@@ -3,13 +3,13 @@ import {Routes, Route, Outlet } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 import WelcomePage from './pages/auth/welcomePage/welcomePage';
-// import HomePage from './pages/app/HomePage/HomePage';
+import HomePage from './pages/app/HomePage/HomePage';
 // import SendRecipePage from './pages/app/SendRecipePage/SendRecipePage';
 // import ViewRecipePage from './pages/app/ViewRecipePage/ViewRecipePage';
 // import ShowRecipes from './components/ShowRecipes/ShowRecipes';
 
-// import AppLayout from './utils/AppLayout/AppLayout';
-// import ProtectedRoute from './utils/ProtectedRoute/ProtectedRoute';
+import AppLayout from './utils/AppLayout/AppLayout';
+import ProtectedRoute from './utils/ProtectedRoute/ProtectedRoute';
 
 // import { pageTypes } from './config/constants';
 
@@ -24,9 +24,10 @@ function App() {
           <Route path='/login' element={<WelcomePage />}/>
           <Route path='*' element={<Navigate to="/login" replace />}/>
         </Route>
-        {/* <Route element={<ProtectedRoute />}>
+        <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
             <Route path="/home" element={<HomePage />}/>
+            {/* 
             <Route path="/trends" element={<ShowRecipes type={pageTypes.TRENDS}/>}/>
             <Route path="/saved-recipes" element={<ShowRecipes type={pageTypes.BOOKMARKS}/>}/>
             <Route path="/liked-recipes" element={<ShowRecipes type={pageTypes.LIKES}/>}/>
@@ -35,9 +36,10 @@ function App() {
             <Route path="/edit-recipe/:id" element={<SendRecipePage />} />
             <Route path="/recipe/:id" element={<ViewRecipePage />} />
             <Route path="/recipes" element={<ShowRecipes type= {pageTypes.FILTEREDS}/>}/>
+            */}
             <Route path='/*' element={<Navigate to="/home" replace/>}/>
           </Route>
-        </Route> */}
+        </Route> 
       </Routes> 
     </div>
   );
