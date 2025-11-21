@@ -18,6 +18,10 @@ const useSignUpForm = (clear:boolean) => {
     try {
       const values = await form.validateFields();
 
+      if (values.BirthDate) {
+        values.BirthDate = values.BirthDate.format('YYYY-MM-DD');
+      }
+
       if (!arePasswordsSame(values)) {
         throw new Error("Error-PasswordsAreNotSame");
       }

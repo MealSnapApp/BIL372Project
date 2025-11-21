@@ -1,4 +1,4 @@
-import { Form, Input } from "antd";
+import { Form, Input, DatePicker, Select } from "antd";
 import '../../styles.css'
 import useSignUpForm from "./SignUpForm.logic";
 
@@ -69,7 +69,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
               </Form.Item>
 
               {/* Again Password Input */}
-             <Form.Item
+              <Form.Item
                 name='PasswordConfirmation'
                 dependencies={['Password']}
                 rules={[
@@ -89,6 +89,28 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
               >
                 <Input.Password className="input" autoComplete="off" type="text" placeholder="Confirm Password"/>
               </Form.Item>
+
+               {/* Birth Date and Sex Row */}
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <Form.Item
+                  name='BirthDate'
+                  rules={[{ required: true, message: 'Please select your birth date!' }]}
+                  style={{ flex: 1 }}
+                >
+                  <DatePicker className="input" placeholder="Birth Date" style={{ width: '100%' }} />
+                </Form.Item>
+
+                <Form.Item
+                  name='Sex'
+                  rules={[{ required: true, message: 'Please select your sex!' }]}
+                  style={{ flex: 1 }}
+                >
+                  <Select className="input" placeholder="Sex">
+                    <Select.Option value="M">Male</Select.Option>
+                    <Select.Option value="F">Female</Select.Option>
+                  </Select>
+                </Form.Item>
+              </div>
 
               {/* Submit Button */}
             <button id="sign-up-button" onClick={handleSubmit}>Sign Up</button>                    
