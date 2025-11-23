@@ -125,12 +125,12 @@ const handleTrendsClick = (period: string) => {
 };
 
     // Send Recipe Button
-    const handleSendRecipeClick = () => {
-        // If the user is already on the send-recipe page, do not navigate again
-        if (window.location.pathname === "/send-recipe") {
+    const handleSaveMealClick = () => {
+        // If the user is already on the save-meal page, do not navigate again
+        if (window.location.pathname === "/save-meal") {
             return; 
         }
-        navigate("/send-recipe");
+        navigate("/save-meal");
     }
 
     // Profile Menu Button
@@ -200,7 +200,7 @@ const handleTrendsClick = (period: string) => {
         handleLogoClick,
         handleRecipesClick,
         handleTrendsClick,
-        handleSendRecipeClick,
+        handleSaveMealClick,
         handleProfileClick,
         handleMyProfileClick,
         handleSavedRecipes,

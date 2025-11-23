@@ -68,7 +68,7 @@ const UpperMenuBar: React.FC = () => {
           handleLogoClick,
           handleRecipesClick,
           handleTrendsClick,
-          handleSendRecipeClick,
+          handleSaveMealClick,
           handleProfileClick,
           handleMyProfileClick,
           handleSavedRecipes,
@@ -85,8 +85,8 @@ const UpperMenuBar: React.FC = () => {
     <div className='upper-menu-bar-1'>
       { contextHolder }
       <div className='upper-menu-bar-1 left-side' onClick={handleLogoClick}>
-        <div className='logo'><img src={logo} alt='My Recipes Logo' /></div>
-        <div className='tauri-font'>My Recipes</div>
+        <div className='logo'><img src={logo} alt='SnapMeal Logo' /></div>
+        <div className='tauri-font'>SnapMeal</div>
       </div>
       <div className='upper-menu-bar-1 right-side'>
         <div className='dropdown-menu-wrapper'
@@ -175,9 +175,9 @@ const UpperMenuBar: React.FC = () => {
           onMouseEnter={()=> setIsMouseOnSendRecipe(true)}
           onMouseLeave={()=> setIsMouseOnSendRecipe(false)}
           className='share-recipe'
-          onClick={handleSendRecipeClick}
+          onClick={handleSaveMealClick}
           >
-            {isMouseOnSendRecipe ? <span className='cooker-icon'><IconCooker/></span> : "Send Recipe"}
+            {isMouseOnSendRecipe ? <span className='cooker-icon'><IconCooker/></span> : "Save Meal"}
         </div>
 
         <div className='bell-icon'><IconBell/></div>
