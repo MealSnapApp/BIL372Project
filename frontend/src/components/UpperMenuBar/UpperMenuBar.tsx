@@ -61,10 +61,8 @@ const UpperMenuBar: React.FC = () => {
           setIsRecipesVisible,
           isTrendsVisible,
           setIsTrendsVisible,
-          isBlogsVisible,
-          setIsBlogsVisible,
-          isMouseOnSendRecipe,
-          setIsMouseOnSendRecipe,
+          isMouseOnSaveMeal,
+          setIsMouseOnSaveMeal,
           handleLogoClick,
           handleRecipesClick,
           handleTrendsClick,
@@ -141,26 +139,6 @@ const UpperMenuBar: React.FC = () => {
             </div>
           }
         </div>
-        <div
-          onMouseEnter={() => setIsBlogsVisible(true)}
-          onMouseLeave={() => setIsBlogsVisible(false)}
-          className='dropdown-menu-wrapper'
-        >
-          <div className='header-text-with-arrow'>
-            <span className={isBlogsVisible ? "title-on-mouse header-text" : "header-text"}>
-              Blogs
-            </span>
-            <IconArrowDown />
-          </div>
-          {isBlogsVisible && 
-            <div className={`dropdown-menu animate`}>
-              <DropdownMenuElement header='Cooking' items={['Cooking Tips', 'Kitchen Hacks']} img={cook}/>
-              <DropdownMenuElement header='Health' items={['Healthy Eating', 'Diet', 'How Much Calories?']} img={healthy}/>
-              <DropdownMenuElement header='Life' items={['Useful Informations', 'Travel Guide']} img={daily}/>
-              <DropdownMenuElement header='What Are The Benefits?' items={['What are the benefits of olive oil for skin?', 'What are the benefits of cherries?']} img={question}/>
-            </div>
-          }
-        </div>
         <div className='text'>Contact Us</div>
         <div className='search-bar-wrapper'>
           <input
@@ -172,12 +150,12 @@ const UpperMenuBar: React.FC = () => {
         </div>
 
         <div 
-          onMouseEnter={()=> setIsMouseOnSendRecipe(true)}
-          onMouseLeave={()=> setIsMouseOnSendRecipe(false)}
+          onMouseEnter={()=> setIsMouseOnSaveMeal(true)}
+          onMouseLeave={()=> setIsMouseOnSaveMeal(false)}
           className='share-recipe'
           onClick={handleSaveMealClick}
           >
-            {isMouseOnSendRecipe ? <span className='cooker-icon'><IconCooker/></span> : "Save Meal"}
+            {isMouseOnSaveMeal ? <span className='cooker-icon'><IconCooker/></span> : "Save Meal"}
         </div>
 
         <div className='bell-icon'><IconBell/></div>
