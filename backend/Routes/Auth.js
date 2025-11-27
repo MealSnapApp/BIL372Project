@@ -3,9 +3,10 @@ const router = express.Router();
 const SignUpController = require('../Controllers/SignUpController');
 const SignInController = require('../Controllers/SignInController');
 const authenticateToken = require('../middlewares/authMiddleware');
+const LogoutController = require('../Controllers/LogoutController');
 
 // If the user signed in
-// router.post('/logout', authenticateToken, LogoutController.logout);
+router.post('/logout', authenticateToken, LogoutController.logout);
 
 router.post('/sign-up', SignUpController.signup);
 router.post('/sign-in', SignInController.signin);

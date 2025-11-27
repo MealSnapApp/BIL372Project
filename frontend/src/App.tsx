@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 import WelcomePage from './pages/auth/welcomePage/welcomePage';
 import HomePage from './pages/app/HomePage/HomePage';
+import SaveMealPage from './pages/app/SaveMealPage/SaveMealPage';
 // import SendRecipePage from './pages/app/SendRecipePage/SendRecipePage';
 // import ViewRecipePage from './pages/app/ViewRecipePage/ViewRecipePage';
 // import ShowRecipes from './components/ShowRecipes/ShowRecipes';
@@ -27,6 +28,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
             <Route path="/home" element={<HomePage />}/>
+            <Route path="/save-meal" element={<SaveMealPage />}/>
             {/* 
             <Route path="/trends" element={<ShowRecipes type={pageTypes.TRENDS}/>}/>
             <Route path="/saved-recipes" element={<ShowRecipes type={pageTypes.BOOKMARKS}/>}/>

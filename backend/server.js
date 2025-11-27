@@ -5,6 +5,8 @@ const { sequelize, initializeDatabase } = require('./config/database');
 
 // Import models to ensure they are registered with Sequelize
 require('./models/User');
+require('./models/Food');
+require('./models/MealLog');
 
 const server = express();
 
@@ -20,8 +22,12 @@ server.use(cors({
 
 // Routes
 const authRoutes = require('./Routes/Auth');
+const foodRoutes = require('./Routes/Food');
+const mealLogRoutes = require('./Routes/MealLog');
 
 server.use('/auth', authRoutes);
+server.use('/foods', foodRoutes);
+server.use('/meal-logs', mealLogRoutes);
 
 const PORT = 3001;
 
