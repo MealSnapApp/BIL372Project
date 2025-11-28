@@ -207,3 +207,93 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+.food-detail-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.food-detail-info {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.portion-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.portion-input-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.portion-input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.portion-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.calculated-calories {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #2e7d32;
+  padding: 1rem;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.back-button {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #f5f5f5;
+}
+
+.confirm-button {
+  flex: 2;
+  padding: 1rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: #43a047;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}

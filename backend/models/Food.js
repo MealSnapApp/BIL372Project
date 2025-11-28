@@ -12,10 +12,6 @@ const Food = sequelize.define('Food', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  portion_size: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
   calorie: {
     type: DataTypes.DOUBLE,
     allowNull: false,

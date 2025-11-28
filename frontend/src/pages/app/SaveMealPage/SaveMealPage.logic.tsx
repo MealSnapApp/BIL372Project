@@ -7,7 +7,6 @@ export interface FoodItem {
   food_id: string;
   food_name: string;
   calorie: number;
-  portion_size: string;
   protein_gr?: number;
   carbohydrate_gr?: number;
   fat_gr?: number;
@@ -34,6 +33,10 @@ const useSaveMealPage = () => {
   const [currentMealType, setCurrentMealType] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<FoodItem[]>([]);
+  
+  // New states for food detail selection
+  const [selectedFoodForDetail, setSelectedFoodForDetail] = useState<FoodItem | null>(null);
+  const [portionAmount, setPortionAmount] = useState<number>(100);
 
   // Fetch daily logs on mount
   useEffect(() => {
@@ -77,11 +80,15 @@ const useSaveMealPage = () => {
         logs.forEach((log: any) => {
             const section = newMeals.find(m => m.id === log.meal_time);
             if (section && log.Food) {
+                // Calculate calories based on portion
+                const logPortion = parseFloat(log.portion) || 0;
+                const basePortion = 100;
+                const calculatedCalories = (log.Food.calorie * logPortion) / basePortion;
+
                 const foodItem: FoodItem = {
                     food_id: log.food_id,
                     food_name: log.Food.food_name,
-                    calorie: log.Food.calorie,
-                    portion_size: log.Food.portion_size,
+                    calorie: Math.round(calculatedCalories), // Show calculated calories
                     protein_gr: log.Food.protein_gr,
                     carbohydrate_gr: log.Food.carbohydrate_gr,
                     fat_gr: log.Food.fat_gr
@@ -101,6 +108,7 @@ const useSaveMealPage = () => {
     setCurrentMealType(mealId);
     setIsModalVisible(true);
     setSearchTerm('');
+    setSelectedFoodForDetail(null); // Reset selection
     // Load initial foods
     getAllFoods().then(response => {
         if (response.success) {
@@ -112,19 +120,29 @@ const useSaveMealPage = () => {
   const handleCloseModal = () => {
     setIsModalVisible(false);
     setCurrentMealType(null);
+    setSelectedFoodForDetail(null);
   };
 
-  const handleAddFoodItem = async (food: FoodItem) => {
-    if (!currentMealType) return;
+  const handleSelectFood = (food: FoodItem) => {
+    setSelectedFoodForDetail(food);
+    setPortionAmount(100); // Default to 100g
+  };
+
+  const handleBackToSearch = () => {
+    setSelectedFoodForDetail(null);
+  };
+
+  const handleConfirmAddFood = async () => {
+    if (!currentMealType || !selectedFoodForDetail) return;
 
     const today = new Date().toISOString().split('T')[0];
     
     try {
         const response = await addMealLog({
-            food_id: food.food_id,
+            food_id: selectedFoodForDetail.food_id,
             date: today,
             meal_time: currentMealType,
-            portion: "1" // Default portion for now
+            portion: portionAmount.toString()
         });
 
         if (response.success) {
@@ -147,8 +165,14 @@ const useSaveMealPage = () => {
     filteredFoods: searchResults,
     handleAddFoodClick,
     handleCloseModal,
-    handleAddFoodItem,
-    totalDailyCalories
+    totalDailyCalories,
+    // New exports
+    selectedFoodForDetail,
+    portionAmount,
+    setPortionAmount,
+    handleSelectFood,
+    handleBackToSearch,
+    handleConfirmAddFood
   };
 };
 

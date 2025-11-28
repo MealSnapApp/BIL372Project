@@ -3,6 +3,7 @@ const { Op } = require('sequelize');
 
 exports.getAllFoods = async (req, res) => {
   try {
+    console.log("Food Attributes:", Object.keys(Food.rawAttributes));
     const foods = await Food.findAll();
     res.status(200).json({ success: true, data: foods });
   } catch (error) {
@@ -22,16 +23,16 @@ exports.searchFoods = async (req, res) => {
     });
     res.status(200).json({ success: true, data: foods });
   } catch (error) {
+    console.error("Search Food Error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
 exports.createFood = async (req, res) => {
   try {
-    const { food_name, portion_size, calorie, protein_gr, carbohydrate_gr, fat_gr } = req.body;
+    const { food_name, calorie, protein_gr, carbohydrate_gr, fat_gr } = req.body;
     const newFood = await Food.create({
       food_name,
-      portion_size,
       calorie,
       protein_gr,
       carbohydrate_gr,
@@ -39,6 +40,7 @@ exports.createFood = async (req, res) => {
     });
     res.status(201).json({ success: true, data: newFood });
   } catch (error) {
+    console.error("Create Food Error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

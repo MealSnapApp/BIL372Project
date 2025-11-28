@@ -17,6 +17,7 @@ exports.addMealLog = async (req, res) => {
 
     res.status(201).json({ success: true, data: newLog });
   } catch (error) {
+    console.error("Add Meal Log Error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -33,12 +34,13 @@ exports.getDailyLogs = async (req, res) => {
       },
       include: [{
         model: Food,
-        attributes: ['food_name', 'calorie', 'portion_size', 'protein_gr', 'carbohydrate_gr', 'fat_gr']
+        attributes: ['food_name', 'calorie', 'protein_gr', 'carbohydrate_gr', 'fat_gr']
       }]
     });
 
     res.status(200).json({ success: true, data: logs });
   } catch (error) {
+    console.error("Get Daily Logs Error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

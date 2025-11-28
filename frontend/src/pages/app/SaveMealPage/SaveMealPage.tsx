@@ -16,8 +16,13 @@ const SaveMealPage: React.FC = () => {
     filteredFoods,
     handleAddFoodClick,
     handleCloseModal,
-    handleAddFoodItem,
-    totalDailyCalories
+    totalDailyCalories,
+    selectedFoodForDetail,
+    portionAmount,
+    setPortionAmount,
+    handleSelectFood,
+    handleBackToSearch,
+    handleConfirmAddFood
   } = useSaveMealPage();
 
   return (
@@ -41,7 +46,7 @@ const SaveMealPage: React.FC = () => {
                 <li key={`${item.food_id}-${index}`} className="food-item">
                   <div className="food-info">
                     <span className="food-name">{item.food_name}</span>
-                    <span className="food-portion">{item.portion_size}</span>
+                    {/* <span className="food-portion">{item.portion_size} g</span> */}
                   </div>
                   <span className="food-calories">{item.calorie} kcal</span>
                 </li>
@@ -62,45 +67,80 @@ const SaveMealPage: React.FC = () => {
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>Add to {meals.find(m => m.id === currentMealType)?.title}</h3>
+              <h3>
+                {selectedFoodForDetail 
+                  ? selectedFoodForDetail.food_name 
+                  : `Add to ${meals.find(m => m.id === currentMealType)?.title}`
+                }
+              </h3>
               <button className="close-button" onClick={handleCloseModal}>
                 <FaTimesIcon />
               </button>
             </div>
             
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search for food (e.g., Egg, Apple)..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              autoFocus
-            />
+            {!selectedFoodForDetail ? (
+              <>
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search for food (e.g., Egg, Apple)..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  autoFocus
+                />
 
-            <div className="search-results">
-              {filteredFoods.length > 0 ? (
-                filteredFoods.map((food) => (
-                  <div 
-                    key={food.food_id} 
-                    className="search-result-item"
-                    onClick={() => handleAddFoodItem(food)}
-                  >
-                    <div className="food-info">
-                      <span className="food-name">{food.food_name}</span>
-                      <span className="food-portion">{food.portion_size}</span>
+                <div className="search-results">
+                  {filteredFoods.length > 0 ? (
+                    filteredFoods.map((food) => (
+                      <div 
+                        key={food.food_id} 
+                        className="search-result-item"
+                        onClick={() => handleSelectFood(food)}
+                      >
+                        <div className="food-info">
+                          <span className="food-name">{food.food_name}</span>
+                          <span className="food-portion">100 g</span>
+                        </div>
+                        <div className="food-calories">
+                          {food.calorie} kcal
+                          <span className="add-icon" style={{marginLeft: '10px'}}>+</span>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div style={{textAlign: 'center', color: '#888', padding: '2rem'}}>
+                      No foods found matching "{searchTerm}"
                     </div>
-                    <div className="food-calories">
-                      {food.calorie} kcal
-                      <span className="add-icon" style={{marginLeft: '10px'}}>+</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div style={{textAlign: 'center', color: '#888', padding: '2rem'}}>
-                  No foods found matching "{searchTerm}"
+                  )}
                 </div>
-              )}
-            </div>
+              </>
+            ) : (
+              <div className="food-detail-view">
+                <div className="food-detail-info">
+                  <p>Base Calories: <strong>{selectedFoodForDetail.calorie} kcal</strong> per 100g</p>
+                </div>
+                
+                <div className="portion-input-container">
+                  <label>Amount (grams):</label>
+                  <input 
+                    type="number" 
+                    className="portion-input"
+                    value={portionAmount}
+                    onChange={(e) => setPortionAmount(Number(e.target.value))}
+                    min="1"
+                  />
+                </div>
+
+                <div className="calculated-calories">
+                  Calculated: <strong>{Math.round((selectedFoodForDetail.calorie * portionAmount) / 100)} kcal</strong>
+                </div>
+
+                <div className="detail-actions">
+                  <button className="back-button" onClick={handleBackToSearch}>Back</button>
+                  <button className="confirm-button" onClick={handleConfirmAddFood}>Add to Meal</button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
