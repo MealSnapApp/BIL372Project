@@ -1,10 +1,12 @@
 import React from 'react';
 import './SaveMealPage.css';
 import useSaveMealPage from './SaveMealPage.logic';
-import { FaPlus, FaTimes } from 'react-icons/fa';
+import { FaPlus, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const FaPlusIcon = FaPlus as any;
 const FaTimesIcon = FaTimes as any;
+const FaChevronLeftIcon = FaChevronLeft as any;
+const FaChevronRightIcon = FaChevronRight as any;
 
 const SaveMealPage: React.FC = () => {
   const {
@@ -22,15 +24,44 @@ const SaveMealPage: React.FC = () => {
     setPortionAmount,
     handleSelectFood,
     handleBackToSearch,
-    handleConfirmAddFood
+    handleConfirmAddFood,
+    selectedDate,
+    setSelectedDate,
+    weekDays,
+    handlePrevWeek,
+    handleNextWeek
   } = useSaveMealPage();
 
   return (
     <div className="save-meal-container">
       <div className="daily-summary">
         <h2>Daily Summary</h2>
+        
+        <div className="calendar-container">
+          <button className="nav-button" onClick={handlePrevWeek}>
+            <FaChevronLeftIcon />
+          </button>
+          
+          <div className="week-calendar">
+            {weekDays.map((day) => (
+              <div 
+                key={day.date} 
+                className={`calendar-day ${day.date === selectedDate ? 'active' : ''}`}
+                onClick={() => setSelectedDate(day.date)}
+              >
+                <span className="day-name">{day.dayName}</span>
+                <span className="day-number">{day.dayNumber}</span>
+              </div>
+            ))}
+          </div>
+
+          <button className="nav-button" onClick={handleNextWeek}>
+            <FaChevronRightIcon />
+          </button>
+        </div>
+
         <div className="calories">{totalDailyCalories} kcal</div>
-        <p>Consumed Today</p>
+        <p>Consumed on {new Date(selectedDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
       </div>
 
       {meals.map((meal) => (

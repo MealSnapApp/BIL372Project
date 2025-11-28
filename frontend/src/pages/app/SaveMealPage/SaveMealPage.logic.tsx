@@ -37,11 +37,39 @@ const useSaveMealPage = () => {
   // New states for food detail selection
   const [selectedFoodForDetail, setSelectedFoodForDetail] = useState<FoodItem | null>(null);
   const [portionAmount, setPortionAmount] = useState<number>(100);
+  
+  // Date state
+  const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split('T')[0]);
 
-  // Fetch daily logs on mount
+  // Helper to get week days
+  const getWeekDays = (currentDateStr: string) => {
+    const current = new Date(currentDateStr);
+    const day = current.getDay(); // 0 (Sun) to 6 (Sat)
+    // Calculate Monday
+    // If Sunday (0), subtract 6 days. If Mon (1), subtract 0. If Tue (2), subtract 1.
+    const daysToMonday = day === 0 ? 6 : day - 1;
+    const monday = new Date(current);
+    monday.setDate(current.getDate() - daysToMonday);
+    
+    const days = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(monday);
+      d.setDate(monday.getDate() + i);
+      days.push({
+        date: d.toISOString().split('T')[0],
+        dayName: d.toLocaleDateString('en-US', { weekday: 'short' }),
+        dayNumber: d.getDate()
+      });
+    }
+    return days;
+  };
+
+  const weekDays = getWeekDays(selectedDate);
+
+  // Fetch daily logs on mount and when date changes
   useEffect(() => {
-    fetchDailyLogs();
-  }, []);
+    fetchDailyLogs(selectedDate);
+  }, [selectedDate]);
 
   // Search foods when searchTerm changes
   useEffect(() => {
@@ -64,10 +92,9 @@ const useSaveMealPage = () => {
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
 
-  const fetchDailyLogs = async () => {
-    const today = new Date().toISOString().split('T')[0];
+  const fetchDailyLogs = async (date: string) => {
     try {
-      const response = await getDailyLogs(today);
+      const response = await getDailyLogs(date);
       if (response.success) {
         const logs = response.data;
         const newMeals = [
@@ -135,23 +162,33 @@ const useSaveMealPage = () => {
   const handleConfirmAddFood = async () => {
     if (!currentMealType || !selectedFoodForDetail) return;
 
-    const today = new Date().toISOString().split('T')[0];
-    
     try {
         const response = await addMealLog({
             food_id: selectedFoodForDetail.food_id,
-            date: today,
+            date: selectedDate,
             meal_time: currentMealType,
             portion: portionAmount.toString()
         });
 
         if (response.success) {
-            fetchDailyLogs(); // Refresh logs
+            fetchDailyLogs(selectedDate); // Refresh logs
             handleCloseModal();
         }
     } catch (error) {
         console.error("Error adding meal log:", error);
     }
+  };
+
+  const handlePrevWeek = () => {
+    const current = new Date(selectedDate);
+    current.setDate(current.getDate() - 7);
+    setSelectedDate(current.toISOString().split('T')[0]);
+  };
+
+  const handleNextWeek = () => {
+    const current = new Date(selectedDate);
+    current.setDate(current.getDate() + 7);
+    setSelectedDate(current.toISOString().split('T')[0]);
   };
 
   const totalDailyCalories = meals.reduce((acc, meal) => acc + meal.totalCalories, 0);
@@ -172,7 +209,12 @@ const useSaveMealPage = () => {
     setPortionAmount,
     handleSelectFood,
     handleBackToSearch,
-    handleConfirmAddFood
+    handleConfirmAddFood,
+    selectedDate,
+    setSelectedDate,
+    weekDays,
+    handlePrevWeek,
+    handleNextWeek
   };
 };
 
