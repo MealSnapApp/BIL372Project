@@ -70,6 +70,7 @@ const { handleMyProfileClick, handleSavedRecipes, handleLikedRecipes, handleSend
       <div ref={menuRef} className={`menu${isMenuVisible ? '' : ' close'}`}>
         <div className='categories'>My Recipes<IconArrowDown/></div>
         <div className='options' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
+
         <div className='options' onClick={handleSavedRecipes}><IconBookmark/>Saved Recipes</div>
         <div className='options' onClick={handleLikedRecipes}><IconHeart/>Likes</div>
         <div className='options' onClick={handleSendRecipe}><IconSend/>Send Recipe</div>

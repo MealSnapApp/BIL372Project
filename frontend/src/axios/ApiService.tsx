@@ -25,7 +25,7 @@ export async function makeRequest(
       method,
       url: endpoint,
       headers: options.headers,
-      data: options.data,
+      data: options.data?.data || options.data,
       params: options.params,
     });
 

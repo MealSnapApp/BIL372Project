@@ -11,7 +11,7 @@ const endpoints: any = {
 class AuthService {
 
     async signIn(values:any): Promise<{ data: any, success: boolean }> {        
-        return makeRequest(RequestMethod.POST, endpoints.signIn, {data:values})
+        return makeRequest(RequestMethod.POST, endpoints.signIn, {data: values})
             .then(result => {
                 return result;
             })
@@ -20,8 +20,8 @@ class AuthService {
             }); 
     }
 
-    async signUp(values:any): Promise<{ data:any, success:boolean}> {
-        return makeRequest(RequestMethod.POST, endpoints.signUp, {data:values})
+    async signUp(values:any): Promise<{ data:any,success:boolean}> {
+        return makeRequest(RequestMethod.POST, endpoints.signUp, {data: values})
             .then(result => {
                 return result;
             })

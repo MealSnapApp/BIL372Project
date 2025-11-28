@@ -8,7 +8,6 @@ const MealLog = sequelize.define('MealLog', {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
-    unique: true,
   },
   user_id: {
     type: DataTypes.UUID,

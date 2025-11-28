@@ -43,6 +43,10 @@ const User = sequelize.define(
       type: DataTypes.CHAR(1),
       allowNull: false,
     },
+    height_cm: {
+      type: DataTypes.DOUBLE,
+      allowNull: true,
+    },
     target_weight_kg: {
       type: DataTypes.DOUBLE,
       allowNull: true,

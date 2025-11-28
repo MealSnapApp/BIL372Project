@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchFoods, getAllFoods } from '../../../services/FoodServices/FoodService';
 import { addMealLog, getDailyLogs } from '../../../services/MealLogServices/MealLogService';
+import { ToastMessage } from '../../../utils/ToastMessage/ToastMessage';
 
 export interface FoodItem {
   food_id: string;
@@ -22,6 +23,7 @@ export interface MealSection {
 
 const useSaveMealPage = () => {
   const navigate = useNavigate();
+  const { contextHolder, showNotification } = ToastMessage();
   
   const [meals, setMeals] = useState<MealSection[]>([
     { id: 'breakfast', title: 'Breakfast', items: [], totalCalories: 0 },
@@ -75,7 +77,8 @@ const useSaveMealPage = () => {
         ] as MealSection[];
 
         logs.forEach((log: any) => {
-            const section = newMeals.find(m => m.id === log.meal_time);
+            // Case-insensitive matching for meal_time
+            const section = newMeals.find(m => m.id.toLowerCase() === log.meal_time.toLowerCase());
             if (section && log.Food) {
                 const foodItem: FoodItem = {
                     food_id: log.food_id,
@@ -130,9 +133,15 @@ const useSaveMealPage = () => {
         if (response.success) {
             fetchDailyLogs(); // Refresh logs
             handleCloseModal();
+            showNotification("Meal added successfully", "success");
         }
-    } catch (error) {
+    } catch (error: any) {
         console.error("Error adding meal log:", error);
+        if (error.response && error.response.data && error.response.data.message) {
+            showNotification(error.response.data.message, "error");
+        } else {
+            showNotification("Failed to add meal log", "error");
+        }
     }
   };
 
@@ -148,7 +157,8 @@ const useSaveMealPage = () => {
     handleAddFoodClick,
     handleCloseModal,
     handleAddFoodItem,
-    totalDailyCalories
+    totalDailyCalories,
+    contextHolder
   };
 };
 

@@ -5,6 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "default";
 
 
 exports.signup = async (req, res) => {
+  console.log("Signup request received:", req.body); // Added logging
   try {
     // Destructure new fields from request body
     const { 
@@ -50,6 +51,6 @@ exports.signup = async (req, res) => {
         return res.status(400).json({ message: "Validation error", errors: err.errors.map(e => e.message) });
     }
 
-    res.status(500).json({ message: "The user could not be created.", error: err.message });
+    res.status(500).json({ message: "The user could not be created.", error: err.toString(), stack: err.stack });
   }
 };

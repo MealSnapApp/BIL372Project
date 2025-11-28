@@ -17,11 +17,13 @@ const SaveMealPage: React.FC = () => {
     handleAddFoodClick,
     handleCloseModal,
     handleAddFoodItem,
-    totalDailyCalories
+    totalDailyCalories,
+    contextHolder
   } = useSaveMealPage();
 
   return (
     <div className="save-meal-container">
+      {contextHolder}
       <div className="daily-summary">
         <h2>Daily Summary</h2>
         <div className="calories">{totalDailyCalories} kcal</div>

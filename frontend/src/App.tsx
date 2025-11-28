@@ -5,9 +5,7 @@ import { Navigate } from 'react-router-dom';
 import WelcomePage from './pages/auth/welcomePage/welcomePage';
 import HomePage from './pages/app/HomePage/HomePage';
 import SaveMealPage from './pages/app/SaveMealPage/SaveMealPage';
-// import SendRecipePage from './pages/app/SendRecipePage/SendRecipePage';
-// import ViewRecipePage from './pages/app/ViewRecipePage/ViewRecipePage';
-// import ShowRecipes from './components/ShowRecipes/ShowRecipes';
+import ProfilePage from './pages/app/ProfilePage/ProfilePage';
 
 import AppLayout from './utils/AppLayout/AppLayout';
 import ProtectedRoute from './utils/ProtectedRoute/ProtectedRoute';
@@ -23,17 +21,17 @@ function App() {
           element={<div className='login-layout'><Outlet /></div>}
         >
           <Route path='/login' element={<WelcomePage />}/>
-          <Route path='*' element={<Navigate to="/login" replace />}/>
+          <Route path='/' element={<Navigate to="/login" replace />}/>
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
             <Route path="/home" element={<HomePage />}/>
             <Route path="/save-meal" element={<SaveMealPage />}/>
+            <Route path="/user-recipes" element={<ProfilePage />}/>
             {/* 
             <Route path="/trends" element={<ShowRecipes type={pageTypes.TRENDS}/>}/>
             <Route path="/saved-recipes" element={<ShowRecipes type={pageTypes.BOOKMARKS}/>}/>
             <Route path="/liked-recipes" element={<ShowRecipes type={pageTypes.LIKES}/>}/>
-            <Route path="/user-recipes" element={<ShowRecipes type={pageTypes.USER_RECIPES}/>}/>
             <Route path="/send-recipe" element={<SendRecipePage />} />
             <Route path="/edit-recipe/:id" element={<SendRecipePage />} />
             <Route path="/recipe/:id" element={<ViewRecipePage />} />
