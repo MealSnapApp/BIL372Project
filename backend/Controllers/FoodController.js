@@ -16,7 +16,7 @@ exports.searchFoods = async (req, res) => {
     const foods = await Food.findAll({
       where: {
         food_name: {
-          [Op.iLike]: `%${query}%`
+          [Op.like]: `${query}%`
         }
       }
     });
