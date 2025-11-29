@@ -7,6 +7,7 @@ const { sequelize, initializeDatabase } = require('./config/database');
 require('./models/User');
 require('./models/Food');
 require('./models/MealLog');
+require('./models/Follower');
 
 const server = express();
 
@@ -24,10 +25,14 @@ server.use(cors({
 const authRoutes = require('./Routes/Auth');
 const foodRoutes = require('./Routes/Food');
 const mealLogRoutes = require('./Routes/MealLog');
+const followerRoutes = require('./Routes/Follower');
+const userRoutes = require('./Routes/User');
 
 server.use('/auth', authRoutes);
 server.use('/foods', foodRoutes);
 server.use('/meal-logs', mealLogRoutes);
+server.use('/followers', followerRoutes);
+server.use('/user', userRoutes);
 
 const PORT = 3001;
 

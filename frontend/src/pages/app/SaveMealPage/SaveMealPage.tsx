@@ -29,11 +29,13 @@ const SaveMealPage: React.FC = () => {
     setSelectedDate,
     weekDays,
     handlePrevWeek,
-    handleNextWeek
+    handleNextWeek,
+    contextHolder
   } = useSaveMealPage();
 
   return (
     <div className="save-meal-container">
+      {contextHolder}
       <div className="daily-summary">
         <h2>Daily Summary</h2>
         
