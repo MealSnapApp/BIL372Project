@@ -55,7 +55,8 @@ exports.getDailyLogs = async (req, res) => {
       include: [{
         model: Food,
         attributes: ['food_name', 'calorie', 'protein_gr', 'carbohydrate_gr', 'fat_gr']
-      }]
+      }],
+      order: [['created_at', 'ASC']]
     });
 
     res.status(200).json({ success: true, data: logs });
@@ -73,7 +74,7 @@ exports.getAllUserLogs = async (req, res) => {
       where: { user_id },
       include: [{
         model: Food,
-        attributes: ['food_name', 'calorie', 'portion_size']
+        attributes: ['food_name', 'calorie']
       }],
       order: [['date', 'DESC'], ['created_at', 'DESC']]
     });

@@ -1,9 +1,12 @@
 import React from 'react';
 import FollowerPage from '../FollowerPage/FollowerPage';
 import './ProfilePage.css';
-import { Modal, Form, InputNumber, Select, Button, List, Card, Popconfirm, Space } from 'antd';
+import { Modal, Form, InputNumber, Select, Button, Card, Popconfirm, Space, DatePicker, Collapse, Empty } from 'antd';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
-import useProfilePage from './ProfilePage.logic';
+import useProfilePage, { MealLog } from './ProfilePage.logic';
+import dayjs from 'dayjs';
+
+const { Panel } = Collapse;
 
 const ProfilePage: React.FC = () => {
     const {
@@ -12,19 +15,75 @@ const ProfilePage: React.FC = () => {
         isEditModalVisible,
         setIsEditModalVisible,
         logsLoading,
-        selectedMealType,
-        setSelectedMealType,
+        selectedDate,
+        setSelectedDate,
+        groupedLogs,
         contextHolder,
         form,
         handleEditClick,
         handleUpdate,
         handleDeleteLog,
-        filteredLogs,
         navigate
     } = useProfilePage();
 
     if (loading) return <div className="profile-loading">Loading...</div>;
     if (!user) return <div className="profile-error">User not found</div>;
+
+    const renderMealList = (logs: MealLog[]) => {
+        if (logs.length === 0) return <Empty description="No meals logged" image={Empty.PRESENTED_IMAGE_SIMPLE} />;
+        
+        return (
+            <div className="meal-list-container">
+                {logs.map(item => {
+                    const portion = parseFloat(item.portion) || 0;
+                    const calculatedCalorie = Math.round((item.Food.calorie * portion) / 100);
+                    const calculatedProtein = Math.round((item.Food.protein_gr * portion) / 100);
+                    const calculatedCarbs = Math.round((item.Food.carbohydrate_gr * portion) / 100);
+                    const calculatedFat = Math.round((item.Food.fat_gr * portion) / 100);
+
+                    return (
+                        <Card 
+                            key={item.meal_log_id}
+                            size="small"
+                            className="meal-log-card"
+                            title={
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <span>{item.Food.food_name}</span>
+                                    <span style={{ fontSize: '12px', color: '#888', fontWeight: 'normal' }}>{item.meal_time}</span>
+                                </div>
+                            }
+                            extra={
+                                <Popconfirm
+                                    title="Delete meal log"
+                                    description="Are you sure to delete this log?"
+                                    onConfirm={() => handleDeleteLog(item.meal_log_id)}
+                                    okText="Yes"
+                                    cancelText="No"
+                                >
+                                    <Button 
+                                        type="text" 
+                                        danger 
+                                        icon={<DeleteOutlined />} 
+                                        size="small"
+                                    />
+                                </Popconfirm>
+                            }
+                        >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div>
+                                    <span style={{ display: 'block', marginBottom: '4px' }}>{item.portion} g</span>
+                                    <span style={{ fontSize: '12px', color: '#666' }}>
+                                        Protein: {calculatedProtein}g | Carbohydrate: {calculatedCarbs}g | Fat: {calculatedFat}g
+                                    </span>
+                                </div>
+                                <span style={{ fontWeight: 'bold', color: '#19850B' }}>{calculatedCalorie} kcal</span>
+                            </div>
+                        </Card>
+                    );
+                })}
+            </div>
+        );
+    };
 
     return (
         <div className="profile-page-container">
@@ -58,17 +117,11 @@ const ProfilePage: React.FC = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                     <h3>My Meal Logs</h3>
                     <Space>
-                        <Select 
-                            defaultValue="all" 
-                            style={{ width: 120 }} 
-                            onChange={setSelectedMealType}
-                            options={[
-                                { value: 'all', label: 'All Meals' },
-                                { value: 'breakfast', label: 'Breakfast' },
-                                { value: 'lunch', label: 'Lunch' },
-                                { value: 'dinner', label: 'Dinner' },
-                                { value: 'snack', label: 'Snack' },
-                            ]}
+                        <DatePicker 
+                            value={selectedDate} 
+                            onChange={(date) => setSelectedDate(date || dayjs())}
+                            allowClear={false}
+                            format="YYYY-MM-DD"
                         />
                         <Button 
                             type="primary" 
@@ -79,40 +132,25 @@ const ProfilePage: React.FC = () => {
                         </Button>
                     </Space>
                 </div>
-                <List
-                    loading={logsLoading}
-                    grid={{ gutter: 16, column: 1 }}
-                    dataSource={filteredLogs}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <Card 
-                                title={item.Food.food_name} 
-                                size="small"
-                                extra={
-                                    <Popconfirm
-                                        title="Delete meal log"
-                                        description="Are you sure to delete this log?"
-                                        onConfirm={() => handleDeleteLog(item.meal_log_id)}
-                                        okText="Yes"
-                                        cancelText="No"
-                                    >
-                                        <Button 
-                                            type="text" 
-                                            danger 
-                                            icon={<DeleteOutlined />} 
-                                        />
-                                    </Popconfirm>
-                                }
-                            >
-                                <p>Date: {item.date}</p>
-                                <p>Time: {item.meal_time}</p>
-                                <p>Calories: {item.Food.calorie} kcal</p>
-                                <p>Portion: {item.portion} ({item.Food.portion_size})</p>
-                            </Card>
-                        </List.Item>
-                    )}
-                    locale={{ emptyText: 'No meal logs found' }}
-                />
+                
+                {logsLoading ? (
+                    <div className="loading-spinner">Loading logs...</div>
+                ) : (
+                    <Collapse defaultActiveKey={['1', '2', '3', '4']} ghost className="meal-collapse">
+                        <Panel header={`Breakfast (${groupedLogs.Breakfast.totalCalories} kcal - Protein:${groupedLogs.Breakfast.totalProtein}g Carbohydrate:${groupedLogs.Breakfast.totalCarbs}g Fat:${groupedLogs.Breakfast.totalFat}g)`} key="1">
+                            {renderMealList(groupedLogs.Breakfast.logs)}
+                        </Panel>
+                        <Panel header={`Lunch (${groupedLogs.Lunch.totalCalories} kcal - Protein:${groupedLogs.Lunch.totalProtein}g Carbohydrate:${groupedLogs.Lunch.totalCarbs}g Fat:${groupedLogs.Lunch.totalFat}g)`} key="2">
+                            {renderMealList(groupedLogs.Lunch.logs)}
+                        </Panel>
+                        <Panel header={`Dinner (${groupedLogs.Dinner.totalCalories} kcal - Protein:${groupedLogs.Dinner.totalProtein}g Carbohydrate:${groupedLogs.Dinner.totalCarbs}g Fat:${groupedLogs.Dinner.totalFat}g)`} key="3">
+                            {renderMealList(groupedLogs.Dinner.logs)}
+                        </Panel>
+                        <Panel header={`Snack (${groupedLogs.Snack.totalCalories} kcal - Protein:${groupedLogs.Snack.totalProtein}g Carbohydrate:${groupedLogs.Snack.totalCarbs}g Fat:${groupedLogs.Snack.totalFat}g)`} key="4">
+                            {renderMealList(groupedLogs.Snack.logs)}
+                        </Panel>
+                    </Collapse>
+                )}
             </div>
             
             <div className="profile-section">
