@@ -58,9 +58,51 @@ const ProfilePage: React.FC = () => {
                 data: Array.isArray(weightLogs) ? weightLogs.map((log) => log.weight_kg) : [],
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                yAxisID: 'y',
+            },
+            {
+                label: 'Height (cm)',
+                data: Array.isArray(weightLogs) ? weightLogs.map((log) => {
+                    const h = heightLogs.find(h => h.date === log.date);
+                    return h ? h.height_cm : null;
+                }) : [],
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                yAxisID: 'y1',
             },
         ],
-        
+    };
+
+    const chartOptions = {
+        responsive: true,
+        interaction: {
+            mode: 'index' as const,
+            intersect: false,
+        },
+        stacked: false,
+        scales: {
+            y: {
+                type: 'linear' as const,
+                display: true,
+                position: 'left' as const,
+                title: {
+                    display: true,
+                    text: 'Weight (kg)'
+                }
+            },
+            y1: {
+                type: 'linear' as const,
+                display: true,
+                position: 'right' as const,
+                grid: {
+                    drawOnChartArea: false,
+                },
+                title: {
+                    display: true,
+                    text: 'Height (cm)'
+                }
+            },
+        },
     };
     
 
@@ -109,7 +151,7 @@ const ProfilePage: React.FC = () => {
                             {weightLogs.map((log, index) => (
                                 <tr key={index}>
                                     <td>{log.date}</td>
-                                    <td>{heightLogs.find(h => h.date === log.date)?.height || "-"}</td>
+                                    <td>{heightLogs.find(h => h.date === log.date)?.height_cm || "-"}</td>
                                     <td>{log.weight_kg}</td>
                                 </tr>
                             ))}
@@ -145,9 +187,9 @@ const ProfilePage: React.FC = () => {
             </div>
 
             <div className="profile-section body-charts">
-                <h3 style={{ textAlign: 'left' }}>Weight Change</h3>
+                <h3 style={{ textAlign: 'left' }}>Body Records Chart</h3>
                 {weightLogs.length > 0 ? (
-                    <Line data={chartData} />
+                    <Line data={chartData} options={chartOptions} />
                 ) : (
                     <p>No data available for charts.</p>
                 )}
