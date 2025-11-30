@@ -1,9 +1,31 @@
 import React from 'react';
 import FollowerPage from '../FollowerPage/FollowerPage';
 import './ProfilePage.css';
-import { Modal, Form, InputNumber, Select, Button, List, Card, Popconfirm, Space } from 'antd';
+import { Modal, Form, InputNumber, Select, Button, List, Card, Popconfirm, Space, DatePicker } from 'antd';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import useProfilePage from './ProfilePage.logic';
+import moment from 'moment';
+import { Line } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 const ProfilePage: React.FC = () => {
     const {
@@ -20,8 +42,27 @@ const ProfilePage: React.FC = () => {
         handleUpdate,
         handleDeleteLog,
         filteredLogs,
-        navigate
+        navigate,
+        isBodyModalVisible,
+        setIsBodyModalVisible,
+        handleSaveBodyData,
+        weightLogs,
+        heightLogs,
     } = useProfilePage();
+
+    const chartData = {
+        labels: Array.isArray(weightLogs) ? weightLogs.map((log) => log.date) : [],
+        datasets: [
+            {
+                label: 'Weight (kg)',
+                data: Array.isArray(weightLogs) ? weightLogs.map((log) => log.weight_kg) : [],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            },
+        ],
+        
+    };
+    
 
     if (loading) return <div className="profile-loading">Loading...</div>;
     if (!user) return <div className="profile-error">User not found</div>;
@@ -51,6 +92,65 @@ const ProfilePage: React.FC = () => {
                         </Button>
                     </div>
                 </div>
+            </div>
+
+
+            <div className="profile-section body-records">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Height (cm)</th>
+                                <th>Weight (kg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {weightLogs.map((log, index) => (
+                                <tr key={index}>
+                                    <td>{log.date}</td>
+                                    <td>{heightLogs.find(h => h.date === log.date)?.height || "-"}</td>
+                                    <td>{log.weight_kg}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <Button type="primary" onClick={() => setIsBodyModalVisible(true)}>
+                    Add Record
+                </Button>
+                <Modal
+                    title="Add Body Record"
+                    open={isBodyModalVisible}
+                    onCancel={() => setIsBodyModalVisible(false)}
+                    footer={null}
+                >
+                    <Form layout="vertical" onFinish={handleSaveBodyData}>
+                        <Form.Item name="weight" label="Weight (kg)" rules={[{ required: true, message: 'Please enter your weight' }]}>
+                            <InputNumber min={0} max={500} style={{ width: '100%' }} />
+                        </Form.Item>
+                        <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
+                            <InputNumber min={0} max={300} style={{ width: '100%' }} />
+                        </Form.Item>
+                        <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
+                            <DatePicker style={{ width: '100%' }} defaultValue={moment()} />
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" block>
+                                Save Record
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Modal>
+                </div>
+            </div>
+
+            <div className="profile-section body-charts">
+                <h3 style={{ textAlign: 'left' }}>Weight Change</h3>
+                {weightLogs.length > 0 ? (
+                    <Line data={chartData} />
+                ) : (
+                    <p>No data available for charts.</p>
+                )}
             </div>
 
             <div className="profile-section">

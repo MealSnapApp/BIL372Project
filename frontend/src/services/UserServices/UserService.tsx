@@ -2,9 +2,22 @@ import axiosInstance from '../../axios/axiosInstance';
 
 export const updateUser = async (data: {
   height_cm?: number;
+  weight_kg?: number;
   target_weight_kg?: number;
   activity_level?: string;
   target_calorie_amount?: number;
+}) => {
+  try {
+    const response = await axiosInstance.put('/user/update', data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateUsersWeightandHeight = async (data: {
+  height_cm?: number;
+  weight_kg?: number;
 }) => {
   try {
     const response = await axiosInstance.put('/user/update', data);

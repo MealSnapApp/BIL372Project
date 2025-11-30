@@ -83,3 +83,56 @@
     font-size: 18px;
     color: #666;
 }
+
+/* Add Body Record styles */
+.add-body-record {
+    margin-bottom: 30px;
+}
+.add-body-record .ant-form-item {
+    margin-bottom: 16px;
+}
+
+/* Body Charts styles */
+.body-charts {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #888;
+}
+
+/* Scrollable Body Records */
+.body-records {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.body-records table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.body-records th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    z-index: 1;
+}
+.body-records th, .body-records td {
+    padding: 8px;
+    text-align: left;
+}
+.body-records td {
+    border-bottom: 1px solid #ddd;
+}
+.body-records .add-record-button {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Align Weight Change title */
+.body-charts h3 {
+    text-align: left;
+}

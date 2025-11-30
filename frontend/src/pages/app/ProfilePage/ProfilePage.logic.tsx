@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { Form } from 'antd';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { updateUser } from '../../../services/UserServices/UserService';
+import { updateUsersWeightandHeight } from '../../../services/UserServices/UserService';
 import { getAllUserLogs, deleteMealLog } from '../../../services/MealLogServices/MealLogService';
 import { ToastMessage } from '../../../utils/ToastMessage/ToastMessage';
+import { saveBodyData, getWeightLogsByUser} from '../../../services/MyBodyServices/MyBodyService';
 
 export interface User {
     user_id: string;
@@ -13,6 +15,7 @@ export interface User {
     username: string;
     email: string;
     height_cm?: number;
+    weight_kg?: number;
     target_weight_kg?: number;
     activity_level?: string;
     target_calorie_amount?: number;
@@ -38,6 +41,9 @@ const useProfilePage = () => {
     const [mealLogs, setMealLogs] = useState<MealLog[]>([]);
     const [logsLoading, setLogsLoading] = useState(false);
     const [selectedMealType, setSelectedMealType] = useState<string>('all');
+    const [isBodyModalVisible, setIsBodyModalVisible] = useState(false);
+    const [weightLogs, setWeightLogs] = useState([]);
+    const [heightLogs, setHeightLogs] = useState([]);
     const { contextHolder, showNotification } = ToastMessage();
     const [form] = Form.useForm();
 
@@ -68,14 +74,40 @@ const useProfilePage = () => {
         }
     };
 
+    const fetchWeightLogs = async () => {
+        try {
+            const response = await getWeightLogsByUser();
+            console.log('Weight logs response:', response); // Log the response to verify its format
+            if (response && response.weightData && Array.isArray(response.weightData)) {
+                setWeightLogs(response.weightData); // Extract weightData array
+                setHeightLogs(response.heightData); // Extract heightData array
+                console.log('Weight logs set:', response.weightData);
+                console.log('Height logs set:', response.heightData);
+            } else {
+                console.error('Unexpected response format:', response);
+            }
+        } catch (error) {
+            console.error('Failed to fetch weight logs', error);
+        }
+    };
+
+
+
     useEffect(() => {
         fetchUser();
         fetchLogs();
     }, []);
 
+    useEffect(() => {
+        if (user) {
+            fetchWeightLogs();
+        }
+    }, [user]);
+
     const handleEditClick = () => {
         form.setFieldsValue({
             height_cm: user?.height_cm,
+            weight_kg: user?.weight_kg,
             target_weight_kg: user?.target_weight_kg,
             activity_level: user?.activity_level,
             target_calorie_amount: user?.target_calorie_amount
@@ -109,6 +141,29 @@ const useProfilePage = () => {
         }
     };
 
+    const handleSaveBodyData = async (data: { weight: number; height: number; date; }) => {
+    try {
+        const formattedData = {
+            ...data,
+            date: data.date.format('YYYY-MM-DD'), // Tarihi string formatına dönüştür
+        };
+        console.log('Saving body data:', formattedData);
+        const response = await saveBodyData(formattedData);
+         const response2 = await updateUsersWeightandHeight({
+            weight_kg: data.weight,
+            height_cm: data.height
+        });
+
+        if (response && response2) {
+            showNotification('Body record added successfully', 'success');
+            setIsBodyModalVisible(false);
+        }
+    } catch (error) {
+        console.error('Failed to save body data', error);
+        showNotification('Failed to save body data', 'error');
+    }
+};
+
     const filteredLogs = mealLogs.filter(log => {
         if (selectedMealType === 'all') return true;
         return log.meal_time.toLowerCase() === selectedMealType.toLowerCase();
@@ -123,13 +178,18 @@ const useProfilePage = () => {
         logsLoading,
         selectedMealType,
         setSelectedMealType,
+        isBodyModalVisible,
+        setIsBodyModalVisible,
+        handleSaveBodyData,
         contextHolder,
         form,
         handleEditClick,
         handleUpdate,
         handleDeleteLog,
         filteredLogs,
-        navigate
+        navigate,
+        weightLogs,
+        heightLogs,
     };
 };
 

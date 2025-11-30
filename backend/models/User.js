@@ -47,6 +47,10 @@ const User = sequelize.define(
       type: DataTypes.DOUBLE,
       allowNull: true,
     },
+    weight_kg: {
+      type: DataTypes.DOUBLE,
+      allowNull: true,
+    },
     target_weight_kg: {
       type: DataTypes.DOUBLE,
       allowNull: true,
