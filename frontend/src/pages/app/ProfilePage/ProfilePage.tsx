@@ -41,6 +41,7 @@ const ProfilePage: React.FC = () => {
                     <p className="profile-email">{user.email}</p>
                     <div className="profile-stats">
                         <span>Height: {user.height_cm || '-'} cm</span>
+                        <span>Weight: {user.weight_kg || '-'} kg</span>
                         <span>Target Weight: {user.target_weight_kg || '-'} kg</span>
                         <span>Activity: {user.activity_level || '-'}</span>
                         <span>Target Calories: {user.target_calorie_amount || '-'} kcal</span>
@@ -132,6 +133,9 @@ const ProfilePage: React.FC = () => {
                 >
                     <Form.Item name="height_cm" label="Height (cm)">
                         <InputNumber min={0} max={300} style={{ width: '100%' }} />
+                    </Form.Item>
+                    <Form.Item name="weight_kg" label="Weight (kg)">
+                        <InputNumber min={0} max={500} style={{ width: '100%' }} />
                     </Form.Item>
                     <Form.Item name="target_weight_kg" label="Target Weight (kg)">
                         <InputNumber min={0} max={500} style={{ width: '100%' }} />

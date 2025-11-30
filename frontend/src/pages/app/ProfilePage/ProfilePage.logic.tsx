@@ -13,6 +13,7 @@ export interface User {
     username: string;
     email: string;
     height_cm?: number;
+    weight_kg?: number;
     target_weight_kg?: number;
     activity_level?: string;
     target_calorie_amount?: number;
@@ -76,6 +77,7 @@ const useProfilePage = () => {
     const handleEditClick = () => {
         form.setFieldsValue({
             height_cm: user?.height_cm,
+            weight_kg: user?.weight_kg,
             target_weight_kg: user?.target_weight_kg,
             activity_level: user?.activity_level,
             target_calorie_amount: user?.target_calorie_amount
