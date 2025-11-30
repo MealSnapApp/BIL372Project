@@ -1,12 +1,35 @@
 import React from 'react';
 import FollowerPage from '../FollowerPage/FollowerPage';
 import './ProfilePage.css';
-import { Modal, Form, InputNumber, Select, Button, Card, Popconfirm, Space, DatePicker, Collapse, Empty } from 'antd';
+import { Modal, Form, InputNumber, Select, Button, List, Card, Popconfirm, Space, DatePicker, Collapse, Empty } from 'antd';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import useProfilePage, { MealLog } from './ProfilePage.logic';
 import dayjs from 'dayjs';
 
+import moment from 'moment';
+import { Line } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+
 const { Panel } = Collapse;
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 const ProfilePage: React.FC = () => {
     const {
@@ -23,8 +46,79 @@ const ProfilePage: React.FC = () => {
         handleEditClick,
         handleUpdate,
         handleDeleteLog,
-        navigate
+        filteredLogs,
+        navigate,
+        isBodyModalVisible,
+        setIsBodyModalVisible,
+        handleSaveBodyData,
+        weightLogs,
+        heightLogs,
     } = useProfilePage();
+
+    // Get all unique dates from both logs
+    const uniqueDates = Array.from(new Set([
+        ...(Array.isArray(weightLogs) ? weightLogs.map(log => moment(log.created_at).format('YYYY-MM-DD')) : []),
+        ...(Array.isArray(heightLogs) ? heightLogs.map(log => moment(log.created_at).format('YYYY-MM-DD')) : [])
+    ])).sort((a, b) => moment(a).valueOf() - moment(b).valueOf());
+
+    const chartData = {
+        labels: uniqueDates,
+        datasets: [
+            {
+                label: 'Weight (kg)',
+                data: uniqueDates.map(date => {
+                    const log = Array.isArray(weightLogs) ? weightLogs.find(w => moment(w.created_at).format('YYYY-MM-DD') === date) : null;
+                    return log ? log.weight_kg : null;
+                }),
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                yAxisID: 'y',
+            },
+            {
+                label: 'Height (cm)',
+                data: uniqueDates.map(date => {
+                    const log = Array.isArray(heightLogs) ? heightLogs.find(h => moment(h.created_at).format('YYYY-MM-DD') === date) : null;
+                    return log ? log.height_cm : null;
+                }),
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                yAxisID: 'y1',
+            },
+        ],
+    };
+
+    const chartOptions = {
+        responsive: true,
+        interaction: {
+            mode: 'index' as const,
+            intersect: false,
+        },
+        stacked: false,
+        scales: {
+            y: {
+                type: 'linear' as const,
+                display: true,
+                position: 'left' as const,
+                title: {
+                    display: true,
+                    text: 'Weight (kg)'
+                }
+            },
+            y1: {
+                type: 'linear' as const,
+                display: true,
+                position: 'right' as const,
+                grid: {
+                    drawOnChartArea: false,
+                },
+                title: {
+                    display: true,
+                    text: 'Height (cm)'
+                }
+            },
+        },
+    };
+    
 
     if (loading) return <div className="profile-loading">Loading...</div>;
     if (!user) return <div className="profile-error">User not found</div>;
@@ -111,6 +205,67 @@ const ProfilePage: React.FC = () => {
                         </Button>
                     </div>
                 </div>
+            </div>
+
+
+            <div className="profile-section body-records">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Height (cm)</th>
+                                <th>Weight (kg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {uniqueDates.map((date, index) => {
+                                const weightLog = Array.isArray(weightLogs) ? weightLogs.find(w => moment(w.created_at).format('YYYY-MM-DD') === date) : null;
+                                const heightLog = Array.isArray(heightLogs) ? heightLogs.find(h => moment(h.created_at).format('YYYY-MM-DD') === date) : null;
+                                
+                                return (
+                                    <tr key={index}>
+                                        <td>{date}</td>
+                                        <td>{heightLog?.height_cm || "-"}</td>
+                                        <td>{weightLog?.weight_kg || "-"}</td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                    <Modal
+                        title="Add Body Record"
+                        open={isBodyModalVisible}
+                        onCancel={() => setIsBodyModalVisible(false)}
+                        footer={null}
+                    >
+                        <Form layout="vertical" onFinish={handleSaveBodyData}>
+                            <Form.Item name="weight" label="Weight (kg)" rules={[{ required: true, message: 'Please enter your weight' }]}>
+                                <InputNumber min={0} max={500} style={{ width: '100%' }} />
+                            </Form.Item>
+                            <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
+                                <InputNumber min={0} max={300} style={{ width: '100%' }} />
+                            </Form.Item>
+                            <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
+                                <DatePicker style={{ width: '100%' }} defaultValue={moment()} />
+                            </Form.Item>
+                            <Form.Item>
+                                <Button type="primary" htmlType="submit" block>
+                                    Save Record
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                    </Modal>
+                </div>
+            </div>
+
+            <div className="profile-section body-charts">
+                <h3 style={{ textAlign: 'left' }}>Body Records Chart</h3>
+                {weightLogs.length > 0 ? (
+                    <Line data={chartData} options={chartOptions} />
+                ) : (
+                    <p>No data available for charts.</p>
+                )}
             </div>
 
             <div className="profile-section">

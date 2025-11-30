@@ -6,6 +6,7 @@ import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { updateUser } from '../../../services/UserServices/UserService';
 import { getAllUserLogs, deleteMealLog, getDailyLogs } from '../../../services/MealLogServices/MealLogService';
 import { ToastMessage } from '../../../utils/ToastMessage/ToastMessage';
+import { saveBodyData, getWeightLogsByUser} from '../../../services/MyBodyServices/MyBodyService';
 
 export interface User {
     user_id: string;
@@ -50,6 +51,10 @@ const useProfilePage = () => {
     const [mealLogs, setMealLogs] = useState<MealLog[]>([]);
     const [logsLoading, setLogsLoading] = useState(false);
     const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
+    const [selectedMealType, setSelectedMealType] = useState<string>('all');
+    const [isBodyModalVisible, setIsBodyModalVisible] = useState(false);
+    const [weightLogs, setWeightLogs] = useState([]);
+    const [heightLogs, setHeightLogs] = useState([]);
     const { contextHolder, showNotification } = ToastMessage();
     const [form] = Form.useForm();
 
@@ -82,6 +87,25 @@ const useProfilePage = () => {
         }
     };
 
+    const fetchWeightLogs = async () => {
+        try {
+            const response = await getWeightLogsByUser();
+            console.log('Weight logs response:', response); // Log the response to verify its format
+            if (response && response.weightData && Array.isArray(response.weightData)) {
+                setWeightLogs(response.weightData); // Extract weightData array
+                setHeightLogs(response.heightData); // Extract heightData array
+                console.log('Weight logs set:', response.weightData);
+                console.log('Height logs set:', response.heightData);
+            } else {
+                console.error('Unexpected response format:', response);
+            }
+        } catch (error) {
+            console.error('Failed to fetch weight logs', error);
+        }
+    };
+
+
+
     useEffect(() => {
         fetchUser();
     }, []);
@@ -89,6 +113,12 @@ const useProfilePage = () => {
     useEffect(() => {
         fetchLogs();
     }, [selectedDate]);
+
+    useEffect(() => {
+        if (user) {
+            fetchWeightLogs();
+        }
+    }, [user]);
 
     const handleEditClick = () => {
         form.setFieldsValue({
@@ -163,6 +193,30 @@ const useProfilePage = () => {
     };
 
     const groupedLogs = processLogs(dailyLogs);
+    const handleSaveBodyData = async (data: { weight: number; height: number; date; }) => {
+    try {
+        const formattedData = {
+            ...data,
+            date: data.date.format('YYYY-MM-DD'), // Tarihi string formatına dönüştür
+        };
+        console.log('Saving body data:', formattedData);
+        const response = await saveBodyData(formattedData);
+
+
+        if (response) {
+            showNotification('Body record added successfully', 'success');
+            setIsBodyModalVisible(false);
+        }
+    } catch (error) {
+        console.error('Failed to save body data', error);
+        showNotification('Failed to save body data', 'error');
+    }
+};
+
+    const filteredLogs = mealLogs.filter(log => {
+        if (selectedMealType === 'all') return true;
+        return log.meal_time.toLowerCase() === selectedMealType.toLowerCase();
+    });
 
     return {
         user,
@@ -173,12 +227,20 @@ const useProfilePage = () => {
         selectedDate,
         setSelectedDate,
         groupedLogs,
+        selectedMealType,
+        setSelectedMealType,
+        isBodyModalVisible,
+        setIsBodyModalVisible,
+        handleSaveBodyData,
         contextHolder,
         form,
         handleEditClick,
         handleUpdate,
         handleDeleteLog,
-        navigate
+        filteredLogs,
+        navigate,
+        weightLogs,
+        heightLogs,
     };
 };
 

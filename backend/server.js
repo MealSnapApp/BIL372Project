@@ -8,6 +8,8 @@ require('./models/User');
 require('./models/Food');
 require('./models/MealLog');
 require('./models/Follower');
+require('./models/HeightLog');
+require('./models/WeightLog');
 
 const server = express();
 
@@ -27,12 +29,14 @@ const foodRoutes = require('./Routes/Food');
 const mealLogRoutes = require('./Routes/MealLog');
 const followerRoutes = require('./Routes/Follower');
 const userRoutes = require('./Routes/User');
+const myBodyRoutes = require('./Routes/Body');
 
 server.use('/auth', authRoutes);
 server.use('/foods', foodRoutes);
 server.use('/meal-logs', mealLogRoutes);
 server.use('/followers', followerRoutes);
 server.use('/user', userRoutes);
+server.use('/my-body', myBodyRoutes);
 
 const PORT = 3001;
 
