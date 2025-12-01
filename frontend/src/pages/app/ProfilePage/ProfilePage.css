@@ -1,85 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 .profile-page-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    font-family: 'Nunito', sans-serif;
+    color: #333;
 }
 
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .profile-avatar {
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .avatar-circle {
-    width: 80px;
-    height: 80px;
-    background-color: #ff6b6b;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #19850B 0%, #2ecc71 100%);
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(25, 133, 11, 0.3);
+}
+
+.profile-info {
+    flex: 1;
 }
 
 .profile-info h1 {
     margin: 0;
-    font-size: 24px;
-    color: #333;
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .profile-username {
-    margin: 5px 0;
-    color: #666;
-    font-weight: 500;
+    margin: 0;
+    color: #19850B;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .profile-email {
-    margin: 0;
-    color: #888;
+    margin: 5px 0 15px 0;
+    color: #7f8c8d;
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
 .profile-stats {
     display: flex;
     gap: 15px;
-    font-size: 14px;
-    color: #555;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .profile-stats span {
-    background-color: #f5f5f5;
-    padding: 4px 8px;
-    border-radius: 4px;
+    background-color: #f0f9eb;
+    color: #19850B;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #d4edda;
 }
 
 .profile-section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 10px;
 }
 
 .profile-section h3 {
     margin-top: 0;
-    margin-bottom: 15px;
-    color: #444;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.profile-section h3::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 24px;
+    background-color: #19850B;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+/* Ant Design Overrides for Green Theme */
+.profile-page-container .ant-btn-primary {
+    background-color: #19850B;
+    border-color: #19850B;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.profile-page-container .ant-btn-primary:hover {
+    background-color: #146c09;
+    border-color: #146c09;
+}
+
+.profile-page-container .ant-select-selector {
+    border-radius: 6px !important;
+}
+
+.profile-page-container .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: #19850B !important;
+}
+
+.profile-page-container .ant-select-focused .ant-select-selector {
+    border-color: #19850B !important;
+    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2) !important;
+}
+
+/* DatePicker Overrides */
+.profile-page-container .ant-picker:hover, .profile-page-container .ant-picker-focused {
+    border-color: #19850B;
+}
+
+.profile-page-container .ant-picker-focused {
+    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2);
+}
+
+/* Collapse Overrides */
+.meal-collapse .ant-collapse-header {
+    background-color: #f9f9f9 !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.meal-collapse .ant-collapse-item-active .ant-collapse-header {
+    background-color: #e6f4e4 !important; /* Light green bg for active header */
+    border-color: #d4edda;
+}
+
+.meal-collapse .ant-collapse-header-text {
+    color: #333;
+    font-weight: 600;
+}
+
+.meal-collapse .ant-collapse-content {
+    border-top: none;
+    background: transparent;
+}
+
+.meal-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.meal-log-card {
+    border-left: 4px solid #19850B !important;
+}
+
+.profile-page-container .ant-card {
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.profile-page-container .ant-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: #d4edda;
+}
+
+.profile-page-container .ant-card-head-title {
+    color: #19850B;
+    font-weight: 600;
 }
 
 .profile-loading, .profile-error {
-    text-align: center;
-    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
     font-size: 18px;
     color: #666;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .profile-stats {
+        justify-content: center;
+    }
+    
+    .profile-section h3::before {
+        display: none;
+    }
+}
+
+/* Add Body Record styles */
+.add-body-record {
+    margin-bottom: 30px;
+}
+.add-body-record .ant-form-item {
+    margin-bottom: 16px;
+}
+
+/* Body Charts styles */
+.body-charts {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #888;
+}
+
+/* Scrollable Body Records */
+.body-records {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.body-records table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.body-records th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    z-index: 1;
+}
+.body-records th, .body-records td {
+    padding: 8px;
+    text-align: left;
+}
+.body-records td {
+    border-bottom: 1px solid #ddd;
+}
+.body-records .add-record-button {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Align Weight Change title */
+.body-charts h3 {
+    text-align: left;
 }

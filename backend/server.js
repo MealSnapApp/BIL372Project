@@ -14,6 +14,8 @@ require('./models/Post');
 require('./models/Post_Likes');
 require('./models/Comment');
 require('./models/Comment_Likes');
+require('./models/HeightLog');
+require('./models/WeightLog');
 
 const server = express();
 
@@ -38,6 +40,7 @@ const commentLikeRoutes = require('./Routes/CommentLikes');
 server.use('/posts', postRoutes);
 server.use('/api', commentLikeRoutes);
 const uploadRoutes = require('./Routes/Upload');
+const myBodyRoutes = require('./Routes/Body');
 
 server.use('/auth', authRoutes);
 server.use('/foods', foodRoutes);
@@ -53,6 +56,7 @@ if (!fs.existsSync(UPLOAD_DIR)) {
 }
 server.use('/uploads', express.static(UPLOAD_DIR));
 server.use('/uploads', uploadRoutes);
+server.use('/my-body', myBodyRoutes);
 
 const PORT = 3001;
 

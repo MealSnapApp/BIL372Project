@@ -1,4 +1,6 @@
 const User = require('../../models/User');
+const HeightLog = require('../../models/HeightLog');
+const WeightLog = require('../../models/WeightLog');
 const { Op } = require('sequelize');
 const { v4: uuidv4 } = require('uuid');
 
@@ -41,5 +43,24 @@ exports.getUserByEmailOrUsername = async (EmailorUsername) => {
 
 exports.getUserById = async (userId) => {
   const user = await User.findByPk(userId);
-  return user ? user.get({ plain: true }) : null;
+  if (!user) return null;
+
+  const userPlain = user.get({ plain: true });
+
+  // Fetch latest height
+  const latestHeightLog = await HeightLog.findOne({
+    where: { user_id: userId },
+    order: [['created_at', 'DESC']]
+  });
+
+  // Fetch latest weight
+  const latestWeightLog = await WeightLog.findOne({
+    where: { user_id: userId },
+    order: [['created_at', 'DESC']]
+  });
+
+  userPlain.height_cm = latestHeightLog ? latestHeightLog.height_cm : null;
+  userPlain.weight_kg = latestWeightLog ? latestWeightLog.weight_kg : null;
+
+  return userPlain;
 };
