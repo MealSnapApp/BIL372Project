@@ -30,13 +30,14 @@ exports.searchFoods = async (req, res) => {
 
 exports.createFood = async (req, res) => {
   try {
-    const { food_name, calorie, protein_gr, carbohydrate_gr, fat_gr } = req.body;
+    const { food_name, calorie, protein_gr, carbohydrate_gr, fat_gr, portion_size } = req.body;
     const newFood = await Food.create({
       food_name,
       calorie,
       protein_gr,
       carbohydrate_gr,
-      fat_gr
+      fat_gr,
+      portion_size
     });
     res.status(201).json({ success: true, data: newFood });
   } catch (error) {

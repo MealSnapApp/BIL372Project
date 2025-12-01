@@ -4,17 +4,18 @@ const User = require('../models/User');
 // Follow a user
 const follow = async (req, res) => {
   try {
-    const { follower_user_id } = req.body;
+    const { followed_user_id: followed_user_id_body, follower_user_id: follower_user_id_body } = req.body;
+    const followed_user_id = followed_user_id_body || follower_user_id_body;
     const user_id = req.user.id; // From auth middleware
 
     // Validate that user is not following themselves
-    if (user_id === follower_user_id) {
+    if (user_id === followed_user_id) {
       return res.status(400).json({ message: 'You cannot follow yourself' });
     }
 
     // Check if already following
     const existingFollow = await Follower.findOne({
-      where: { user_id, follower_user_id },
+      where: { user_id, followed_user_id },
     });
 
     if (existingFollow) {
@@ -24,7 +25,7 @@ const follow = async (req, res) => {
     // Create follow relationship
     const newFollow = await Follower.create({
       user_id,
-      follower_user_id,
+      followed_user_id,
     });
 
     res.status(201).json({
@@ -40,11 +41,12 @@ const follow = async (req, res) => {
 // Unfollow a user
 const unfollow = async (req, res) => {
   try {
-    const { follower_user_id } = req.params;
+    const { followed_user_id: followed_user_id_param, follower_user_id: follower_user_id_param } = req.params;
+    const followed_user_id = followed_user_id_param || follower_user_id_param;
     const user_id = req.user.id;
 
     const follow = await Follower.findOne({
-      where: { user_id, follower_user_id },
+      where: { user_id, followed_user_id },
     });
 
     if (!follow) {
@@ -69,7 +71,7 @@ const getFollowers = async (req, res) => {
     // Find rows where follower_user_id is the target user (me)
     // Include 'followingUser' (the person who is following me)
     const followers = await Follower.findAll({
-      where: { follower_user_id: user_id },
+      where: { followed_user_id: user_id },
       include: [
         {
           model: User,
@@ -127,11 +129,12 @@ const getFollowing = async (req, res) => {
 // Check if user follows another user
 const isFollowing = async (req, res) => {
   try {
-    const { follower_user_id } = req.params;
+    const { followed_user_id: followed_user_id_param2, follower_user_id: follower_user_id_param2 } = req.params;
+    const followed_user_id = followed_user_id_param2 || follower_user_id_param2;
     const user_id = req.user.id;
 
     const follow = await Follower.findOne({
-      where: { user_id, follower_user_id },
+      where: { user_id, followed_user_id },
     });
 
     res.status(200).json({
@@ -152,12 +155,12 @@ const removeFollower = async (req, res) => {
     // I want to remove 'user_id_to_remove' from my followers list.
     // In the database, this means deleting the row where:
     // user_id = user_id_to_remove (the person following)
-    // follower_user_id = current_user_id (me, the person being followed)
+    // followed_user_id = current_user_id (me, the person being followed)
 
     const follow = await Follower.findOne({
       where: { 
         user_id: user_id_to_remove,
-        follower_user_id: current_user_id
+        followed_user_id: current_user_id
       },
     });
 

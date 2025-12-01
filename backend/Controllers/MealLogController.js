@@ -1,11 +1,11 @@
-const MealLog = require('../models/MealLog');
+const MealLog = require('../models/Meal_Log');
 const Food = require('../models/Food');
 const { Op } = require('sequelize');
 
 exports.addMealLog = async (req, res) => {
   try {
     const user_id = req.user.id;
-    const { food_id, date, meal_time, portion } = req.body;
+    const { food_name, date, meal_time, portion } = req.body;
     
     // Check if a log already exists for the same date, time and food
     const existingLog = await MealLog.findOne({
@@ -13,7 +13,7 @@ exports.addMealLog = async (req, res) => {
         user_id,
         date,
         meal_time,
-        food_id
+        food_name
       }
     });
 
@@ -26,7 +26,7 @@ exports.addMealLog = async (req, res) => {
     
     const newLog = await MealLog.create({
       user_id,
-      food_id,
+      food_name,
       date,
       meal_time,
       portion

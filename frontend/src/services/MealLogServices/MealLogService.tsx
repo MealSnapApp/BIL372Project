@@ -1,7 +1,7 @@
 import axiosInstance from '../../axios/axiosInstance';
 
 export const addMealLog = async (data: {
-  food_id: string;
+  food_name: string;
   date: string;
   meal_time: string;
   portion: string;

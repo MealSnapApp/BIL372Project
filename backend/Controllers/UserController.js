@@ -37,7 +37,7 @@ exports.searchUsers = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     const user_id = req.user.id; // From auth middleware
-    const { height_cm, target_weight_kg, activity_level, target_calorie_amount } = req.body;
+    const { target_weight_kg, activity_level, target_calorie_amount } = req.body;
 
     const user = await User.findByPk(user_id);
 
@@ -46,10 +46,9 @@ exports.updateUser = async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    console.log('Updating user:', user_id, 'with data:', { height_cm, target_weight_kg, activity_level, target_calorie_amount });
+    console.log('Updating user:', user_id, 'with data:', { target_weight_kg, activity_level, target_calorie_amount });
 
     // Update fields if provided
-    if (height_cm !== undefined) user.height_cm = height_cm;
     if (target_weight_kg !== undefined) user.target_weight_kg = target_weight_kg;
     if (activity_level !== undefined) user.activity_level = activity_level;
     if (target_calorie_amount !== undefined) user.target_calorie_amount = target_calorie_amount;

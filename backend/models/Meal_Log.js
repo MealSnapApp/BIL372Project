@@ -18,12 +18,12 @@ const MealLog = sequelize.define('MealLog', {
       key: 'user_id'
     }
   },
-  food_id: {
-    type: DataTypes.UUID,
+  food_name: {
+    type: DataTypes.STRING(255),
     allowNull: false,
     references: {
       model: Food,
-      key: 'food_id'
+      key: 'food_name'
     }
   },
   date: {
@@ -48,11 +48,10 @@ const MealLog = sequelize.define('MealLog', {
   timestamps: false
 });
 
-// Associations
 User.hasMany(MealLog, { foreignKey: 'user_id' });
 MealLog.belongsTo(User, { foreignKey: 'user_id' });
 
-Food.hasMany(MealLog, { foreignKey: 'food_id' });
-MealLog.belongsTo(Food, { foreignKey: 'food_id' });
+Food.hasMany(MealLog, { foreignKey: 'food_name', sourceKey: 'food_name' });
+MealLog.belongsTo(Food, { foreignKey: 'food_name', targetKey: 'food_name' });
 
 module.exports = MealLog;

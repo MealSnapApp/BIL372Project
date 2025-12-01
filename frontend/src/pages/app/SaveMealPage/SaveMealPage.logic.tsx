@@ -4,7 +4,7 @@ import { addMealLog, getDailyLogs } from '../../../services/MealLogServices/Meal
 import { ToastMessage } from '../../../utils/ToastMessage/ToastMessage';
 
 export interface FoodItem {
-  food_id: string;
+  food_id?: string;
   food_name: string;
   calorie: number;
   protein_gr?: number;
@@ -114,8 +114,7 @@ const useSaveMealPage = () => {
                 const calculatedCalories = (log.Food.calorie * logPortion) / basePortion;
 
                 const foodItem: FoodItem = {
-                    food_id: log.food_id,
-                    food_name: log.Food.food_name,
+              food_name: log.Food.food_name,
                     calorie: Math.round(calculatedCalories), // Show calculated calories
                     protein_gr: log.Food.protein_gr,
                     carbohydrate_gr: log.Food.carbohydrate_gr,
@@ -165,7 +164,7 @@ const useSaveMealPage = () => {
 
     try {
         const response = await addMealLog({
-            food_id: selectedFoodForDetail.food_id,
+          food_name: selectedFoodForDetail.food_name,
             date: selectedDate,
             meal_time: currentMealType,
             portion: portionAmount.toString()

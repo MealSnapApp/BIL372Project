@@ -9,8 +9,12 @@ const Food = sequelize.define('Food', {
     unique: true,
   },
   food_name: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(255),
     allowNull: false,
+  },
+  portion_size: {
+    type: DataTypes.TEXT,
+    allowNull: true
   },
   calorie: {
     type: DataTypes.DOUBLE,
@@ -30,7 +34,10 @@ const Food = sequelize.define('Food', {
   }
 }, {
   tableName: 'Food',
-  timestamps: false 
+  timestamps: false,
+  indexes: [
+    { fields: ['food_name'] } // index to support FK from Meal_Log
+  ]
 });
 
 module.exports = Food;

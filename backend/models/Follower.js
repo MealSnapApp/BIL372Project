@@ -20,7 +20,7 @@ const Follower = sequelize.define(
       },
       onDelete: 'CASCADE',
     },
-    follower_user_id: {
+    followed_user_id: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
@@ -38,13 +38,16 @@ const Follower = sequelize.define(
   {
     tableName: 'followers',
     timestamps: false,
+    indexes: [
+      { unique: true, fields: ['user_id', 'followed_user_id'] },
+      { fields: ['followed_user_id'] },
+      { fields: ['user_id'] }
+    ]
   }
 );
 
 // Define associations
-// 'user' is the person who is following (the actor)
 Follower.belongsTo(User, { foreignKey: 'user_id', as: 'followingUser' });
-// 'follower' is the person being followed (the target)
-Follower.belongsTo(User, { foreignKey: 'follower_user_id', as: 'followedUser' });
+Follower.belongsTo(User, { foreignKey: 'followed_user_id', as: 'followedUser' });
 
 module.exports = Follower;

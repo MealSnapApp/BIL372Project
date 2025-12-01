@@ -76,7 +76,7 @@ const SaveMealPage: React.FC = () => {
           {meal.items.length > 0 && (
             <ul className="food-list">
               {meal.items.map((item, index) => (
-                <li key={`${item.food_id}-${index}`} className="food-item">
+                <li key={`${item.food_name}-${index}`} className="food-item">
                   <div className="food-info">
                     <span className="food-name">{item.food_name}</span>
                     {/* <span className="food-portion">{item.portion_size} g</span> */}
@@ -126,7 +126,7 @@ const SaveMealPage: React.FC = () => {
                   {filteredFoods.length > 0 ? (
                     filteredFoods.map((food) => (
                       <div 
-                        key={food.food_id} 
+                        key={food.food_name} 
                         className="search-result-item"
                         onClick={() => handleSelectFood(food)}
                       >
