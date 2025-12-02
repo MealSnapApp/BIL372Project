@@ -32,6 +32,15 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegBookmark } from "react-icons/fa";
 import { GiRiceCooker } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
+import { MdPostAdd } from "react-icons/md";
+
+// Ant Design imports for Modal
+import { Modal, Input, Upload, Button, message } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { createPost, uploadImage } from '../../services/PostServices/PostService';
+
+const { TextArea } = Input;
 
 // Icons
 const IconSearch = FaSearch as React.FC<IconBaseProps>;
@@ -46,6 +55,7 @@ const IconBookmark = FaRegBookmark as React.FC<IconBaseProps>;
 const IconProfile = MdAccountCircle as React.FC<IconBaseProps>;
 const IconCooker = GiRiceCooker as React.FC<IconBaseProps>;
 const IconMenu = HiOutlineMenu as React.FC<IconBaseProps>;
+const IconPost = MdPostAdd as React.FC<IconBaseProps>;
 
 
 const UpperMenuBar: React.FC = () => {
@@ -78,6 +88,49 @@ const UpperMenuBar: React.FC = () => {
           setSelectedCategories,
           selectedTypes,
           setSelectedTypes } = useUpperMenuBar();
+
+  // Modal State for Post Meal
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState('');
+  const [fileList, setFileList] = useState<any[]>([]);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleOk = async () => {
+    try {
+      setSubmitting(true);
+      let image_path: string | undefined = undefined;
+      let thumb_path: string | undefined = undefined;
+      if (fileList.length > 0 && fileList[0].originFileObj) {
+        const uploaded = await uploadImage(fileList[0].originFileObj as File);
+        image_path = uploaded.path;
+        thumb_path = uploaded.thumb_path;
+      }
+
+      if (!content.trim() && !image_path) {
+        message.warning('Please enter content or choose an image.');
+        setSubmitting(false);
+        return;
+      }
+
+      const resp = await createPost({ content: content.trim() || undefined, image_path, thumb_path });
+      if (resp.success) {
+        message.success('Post shared');
+        setOpen(false);
+        setContent('');
+        setFileList([]);
+      } else {
+        message.error(resp.errorMessage || 'Failed to share post');
+      }
+    } catch (err: any) {
+      message.error(err?.response?.data?.message || 'An error occurred');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const beforeUpload = () => {
+    return false;
+  };
 
   return (
     <div className='upper-menu-bar-1'>
@@ -139,7 +192,6 @@ const UpperMenuBar: React.FC = () => {
             </div>
           }
         </div>
-        <div className='text'>Contact Us</div>
         <div className='search-bar-wrapper'>
           <input
             type="text"
@@ -153,12 +205,10 @@ const UpperMenuBar: React.FC = () => {
           onMouseEnter={()=> setIsMouseOnSaveMeal(true)}
           onMouseLeave={()=> setIsMouseOnSaveMeal(false)}
           className='share-recipe'
-          onClick={handleSaveMealClick}
+          onClick={() => setOpen(true)}
           >
-            {isMouseOnSaveMeal ? <span className='cooker-icon'><IconCooker/></span> : "Save Meal"}
+            {isMouseOnSaveMeal ? <span className='cooker-icon'><IconCooker/></span> : "Post Meal"}
         </div>
-
-        <div className='bell-icon'><IconBell/></div>
         
         <div ref={profileMenuRef}>
           <div className='profile-icon' onClick={handleProfileClick}><span className='icon'><IconProfile/></span></div>
@@ -167,8 +217,6 @@ const UpperMenuBar: React.FC = () => {
               <div className='text' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
               <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Recipes</div>
               <div className='text' onClick={handleLikedRecipes}><IconLike/>Likes</div>
-              <div className='text'><IconCalendar/>Plannings</div>
-              <div className='text'><IconSettings/>Settings</div>
               <div className='text' onClick={handleLogout}><IconLogout/>Logout</div>
             </div>
           }
@@ -176,6 +224,34 @@ const UpperMenuBar: React.FC = () => {
         <div className='menu-icon' ref={mainMenuRef} onClick={handleMenuClick}><IconMenu /></div>
       </div>
       <DropDownMainMenu isMenuVisible={isMenuVisible} menuRef={menuContentRef}/>
+
+      <Modal
+        title="New Post"
+        open={open}
+        onOk={handleOk}
+        onCancel={() => setOpen(false)}
+        okText="Share"
+        cancelText="Cancel"
+        confirmLoading={submitting}
+        className="dark-modal"
+      >
+        <TextArea
+          rows={4}
+          placeholder="Write content... (optional)"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          style={{ marginBottom: 12 }}
+        />
+        <Upload
+          listType="picture"
+          maxCount={1}
+          beforeUpload={beforeUpload}
+          fileList={fileList}
+          onChange={({ fileList }) => setFileList(fileList)}
+        >
+          <Button icon={<UploadOutlined />}>Add Photo</Button>
+        </Upload>
+      </Modal>
     </div>
   );
 };

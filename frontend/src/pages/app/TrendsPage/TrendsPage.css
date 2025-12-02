@@ -150,15 +150,23 @@
 
 .comment-area {
   width: 100%;
-  background-color: #2c2c2e;
-  border: 1px solid #444;
-  border-radius: 6px;
-  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px;
   font-size: 0.9rem;
-  margin-top: 6px;
-  resize: vertical;
+  margin-top: 8px;
+  resize: none;
   min-height: 60px;
   color: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.comment-area:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #30d158;
 }
 
 .comment-actions {

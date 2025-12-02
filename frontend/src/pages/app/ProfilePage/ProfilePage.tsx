@@ -253,20 +253,13 @@ const ProfilePage: React.FC = () => {
                                 </div>
                             }
                             extra={
-                                <Popconfirm
-                                    title="Delete meal log"
-                                    description="Are you sure to delete this log?"
-                                    onConfirm={() => handleDeleteLog(item.meal_log_id)}
-                                    okText="Yes"
-                                    cancelText="No"
-                                >
-                                    <Button 
-                                        type="text" 
-                                        danger 
-                                        icon={<DeleteOutlined />} 
-                                        size="small"
-                                    />
-                                </Popconfirm>
+                                <Button 
+                                    type="text" 
+                                    danger 
+                                    icon={<DeleteOutlined />} 
+                                    size="small"
+                                    onClick={() => handleDeleteLog(item.meal_log_id)}
+                                />
                             }
                         >
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -414,6 +407,7 @@ const ProfilePage: React.FC = () => {
                     open={isBodyModalVisible}
                     onCancel={() => setIsBodyModalVisible(false)}
                     footer={null}
+                    className="dark-modal"
                 >
                     <Form layout="vertical" onFinish={handleSaveBodyData}>
                         <Form.Item name="weight" label="Weight (kg)" rules={[{ required: true, message: 'Please enter your weight' }]}>
@@ -423,7 +417,7 @@ const ProfilePage: React.FC = () => {
                             <InputNumber min={0} max={300} style={{ width: '100%' }} />
                         </Form.Item>
                         <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
-                            <DatePicker style={{ width: '100%' }} defaultValue={moment()} />
+                            <DatePicker style={{ width: '100%' }} defaultValue={moment()} popupClassName="dark-date-picker-dropdown" />
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit" block>
@@ -443,6 +437,7 @@ const ProfilePage: React.FC = () => {
                             onChange={(date) => setSelectedDate(date || dayjs())}
                             allowClear={false}
                             format="YYYY-MM-DD"
+                            popupClassName="dark-date-picker-dropdown"
                         />
                         <Button 
                             type="primary" 
@@ -574,6 +569,7 @@ const ProfilePage: React.FC = () => {
                 open={isEditModalVisible}
                 onCancel={() => setIsEditModalVisible(false)}
                 footer={null}
+                className="dark-modal"
             >
                 <Form
                     form={form}
@@ -590,7 +586,7 @@ const ProfilePage: React.FC = () => {
                         <InputNumber min={0} max={500} style={{ width: '100%' }} />
                     </Form.Item>
                     <Form.Item name="activity_level" label="Activity Level">
-                        <Select>
+                        <Select popupClassName="dark-select-dropdown">
                             <Select.Option value="Sedentary">Sedentary</Select.Option>
                             <Select.Option value="Lightly Active">Lightly Active</Select.Option>
                             <Select.Option value="Moderately Active">Moderately Active</Select.Option>

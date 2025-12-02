@@ -1,217 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 .home-page-container {
-  padding: 2rem;
+  padding: 30px;
+  max-width: 1000px; /* Wider than profile page (900px) */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #000;
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  /* Soft modern background */
-  background:
-    radial-gradient(1200px 800px at -10% -10%, #f6ffed 0%, rgba(246,255,237,0) 50%),
-    radial-gradient(1200px 800px at 110% -10%, #e6f4ff 0%, rgba(230,244,255,0) 45%),
-    linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+  gap: 20px;
 }
 
 .welcome-section {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: #1c1c1e;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .welcome-section h1 {
-  color: #2e7d32;
+  color: #fff;
   margin-bottom: 0.5rem;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .welcome-section p {
-  color: #666;
+  color: #8e8e93;
   font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-.action-buttons {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Reusing the profile-section style for consistency */
+.profile-section {
+  background: #1c1c1e;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 100%; /* Ensure full width within container */
+  box-sizing: border-box;
 }
 
-.save-meal-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 180px;
-  height: 180px;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #4caf50, #43a047);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
-  transition: all 0.3s ease;
-}
-
-.save-meal-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(76, 175, 80, 0.4);
-  background: linear-gradient(145deg, #66bb6a, #4caf50);
-}
-
-    background: linear-gradient(90deg, #2e7d32, #43a047, #66bb6a);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-.btn-icon {
-  font-size: 3rem;
-}
-
-/* Feed grid & cards */
-.feed-grid {
-  width: 100%;
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-.post-card {
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  padding: 12px;
-    gap: 20px;
-  flex-direction: column;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  border-color: #eaeaea;
-}
-
-.post-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #fafafa;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: hidden;
+.profile-section h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
 }
 
-.post-image img { width: 100%; height: 100%; object-fit: cover; }
-
-.post-content {
-  white-space: pre-wrap;
-  font-size: 13px;
-  line-height: 18px;
-  margin-bottom: 6px;
-  word-break: break-word;
+.profile-section h3::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 24px;
+    background-color: #30d158;
+    margin-right: 10px;
+    border-radius: 2px;
 }
 
-.post-user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #444;
-  font-size: 12px;
-  margin-top: 4px;
+/* Ant Design Overrides for Dark Theme */
+.home-page-container .ant-btn-primary {
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000;
+    font-weight: 600;
 }
 
-.post-user .avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #f0f5ff;
-  color: #2f54eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  border: 1px solid #e6f0ff;
+.home-page-container .ant-btn-primary:hover {
+    background-color: #28b14a;
+    border-color: #28b14a;
 }
 
-.post-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
+.home-page-container .ant-picker {
+    background-color: #2c2c2e;
+    border-color: #3a3a3c;
+    color: #fff;
 }
 
-.btn-like {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  font-size: 12px;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
+.home-page-container .ant-picker-input > input {
+    color: #fff;
 }
 
-.btn-like.liked { color: #ef4444; border-color: #fecaca; background: #fff5f5; }
-
-.btn-like:hover { border-color:#d9d9d9; background:#fafafa; }
-
-.btn-secondary {
-  padding: 4px 10px;
-  font-size: 12px;
-  cursor: pointer;
-  background: #f6ffed;
-  border: 1px solid #b7eb8f;
-  color: #389e0d;
-  border-radius: 20px;
-  transition: background .15s ease, border-color .15s ease;
+.home-page-container .ant-picker-suffix {
+    color: #8e8e93;
 }
 
-.btn-secondary:hover { background:#eaffd5; border-color:#95de64; }
-
-.comment-toggle {
-  font-size: 12px;
-  color: #1677ff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+/* Collapse Overrides - Matching ProfilePage exactly */
+.meal-collapse .ant-collapse-header {
+    background-color: #2c2c2e !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    border: 1px solid #3a3a3c;
+    color: #fff !important;
+    transition: all 0.3s ease;
 }
 
-.comment-toggle:hover { text-decoration: underline; }
-
-.comment-area {
-  width: 100%;
-  font-size: 12px;
-  resize: vertical;
-  min-height: 36px;
-  border-radius: 8px;
-  border: 1px solid #eaeaea;
-  padding: 6px 8px;
+.meal-collapse .ant-collapse-item-active .ant-collapse-header {
+    background-color: #3a3a3c !important;
+    border-color: #48484a;
 }
 
-.comment-actions { display: flex; gap: 8px; margin-top: 4px; }
-
-.modal-like-row { 
-  font-size: 13px; 
-  border-bottom: 1px solid #f5f5f5; 
-  padding: 8px 0; 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
+.meal-collapse .ant-collapse-header-text {
+    color: #fff !important;
+    font-weight: 600;
 }
 
-.follow-btn { 
-  font-size: 12px; 
-  padding: 2px 8px; 
-  cursor: pointer; 
-  border-radius: 6px; 
+.meal-collapse .ant-collapse-content {
+    border-top: none;
+    background: transparent;
+    color: #fff;
 }
-.follow-btn.following { background:#e6f4ff; color:#1677ff; border:1px solid #91caff; }
-.follow-btn.follow { background:#1677ff; color:#fff; border:1px solid #1677ff; }
+
+.ant-list-item {
+  border-bottom: 1px solid #2c2c2e !important;
+}
+
+.ant-list-item-meta-title {
+  color: #fff !important;
+}
+
+.ant-list-item-meta-description {
+  color: #8e8e93 !important;
+}
+
+.ant-empty-description {
+  color: #8e8e93 !important;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 20px;
+  color: #8e8e93;
+}
+
+/* DatePicker Dropdown Dark Mode Overrides */
+.dark-date-picker-dropdown .ant-picker-panel-container {
+    background-color: #1c1c1e !important;
+    border: 1px solid #3a3a3c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark-date-picker-dropdown .ant-picker-header {
+    color: #fff !important;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+.dark-date-picker-dropdown .ant-picker-header button {
+    color: #8e8e93 !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-header button:hover {
+    color: #fff !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-content th {
+    color: #8e8e93 !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-cell {
+    color: #636366 !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-cell-in-view {
+    color: #fff !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+    border: 1px solid #30d158 !important;
+    border-radius: 4px !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: #30d158 !important;
+    color: #000 !important;
+    border-radius: 4px !important;
+}
+
+.dark-date-picker-dropdown .ant-picker-year-panel,
+.dark-date-picker-dropdown .ant-picker-month-panel,
+.dark-date-picker-dropdown .ant-picker-decade-panel {
+    background-color: #1c1c1e !important;
+}
