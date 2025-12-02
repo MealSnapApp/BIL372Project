@@ -49,8 +49,8 @@ server.use('/followers', followerRoutes);
 server.use('/user', userRoutes);
 server.use('/posts', postRoutes);
 // static serving for uploaded files and upload endpoints
-// Upload dizini (OneDrive dışı varsayılan C:\snapmeal_uploads)
-const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join('C:\\', 'snapmeal_uploads');
+// Upload dizini (Proje içi uploads klasörü)
+const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dirname, 'uploads');
 if (!fs.existsSync(UPLOAD_DIR)) {
   try { fs.mkdirSync(UPLOAD_DIR, { recursive: true }); } catch (e) { console.error('Upload dir create error:', e); }
 }

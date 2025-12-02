@@ -8,7 +8,7 @@ const authenticateToken = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 // OneDrive kilit sorunlarını azaltmak için dış dizin kullan
-const uploadsDir = process.env.UPLOAD_DIR || path.join('C:\\', 'snapmeal_uploads');
+const uploadsDir = process.env.UPLOAD_DIR || path.join(__dirname, '../uploads');
 if (!fs.existsSync(uploadsDir)) {
   try { fs.mkdirSync(uploadsDir, { recursive: true }); } catch (e) { console.error('Upload dir create error:', e); }
 }
