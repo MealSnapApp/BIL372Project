@@ -6,7 +6,7 @@ import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { updateUser } from '../../../services/UserServices/UserService';
 import { getAllUserLogs, deleteMealLog, getDailyLogs } from '../../../services/MealLogServices/MealLogService';
 import { ToastMessage } from '../../../utils/ToastMessage/ToastMessage';
-import { saveBodyData, getWeightLogsByUser} from '../../../services/MyBodyServices/MyBodyService';
+import { saveBodyData, getWeightLogsByUser, deleteHeightLog, deleteWeightLog} from '../../../services/MyBodyServices/MyBodyService';
 
 export interface User {
     user_id: string;
@@ -157,6 +157,28 @@ const useProfilePage = () => {
         }
     };
 
+    const handleDeleteWeightRecord = async (logId: string) => {
+        try {
+            await deleteWeightLog(logId);
+            showNotification('Weight log deleted successfully', 'success');
+            fetchLogs();
+        } catch (error) {
+            console.error("Failed to delete weight log", error);
+            showNotification('Failed to delete weight log', 'error');
+        }
+    };
+
+    const handleDeleteHeightRecord = async (logId: string) => {
+        try {
+            await deleteHeightLog(logId);
+            showNotification('Height log deleted successfully', 'success');
+            fetchLogs();
+        } catch (error) {
+            console.error("Failed to delete height log", error);
+            showNotification('Failed to delete height log', 'error');
+        }
+    };
+
     // Filter logs by selected date (Not needed anymore as we fetch by date)
     const dailyLogs = mealLogs;
 
@@ -241,6 +263,9 @@ const useProfilePage = () => {
         navigate,
         weightLogs,
         heightLogs,
+        handleDeleteHeightRecord,
+        handleDeleteWeightRecord,
+        fetchWeightLogs,
     };
 };
 

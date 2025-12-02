@@ -43,7 +43,47 @@ const saveBodyData = async (req, res) => {
   }
 };
 
+const deleteHeightLogController = async (req, res) => {
+  const { id } = req.params; // Silinecek kaydın ID'si
+  console.log('height id: ', id)
+  try {
+    // Servis fonksiyonunu çağırın. 
+    // ID ve userId'yi kontrol ederek kullanıcının sadece kendi kaydını silmesini sağlayın.
+    const deletedLog = await HeightLogService.deleteHeightLog(id);
+
+    if (deletedLog === 0) {
+      return res.status(404).json({ message: 'There is no height record.' });
+    }
+
+    res.status(200).json({ message: 'Height record is deleted' });
+  } catch (error) {
+    console.error('Error deleting height log:', error);
+    res.status(500).json({ message: 'Error deleting height log:' });
+  }
+};
+
+const deleteWeightLogController = async (req, res) => {
+  const { id } = req.params; // Silinecek kaydın ID'si
+  console.log('weight id: ', id)
+  try {
+    // Servis fonksiyonunu çağırın. 
+    // ID ve userId'yi kontrol ederek kullanıcının sadece kendi kaydını silmesini sağlayın.
+    const deletedLog = await WeightLogService.deleteWeightLog(id);
+
+    if (deletedLog === 0) {
+      return res.status(404).json({ message: ' There is no weight record.' });
+    }
+
+    res.status(200).json({ message: 'Weight record is deleted' });
+  } catch (error) {
+    console.error('Error deleting weight log:', error);
+    res.status(500).json({ message: 'Error deleting weight log.' });
+  }
+};
+
 module.exports = {
   getBodyData,
   saveBodyData,
+  deleteWeightLogController,
+  deleteHeightLogController,
 };

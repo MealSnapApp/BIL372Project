@@ -50,7 +50,7 @@ exports.getWeightLogsByUser = async (userId) => {
 exports.deleteWeightLog = async (logId) => {
   try {
     const result = await WeightLog.destroy({
-      where: { weight_log_id: logId },
+      where: { log_id: logId },
     });
     return result > 0; // Returns true if a row was deleted
   } catch (error) {

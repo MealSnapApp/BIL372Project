@@ -26,3 +26,22 @@ export const getWeightLogsByUser = async () => {
   }
 };
 
+export const deleteHeightLog = async (id: string) => {
+  try {
+    console.log('iste bu height iddir:' , id)
+    const response = await axiosInstance.delete(`/my-body/height/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteWeightLog = async (id: string) => {
+  try {
+    console.log('iste bu weight iddir:' , id)
+    const response = await axiosInstance.delete(`/my-body/weight/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
