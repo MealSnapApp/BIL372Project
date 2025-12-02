@@ -17,9 +17,9 @@ export async function createPost(params: { content?: string; image_path?: string
   });
 }
 
-export async function getRecentPosts(limit: number = 20) {
+export async function getRecentPosts(limit: number = 20, period: string = 'all-time') {
   return makeRequest(RequestMethod.GET, '/posts', {
-    params: { limit }
+    params: { limit, period }
   });
 }
 

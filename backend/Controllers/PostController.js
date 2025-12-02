@@ -1,6 +1,7 @@
 const Post = require('../models/Post');
 const User = require('../models/User');
 const PostLike = require('../models/Post_Likes');
+const { Op } = require('sequelize');
 
 // Create a new post
 const createPost = async (req, res) => {
@@ -29,9 +30,25 @@ const createPost = async (req, res) => {
 // (Opsiyonel) Basit feed: son paylaşımlar
 const listRecentPosts = async (req, res) => {
   try {
-    const limit = Number(req.query.limit || 20);
+    const limit = Number(req.query.limit || 50);
+    const period = req.query.period || 'all-time';
+
+    let whereClause = {};
+    const now = new Date();
+
+    if (period === 'daily') {
+      whereClause.shared_at = { [Op.gte]: new Date(now - 24 * 60 * 60 * 1000) };
+    } else if (period === 'weekly') {
+      whereClause.shared_at = { [Op.gte]: new Date(now - 7 * 24 * 60 * 60 * 1000) };
+    } else if (period === 'monthly') {
+      whereClause.shared_at = { [Op.gte]: new Date(now - 30 * 24 * 60 * 60 * 1000) };
+    } else if (period === 'annual') {
+      whereClause.shared_at = { [Op.gte]: new Date(now - 365 * 24 * 60 * 60 * 1000) };
+    }
+
     const posts = await Post.findAll({
-      order: [['shared_at', 'DESC']],
+      where: whereClause,
+      order: [['like_count', 'DESC'], ['shared_at', 'DESC']],
       limit,
       include: [
         { model: User, attributes: ['user_id', 'name', 'surname', 'username'] },

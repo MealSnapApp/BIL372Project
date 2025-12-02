@@ -6,6 +6,7 @@ import WelcomePage from './pages/auth/welcomePage/welcomePage';
 import HomePage from './pages/app/HomePage/HomePage';
 import SaveMealPage from './pages/app/SaveMealPage/SaveMealPage';
 import ProfilePage from './pages/app/ProfilePage/ProfilePage';
+import TrendsPage from './pages/app/TrendsPage/TrendsPage';
 
 import AppLayout from './utils/AppLayout/AppLayout';
 import ProtectedRoute from './utils/ProtectedRoute/ProtectedRoute';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/home" element={<HomePage />}/>
             <Route path="/save-meal" element={<SaveMealPage />}/>
             <Route path="/user-recipes" element={<ProfilePage />}/>
+            <Route path="/trends" element={<TrendsPage />}/>
             {/* 
             <Route path="/trends" element={<ShowRecipes type={pageTypes.TRENDS}/>}/>
             <Route path="/saved-recipes" element={<ShowRecipes type={pageTypes.BOOKMARKS}/>}/>
