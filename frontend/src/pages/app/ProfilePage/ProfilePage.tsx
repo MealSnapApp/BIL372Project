@@ -55,6 +55,9 @@ const ProfilePage: React.FC = () => {
         handleSaveBodyData,
         weightLogs,
         heightLogs,
+        handleDeleteWeightRecord,
+        handleDeleteHeightRecord,
+        fetchWeightLogs,
     } = useProfilePage();
 
     // Get all unique dates from both logs
@@ -282,6 +285,27 @@ const ProfilePage: React.FC = () => {
         );
     };
 
+    const handleDeleteRecord = async (recordId, type) => {
+    // Burada silme işlemini gerçekleştirecek olan hazır fonksiyonunuzu çağırın.
+    // 'type' değişkeni (örneğin 'weight' veya 'height') hangi API endpoint'ini 
+    // veya hangi veritabanı tablosunu kullanmanız gerektiğini belirleyebilir.
+    console.log('handledeleterecordID:' ,recordId ) 
+    console.log('handledeleterecord type:' ,type )
+    try {
+        if (type === 'weight') {
+            await handleDeleteWeightRecord(recordId); // Kilo kaydı silme fonksiyonunuz
+        } else if (type === 'height') {
+            await handleDeleteHeightRecord(recordId); // Boy kaydı silme fonksiyonunuz
+        }
+        
+        // Silme başarılı olduktan sonra, tabloyu güncellemek için verileri yeniden çekin veya state'i güncelleyin
+        fetchWeightLogs(); 
+        console.log('Kayıt başarıyla silindi!');
+    } catch (error) {
+        console.log('Silme işlemi başarısız oldu.');
+    }
+};
+
     return (
         <div className="profile-page-container">
             {contextHolder}
@@ -336,7 +360,9 @@ const ProfilePage: React.FC = () => {
                                     <tr>
                                         <th>Date</th>
                                         <th>Height (cm)</th>
+                                        <th></th>
                                         <th>Weight (kg)</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -348,11 +374,37 @@ const ProfilePage: React.FC = () => {
                                             <tr key={index}>
                                                 <td>{date}</td>
                                                 <td>{heightLog?.height_cm || "-"}</td>
+                                                <td>
+                                                    {/* Boy kaydı varsa, silme butonu göster */}
+                                                 {heightLog && (
+                                                     <Button 
+                                                         type="text" 
+                                                         danger 
+                                                         size="small"
+                                                         onClick={() => handleDeleteRecord(heightLog.log_id, 'height')} // heightLog'un id'sini ve tipini fonksiyona gönder
+                                                         icon={<DeleteOutlined />} 
+                                                     />
+                                                 )}
+                                                </td>
                                                 <td>{weightLog?.weight_kg || "-"}</td>
+                                             <td>
+                                                 {/* Kilo kaydı varsa, silme butonu göster */}
+                                                 {weightLog && (
+                                                     <Button 
+                                                         type="text" 
+                                                         danger     
+                                                         size="small"
+                                                         onClick={() => handleDeleteRecord(weightLog.log_id, 'weight')} // weightLog'un id'sini ve tipini fonksiyona gönder
+                                                         icon={<DeleteOutlined />} 
+                                                     />
+                                                 )}
+                                                
+                                             </td>
                                             </tr>
                                         );
                                     })}
                                 </tbody>
+
                             </table>
                         </div>
                     </Panel>

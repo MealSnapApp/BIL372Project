@@ -50,7 +50,7 @@ exports.getHeightLogsByUser = async (userId) => {
 exports.deleteHeightLog = async (logId) => {
   try {
     const result = await HeightLog.destroy({
-      where: { height_log_id: logId },
+      where: { log_id: logId },
     });
     return result > 0; // Returns true if a row was deleted
   } catch (error) {
