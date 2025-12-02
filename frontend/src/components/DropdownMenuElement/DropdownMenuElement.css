@@ -1,12 +1,14 @@
-.main-wrapper {
+﻿.main-wrapper {
     display: flex;
     align-items: center;
-    background-color: #f8f9fa;
+    background-color: #3a3a3c; /* Darker card background */
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(233, 213, 213, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
 
     &:hover {
-        box-shadow: 0 4px 8px rgba(150, 150, 150, 0.4);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        background-color: #48484a; /* Slightly lighter on hover */
     }
 }
 
@@ -36,8 +38,10 @@
 
 .header {
     cursor: pointer;
+    color: #fff;
     &:hover {
         text-decoration: underline;
+        color: #19850B; /* Green hover */
     }
 }
 
@@ -51,7 +55,7 @@
 .items {
     display: flex;
     align-items: center;
-    color: grey;
+    color: #a1a1a6; /* Light gray text */
     font-size: 0.9rem;
     cursor: pointer;
     white-space: nowrap;
@@ -61,6 +65,7 @@
 
 .items:hover {
     text-decoration: underline;
+    color: #fff;
 }
 
 .check-icon {
@@ -73,4 +78,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #19850B; /* Green check */
 }

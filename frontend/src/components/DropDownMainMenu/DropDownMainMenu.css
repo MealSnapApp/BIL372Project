@@ -1,8 +1,8 @@
-.menu-background {
+﻿.menu-background {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
     z-index: 1000;
     left: 0;
     top: 0;
@@ -16,11 +16,13 @@
     height: 100%;
     width: 220px;
     z-index: 9999;
-    background: #ffffff;
+    background: #1c1c1e; /* Dark background */
     padding: 8px;
     animation: slipToRight 0.6s ease-in-out forwards;
     display: flex;
     flex-direction: column;
+    color: #fff; /* White text */
+    border-right: 1px solid #3a3a3c;
   }
 
 .close {
@@ -38,13 +40,14 @@
 }
 
 .categories {
-  background-color: rgba(255, 0, 0);
-  color: rgba(255, 255, 255);
+  background-color: #19850B; /* Green background */
+  color: #ffffff;
   border-radius: 5px;
   padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
 }
 
 .options {
@@ -53,9 +56,11 @@
   align-items: center;
   border-radius: 5px;
   gap: 0.5rem;
+  color: #fff;
 }
 
 .options:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
   cursor: pointer;
+  color: #19850B; /* Green text on hover */
 }

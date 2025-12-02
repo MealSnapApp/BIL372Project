@@ -1,22 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
+body {
+    background-color: #000; /* Dark background for the whole page */
+}
+
 .profile-page-container {
     padding: 30px;
     max-width: 900px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #000; /* Match body background */
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.05); */
     font-family: 'Nunito', sans-serif;
-    color: #333;
+    color: #fff; /* Light text */
 }
 
 .profile-header {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 30px;
+    background-color: #1c1c1e; /* Dark card background */
+    border-radius: 16px;
+    border-bottom: none;
 }
 
 .profile-avatar {
@@ -44,21 +50,21 @@
 .profile-info h1 {
     margin: 0;
     font-size: 28px;
-    color: #2c3e50;
+    color: #fff; /* White text */
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .profile-username {
     margin: 0;
-    color: #19850B;
+    color: #30d158; /* Bright green */
     font-weight: 600;
     font-size: 16px;
 }
 
 .profile-email {
     margin: 5px 0 15px 0;
-    color: #7f8c8d;
+    color: #8e8e93; /* Light gray */
     font-size: 14px;
 }
 
@@ -70,25 +76,27 @@
 }
 
 .profile-stats span {
-    background-color: #f0f9eb;
-    color: #19850B;
+    background-color: #2c2c2e; /* Darker gray */
+    color: #fff;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
-    border: 1px solid #d4edda;
+    border: 1px solid #3a3a3c;
 }
 
 .profile-section {
-    margin-bottom: 40px;
-    background: #fff;
-    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #1c1c1e; /* Dark card background */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .profile-section h3 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #fff;
     font-size: 20px;
     font-weight: 700;
     display: flex;
@@ -100,67 +108,74 @@
     display: block;
     width: 4px;
     height: 24px;
-    background-color: #19850B;
+    background-color: #30d158;
     margin-right: 10px;
     border-radius: 2px;
 }
 
-/* Ant Design Overrides for Green Theme */
+/* Ant Design Overrides for Dark Theme */
 .profile-page-container .ant-btn-primary {
-    background-color: #19850B;
-    border-color: #19850B;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000;
+    font-weight: 600;
 }
 
 .profile-page-container .ant-btn-primary:hover {
-    background-color: #146c09;
-    border-color: #146c09;
+    background-color: #28b14a;
+    border-color: #28b14a;
 }
 
 .profile-page-container .ant-select-selector {
+    background-color: #2c2c2e !important;
+    border-color: #3a3a3c !important;
+    color: #fff !important;
     border-radius: 6px !important;
 }
 
-.profile-page-container .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
-    border-color: #19850B !important;
-}
-
-.profile-page-container .ant-select-focused .ant-select-selector {
-    border-color: #19850B !important;
-    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2) !important;
+.profile-page-container .ant-select-arrow {
+    color: #8e8e93;
 }
 
 /* DatePicker Overrides */
-.profile-page-container .ant-picker:hover, .profile-page-container .ant-picker-focused {
-    border-color: #19850B;
+.profile-page-container .ant-picker {
+    background-color: #2c2c2e;
+    border-color: #3a3a3c;
+    color: #fff;
 }
 
-.profile-page-container .ant-picker-focused {
-    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2);
+.profile-page-container .ant-picker-input > input {
+    color: #fff;
+}
+
+.profile-page-container .ant-picker-suffix {
+    color: #8e8e93;
 }
 
 /* Collapse Overrides */
 .meal-collapse .ant-collapse-header {
-    background-color: #f9f9f9 !important;
+    background-color: #2c2c2e !important;
     border-radius: 8px !important;
     margin-bottom: 8px;
-    border: 1px solid #eee;
+    border: 1px solid #3a3a3c;
+    color: #fff !important;
     transition: all 0.3s ease;
 }
 
 .meal-collapse .ant-collapse-item-active .ant-collapse-header {
-    background-color: #e6f4e4 !important; /* Light green bg for active header */
-    border-color: #d4edda;
+    background-color: #3a3a3c !important;
+    border-color: #48484a;
 }
 
 .meal-collapse .ant-collapse-header-text {
-    color: #333;
+    color: #fff !important;
     font-weight: 600;
 }
 
 .meal-collapse .ant-collapse-content {
     border-top: none;
     background: transparent;
+    color: #fff;
 }
 
 .meal-list-container {
@@ -171,24 +186,63 @@
 }
 
 .meal-log-card {
-    border-left: 4px solid #19850B !important;
+    background-color: #2c2c2e !important;
+    border: 1px solid #3a3a3c !important;
+    border-left: 4px solid #30d158 !important;
 }
 
 .profile-page-container .ant-card {
-    border-radius: 10px;
-    border: 1px solid #f0f0f0;
-    transition: all 0.3s ease;
+    background-color: #2c2c2e;
+    color: #fff;
 }
 
-.profile-page-container .ant-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-color: #d4edda;
+.profile-page-container .ant-card-head {
+    border-bottom: 1px solid #3a3a3c;
+    color: #fff;
 }
 
 .profile-page-container .ant-card-head-title {
-    color: #19850B;
+    color: #fff;
     font-weight: 600;
 }
+
+.profile-page-container .ant-card-body {
+    color: #fff;
+}
+
+/* Text colors inside cards */
+.meal-log-card span {
+    color: #fff !important;
+}
+
+.meal-log-card span[style*="color: #666"] {
+    color: #8e8e93 !important;
+}
+
+.meal-log-card span[style*="color: #888"] {
+    color: #aeaeb2 !important;
+}
+
+/* Body Records Table */
+.body-records table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.body-records th {
+    background-color: #2c2c2e;
+    color: #8e8e93;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+.body-records td {
+    border-bottom: 1px solid #3a3a3c;
+    color: #fff;
+}
+
+/* Modal Overrides (Global usually, but trying to scope if possible or just accept light modal for now) */
+/* Note: Ant Design Modals are rendered outside root usually. We might need global styles for them to be dark. */
 
 .profile-loading, .profile-error {
     display: flex;
@@ -196,7 +250,7 @@
     align-items: center;
     min-height: 400px;
     font-size: 18px;
-    color: #666;
+    color: #8e8e93;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -237,39 +291,87 @@
 }
 
 /* Scrollable Body Records */
-.body-records {
+.body-records-table {
     max-height: 200px;
     overflow-y: auto;
     margin-bottom: 20px;
 }
-.body-records table {
+.body-records-table table {
     width: 100%;
     border-collapse: collapse;
+    color: #fff;
 }
-.body-records th {
+.body-records-table th {
     position: sticky;
     top: 0;
-    background-color: #f9f9f9;
+    background-color: #2c2c2e; /* Dark background */
+    color: #fff;
     font-weight: bold;
     z-index: 1;
 }
-.body-records th, .body-records td {
+.body-records-table th, .body-records-table td {
     padding: 8px;
     text-align: left;
 }
-.body-records td {
-    border-bottom: 1px solid #ddd;
-}
-.body-records .add-record-button {
-    position: sticky;
-    bottom: 0;
-    background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    z-index: 1;
+.body-records-table td {
+    border-bottom: 1px solid #3a3a3c; /* Dark border */
 }
 
 /* Align Weight Change title */
 .body-charts h3 {
     text-align: left;
+}
+/* Ant Design Button Overrides for Profile Page */
+.profile-page-container .ant-btn-primary {
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000; /* Black text to match following button */
+    box-shadow: none;
+}
+
+.profile-page-container .ant-btn-primary:hover,
+.profile-page-container .ant-btn-primary:focus {
+    background-color: #24a042 !important;
+    border-color: #24a042 !important;
+    color: #000 !important;
+}
+
+/* Specific override for Add Record button in Collapse header */
+.meal-collapse .ant-btn-primary {
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000;
+}
+
+.meal-collapse .ant-btn-primary:hover {
+    background-color: #24a042 !important;
+    border-color: #24a042 !important;
+    color: #000 !important;
+}
+/* Ant Design Button Overrides for Profile Page */
+.profile-page-container .ant-btn-primary {
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000; /* Black text to match following button */
+    box-shadow: none;
+}
+
+.profile-page-container .ant-btn-primary:hover,
+.profile-page-container .ant-btn-primary:focus {
+    background-color: #24a042 !important;
+    border-color: #24a042 !important;
+    color: #000 !important;
+}
+
+/* Specific override for Add Record button in Collapse header */
+.meal-collapse .ant-btn-primary {
+    background-color: #30d158;
+    border-color: #30d158;
+    color: #000;
+}
+
+.meal-collapse .ant-btn-primary:hover {
+    background-color: #24a042 !important;
+    border-color: #24a042 !important;
+    color: #000 !important;
 }

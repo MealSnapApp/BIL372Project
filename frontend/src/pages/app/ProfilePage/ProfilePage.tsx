@@ -7,7 +7,7 @@ import useProfilePage, { MealLog } from './ProfilePage.logic';
 import dayjs from 'dayjs';
 
 import moment from 'moment';
-import { Line } from 'react-chartjs-2';
+import { Line, Doughnut } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -17,6 +17,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    ArcElement,
 } from 'chart.js';
 
 const { Panel } = Collapse;
@@ -28,7 +29,8 @@ ChartJS.register(
     LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    ArcElement
 );
 
 const ProfilePage: React.FC = () => {
@@ -70,8 +72,12 @@ const ProfilePage: React.FC = () => {
                     const log = Array.isArray(weightLogs) ? weightLogs.find(w => moment(w.created_at).format('YYYY-MM-DD') === date) : null;
                     return log ? log.weight_kg : null;
                 }),
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: '#30d158', // Bright Green
+                backgroundColor: 'rgba(48, 209, 88, 0.2)',
+                borderWidth: 3,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.3, // Smooth curves
                 yAxisID: 'y',
             },
             {
@@ -80,8 +86,12 @@ const ProfilePage: React.FC = () => {
                     const log = Array.isArray(heightLogs) ? heightLogs.find(h => moment(h.created_at).format('YYYY-MM-DD') === date) : null;
                     return log ? log.height_cm : null;
                 }),
-                borderColor: 'rgba(255, 99, 132, 1)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: '#FF3B30', // Bright Red
+                backgroundColor: 'rgba(255, 59, 48, 0.2)',
+                borderWidth: 3,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.3, // Smooth curves
                 yAxisID: 'y1',
             },
         ],
@@ -94,14 +104,49 @@ const ProfilePage: React.FC = () => {
             intersect: false,
         },
         stacked: false,
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#fff', // White text for legend
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            tooltip: {
+                backgroundColor: '#2c2c2e',
+                titleColor: '#fff',
+                bodyColor: '#fff',
+                borderColor: '#3a3a3c',
+                borderWidth: 1
+            }
+        },
         scales: {
+            x: {
+                ticks: {
+                    color: '#8e8e93' // Light gray for dates
+                },
+                grid: {
+                    color: '#3a3a3c' // Dark grid lines
+                }
+            },
             y: {
                 type: 'linear' as const,
                 display: true,
                 position: 'left' as const,
                 title: {
                     display: true,
-                    text: 'Weight (kg)'
+                    text: 'Weight (kg)',
+                    color: '#30d158', // Green title
+                    font: {
+                        weight: 'bold' as const
+                    }
+                },
+                ticks: {
+                    color: '#8e8e93'
+                },
+                grid: {
+                    color: '#3a3a3c'
                 }
             },
             y1: {
@@ -113,15 +158,73 @@ const ProfilePage: React.FC = () => {
                 },
                 title: {
                     display: true,
-                    text: 'Height (cm)'
+                    text: 'Height (cm)',
+                    color: '#FF3B30', // Red title
+                    font: {
+                        weight: 'bold' as const
+                    }
+                },
+                ticks: {
+                    color: '#8e8e93'
                 }
             },
         },
     };
-    
 
     if (loading) return <div className="profile-loading">Loading...</div>;
     if (!user) return <div className="profile-error">User not found</div>;
+
+    // Calculate total daily macros and calories
+    const totalDailyProtein = groupedLogs.Breakfast.totalProtein + groupedLogs.Lunch.totalProtein + groupedLogs.Dinner.totalProtein + groupedLogs.Snack.totalProtein;
+    const totalDailyCarbs = groupedLogs.Breakfast.totalCarbs + groupedLogs.Lunch.totalCarbs + groupedLogs.Dinner.totalCarbs + groupedLogs.Snack.totalCarbs;
+    const totalDailyFat = groupedLogs.Breakfast.totalFat + groupedLogs.Lunch.totalFat + groupedLogs.Dinner.totalFat + groupedLogs.Snack.totalFat;
+    const totalDailyCalories = groupedLogs.Breakfast.totalCalories + groupedLogs.Lunch.totalCalories + groupedLogs.Dinner.totalCalories + groupedLogs.Snack.totalCalories;
+
+    const targetCalories = user.target_calorie_amount;
+    const hasTarget = targetCalories && targetCalories > 0;
+    const remainingCalories = hasTarget ? targetCalories - totalDailyCalories : 0;
+
+    // Macro Calories for Chart (1g Protein=4kcal, 1g Carb=4kcal, 1g Fat=9kcal)
+    const proteinCals = totalDailyProtein * 4;
+    const carbCals = totalDailyCarbs * 4;
+    const fatCals = totalDailyFat * 9;
+    const totalMacroCals = proteinCals + carbCals + fatCals;
+
+    const proteinPct = totalMacroCals > 0 ? Math.round((proteinCals / totalMacroCals) * 100) : 0;
+    const carbPct = totalMacroCals > 0 ? Math.round((carbCals / totalMacroCals) * 100) : 0;
+    const fatPct = totalMacroCals > 0 ? Math.round((fatCals / totalMacroCals) * 100) : 0;
+
+    const doughnutData = {
+        labels: ['Carbohydrate', 'Fat', 'Protein'],
+        datasets: [
+            {
+                data: [carbCals, fatCals, proteinCals],
+                backgroundColor: [
+                    '#5AC8FA', // Carbs - Blue
+                    '#FFCC00', // Fat - Yellow
+                    '#FF3B30', // Protein - Red
+                ],
+                borderWidth: 0,
+            },
+        ],
+    };
+
+    const doughnutOptions = {
+        responsive: true,
+        cutout: '70%',
+        plugins: {
+            legend: {
+                display: false,
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context: any) {
+                        return `${context.label}: ${Math.round(context.raw)} kcal`;
+                    }
+                }
+            }
+        },
+    };
 
     const renderMealList = (logs: MealLog[]) => {
         if (logs.length === 0) return <Empty description="No meals logged" image={Empty.PRESENTED_IMAGE_SIMPLE} />;
@@ -208,57 +311,6 @@ const ProfilePage: React.FC = () => {
             </div>
 
 
-            <div className="profile-section body-records">
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Height (cm)</th>
-                                <th>Weight (kg)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {uniqueDates.map((date, index) => {
-                                const weightLog = Array.isArray(weightLogs) ? weightLogs.find(w => moment(w.created_at).format('YYYY-MM-DD') === date) : null;
-                                const heightLog = Array.isArray(heightLogs) ? heightLogs.find(h => moment(h.created_at).format('YYYY-MM-DD') === date) : null;
-                                
-                                return (
-                                    <tr key={index}>
-                                        <td>{date}</td>
-                                        <td>{heightLog?.height_cm || "-"}</td>
-                                        <td>{weightLog?.weight_kg || "-"}</td>
-                                    </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
-                    <Modal
-                        title="Add Body Record"
-                        open={isBodyModalVisible}
-                        onCancel={() => setIsBodyModalVisible(false)}
-                        footer={null}
-                    >
-                        <Form layout="vertical" onFinish={handleSaveBodyData}>
-                            <Form.Item name="weight" label="Weight (kg)" rules={[{ required: true, message: 'Please enter your weight' }]}>
-                                <InputNumber min={0} max={500} style={{ width: '100%' }} />
-                            </Form.Item>
-                            <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
-                                <InputNumber min={0} max={300} style={{ width: '100%' }} />
-                            </Form.Item>
-                            <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
-                                <DatePicker style={{ width: '100%' }} defaultValue={moment()} />
-                            </Form.Item>
-                            <Form.Item>
-                                <Button type="primary" htmlType="submit" block>
-                                    Save Record
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                    </Modal>
-                </div>
-            </div>
-
             <div className="profile-section body-charts">
                 <h3 style={{ textAlign: 'left' }}>Body Records Chart</h3>
                 {weightLogs.length > 0 ? (
@@ -266,6 +318,68 @@ const ProfilePage: React.FC = () => {
                 ) : (
                     <p>No data available for charts.</p>
                 )}
+            </div>
+
+            <div className="profile-section">
+                <Collapse ghost className="meal-collapse">
+                    <Panel header="Body Records" key="1" extra={
+                        <Button type="primary" size="small" onClick={(e) => {
+                            e.stopPropagation();
+                            setIsBodyModalVisible(true);
+                        }}>
+                            Add Record
+                        </Button>
+                    }>
+                        <div className="body-records-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Height (cm)</th>
+                                        <th>Weight (kg)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {uniqueDates.map((date, index) => {
+                                        const weightLog = Array.isArray(weightLogs) ? weightLogs.find(w => moment(w.created_at).format('YYYY-MM-DD') === date) : null;
+                                        const heightLog = Array.isArray(heightLogs) ? heightLogs.find(h => moment(h.created_at).format('YYYY-MM-DD') === date) : null;
+                                        
+                                        return (
+                                            <tr key={index}>
+                                                <td>{date}</td>
+                                                <td>{heightLog?.height_cm || "-"}</td>
+                                                <td>{weightLog?.weight_kg || "-"}</td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    </Panel>
+                </Collapse>
+                <Modal
+                    title="Add Body Record"
+                    open={isBodyModalVisible}
+                    onCancel={() => setIsBodyModalVisible(false)}
+                    footer={null}
+                >
+                    <Form layout="vertical" onFinish={handleSaveBodyData}>
+                        <Form.Item name="weight" label="Weight (kg)" rules={[{ required: true, message: 'Please enter your weight' }]}>
+                            <InputNumber min={0} max={500} style={{ width: '100%' }} />
+                        </Form.Item>
+                        <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
+                            <InputNumber min={0} max={300} style={{ width: '100%' }} />
+                        </Form.Item>
+                        <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
+                            <DatePicker style={{ width: '100%' }} defaultValue={moment()} />
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" block>
+                                Save Record
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Modal>
             </div>
 
             <div className="profile-section">
@@ -291,7 +405,17 @@ const ProfilePage: React.FC = () => {
                 {logsLoading ? (
                     <div className="loading-spinner">Loading logs...</div>
                 ) : (
-                    <Collapse defaultActiveKey={['1', '2', '3', '4']} ghost className="meal-collapse">
+                    <Collapse 
+                        key={selectedDate.format('YYYY-MM-DD')}
+                        defaultActiveKey={[
+                            groupedLogs.Breakfast.logs.length > 0 ? '1' : '',
+                            groupedLogs.Lunch.logs.length > 0 ? '2' : '',
+                            groupedLogs.Dinner.logs.length > 0 ? '3' : '',
+                            groupedLogs.Snack.logs.length > 0 ? '4' : ''
+                        ].filter(Boolean)} 
+                        ghost 
+                        className="meal-collapse"
+                    >
                         <Panel header={`Breakfast (${groupedLogs.Breakfast.totalCalories} kcal - Protein:${groupedLogs.Breakfast.totalProtein}g Carbohydrate:${groupedLogs.Breakfast.totalCarbs}g Fat:${groupedLogs.Breakfast.totalFat}g)`} key="1">
                             {renderMealList(groupedLogs.Breakfast.logs)}
                         </Panel>
@@ -306,6 +430,86 @@ const ProfilePage: React.FC = () => {
                         </Panel>
                     </Collapse>
                 )}
+            </div>
+
+            <div className="profile-section">
+                {/* Header Summary */}
+                <div style={{ marginBottom: '20px' }}>
+                    <h3 style={{ color: '#fff', margin: '0 0 15px 0', fontSize: '18px', fontWeight: 600, textAlign: 'left' }}>Daily Macro Breakdown</h3>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
+                        {hasTarget && (
+                            <div>
+                                <div style={{ color: '#8e8e93', marginBottom: '4px' }}>Remaining Calories</div>
+                                <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{remainingCalories}</div>
+                            </div>
+                        )}
+                        <div style={{ textAlign: hasTarget ? 'right' : 'left' }}>
+                            <div style={{ color: '#8e8e93', marginBottom: '4px' }}>Taken Calories</div>
+                            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{totalDailyCalories}</div>
+                        </div>
+                    </div>
+                    {hasTarget && (
+                        <>
+                            <div style={{ marginTop: '5px', color: '#8e8e93', fontSize: '12px', textAlign: 'right' }}>
+                                Target: {targetCalories} kcal
+                            </div>
+                            {/* Progress Bar */}
+                            <div style={{ 
+                                height: '10px', 
+                                backgroundColor: '#3a3a3c', 
+                                borderRadius: '5px', 
+                                marginTop: '10px', 
+                                overflow: 'hidden' 
+                            }}>
+                                <div style={{ 
+                                    width: `${Math.min(100, (totalDailyCalories / targetCalories) * 100)}%`, 
+                                    height: '100%', 
+                                    backgroundColor: remainingCalories < 0 ? '#FF3B30' : '#30d158',
+                                    transition: 'width 0.5s ease-in-out'
+                                }} />
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                {/* Chart Section */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+                    {/* Legend */}
+                    <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#5AC8FA', marginRight: '10px' }}></div>
+                            <span style={{ fontSize: '15px', fontWeight: 500 }}>Carbs: {carbPct}%</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#FFCC00', marginRight: '10px' }}></div>
+                            <span style={{ fontSize: '15px', fontWeight: 500 }}>Fat: {fatPct}%</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#FF3B30', marginRight: '10px' }}></div>
+                            <span style={{ fontSize: '15px', fontWeight: 500 }}>Protein: {proteinPct}%</span>
+                        </div>
+                    </div>
+                    {/* Chart */}
+                    <div style={{ width: '140px', height: '140px', position: 'relative' }}>
+                        <Doughnut data={doughnutData} options={doughnutOptions} />
+                    </div>
+                </div>
+
+                {/* Details List */}
+                <div style={{ borderTop: '1px solid #3a3a3c', paddingTop: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '14px' }}>
+                        <span style={{ color: '#fff' }}>Total Fat</span>
+                        <span style={{ color: '#8e8e93' }}>{totalDailyFat}g</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '14px' }}>
+                        <span style={{ color: '#fff' }}>Total Carbohydrate</span>
+                        <span style={{ color: '#8e8e93' }}>{totalDailyCarbs}g</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
+                        <span style={{ color: '#fff' }}>Protein</span>
+                        <span style={{ color: '#8e8e93' }}>{totalDailyProtein}g</span>
+                    </div>
+                </div>
             </div>
             
             <div className="profile-section">

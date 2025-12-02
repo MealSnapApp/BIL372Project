@@ -1,15 +1,13 @@
-.follower-page {
+﻿.follower-page {
   width: 100%;
-  /* max-width: 800px; Removed to fit in parent container */
-  /* margin: 0 auto; Removed to fit in parent container */
-  padding: 0; /* Removed padding to align with parent */
+  padding: 0;
 }
 
 .follower-tabs {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid #3a3a3c; /* Dark border */
 }
 
 .tab-btn {
@@ -19,18 +17,18 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  color: #666;
+  color: #8e8e93; /* Light gray */
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
-  color: #333;
+  color: #fff; /* White on hover */
 }
 
 .tab-btn.active {
-  color: #007bff;
-  border-bottom-color: #007bff;
+  color: #30d158; /* Green active */
+  border-bottom-color: #30d158;
 }
 
 .follower-content {
@@ -48,15 +46,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #3a3a3c; /* Dark border */
   border-radius: 8px;
-  background: #fff;
+  background: #2c2c2e; /* Dark card background */
   transition: all 0.3s ease;
 }
 
 .user-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: #30d158; /* Green border on hover */
 }
 
 .user-info {
@@ -67,19 +65,19 @@
 .user-name {
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: #fff; /* White text */
   margin-bottom: 4px;
 }
 
 .user-username {
   font-size: 14px;
-  color: #666;
+  color: #30d158; /* Green username */
   margin-bottom: 4px;
 }
 
 .user-email {
   font-size: 12px;
-  color: #999;
+  color: #8e8e93; /* Light gray email */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -87,9 +85,9 @@
 
 .follow-btn {
   padding: 8px 16px;
-  border: 1px solid #007bff;
-  background: white;
-  color: #007bff;
+  border: 1px solid #30d158; /* Green border */
+  background: transparent;
+  color: #30d158; /* Green text */
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
@@ -100,36 +98,65 @@
 }
 
 .follow-btn:hover {
-  background: #007bff;
-  color: white;
+  background: rgba(48, 209, 88, 0.1);
+  color: #30d158;
 }
 
 .follow-btn.following {
-  background: #007bff;
-  color: white;
+  background: #30d158; /* Green background */
+  color: #000; /* Black text */
+  border: 1px solid #24a042; /* Darker green border */
 }
 
 .follow-btn.following:hover {
-  background: #0056b3;
-  border-color: #0056b3;
+  background: #24a042; /* Darker green */
+  border-color: #24a042;
 }
 
 .empty-message {
   text-align: center;
   padding: 40px 20px;
-  color: #999;
+  color: #8e8e93;
   font-size: 16px;
 }
 
 .loading {
   text-align: center;
   padding: 40px 20px;
-  color: #666;
+  color: #8e8e93;
   font-size: 16px;
 }
 
 .search-section {
   margin-bottom: 20px;
+}
+
+/* Search Input Styles for Dark Mode */
+.search-input.ant-input-affix-wrapper {
+    background-color: #2c2c2e;
+    border-color: #3a3a3c;
+    color: #fff;
+}
+
+.search-input.ant-input-affix-wrapper:hover,
+.search-input.ant-input-affix-wrapper:focus,
+.search-input.ant-input-affix-wrapper-focused {
+    border-color: #30d158;
+    box-shadow: 0 0 0 2px rgba(48, 209, 88, 0.2);
+}
+
+.search-input input.ant-input {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+.search-input input.ant-input::placeholder {
+    color: #d1d1d6 !important; /* Lighter gray for better visibility */
+    opacity: 1;
+}
+
+.search-input .ant-input-prefix {
+    color: #d1d1d6; /* Match placeholder color */
 }
 
 .user-actions {
@@ -140,9 +167,9 @@
 
 .remove-btn {
   padding: 8px 16px;
-  border: 1px solid #ff4d4f;
-  background: white;
-  color: #ff4d4f;
+  border: 1px solid #ff453a; /* Red border */
+  background: transparent;
+  color: #ff453a; /* Red text */
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
@@ -152,8 +179,8 @@
 }
 
 .remove-btn:hover {
-  background: #ff4d4f;
-  color: white;
+  background: rgba(255, 69, 58, 0.1);
+  color: #ff453a;
 }
 
 @media (max-width: 600px) {
