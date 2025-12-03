@@ -191,3 +191,20 @@
 .dark-date-picker-dropdown .ant-picker-decade-panel {
     background-color: #1c1c1e !important;
 }
+
+/* Save Meal Button Customization */
+.save-meal-btn {
+  background-color: #19850B !important;
+  border-color: #19850B !important;
+  color: #fff !important;
+  font-weight: 600;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 20px;
+}
+
+.save-meal-btn:hover {
+  background-color: #0f5206 !important;
+  border-color: #0f5206 !important;
+  color: #fff !important;
+}

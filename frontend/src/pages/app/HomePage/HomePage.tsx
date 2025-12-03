@@ -246,7 +246,7 @@ const HomePage = () => {
       <div className="welcome-section">
         <h1>Welcome Back!</h1>
         <p>Track your meals and stay healthy.</p>
-        <Button type="primary" onClick={() => navigate('/save-meal')}>Save Meal</Button>
+        <Button type="primary" className="save-meal-btn" onClick={() => navigate('/save-meal')}>Save Meal</Button>
       </div>
 
       {/* Meal Logs Section */}
