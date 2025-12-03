@@ -36,12 +36,13 @@ import { MdPostAdd } from "react-icons/md";
 import { IoBookOutline } from "react-icons/io5";
 
 // Ant Design imports for Modal
-import { Modal, Input, Upload, Button, message } from 'antd';
+import { Modal, Input, Upload, Button, message, Select } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { createPost, uploadImage } from '../../services/PostServices/PostService';
 
 const { TextArea } = Input;
+const { Option } = Select;
 
 // Icons
 const IconSearch = FaSearch as React.FC<IconBaseProps>;
@@ -99,6 +100,8 @@ const UpperMenuBar: React.FC = () => {
   const [content, setContent] = useState('');
   const [fileList, setFileList] = useState<any[]>([]);
   const [submitting, setSubmitting] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
+  const [selectedType, setSelectedType] = useState<string | undefined>(undefined);
 
   const handleOk = async () => {
     try {
@@ -117,12 +120,20 @@ const UpperMenuBar: React.FC = () => {
         return;
       }
 
-      const resp = await createPost({ content: content.trim() || undefined, image_path, thumb_path });
+      const resp = await createPost({ 
+        content: content.trim() || undefined, 
+        image_path, 
+        thumb_path,
+        category: selectedCategory,
+        type: selectedType
+      });
       if (resp.success) {
         message.success('Post shared');
         setOpen(false);
         setContent('');
         setFileList([]);
+        setSelectedCategory(undefined);
+        setSelectedType(undefined);
       } else {
         message.error(resp.errorMessage || 'Failed to share post');
       }
@@ -250,6 +261,34 @@ const UpperMenuBar: React.FC = () => {
         confirmLoading={submitting}
         className="dark-modal"
       >
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '12px' }}>
+          <Select
+            placeholder="Select Category"
+            style={{ flex: 1 }}
+            value={selectedCategory}
+            onChange={(value) => {
+              setSelectedCategory(value);
+              setSelectedType(undefined); // Reset type when category changes
+            }}
+            popupClassName="dark-select-dropdown"
+          >
+            {Object.keys(categoryTypes).map((cat) => (
+              <Option key={cat} value={cat}>{cat}</Option>
+            ))}
+          </Select>
+          <Select
+            placeholder="Select Type"
+            style={{ flex: 1 }}
+            value={selectedType}
+            onChange={(value) => setSelectedType(value)}
+            disabled={!selectedCategory}
+            popupClassName="dark-select-dropdown"
+          >
+            {selectedCategory && categoryTypes[selectedCategory]?.map((type) => (
+              <Option key={type} value={type}>{type}</Option>
+            ))}
+          </Select>
+        </div>
         <TextArea
           rows={4}
           placeholder="Write content... (optional)"

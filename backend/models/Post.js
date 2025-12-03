@@ -38,6 +38,14 @@ const Post = sequelize.define(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    category: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    type: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
   },
   {
     tableName: 'Post',

@@ -5,9 +5,15 @@ import { getRecentPosts, likePost, unlikePost, listSavedPosts, bookmarkPost, unb
 import axiosInstance from '../../../axios/axiosInstance';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
+import { useSearchParams } from 'react-router-dom';
 const { TextArea } = Input;
 
 const PostsPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category') || undefined;
+  const typeParam = searchParams.get('type') || undefined;
+  const periodParam = searchParams.get('period') || 'all-time';
+
   const [posts, setPosts] = useState<any[]>([]);
   const [currentUserId, setCurrentUserId] = useState<string|null>(null);
   const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
@@ -27,7 +33,7 @@ const PostsPage: React.FC = () => {
 
   const loadPosts = async () => {
     try {
-      const resp = await getRecentPosts(100);
+      const resp = await getRecentPosts(100, periodParam, categoryParam, typeParam);
       if (resp.success) {
         const payload = resp.data?.data;
         const arr = Array.isArray(payload?.data) ? payload.data : Array.isArray(payload) ? payload : [];
@@ -49,7 +55,7 @@ const PostsPage: React.FC = () => {
       try { const resp: any = await checkAuth(); const uid = resp?.data?.data?.user?.user_id; if (uid) setCurrentUserId(uid); } catch {}
       loadPosts();
     })();
-  }, []);
+  }, [categoryParam, typeParam, periodParam]);
 
   useEffect(() => {
     localStorage.setItem('posts.postFilter', postFilter);

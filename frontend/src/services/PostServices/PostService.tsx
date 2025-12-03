@@ -11,7 +11,7 @@ export async function uploadImage(file: File): Promise<{ path: string; thumb_pat
   return { path: res.data.path as string, thumb_path: res.data.thumb_path };
 }
 
-export async function createPost(params: { content?: string; image_path?: string; thumb_path?: string }) {
+export async function createPost(params: { content?: string; image_path?: string; thumb_path?: string; category?: string; type?: string }) {
   return makeRequest(RequestMethod.POST, '/posts', {
     data: params,
   });
@@ -23,9 +23,9 @@ export async function updatePost(post_id: string, params: { content?: string; im
   });
 }
 
-export async function getRecentPosts(limit: number = 20, period: string = 'all-time') {
+export async function getRecentPosts(limit: number = 20, period: string = 'all-time', category?: string, type?: string) {
   return makeRequest(RequestMethod.GET, '/posts', {
-    params: { limit, period }
+    params: { limit, period, category, type }
   });
 }
 

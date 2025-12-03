@@ -91,32 +91,15 @@ const useUpperMenuBar = () => {
             return;
         }
 
-        // if (selectedCategories.length > 0) {
-        //     getRecipeByCategory(selectedCategories.join(','), 1, 5)
-        //     .then((response:any) => {
-        //         if (response && response.success) {
-        //             const categoriesParam = selectedCategories.join(',');
-        //             navigate(`/recipes?categories=${encodeURIComponent(categoriesParam)}`);
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error fetching recipes:", error);
-        //     }
-        //     );
-        // }
-        // if (selectedTypes.length > 0) {
-        //     getRecipesByType(selectedTypes.join(','), 1, 5)
-        //     .then((response:any) => {  
-        //         if (response && response.success) {
-        //             const typesParam = selectedTypes.join(',');
-        //             navigate(`/recipes?types=${encodeURIComponent(typesParam)}`);
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error fetching recipes by type:", error);
-        //     }
-        //     );
-        // }
+        const params = new URLSearchParams();
+        if (selectedCategories.length > 0) {
+            params.append('category', selectedCategories.join(','));
+        }
+        if (selectedTypes.length > 0) {
+            params.append('type', selectedTypes.join(','));
+        }
+
+        navigate(`/posts?${params.toString()}`);
     }
 
 const handleTrendsClick = (period: string) => {

@@ -7,7 +7,7 @@ const { Op } = require('sequelize');
 const createPost = async (req, res) => {
   try {
     const user_id = req.user.id; // set by auth middleware
-    const { content, image_path } = req.body;
+    const { content, image_path, category, type } = req.body;
 
     if ((!content || content.trim().length === 0) && (!image_path || image_path.trim().length === 0)) {
       return res.status(400).json({ message: 'İçerik veya görsel yolundan en az biri gereklidir.' });
@@ -17,6 +17,8 @@ const createPost = async (req, res) => {
       user_id,
       content: content && content.trim().length > 0 ? content : null,
       image_path: image_path && image_path.trim().length > 0 ? image_path : null,
+      category: category || null,
+      type: type || null,
     });
 
     return res.status(201).json({ message: 'Post oluşturuldu', post: newPost });
@@ -31,6 +33,8 @@ const listRecentPosts = async (req, res) => {
   try {
     const limit = Number(req.query.limit || 50);
     const period = req.query.period || 'all-time';
+    const category = req.query.category;
+    const type = req.query.type;
 
     let whereClause = {};
     const now = new Date();
@@ -43,6 +47,22 @@ const listRecentPosts = async (req, res) => {
       whereClause.shared_at = { [Op.gte]: new Date(now - 30 * 24 * 60 * 60 * 1000) };
     } else if (period === 'annual') {
       whereClause.shared_at = { [Op.gte]: new Date(now - 365 * 24 * 60 * 60 * 1000) };
+    }
+
+    if (category) {
+      // If multiple categories are sent as comma separated string
+      const categories = category.split(',');
+      if (categories.length > 0) {
+        whereClause.category = { [Op.in]: categories };
+      }
+    }
+
+    if (type) {
+      // If multiple types are sent as comma separated string
+      const types = type.split(',');
+      if (types.length > 0) {
+        whereClause.type = { [Op.in]: types };
+      }
     }
 
     const posts = await Post.findAll({
