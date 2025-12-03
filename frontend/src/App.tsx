@@ -6,6 +6,11 @@ import WelcomePage from './pages/auth/welcomePage/welcomePage';
 import HomePage from './pages/app/HomePage/HomePage';
 import SaveMealPage from './pages/app/SaveMealPage/SaveMealPage';
 import ProfilePage from './pages/app/ProfilePage/ProfilePage';
+import SavedRecipes from './pages/app/SavedRecipes/SavedRecipes';
+import LikedRecipes from './pages/app/LikedRecipes/LikedRecipes';
+import MyPosts from './pages/app/MyPosts/MyPosts';
+import AllTrends from './pages/app/Trends/AllTrends';
+import PostsPage from './pages/app/Posts/PostsPage';
 
 import AppLayout from './utils/AppLayout/AppLayout';
 import ProtectedRoute from './utils/ProtectedRoute/ProtectedRoute';
@@ -28,6 +33,14 @@ function App() {
             <Route path="/home" element={<HomePage />}/>
             <Route path="/save-meal" element={<SaveMealPage />}/>
             <Route path="/user-recipes" element={<ProfilePage />}/>
+            <Route path="/user-posts" element={<MyPosts />}/>
+            <Route path="/saved-posts" element={<SavedRecipes />}/>
+            <Route path="/liked-posts" element={<LikedRecipes />}/>
+            <Route path="/trends" element={<AllTrends />}/>
+            <Route path="/posts" element={<PostsPage />}/>
+            {/** Backward-compat routes */}
+            <Route path="/saved-recipes" element={<SavedRecipes />}/>
+            <Route path="/liked-recipes" element={<LikedRecipes />}/>
             {/* 
             <Route path="/trends" element={<ShowRecipes type={pageTypes.TRENDS}/>}/>
             <Route path="/saved-recipes" element={<ShowRecipes type={pageTypes.BOOKMARKS}/>}/>

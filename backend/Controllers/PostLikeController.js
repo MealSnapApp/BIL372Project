@@ -30,7 +30,12 @@ const unlikePost = async (req, res) => {
       return res.status(404).json({ message: 'Not liked', liked: false });
     }
     await existing.destroy();
-    await Post.decrement('like_count', { by: 1, where: { post_id } });
+    // Ensure like_count never goes below zero
+    const post = await Post.findByPk(post_id);
+    if (post) {
+      const next = Math.max(0, (post.like_count || 0) - 1);
+      await post.update({ like_count: next });
+    }
     return res.status(200).json({ message: 'Unliked', liked: false });
   } catch (e) {
     console.error('unlikePost error', e);
@@ -53,3 +58,28 @@ const listPostLikes = async (req, res) => {
 };
 
 module.exports = { likePost, unlikePost, listPostLikes };
+
+// List posts liked by current user
+const listLikedPosts = async (req, res) => {
+  try {
+    const user_id = req.user.id;
+    const likes = await PostLike.findAll({
+      where: { user_id },
+      include: [{ model: Post, include: [{ model: User, attributes: ['user_id','username','name','surname'] }] }],
+      order: [['created_at','DESC']]
+    });
+    const data = likes
+      .map(l => {
+        const postObj = (l.Post && l.Post.toJSON) ? l.Post.toJSON() : l.Post;
+        if (!postObj) return null;
+        return { ...postObj, like_count: Math.max(0, Number(postObj.like_count || 0)) };
+      })
+      .filter(Boolean);
+    return res.status(200).json({ count: data.length, data });
+  } catch (e) {
+    console.error('listLikedPosts error', e);
+    return res.status(500).json({ message: 'List liked posts error', error: e.message });
+  }
+};
+
+module.exports.listLikedPosts = listLikedPosts;

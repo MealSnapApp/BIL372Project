@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import { Button, Modal, Input, Upload, message } from 'antd';
 import { UploadOutlined, HeartOutlined, HeartFilled, MessageOutlined, UserOutlined } from '@ant-design/icons';
-import { createPost, uploadImage, getRecentPosts, likePost, unlikePost, listPostLikes, listComments, addComment } from '../../../services/PostServices/PostService';
+import { createPost, uploadImage, getRecentPosts, likePost, unlikePost, listPostLikes, listComments, addComment, bookmarkPost, unbookmarkPost, listSavedPosts, updatePost } from '../../../services/PostServices/PostService';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import './HomePage.css';
@@ -11,6 +11,7 @@ const { TextArea } = Input;
 
 const HomePage = () => {
   const [open, setOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState<{open:boolean; post:any|null}>({open:false, post:null});
   const [content, setContent] = useState('');
   const [fileList, setFileList] = useState<any[]>([]);
   const [submitting, setSubmitting] = useState(false);
@@ -24,25 +25,10 @@ const HomePage = () => {
   const [followingMap, setFollowingMap] = useState<Record<string, boolean>>({});
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
   const [showCommentBox, setShowCommentBox] = useState<Record<string, boolean>>({});
+  const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
 
-  const loadPosts = async () => {
-    try {
-      const resp = await getRecentPosts(50);
-      if (resp.success) {
-        const payload = resp.data?.data;
-        const arr = Array.isArray(payload?.data) ? payload.data : Array.isArray(payload) ? payload : [];
-        setPosts(arr);
-        // Postlar yüklenince yorumları otomatik olarak getir
-        arr.forEach((p:any) => {
-          if (p?.post_id) {
-            fetchComments(p.post_id);
-          }
-        });
-      }
-    } catch (e) {
-      // noop
-    }
-  };
+  // Home page will not show posts; keep handlers for comments if reused elsewhere.
+  const loadPosts = async () => { setPosts([]); };
 
   const fetchLikes = async (post_id:string) => {
     setLoadingLikes(true);
@@ -51,7 +37,7 @@ const HomePage = () => {
       if (!currentUserId) {
         try {
           const respAuth: any = await checkAuth();
-          const uid = respAuth?.data?.user?.user_id || respAuth?.user?.user_id;
+          const uid = respAuth?.data?.data?.user?.user_id;
           if (uid) setCurrentUserId(uid);
         } catch {}
       }
@@ -84,18 +70,36 @@ const HomePage = () => {
     }
   };
 
-  const toggleLike = async (post:any) => {
-    const isLiked = post._liked; // local flag
+  const toggleBookmark = async (post:any) => {
+    const isBookmarked = !!post._bookmarked;
     const post_id = post.post_id;
     let resp;
-    if (isLiked) resp = await unlikePost(post_id); else resp = await likePost(post_id);
+    if (isBookmarked) resp = await unbookmarkPost(post_id); else resp = await bookmarkPost(post_id);
     if (resp.success) {
       setPosts(prev => prev.map(p => p.post_id===post_id ? {
         ...p,
-        like_count: (p.like_count || 0) + (isLiked ? -1 : 1),
-        _liked: !isLiked
+        _bookmarked: !isBookmarked
       } : p));
     }
+  };
+
+  const toggleLike = async (post:any) => {
+    const post_id = post.post_id;
+    if (likingMap[post_id]) return;
+    setLikingMap(m => ({ ...m, [post_id]: true }));
+    const wasLiked = !!post._liked;
+    const nextLiked = !wasLiked;
+    const resp = wasLiked ? await unlikePost(post_id) : await likePost(post_id);
+    if (resp.success) {
+      setPosts(prev => prev.map(p => {
+        if (p.post_id !== post_id) return p;
+        const currentCount = p.like_count || 0;
+        const delta = nextLiked ? 1 : -1;
+        const newCount = Math.max(0, currentCount + delta);
+        return { ...p, like_count: newCount, _liked: nextLiked };
+      }));
+    }
+    setLikingMap(m => ({ ...m, [post_id]: false }));
   };
 
   const fetchComments = async (post_id:string) => {
@@ -128,12 +132,13 @@ const HomePage = () => {
     (async () => {
       try {
         const resp: any = await checkAuth();
-        const uid = resp?.data?.user?.user_id || resp?.user?.user_id;
+        const uid = resp?.data?.data?.user?.user_id;
         if (uid) setCurrentUserId(uid);
       } catch {}
       loadPosts();
     })();
   }, []);
+
 
   // Yorumları sınırsız derinlikte render eden yardımcı
   const renderComments = (items: any[], post_id: string, level = 0) => {
@@ -192,6 +197,21 @@ const HomePage = () => {
     }
   };
 
+  const handleEditOk = async () => {
+    const post = editOpen.post;
+    if (!post) return;
+    try {
+      setSubmitting(true);
+      await updatePost(post.post_id, { content: post._draftContent ?? post.content });
+      setPosts(prev => prev.map(p => p.post_id===post.post_id ? { ...p, content: post._draftContent ?? post.content } : p));
+      setEditOpen({ open:false, post:null });
+    } catch (err:any) {
+      // no-op or show message
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   const beforeUpload = () => {
     // Upload'ı manuel yöneteceğiz, otomatik yükleme olmasın
     return false;
@@ -202,8 +222,10 @@ const HomePage = () => {
       <div className="welcome-section">
         <h1>Welcome Back!</h1>
         <p>Track your meals and stay healthy.</p>
-        <Button type="primary" onClick={() => setOpen(true)}>Post Meal</Button>
+        {/* Post Meal button removed from Home page as requested */}
       </div>
+
+      
 
       <Modal
         title="New Post"
@@ -232,7 +254,8 @@ const HomePage = () => {
         </Upload>
       </Modal>
 
-      <div className="feed-grid" style={{ marginTop: 24 }}>
+      {/* Home no longer displays posts */}
+      <div className="feed-grid" style={{ marginTop: 24, display:'none' }}>
         {Array.isArray(posts) && posts.map((p) => {
           const user = p.User || p.User?.dataValues || p.user;
           const username = user?.username ?? 'Unknown';
@@ -256,12 +279,20 @@ const HomePage = () => {
                 <button className={`btn-like ${p._liked ? 'liked' : ''}`} onClick={() => toggleLike(p)}>
                   {p._liked ? <HeartFilled /> : <HeartOutlined />} {p._liked ? 'Unlike' : 'Like'}
                 </button>
-                <span style={{ fontSize:12, color:'#444' }}>
-                  <HeartFilled style={{ color:'#ef4444', marginRight:4 }} />{p.like_count || 0}
+                <span className="like-count">
+                  <HeartFilled style={{ color:'#ef4444' }} />{p.like_count || 0}
                 </span>
                 <button className="btn-secondary" onClick={() => fetchLikes(p.post_id)}>
                   Likes
                 </button>
+                <button className="btn-secondary" onClick={() => toggleBookmark(p)} style={{ marginLeft: 8 }}>
+                  {p._bookmarked ? 'Unsave' : 'Save'}
+                </button>
+                {currentUserId && (p.user_id === currentUserId || p?.User?.user_id === currentUserId) && (
+                  <button className="btn-secondary" style={{ marginLeft: 8 }} onClick={() => setEditOpen({ open:true, post: { ...p, _draftContent: p.content } })}>
+                    Edit
+                  </button>
+                )}
               </div>
               <div style={{ marginTop:8 }}>
                 {!showCommentBox[p.post_id] && (
@@ -347,6 +378,23 @@ const HomePage = () => {
             </div>
           );
         })}
+      </Modal>
+      <Modal
+        title="Edit Post"
+        open={editOpen.open}
+        onOk={handleEditOk}
+        onCancel={() => setEditOpen({ open:false, post:null })}
+        okText="Save"
+        cancelText="Cancel"
+        confirmLoading={submitting}
+      >
+        <TextArea
+          rows={4}
+          placeholder="Update content..."
+          value={editOpen.post?._draftContent ?? ''}
+          onChange={(e) => setEditOpen(prev => prev.post ? { open:true, post: { ...prev.post, _draftContent: e.target.value } } : prev)}
+          style={{ marginBottom: 12 }}
+        />
       </Modal>
     </div>
   );

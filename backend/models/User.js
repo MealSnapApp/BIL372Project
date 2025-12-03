@@ -30,11 +30,6 @@ const User = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    registration_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
     birth_date: {
       type: DataTypes.DATEONLY,
       allowNull: false,
@@ -58,7 +53,7 @@ const User = sequelize.define(
   },
   {
     tableName: 'users',
-    timestamps: false, // registration_date is handled manually via defaultValue
+    timestamps: false,
   }
 );
 

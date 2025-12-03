@@ -32,6 +32,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegBookmark } from "react-icons/fa";
 import { GiRiceCooker } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
+import { IoBookOutline } from "react-icons/io5";
 
 // Icons
 const IconSearch = FaSearch as React.FC<IconBaseProps>;
@@ -46,6 +47,7 @@ const IconBookmark = FaRegBookmark as React.FC<IconBaseProps>;
 const IconProfile = MdAccountCircle as React.FC<IconBaseProps>;
 const IconCooker = GiRiceCooker as React.FC<IconBaseProps>;
 const IconMenu = HiOutlineMenu as React.FC<IconBaseProps>;
+const IconBlogs = IoBookOutline as React.FC<IconBaseProps>;
 
 
 const UpperMenuBar: React.FC = () => {
@@ -65,10 +67,12 @@ const UpperMenuBar: React.FC = () => {
           setIsMouseOnSaveMeal,
           handleLogoClick,
           handleRecipesClick,
+          handlePostsClick,
           handleTrendsClick,
           handleSaveMealClick,
           handleProfileClick,
           handleMyProfileClick,
+      handleMyPosts,
           handleSavedRecipes,
           handleLikedRecipes,
           handleMenuClick,
@@ -77,7 +81,8 @@ const UpperMenuBar: React.FC = () => {
           selectedCategories,
           setSelectedCategories,
           selectedTypes,
-          setSelectedTypes } = useUpperMenuBar();
+        setSelectedTypes,
+        postsClickedAnim } = useUpperMenuBar();
 
   return (
     <div className='upper-menu-bar-1'>
@@ -118,6 +123,14 @@ const UpperMenuBar: React.FC = () => {
           </div>
 
         </div>
+        <div className='dropdown-menu-wrapper'>
+          <div className='header-text-with-arrow'>
+            <span className={`header-text posts-header ${postsClickedAnim ? 'posts-click-anim' : ''}`} onClick={handlePostsClick}>
+              Posts
+            </span>
+          </div>
+        </div>
+
         <div
           onMouseEnter={() => setIsTrendsVisible(true)}
           onMouseLeave={() => setIsTrendsVisible(false)}
@@ -129,15 +142,7 @@ const UpperMenuBar: React.FC = () => {
             </span>
             <IconArrowDown />
           </div>
-          {isTrendsVisible &&
-            <div className={`dropdown-menu trends animate`}>
-              <DropdownMenuElement header='Daily Trends' img={hour24} onClick={() => handleTrendsClick("daily")}/>
-              <DropdownMenuElement header='Weekly Trends' img={week} onClick={() => handleTrendsClick("weekly")}/>
-              <DropdownMenuElement header='Monthly Trends' img={month} onClick={() => handleTrendsClick("monthly")}/>
-              <DropdownMenuElement header='Annual Trends' img={annual} onClick={() => handleTrendsClick("annual")}/>
-              <DropdownMenuElement header='All Time Trends' img={all} onClick={() => handleTrendsClick("all-time")}/>
-            </div>
-          }
+          {/* Trends dropdown content removed as requested */}
         </div>
         <div className='text'>Contact Us</div>
         <div className='search-bar-wrapper'>
@@ -165,8 +170,9 @@ const UpperMenuBar: React.FC = () => {
           {hasBeenClickedToProfile && 
             <div className={`profile-menu${isProfileVisible ? ' animate-in' : ' animate-out'}`}>
               <div className='text' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
-              <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Recipes</div>
-              <div className='text' onClick={handleLikedRecipes}><IconLike/>Likes</div>
+              <div className='text' onClick={handleMyPosts}><IconBlogs/>My Posts</div>
+              <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Posts</div>
+              <div className='text' onClick={handleLikedRecipes}><IconLike/>Liked Posts</div>
               <div className='text'><IconCalendar/>Plannings</div>
               <div className='text'><IconSettings/>Settings</div>
               <div className='text' onClick={handleLogout}><IconLogout/>Logout</div>

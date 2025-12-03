@@ -1,0 +1,63 @@
+.saved-recipes-page {
+  padding: 16px;
+  background-color: #000; /* Dark background */
+  min-height: calc(100vh - 120px);
+}
+
+.saved-recipes-page .sr-title {
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+/* Ensure grid spacing matches app */
+.saved-recipes-page .sr-grid {
+  margin-top: 16px;
+}
+
+/* Card overrides for dark */
+.saved-recipes-page .sr-card {
+  background: #1c1c1e;
+  border: 1px solid #2c2c2e;
+  box-shadow: none;
+  color: #e5e5ea;
+}
+
+.saved-recipes-page .sr-image {
+  background: #2c2c2e;
+  border: 1px solid #3a3a3c;
+}
+
+.saved-recipes-page .sr-content {
+  color: #e5e5ea;
+}
+
+.saved-recipes-page .sr-user {
+  color: #d1d1d6;
+}
+
+.saved-recipes-page .sr-user .avatar {
+  background: #2c2c2e;
+  color: #e5e5ea;
+  border: 1px solid #3a3a3c;
+}
+
+.saved-recipes-page .sr-actions .sr-like {
+  background: #2c2c2e;
+  color: #e5e5ea;
+  border: 1px solid #3a3a3c;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 16px;
+}
+
+.saved-recipes-page .sr-actions .sr-like:hover {
+  border-color: #4d4d4f;
+}
+
+.saved-recipes-page .sr-like-count {
+  font-size: 12px;
+  color: #d1d1d6;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

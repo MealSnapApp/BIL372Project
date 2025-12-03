@@ -16,6 +16,7 @@ const useUpperMenuBar = () => {
     const [isRecipesVisible, setIsRecipesVisible] = useState(false);
     const [isTrendsVisible, setIsTrendsVisible] = useState(false);
     const [isMouseOnSaveMeal, setIsMouseOnSaveMeal] = useState(false);
+    const [postsClickedAnim, setPostsClickedAnim] = useState(false);
 
     const profileMenuRef = useRef<HTMLDivElement>(null);
     const mainMenuRef = useRef<HTMLDivElement>(null);
@@ -73,6 +74,15 @@ const useUpperMenuBar = () => {
         handleBringTheChosens(); // Fetch recipes based on selected categories
     }
 
+    const handlePostsClick = () => {
+        setPostsClickedAnim(true);
+        setTimeout(() => setPostsClickedAnim(false), 300);
+        if (window.location.pathname === "/posts") {
+            return;
+        }
+        navigate("/posts");
+    }
+
     const handleBringTheChosens = () => {
 
         // If no categories are selected, do not proceed
@@ -110,14 +120,8 @@ const useUpperMenuBar = () => {
     }
 
 const handleTrendsClick = (period: string) => {
-    const currentParams = new URLSearchParams(window.location.search);
-    const currentPeriod = currentParams.get("period");
-
-    if (window.location.pathname === "/trends" && currentPeriod === period) {
-        return;
-    }
-
-    navigate(`/trends?period=${period}`);
+    // Trends sayfası açılmasın: buton tıklanınca hiçbir şey yapma
+    return;
 };
 
     // Send Recipe Button
@@ -140,6 +144,13 @@ const handleTrendsClick = (period: string) => {
             return; 
         }
         navigate("/user-recipes");
+    }
+
+    const handleMyPosts = () => {
+        if (window.location.pathname === "/user-posts") {
+            return;
+        }
+        navigate("/user-posts");
     }
 
     // Saved Recipes Button
@@ -194,9 +205,11 @@ const handleTrendsClick = (period: string) => {
         handleLogoClick,
         handleRecipesClick,
         handleTrendsClick,
+        handlePostsClick,
         handleSaveMealClick,
         handleProfileClick,
         handleMyProfileClick,
+        handleMyPosts,
         handleSavedRecipes,
         handleLikedRecipes,
         handleMenuClick,
@@ -206,6 +219,7 @@ const handleTrendsClick = (period: string) => {
         setSelectedCategories,
         selectedTypes,
         setSelectedTypes,
+        postsClickedAnim,
     }  
 }
 export default useUpperMenuBar
