@@ -58,6 +58,7 @@ const ProfilePage: React.FC = () => {
         handleDeleteWeightRecord,
         handleDeleteHeightRecord,
         fetchWeightLogs,
+        recommendedCalorie,
     } = useProfilePage();
 
     const disabledDate = (current: any) => {
@@ -283,9 +284,6 @@ const ProfilePage: React.FC = () => {
     };
 
     const handleDeleteRecord = async (recordId, type) => {
-    // Burada silme işlemini gerçekleştirecek olan hazır fonksiyonunuzu çağırın.
-    // 'type' değişkeni (örneğin 'weight' veya 'height') hangi API endpoint'ini 
-    // veya hangi veritabanı tablosunu kullanmanız gerektiğini belirleyebilir.
     console.log('handledeleterecordID:' ,recordId ) 
     console.log('handledeleterecord type:' ,type )
     try {
@@ -301,7 +299,7 @@ const ProfilePage: React.FC = () => {
     } catch (error) {
         console.log('Silme işlemi başarısız oldu.');
     }
-};
+}; 
 
     return (
         <div className="profile-page-container">
@@ -321,7 +319,7 @@ const ProfilePage: React.FC = () => {
                         <span>Weight: {user.weight_kg || '-'} kg</span>
                         <span>Target Weight: {user.target_weight_kg || '-'} kg</span>
                         <span>Activity: {user.activity_level || '-'}</span>
-                        <span>Target Calories: {user.target_calorie_amount || '-'} kcal</span>
+                        <span>Target Calories: {user.target_calorie_amount ||'-'} kcal (Recommended: {recommendedCalorie}) </span>
                     </div>
                     <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
                         <Button type="primary" onClick={handleEditClick}>
@@ -413,12 +411,11 @@ const ProfilePage: React.FC = () => {
                         <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
                             <InputNumber min={0} max={300} style={{ width: '100%' }} />
                         </Form.Item>
-                        <Form.Item name="date" label="Date" initialValue={dayjs()} rules={[{ required: true, message: 'Please select a date' }]}>
+                        <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
                             <DatePicker 
-                                style={{ width: '100%' }} 
-                                defaultValue={dayjs()} 
-                                disabledDate={disabledDate}
+                                style={{ width: '100%' }} defaultValue={moment()} 
                                 popupClassName="dark-date-picker-dropdown" 
+                                disabledDate={(current) => current && current.isAfter(dayjs(), 'day')} 
                             />
                         </Form.Item>
                         <Form.Item>
@@ -589,10 +586,10 @@ const ProfilePage: React.FC = () => {
                     </Form.Item>
                     <Form.Item name="activity_level" label="Activity Level">
                         <Select popupClassName="dark-select-dropdown">
-                            <Select.Option value="Sedentary">Sedentary</Select.Option>
-                            <Select.Option value="Lightly Active">Lightly Active</Select.Option>
-                            <Select.Option value="Moderately Active">Moderately Active</Select.Option>
-                            <Select.Option value="Very Active">Very Active</Select.Option>
+                            <Select.Option value="Sedentary">Sedentary; Little or no exercise; desk job</Select.Option>
+                            <Select.Option value="Lightly Active">Lightly Active; Light exercise or sports 1–3 days per week</Select.Option>
+                            <Select.Option value="Moderately Active">Moderately Active; Moderate exercise or sports 3–5 days per week</Select.Option>
+                            <Select.Option value="Very Active">Very Active; Hard exercise or sports 6–7 days per week</Select.Option>
                         </Select>
                     </Form.Item>
                     <Form.Item name="target_calorie_amount" label="Target Daily Calories">

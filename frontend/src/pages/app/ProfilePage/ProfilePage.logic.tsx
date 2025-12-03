@@ -19,6 +19,8 @@ export interface User {
     target_weight_kg?: number;
     activity_level?: string;
     target_calorie_amount?: number;
+    sex?: string;
+    birth_date?: Date;
 }
 
 export interface MealLog {
@@ -57,6 +59,7 @@ const useProfilePage = () => {
     const [heightLogs, setHeightLogs] = useState([]);
     const { contextHolder, showNotification } = ToastMessage();
     const [form] = Form.useForm();
+    const [recommendedCalorie, setRecommendedCalorie] = useState<number | null>(null);
 
     const fetchUser = async () => {
         try {
@@ -104,10 +107,60 @@ const useProfilePage = () => {
         }
     };
 
+    const calculateRecommendedCalorie = async () => {
+            try {
+                if (!user.birth_date) {
+                    return null;
+                }
+                var calorie;
+
+                const birthDateObject = new Date(user.birth_date as any);
+                const today = new Date();
+                const timeDiff = today.getTime() - birthDateObject.getTime();
+                const years = timeDiff / (1000 * 60 * 60 * 24 * 365.25);
+ 
+                const age = Math.floor(years);
+                if(user.sex === 'M'){
+                    calorie = 10 * user.weight_kg + 6.25 * user.height_cm - 5 * age + 5 ;
+                }else{
+                    calorie = 10 * user.weight_kg + 6.25 * user.height_cm - 5 * age + -161  ;
+                }
+
+                if(user.activity_level === 'Sedentary'){
+                    calorie *= 1.2;
+                }else if(user.activity_level === 'Lightly Active'){
+                    calorie *= 1.375;
+                }else if(user.activity_level === 'Moderately Active'){
+                    calorie *= 1.55;
+                }else if(user.activity_level === 'Very Active'){
+                    calorie *= 1.725;
+                }else{
+                    calorie *= 1.3;
+                }
+
+                if(user.target_weight_kg > user.weight_kg){
+                    calorie += 300
+                }else if(user.target_weight_kg < user.weight_kg){
+                    calorie -= 300
+                }
+                calorie = Math.round(calorie);
+                
+                if(age === null || user.weight_kg === null || user.height_cm === null){
+                    calorie = (user.sex === 'erkek') ? 2300 : 1900;
+                }
+                setRecommendedCalorie(calorie);
+
+                if(user.target_calorie_amount === null){
+                    user.target_calorie_amount = calorie;
+                }
+            } catch (error) {
+                console.error('error, while calcualting reccomended calorie', error);
+            }
+        };
 
 
     useEffect(() => {
-        fetchUser();
+        fetchUser()
     }, []);
 
     useEffect(() => {
@@ -117,6 +170,7 @@ const useProfilePage = () => {
     useEffect(() => {
         if (user) {
             fetchWeightLogs();
+            calculateRecommendedCalorie();
         }
     }, [user]);
 
@@ -266,6 +320,7 @@ const useProfilePage = () => {
         handleDeleteHeightRecord,
         handleDeleteWeightRecord,
         fetchWeightLogs,
+        recommendedCalorie,
     };
 };
 
