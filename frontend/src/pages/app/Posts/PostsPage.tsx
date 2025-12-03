@@ -13,14 +13,24 @@ const PostsPage: React.FC = () => {
   const categoryParam = searchParams.get('category') || undefined;
   const typeParam = searchParams.get('type') || undefined;
   const periodParam = searchParams.get('period') || 'all-time';
+  const filterParam = searchParams.get('filter');
 
   const [posts, setPosts] = useState<any[]>([]);
   const [currentUserId, setCurrentUserId] = useState<string|null>(null);
   const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
   const [postFilter, setPostFilter] = useState<'all'|'mine'|'others'>(() => {
+    if (filterParam && (filterParam === 'mine' || filterParam === 'others' || filterParam === 'all')) {
+      return filterParam as any;
+    }
     const v = localStorage.getItem('posts.postFilter');
     return (v === 'mine' || v === 'others' || v === 'all') ? v : 'all';
   });
+
+  useEffect(() => {
+    if (filterParam && (filterParam === 'mine' || filterParam === 'others' || filterParam === 'all')) {
+      setPostFilter(filterParam as any);
+    }
+  }, [filterParam]);
   const [editOpen, setEditOpen] = useState<{open:boolean; post:any|null}>({open:false, post:null});
   const [likesModal, setLikesModal] = useState<{open:boolean; users:any[]; postId:string|null}>({open:false, users:[], postId:null});
   const [followingMap, setFollowingMap] = useState<Record<string, boolean>>({});
@@ -190,20 +200,7 @@ const PostsPage: React.FC = () => {
 
   return (
     <div className="home-page-container" style={{ paddingTop: 16 }}>
-      <div style={{ display:'flex', alignItems:'center', justifyContent:'flex-end', gap:12, marginBottom: 12 }}>
-        <div style={{ fontSize: 13, color: '#555' }}>Filter:</div>
-        <Select
-          size="small"
-          value={postFilter}
-          style={{ width: 200 }}
-          onChange={(val) => setPostFilter(val as 'all'|'mine'|'others')}
-          options={[
-            { value: 'all', label: 'All Posts' },
-            { value: 'mine', label: 'My Posts' },
-            { value: 'others', label: "Other User's Posts" },
-          ]}
-        />
-      </div>
+
 
       <div className="feed-grid" style={{ marginTop: 12 }}>
         {Array.isArray(posts) && posts

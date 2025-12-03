@@ -15,6 +15,7 @@ const useUpperMenuBar = () => {
 
     const [isRecipesVisible, setIsRecipesVisible] = useState(false);
     const [isTrendsVisible, setIsTrendsVisible] = useState(false);
+    const [isPostsVisible, setIsPostsVisible] = useState(false);
     const [isMouseOnSaveMeal, setIsMouseOnSaveMeal] = useState(false);
     const [postsClickedAnim, setPostsClickedAnim] = useState(false);
 
@@ -38,13 +39,16 @@ const useUpperMenuBar = () => {
         if (isTrendsVisible) {
           setIsTrendsVisible(false);
         }
+        if (isPostsVisible) {
+          setIsPostsVisible(false);
+        }
       };
         window.addEventListener('scroll', handleScroll);
 
         return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-    }, [isRecipesVisible, isTrendsVisible]);
+    }, [isRecipesVisible, isTrendsVisible, isPostsVisible]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -77,10 +81,11 @@ const useUpperMenuBar = () => {
     const handlePostsClick = () => {
         setPostsClickedAnim(true);
         setTimeout(() => setPostsClickedAnim(false), 300);
-        if (window.location.pathname === "/posts") {
-            return;
-        }
-        navigate("/posts");
+        navigate("/posts?filter=all");
+    }
+
+    const handlePostsFilterClick = (filter: string) => {
+        navigate(`/posts?filter=${filter}`);
     }
 
     const handleBringTheChosens = () => {
@@ -189,12 +194,15 @@ const handleTrendsClick = (period: string) => {
         setIsRecipesVisible,
         isTrendsVisible,
         setIsTrendsVisible,
+        isPostsVisible,
+        setIsPostsVisible,
         isMouseOnSaveMeal,
         setIsMouseOnSaveMeal,
         handleLogoClick,
         handleRecipesClick,
         handleTrendsClick,
         handlePostsClick,
+        handlePostsFilterClick,
         handleSaveMealClick,
         handleProfileClick,
         handleMyProfileClick,

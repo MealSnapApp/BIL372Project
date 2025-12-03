@@ -13,10 +13,6 @@ import week from '../../assets/trends/week.png';
 import month from '../../assets/trends/month.png';
 import annual from '../../assets/trends/annual-calendar.png';
 import all from '../../assets/trends/all.png';
-import cook from '../../assets/blogs/cooking.png';
-import healthy from '../../assets/blogs/healthy-heart.png';
-import daily from '../../assets/blogs/daily-tasks.png';
-import question from '../../assets/blogs/question.png';
 
 // React Icon imports
 import { IconBaseProps } from 'react-icons';
@@ -74,11 +70,14 @@ const UpperMenuBar: React.FC = () => {
           setIsRecipesVisible,
           isTrendsVisible,
           setIsTrendsVisible,
+          isPostsVisible,
+          setIsPostsVisible,
           isMouseOnSaveMeal,
           setIsMouseOnSaveMeal,
           handleLogoClick,
           handleRecipesClick,
           handlePostsClick,
+          handlePostsFilterClick,
           handleTrendsClick,
           handleSaveMealClick,
           handleProfileClick,
@@ -187,12 +186,24 @@ const UpperMenuBar: React.FC = () => {
           </div>
 
         </div>
-        <div className='dropdown-menu-wrapper'>
+        <div 
+          className='dropdown-menu-wrapper'
+          onMouseEnter={() => setIsPostsVisible(true)}
+          onMouseLeave={() => setIsPostsVisible(false)}
+        >
           <div className='header-text-with-arrow'>
             <span className={`header-text posts-header ${postsClickedAnim ? 'posts-click-anim' : ''}`} onClick={handlePostsClick}>
               Posts
             </span>
+            <IconArrowDown />
           </div>
+          {isPostsVisible &&
+            <div className={`dropdown-menu trends animate`}>
+              <DropdownMenuElement header='All Posts' onClick={() => handlePostsFilterClick("all")}/>
+              <DropdownMenuElement header='My Posts' onClick={() => handlePostsFilterClick("mine")}/>
+              <DropdownMenuElement header="Other User's Posts" onClick={() => handlePostsFilterClick("others")}/>
+            </div>
+          }
         </div>
 
         <div

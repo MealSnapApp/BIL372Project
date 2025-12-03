@@ -25,9 +25,11 @@ const DropdownMenuElement: React.FC<DropdownMenuElementProps> = ({header, items,
         <>
             <div className='main-wrapper' onClick={() => {onClick && onClick(header);}}>
 
-                <div className='mini-img'>
-                    <img src={img} alt="mini-img" />
-                </div>
+                {img && (
+                    <div className='mini-img'>
+                        <img src={img} alt="mini-img" />
+                    </div>
+                )}
 
                 <div className='content'>
 
