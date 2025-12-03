@@ -11,6 +11,7 @@ const Food = sequelize.define('Food', {
   food_name: {
     type: DataTypes.STRING(255),
     allowNull: false,
+    unique: true,
   },
   portion_size: {
     type: DataTypes.TEXT,
@@ -36,7 +37,7 @@ const Food = sequelize.define('Food', {
   tableName: 'Food',
   timestamps: false,
   indexes: [
-    { fields: ['food_name'] } // index to support FK from Meal_Log
+    { unique: true, fields: ['food_name'] } // enforce uniqueness for BCNF
   ]
 });
 
