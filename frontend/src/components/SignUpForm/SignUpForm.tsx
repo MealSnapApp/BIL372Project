@@ -1,6 +1,7 @@
 import { Form, Input, DatePicker, Select } from "antd";
 import '../../styles.css'
 import useSignUpForm from "./SignUpForm.logic";
+import dayjs from 'dayjs';
 
 interface SignUpFormProps {
   whichState: string;
@@ -10,6 +11,11 @@ interface SignUpFormProps {
 const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
 
   const {contextHolder,form,handleSubmit} = useSignUpForm(clear ?? false);
+
+  const disabledDate = (current: any) => {
+    // Can not select days after today - 7 years
+    return current && current > dayjs().subtract(7, 'year').endOf('day');
+  };
 
   return (
     <div className={`form-container sign-up-container${whichState === "signIn" ? " move-right" : ""}`}>
@@ -97,7 +103,13 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
                   rules={[{ required: true, message: 'Please select your birth date!' }]}
                   style={{ flex: 1 }}
                 >
-                  <DatePicker className="input" placeholder="Birth Date" style={{ width: '100%' }} />
+                  <DatePicker 
+                    className="input" 
+                    placeholder="Birth Date" 
+                    style={{ width: '100%' }} 
+                    disabledDate={disabledDate}
+                    defaultPickerValue={dayjs().subtract(7, 'year')}
+                  />
                 </Form.Item>
 
                 <Form.Item
