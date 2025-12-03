@@ -1,0 +1,61 @@
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #333;
+    margin-top: 12px;
+}
+
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b0b3b8;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    color: #e4e6eb;
+    transform: scale(1.1);
+}
+
+.action-btn.liked {
+    color: #ef4444;
+}
+
+.action-btn.bookmarked {
+    color: #ffffff;
+}
+
+.like-count-text {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #b0b3b8;
+    margin-left: -8px;
+}
+
+.like-count-text:hover {
+    text-decoration: underline;
+    color: #e4e6eb;
+}
+
+.edit-btn:hover {
+    color: #1890ff;
+}
+
+.delete-btn:hover {
+    color: #ff4d4f;
+}

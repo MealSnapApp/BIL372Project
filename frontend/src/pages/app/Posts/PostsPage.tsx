@@ -48,6 +48,10 @@ const PostsPage: React.FC = () => {
       if (resp.success) {
         const payload = resp.data?.data;
         const arr = Array.isArray(payload?.data) ? payload.data : Array.isArray(payload) ? payload : [];
+        
+        // Sort by like count descending initially
+        arr.sort((a:any, b:any) => (Number(b.like_count || 0) - Number(a.like_count || 0)));
+
         try {
           const savedResp = await listSavedPosts();
           const body = savedResp?.data?.data;
@@ -226,7 +230,6 @@ const PostsPage: React.FC = () => {
             if (!currentUserId) return true; // until auth loads, show all
             return postFilter === 'mine' ? ownerId === currentUserId : ownerId !== currentUserId;
           })
-          .sort((a, b) => (Number(b.like_count || 0) - Number(a.like_count || 0)))
           .map((p) => {
             const user = p.User || p.User?.dataValues || p.user;
             const username = user?.username ?? 'Unknown';
