@@ -32,7 +32,7 @@ const MealLog = sequelize.define('MealLog', {
     defaultValue: DataTypes.NOW
   },
   meal_time: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(50),
     allowNull: false,
   },
   portion: {

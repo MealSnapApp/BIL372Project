@@ -24,6 +24,7 @@ async function seedFoods() {
         // Expected headers: "food_id","food_name","portion_size","calorie","protein_gr","carbohydrate_gr","fat_gr"
         
         const foods = [];
+        const seen = new Set();
         // Start from index 1 to skip header
         for (let i = 1; i < lines.length; i++) {
             const line = lines[i].trim();
@@ -45,6 +46,12 @@ async function seedFoods() {
             if (cols.length >= 7) {
                 const clean = (str) => str ? str.trim().replace(/^"|"$/g, '') : '';
 
+                const name = clean(cols[1]).toLowerCase();
+                if (seen.has(name)) {
+                    continue; // skip duplicate by normalized name
+                }
+                seen.add(name);
+
                 foods.push({
                     food_name: clean(cols[1]),
                     portion_size: clean(cols[2]),
@@ -57,7 +64,7 @@ async function seedFoods() {
         }
 
         if (foods.length > 0) {
-            await Food.bulkCreate(foods);
+            await Food.bulkCreate(foods, { ignoreDuplicates: true });
             console.log(`Successfully seeded ${foods.length} food items.`);
         } else {
             console.log('No valid data found in CSV.');
