@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Select, Modal, Input, Button } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined } from '@ant-design/icons';
+import { Select, Modal, Input, Button, message } from 'antd';
+import { UserOutlined, HeartFilled, HeartOutlined, DeleteOutlined, EditOutlined, SaveOutlined, EyeOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { getRecentPosts, likePost, unlikePost, listSavedPosts, bookmarkPost, unbookmarkPost, updatePost, listPostLikes, listComments, addComment } from '../../../services/PostServices/PostService';
 import axiosInstance from '../../../axios/axiosInstance';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
 import { useSearchParams } from 'react-router-dom';
+import { notification } from 'antd';
 const { TextArea } = Input;
 
 const PostsPage: React.FC = () => {
@@ -96,6 +97,10 @@ const PostsPage: React.FC = () => {
     const resp = isBookmarked ? await unbookmarkPost(post_id) : await bookmarkPost(post_id);
     if (resp?.success) {
       setPosts(prev => prev.map(p => p.post_id===post_id ? { ...p, _bookmarked: !isBookmarked } : p));
+      notification.success({
+        message: !isBookmarked ? 'Post saved' : 'Post unsaved',
+        placement: 'bottomLeft'
+      });
     }
   };
 
@@ -202,7 +207,18 @@ const PostsPage: React.FC = () => {
     <div className="home-page-container" style={{ paddingTop: 16 }}>
 
 
-      <div className="feed-grid" style={{ marginTop: 12 }}>
+      <div
+        className="feed-grid"
+        style={{
+          marginTop: 12,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gridAutoFlow: 'dense',
+          gap: 12,
+          maxWidth: 1000,
+          width: '100%'
+        }}
+      >
         {Array.isArray(posts) && posts
           .filter((p) => {
             if (postFilter === 'all') return true;
@@ -217,82 +233,107 @@ const PostsPage: React.FC = () => {
             const rawImg = p.thumb_path || p.image_path;
             const imgSrc = rawImg && (rawImg.startsWith('http') ? rawImg : `http://localhost:3001${rawImg}`);
             return (
-              <div key={p.post_id} className="post-card">
+              <div
+                key={p.post_id}
+                className="post-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
+                }}
+              >
                 {imgSrc && (
-                  <div className="post-image">
-                    <img src={imgSrc} alt="post" />
+                  <div className="post-image" style={{ lineHeight: 0 }}>
+                    <img src={imgSrc} alt="post" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
                 )}
                 {p.content && (
-                  <div className="post-content">{p.content}</div>
+                  <div
+                    className="post-content"
+                    style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
+                  >
+                    {p.content}
+                  </div>
                 )}
                 <div className="post-user">
                   <div className="avatar"><UserOutlined /></div>
                   <div>@{username}</div>
                 </div>
-                <div className="post-actions">
+                <div className="post-actions" style={{ flexWrap: 'wrap' }}>
                   <button className={`btn-like ${p._liked ? 'liked' : ''}`} onClick={() => toggleLike(p)}>
-                    {p._liked ? <HeartFilled /> : <HeartOutlined />} {p._liked ? 'Unlike' : 'Like'}
-                  </button>
-                  <button className="btn-secondary" onClick={() => fetchLikes(p.post_id)}>
-                    Likes
+                    {p._liked ? <HeartFilled /> : <HeartOutlined />}
                   </button>
                   <span className="like-count">
-                    <HeartFilled style={{ color:'#ef4444' }} />{p.like_count || 0}
+                    {(p.like_count || 0)} Likes
                   </span>
-                  <button className="btn-secondary" onClick={() => toggleBookmark(p)}>
-                    {p._bookmarked ? 'Unsave' : 'Save'}
-                  </button>
+                  <Button
+                    size="small"
+                    onClick={() => fetchLikes(p.post_id)}
+                    title="View Likes"
+                    style={{ borderColor:'#1677ff', color:'#1677ff' }}
+                  >
+                    <UsergroupAddOutlined />
+                  </Button>
+                  <Button
+                    size="small"
+                    onClick={() => toggleBookmark(p)}
+                    title={p._bookmarked ? 'Unsave' : 'Save'}
+                    style={{ borderColor:'#2ca50c', color: p._bookmarked ? '#fff' : '#2ca50c', backgroundColor: p._bookmarked ? '#2ca50c' : 'transparent' }}
+                  >
+                    <SaveOutlined style={{ fontSize:16 }} />
+                  </Button>
                   {currentUserId && (p.user_id === currentUserId || p?.User?.user_id === currentUserId) && (
                     <>
-                      <Button size="small" onClick={() => setEditOpen({ open:true, post: { ...p, _draftContent: p.content } })}>
-                        Edit
+                      <Button size="small" onClick={() => setEditOpen({ open:true, post: { ...p, _draftContent: p.content } })} title="Edit">
+                        <EditOutlined />
                       </Button>
-                      <Button size="small" danger onClick={() => deletePost(p.post_id)}>
-                        Delete
+                      <Button size="small" danger onClick={() => deletePost(p.post_id)} title="Delete">
+                        <DeleteOutlined />
                       </Button>
                     </>
                   )}
                 </div>
                 {/* Comments */}
-                <div style={{ marginTop:8 }}>
-                  {!showCommentBox[p.post_id] && (
-                    <button className="comment-toggle" onClick={() => { setShowCommentBox(sc => ({ ...sc, [p.post_id]: true })); fetchComments(p.post_id); }}>
-                      Yorum yaz
-                    </button>
-                  )}
-                  {showCommentBox[p.post_id] && (
-                    <>
-                      <textarea className="comment-area"
-                        placeholder="Yorum yaz..."
-                        value={commentInputs[p.post_id] || ''}
-                        onChange={(e) => setCommentInputs(ci => ({...ci, [p.post_id]: e.target.value}))}
-                      />
-                      {replyTarget[p.post_id] && (
-                        <div style={{ fontSize:11, color:'#555', marginTop:4 }}>
-                          Bir yoruma cevap veriliyor.
+                {(showCommentBox[p.post_id] || (Array.isArray(commentsMap[p.post_id]) && commentsMap[p.post_id].length > 0)) && (
+                  <div style={{ marginTop:8 }}>
+                    {!showCommentBox[p.post_id] && (
+                      <button className="comment-toggle" onClick={() => { setShowCommentBox(sc => ({ ...sc, [p.post_id]: true })); fetchComments(p.post_id); }}>
+                        Yorum yaz
+                      </button>
+                    )}
+                    {showCommentBox[p.post_id] && (
+                      <>
+                        <textarea className="comment-area"
+                          placeholder="Yorum yaz..."
+                          value={commentInputs[p.post_id] || ''}
+                          onChange={(e) => setCommentInputs(ci => ({...ci, [p.post_id]: e.target.value}))}
+                        />
+                        {replyTarget[p.post_id] && (
+                          <div style={{ fontSize:11, color:'#555', marginTop:4 }}>
+                            Bir yoruma cevap veriliyor.
+                            <button
+                              style={{ fontSize:11, padding:0, marginLeft:6, color:'#1677ff', background:'transparent', border:'none', cursor:'pointer' }}
+                              onClick={() => setReplyTarget(rt => ({ ...rt, [p.post_id]: null }))}
+                            >İptal</button>
+                          </div>
+                        )}
+                        <div className="comment-actions">
                           <button
-                            style={{ fontSize:11, padding:0, marginLeft:6, color:'#1677ff', background:'transparent', border:'none', cursor:'pointer' }}
-                            onClick={() => setReplyTarget(rt => ({ ...rt, [p.post_id]: null }))}
-                          >İptal</button>
+                            style={{ fontSize:12, padding:'4px 8px', cursor:'pointer' }}
+                            onClick={() => submitComment(p.post_id)}
+                          >Gönder</button>
+                          <button
+                            style={{ fontSize:12, padding:'4px 8px', cursor:'pointer' }}
+                            onClick={() => {
+                              setShowCommentBox(sc => ({ ...sc, [p.post_id]: false }));
+                              setReplyTarget(rt => ({ ...rt, [p.post_id]: null }));
+                            }}
+                          >Kapat</button>
                         </div>
-                      )}
-                      <div className="comment-actions">
-                        <button
-                          style={{ fontSize:12, padding:'4px 8px', cursor:'pointer' }}
-                          onClick={() => submitComment(p.post_id)}
-                        >Gönder</button>
-                        <button
-                          style={{ fontSize:12, padding:'4px 8px', cursor:'pointer' }}
-                          onClick={() => {
-                            setShowCommentBox(sc => ({ ...sc, [p.post_id]: false }));
-                            setReplyTarget(rt => ({ ...rt, [p.post_id]: null }));
-                          }}
-                        >Kapat</button>
-                      </div>
-                    </>
-                  )}
-                </div>
+                      </>
+                    )}
+                  </div>
+                )}
 
                 { Array.isArray(commentsMap[p.post_id]) && commentsMap[p.post_id].length > 0 && (
                   <div style={{ marginTop:8 }}>
@@ -322,13 +363,20 @@ const PostsPage: React.FC = () => {
       </Modal>
 
       <Modal
-        title="Liked by"
+        title={<span style={{ color:'#fff', fontWeight:600 }}>Liked by</span>}
         open={likesModal.open}
         onCancel={() => setLikesModal({open:false, users:[], postId:null})}
-        footer={null}
+        footer={<Button onClick={() => setLikesModal({open:false, users:[], postId:null})}>Close</Button>}
+        bodyStyle={{ background:'#121212', color:'#fff' }}
+        styles={{ header: { background:'#121212', color:'#fff' } as any }}
+        maskStyle={{ backgroundColor:'rgba(0,0,0,0.65)' }}
+        closable
+        closeIcon={<span style={{ color:'#fff' }}>✕</span>}
+        width={420}
+        centered
       >
-        {loadingLikes && <div>Loading...</div>}
-        {!loadingLikes && likesModal.users.length === 0 && <div>No likes yet.</div>}
+        {loadingLikes && <div style={{ color:'#fff', padding:'8px 0' }}>Loading...</div>}
+        {!loadingLikes && likesModal.users.length === 0 && <div style={{ color:'#fff', padding:'8px 0' }}>No likes yet.</div>}
         {!loadingLikes && likesModal.users.map(l => {
           const u = l.User;
           const uid = u?.user_id;
@@ -347,10 +395,17 @@ const PostsPage: React.FC = () => {
             } catch {}
           };
           return (
-            <div key={l.like_id} className="modal-like-row" style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'6px 0' }}>
-              <div>@{uname}</div>
+            <div key={l.like_id} className="modal-like-row" style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'10px 0', color:'#fff', borderBottom:'1px solid #1f1f1f' }}>
+              <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+                <div style={{ width:28, height:28, borderRadius:'50%', background:'#2a2a2a', display:'flex', alignItems:'center', justifyContent:'center', color:'#bbb' }}>
+                  <UserOutlined />
+                </div>
+                <div style={{ color:'#fff', fontWeight:600, fontSize:14 }}>@{uname}</div>
+              </div>
               {uid && currentUserId && uid !== currentUserId && (
-                <button className={isF ? 'follow-btn following' : 'follow-btn follow'} onClick={onClick}>{isF ? 'Following' : 'Follow'}</button>
+                <button className={isF ? 'follow-btn following' : 'follow-btn follow'} onClick={onClick} style={{ color: isF ? '#1677ff' : '#fff', border:'1px solid #3a3a3a', background:'transparent', padding:'6px 10px', borderRadius:6 }}>
+                  {isF ? 'Following' : 'Follow'}
+                </button>
               )}
             </div>
           );

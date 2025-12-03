@@ -1,40 +1,55 @@
 import React, { useEffect, useState } from 'react';
-import { listMyPosts, likePost, unlikePost, updatePost, listSavedPosts, listPostLikes } from '../../../services/PostServices/PostService';
+import './SavedPosts.css';
+import { listSavedPosts, likePost, unlikePost, updatePost, bookmarkPost, unbookmarkPost, listPostLikes, listLikedPosts } from '../../../services/PostServices/PostService';
 import axiosInstance from '../../../axios/axiosInstance';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
-import { HeartFilled, HeartOutlined, UserOutlined, SaveOutlined, EditOutlined, DeleteOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { Modal, Input, Button, notification } from 'antd';
-import { bookmarkPost, unbookmarkPost } from '../../../services/PostServices/PostService';
-import '../SavedPosts/SavedPosts.css';
-
+import { HeartFilled, HeartOutlined, UserOutlined, SaveOutlined, EditOutlined, DeleteOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 
-const MyPosts: React.FC = () => {
+const SavedPosts: React.FC = () => {
   const [items, setItems] = useState<any[]>([]);
-  const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
   const [currentUserId, setCurrentUserId] = useState<string|null>(null);
   const [editOpen, setEditOpen] = useState<{open:boolean; post:any|null}>({open:false, post:null});
+  const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
   const [likesModal, setLikesModal] = useState<{open:boolean; users:any[]; postId:string|null}>({open:false, users:[], postId:null});
   const [followingMap, setFollowingMap] = useState<Record<string, boolean>>({});
   const [loadingLikes, setLoadingLikes] = useState(false);
 
   const load = async () => {
-    const resp = await listMyPosts();
+    const resp = await listSavedPosts();
     if (resp?.success) {
-      const body = resp.data?.data; // { data }
+      const body = resp.data?.data; // { count, data }
       const arr = Array.isArray(body?.data) ? body.data : (Array.isArray(body) ? body : []);
+      const base = arr.map((p:any) => ({ ...p, _bookmarked: true }));
       try {
-        const savedResp = await listSavedPosts();
-        const savedBody = savedResp?.data?.data;
-        const savedArr = Array.isArray(savedBody?.data) ? savedBody.data : (Array.isArray(savedBody) ? savedBody : []);
-        const savedIds = new Set(savedArr.map((p:any) => p.post_id));
-        setItems(arr.map((p:any) => ({ ...p, _bookmarked: savedIds.has(p.post_id) })));
+        const likedResp = await listLikedPosts();
+        const likedBody = likedResp?.data?.data;
+        const likedArr = Array.isArray(likedBody?.data) ? likedBody.data : (Array.isArray(likedBody) ? likedBody : []);
+        const likedIds = new Set(likedArr.map((p:any) => p.post_id));
+        setItems(base.map((p:any) => ({ ...p, _liked: likedIds.has(p.post_id) })));
       } catch {
-        setItems(arr.map((p:any) => ({ ...p, _bookmarked: !!p._bookmarked })));
+        setItems(base);
       }
+      try {
+        const updates = await Promise.all(base.map(async (p:any) => {
+          try {
+            const r = await listPostLikes(p.post_id);
+            const likesArr = r?.data?.data?.data || r?.data?.data || [];
+            return { post_id: p.post_id, like_count: Array.isArray(likesArr) ? likesArr.length : (p.like_count || 0) };
+          } catch {
+            return { post_id: p.post_id, like_count: p.like_count || 0 };
+          }
+        }));
+        setItems(prev => prev.map(p => {
+          const u = updates.find(x => x.post_id === p.post_id);
+          return u ? { ...p, like_count: u.like_count } : p;
+        }));
+      } catch {}
     }
   };
+
   const fetchLikes = async (post_id:string) => {
     setLoadingLikes(true);
     try {
@@ -120,7 +135,11 @@ const MyPosts: React.FC = () => {
     const isBookmarked = !!post._bookmarked;
     const resp = isBookmarked ? await unbookmarkPost(post_id) : await bookmarkPost(post_id);
     if (resp?.success) {
-      setItems(prev => prev.map(p => p.post_id===post_id ? { ...p, _bookmarked: !isBookmarked } : p));
+      if (isBookmarked) {
+        setItems(prev => prev.filter(p => p.post_id !== post_id));
+      } else {
+        setItems(prev => prev.map(p => p.post_id===post_id ? { ...p, _bookmarked: true } : p));
+      }
       notification.success({
         message: !isBookmarked ? 'Post saved' : 'Post unsaved',
         placement: 'bottomLeft'
@@ -130,10 +149,7 @@ const MyPosts: React.FC = () => {
 
   return (
     <div className="saved-recipes-page">
-      <h2 className="sr-title">My Posts</h2>
-      {items.length === 0 && (
-        <div style={{ color:'#d1d1d6', marginTop: 8 }}>You have no posts.</div>
-      )}
+      <h2 className="sr-title">Saved Posts</h2>
       <div className="feed-grid sr-grid" style={{
         marginTop: 12,
         display: 'grid',
@@ -167,7 +183,10 @@ const MyPosts: React.FC = () => {
                 <div>@{username}</div>
               </div>
               <div className="post-actions sr-actions" style={{ flexWrap:'wrap' }}>
-                <button className={`btn-like sr-like ${p._liked ? 'liked' : ''}`} onClick={() => toggleLike(p)}>
+                <button
+                  className={`btn-like sr-like ${p._liked ? 'liked' : ''}`}
+                  onClick={() => toggleLike(p)}
+                >
                   {p._liked ? <HeartFilled style={{ color:'#ef4444' }} /> : <HeartOutlined />}
                 </button>
                 <span className="sr-like-count" style={{ display:'inline-flex', alignItems:'center' }}>
@@ -199,6 +218,9 @@ const MyPosts: React.FC = () => {
           );
         })}
       </div>
+      {items.length === 0 && (
+        <div style={{ color:'#d1d1d6', marginTop: 8 }}>You have no saved posts.</div>
+      )}
       <Modal
         title="Edit Post"
         open={editOpen.open}
@@ -269,4 +291,4 @@ const MyPosts: React.FC = () => {
   );
 };
 
-export default MyPosts;
+export default SavedPosts;

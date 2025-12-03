@@ -9,12 +9,10 @@
   margin: 0 0 12px 0;
 }
 
-/* Ensure grid spacing matches app */
 .saved-recipes-page .sr-grid {
   margin-top: 16px;
 }
 
-/* Card overrides for dark */
 .saved-recipes-page .sr-card {
   background: #1c1c1e;
   border: 1px solid #2c2c2e;

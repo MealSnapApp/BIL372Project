@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { listMyPosts, likePost, unlikePost, updatePost, listSavedPosts, listPostLikes } from '../../../services/PostServices/PostService';
-import axiosInstance from '../../../axios/axiosInstance';
+import { listLikedPosts, likePost, unlikePost, updatePost, listSavedPosts, listPostLikes } from '../../../services/PostServices/PostService';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
-import { HeartFilled, HeartOutlined, UserOutlined, SaveOutlined, EditOutlined, DeleteOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+import { HeartFilled, HeartOutlined, UserOutlined } from '@ant-design/icons';
 import { Modal, Input, Button, notification } from 'antd';
+import axiosInstance from '../../../axios/axiosInstance';
+import { SaveOutlined, EditOutlined, DeleteOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { bookmarkPost, unbookmarkPost } from '../../../services/PostServices/PostService';
-import '../SavedPosts/SavedPosts.css';
 
 const { TextArea } = Input;
 
-const MyPosts: React.FC = () => {
+const LikedPosts: React.FC = () => {
   const [items, setItems] = useState<any[]>([]);
   const [likingMap, setLikingMap] = useState<Record<string, boolean>>({});
   const [currentUserId, setCurrentUserId] = useState<string|null>(null);
@@ -20,21 +20,23 @@ const MyPosts: React.FC = () => {
   const [loadingLikes, setLoadingLikes] = useState(false);
 
   const load = async () => {
-    const resp = await listMyPosts();
+    const resp = await listLikedPosts();
     if (resp?.success) {
-      const body = resp.data?.data; // { data }
+      const body = resp.data?.data;
       const arr = Array.isArray(body?.data) ? body.data : (Array.isArray(body) ? body : []);
       try {
         const savedResp = await listSavedPosts();
         const savedBody = savedResp?.data?.data;
         const savedArr = Array.isArray(savedBody?.data) ? savedBody.data : (Array.isArray(savedBody) ? savedBody : []);
         const savedIds = new Set(savedArr.map((p:any) => p.post_id));
-        setItems(arr.map((p:any) => ({ ...p, _bookmarked: savedIds.has(p.post_id) })));
+        // These are liked posts; mark them as liked by current user
+        setItems(arr.map((p:any) => ({ ...p, _bookmarked: savedIds.has(p.post_id), _liked: true })));
       } catch {
-        setItems(arr.map((p:any) => ({ ...p, _bookmarked: !!p._bookmarked })));
+        setItems(arr.map((p:any) => ({ ...p, _bookmarked: !!p._bookmarked, _liked: true })));
       }
     }
   };
+
   const fetchLikes = async (post_id:string) => {
     setLoadingLikes(true);
     try {
@@ -83,11 +85,16 @@ const MyPosts: React.FC = () => {
     const nextLiked = !wasLiked;
     const resp = wasLiked ? await unlikePost(post_id) : await likePost(post_id);
     if (resp?.success) {
-      setItems(prev => prev.map(p => p.post_id===post_id ? {
-        ...p,
-        like_count: Math.max(0, (p.like_count || 0) + (nextLiked ? 1 : -1)),
-        _liked: nextLiked
-      } : p));
+      if (!nextLiked) {
+        // When unliking from Liked Posts, remove from the list
+        setItems(prev => prev.filter(p => p.post_id !== post_id));
+      } else {
+        setItems(prev => prev.map(p => p.post_id===post_id ? {
+          ...p,
+          like_count: Math.max(0, (p.like_count || 0) + 1),
+          _liked: true
+        } : p));
+      }
       notification.success({
         message: nextLiked ? 'Post liked' : 'Post unliked',
         placement: 'bottomLeft'
@@ -130,10 +137,7 @@ const MyPosts: React.FC = () => {
 
   return (
     <div className="saved-recipes-page">
-      <h2 className="sr-title">My Posts</h2>
-      {items.length === 0 && (
-        <div style={{ color:'#d1d1d6', marginTop: 8 }}>You have no posts.</div>
-      )}
+      <h2 className="sr-title">Liked Posts</h2>
       <div className="feed-grid sr-grid" style={{
         marginTop: 12,
         display: 'grid',
@@ -199,6 +203,9 @@ const MyPosts: React.FC = () => {
           );
         })}
       </div>
+      {items.length === 0 && (
+        <div style={{ color:'#d1d1d6', marginTop: 8 }}>You have no liked posts.</div>
+      )}
       <Modal
         title="Edit Post"
         open={editOpen.open}
@@ -269,4 +276,4 @@ const MyPosts: React.FC = () => {
   );
 };
 
-export default MyPosts;
+export default LikedPosts;

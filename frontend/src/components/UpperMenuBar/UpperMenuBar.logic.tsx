@@ -134,35 +134,35 @@ const handleTrendsClick = (period: string) => {
 
     const handleMyProfileClick = () => {
         // If the user is already on the profile page, do not navigate again
-        if (window.location.pathname === "/user-recipes") {
+        if (window.location.pathname === "/profile") {
             return; 
         }
-        navigate("/user-recipes");
+        navigate("/profile");
     }
 
     const handleMyPosts = () => {
-        if (window.location.pathname === "/user-posts") {
+        if (window.location.pathname === "/my-posts") {
             return;
         }
-        navigate("/user-posts");
+        navigate("/my-posts");
     }
 
     // Saved Recipes Button
     const handleSavedRecipes = () => {
-        // If the user is already on the saved-recipes page, do not navigate again
-        if (window.location.pathname === "/saved-recipes") {
+        // If the user is already on the saved posts page, do not navigate again
+        if (window.location.pathname === "/saved-posts") {
             return; 
         }
-        navigate("/saved-recipes");
+        navigate("/saved-posts");
     }
 
     // Liked Recipes Button
     const handleLikedRecipes = () => {
-        // If the user is already on the liked-recipes page, do not navigate again
-        if (window.location.pathname === "/liked-recipes") {
+        // If the user is already on the liked posts page, do not navigate again
+        if (window.location.pathname === "/liked-posts") {
             return; 
         }
-        navigate("/liked-recipes");
+        navigate("/liked-posts");
     }
 
     // Logout Button

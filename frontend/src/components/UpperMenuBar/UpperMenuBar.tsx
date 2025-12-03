@@ -250,7 +250,6 @@ const UpperMenuBar: React.FC = () => {
           {hasBeenClickedToProfile && 
             <div className={`profile-menu${isProfileVisible ? ' animate-in' : ' animate-out'}`}>
               <div className='text' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
-              <div className='text' onClick={handleLikedRecipes}><IconLike/>Likes</div>
               <div className='text' onClick={handleMyPosts}><IconBlogs/>My Posts</div>
               <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Posts</div>
               <div className='text' onClick={handleLikedRecipes}><IconLike/>Liked Posts</div>
