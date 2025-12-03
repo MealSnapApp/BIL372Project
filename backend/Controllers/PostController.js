@@ -7,7 +7,7 @@ const { Op } = require('sequelize');
 const createPost = async (req, res) => {
   try {
     const user_id = req.user.id; // set by auth middleware
-    const { content, image_path, thumb_path } = req.body;
+    const { content, image_path } = req.body;
 
     if ((!content || content.trim().length === 0) && (!image_path || image_path.trim().length === 0)) {
       return res.status(400).json({ message: 'İçerik veya görsel yolundan en az biri gereklidir.' });
@@ -17,7 +17,6 @@ const createPost = async (req, res) => {
       user_id,
       content: content && content.trim().length > 0 ? content : null,
       image_path: image_path && image_path.trim().length > 0 ? image_path : null,
-      thumb_path: thumb_path && thumb_path.trim().length > 0 ? thumb_path : null,
     });
 
     return res.status(201).json({ message: 'Post oluşturuldu', post: newPost });
@@ -60,7 +59,8 @@ const listRecentPosts = async (req, res) => {
       const plain = p.get({ plain: true });
       const liked = Array.isArray(plain.PostLikes) && plain.PostLikes.length > 0;
       delete plain.PostLikes;
-      return { ...plain, _liked: liked };
+      const likeCount = Math.max(0, Number(plain.like_count || 0));
+      return { ...plain, like_count: likeCount, _liked: liked };
     });
     return res.status(200).json({ data });
   } catch (error) {
@@ -69,4 +69,73 @@ const listRecentPosts = async (req, res) => {
   }
 };
 
-module.exports = { createPost, listRecentPosts };
+// Update an existing post (owner only)
+const updatePost = async (req, res) => {
+  try {
+    const user_id = req.user.id;
+    const { post_id } = req.params;
+    const { content, image_path } = req.body;
+
+    const post = await Post.findByPk(post_id);
+    if (!post) return res.status(404).json({ message: 'Post bulunamadı' });
+    if (post.user_id !== user_id) return res.status(403).json({ message: 'Bu postu düzenleme yetkiniz yok' });
+
+    const payload = {};
+    if (typeof content === 'string') payload.content = content.trim() || null;
+    if (typeof image_path === 'string') payload.image_path = image_path.trim() || null;
+
+    await post.update(payload);
+    return res.status(200).json({ message: 'Post güncellendi', post });
+  } catch (error) {
+    console.error('Update post error:', error);
+    return res.status(500).json({ message: 'Post güncellenirken hata oluştu', error: error.message });
+  }
+};
+
+module.exports = { createPost, listRecentPosts, updatePost };
+
+// List posts created by current user
+const listMyPosts = async (req, res) => {
+  try {
+    const user_id = req.user.id;
+    const posts = await Post.findAll({
+      where: { user_id },
+      order: [['shared_at', 'DESC']],
+      include: [
+        { model: User, attributes: ['user_id', 'name', 'surname', 'username'] },
+        { model: PostLike, attributes: ['like_id'], where: { user_id }, required: false }
+      ],
+    });
+    const data = posts.map(p => {
+      const plain = p.get({ plain: true });
+      const liked = Array.isArray(plain.PostLikes) && plain.PostLikes.length > 0;
+      delete plain.PostLikes;
+      const likeCount = Math.max(0, Number(plain.like_count || 0));
+      return { ...plain, like_count: likeCount, _liked: liked };
+    });
+    return res.status(200).json({ data });
+  } catch (error) {
+    console.error('List my posts error:', error);
+    return res.status(500).json({ message: 'Kullanıcı postları listelenirken hata oluştu', error: error.message });
+  }
+};
+
+module.exports.listMyPosts = listMyPosts;
+
+// Delete a post (owner only)
+const deletePost = async (req, res) => {
+  try {
+    const user_id = req.user.id;
+    const { post_id } = req.params;
+    const post = await Post.findByPk(post_id);
+    if (!post) return res.status(404).json({ message: 'Post bulunamadı' });
+    if (post.user_id !== user_id) return res.status(403).json({ message: 'Bu postu silme yetkiniz yok' });
+    await post.destroy();
+    return res.status(200).json({ message: 'Post silindi', success: true });
+  } catch (error) {
+    console.error('Delete post error:', error);
+    return res.status(500).json({ message: 'Post silinirken hata oluştu', error: error.message });
+  }
+};
+
+module.exports.deletePost = deletePost;

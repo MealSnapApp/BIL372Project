@@ -12,6 +12,7 @@ require('./models/Meal_Log');
 require('./models/Follower');
 require('./models/Post');
 require('./models/Post_Likes');
+require('./models/Post_Bookmarks');
 require('./models/Comment');
 require('./models/Comment_Likes');
 require('./models/HeightLog');
@@ -62,9 +63,17 @@ const PORT = 3001;
 
 // Initialize DB, Sync models, then start server
 initializeDatabase().then(() => {
-  sequelize.sync({ alter: true })
-    .then(() => {
-      console.log('Database & tables synced successfully.');
+  const forceSync = String(process.env.FORCE_SYNC || '').toLowerCase() === 'true';
+  const syncOptions = forceSync ? { force: true } : { alter: true };
+  sequelize.sync(syncOptions)
+    .then(async () => {
+      console.log(`Database & tables synced successfully. Sync mode: ${forceSync ? 'force (drop & recreate)' : 'alter'}`);
+      try {
+        // Normalize any negative like counts persisted previously
+        await sequelize.query('UPDATE `Post` SET `like_count` = GREATEST(0, COALESCE(`like_count`,0))');
+      } catch (e) {
+        console.warn('Warning: failed to normalize like_count values:', e?.message || e);
+      }
       server.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
       });

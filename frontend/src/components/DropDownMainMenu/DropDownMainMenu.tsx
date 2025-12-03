@@ -49,7 +49,7 @@ interface DropDownMainMenuProps {
 }
 
 const DropDownMainMenu: React.FC<DropDownMainMenuProps> = ({ isMenuVisible, menuRef }) => {
-const { handleMyProfileClick, handleSavedRecipes, handleLikedRecipes, handleSendRecipe, handleTrends, handleLogout } = useDropDownMainMenu();
+const { handleMyProfileClick, handleMyPosts, handleSavedRecipes, handleLikedRecipes, handleSendRecipe, handleTrends, handleLogout } = useDropDownMainMenu();
 
 
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
@@ -70,8 +70,9 @@ const { handleMyProfileClick, handleSavedRecipes, handleLikedRecipes, handleSend
       <div ref={menuRef} className={`menu${isMenuVisible ? '' : ' close'}`}>
         <div className='categories'>My Recipes<IconArrowDown/></div>
         <div className='options' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
-        <div className='options' onClick={handleSavedRecipes}><IconBookmark/>Saved Recipes</div>
-        <div className='options' onClick={handleLikedRecipes}><IconHeart/>Likes</div>
+        <div className='options' onClick={handleMyPosts}><IconBlogs/>My Posts</div>
+        <div className='options' onClick={handleSavedRecipes}><IconBookmark/>Saved Posts</div>
+        <div className='options' onClick={handleLikedRecipes}><IconHeart/>Liked Posts</div>
         <div className='options' onClick={handleSendRecipe}><IconSend/>Send Recipe</div>
         <div className='options'><IconShoppingCart/>Shopping List</div>
         <div className='options'><IconCalendar/>Plannings</div>

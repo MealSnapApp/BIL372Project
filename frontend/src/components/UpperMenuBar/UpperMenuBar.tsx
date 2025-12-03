@@ -33,6 +33,7 @@ import { FaRegBookmark } from "react-icons/fa";
 import { GiRiceCooker } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdPostAdd } from "react-icons/md";
+import { IoBookOutline } from "react-icons/io5";
 
 // Ant Design imports for Modal
 import { Modal, Input, Upload, Button, message } from 'antd';
@@ -56,6 +57,7 @@ const IconProfile = MdAccountCircle as React.FC<IconBaseProps>;
 const IconCooker = GiRiceCooker as React.FC<IconBaseProps>;
 const IconMenu = HiOutlineMenu as React.FC<IconBaseProps>;
 const IconPost = MdPostAdd as React.FC<IconBaseProps>;
+const IconBlogs = IoBookOutline as React.FC<IconBaseProps>;
 
 
 const UpperMenuBar: React.FC = () => {
@@ -75,10 +77,12 @@ const UpperMenuBar: React.FC = () => {
           setIsMouseOnSaveMeal,
           handleLogoClick,
           handleRecipesClick,
+          handlePostsClick,
           handleTrendsClick,
           handleSaveMealClick,
           handleProfileClick,
           handleMyProfileClick,
+      handleMyPosts,
           handleSavedRecipes,
           handleLikedRecipes,
           handleMenuClick,
@@ -87,7 +91,8 @@ const UpperMenuBar: React.FC = () => {
           selectedCategories,
           setSelectedCategories,
           selectedTypes,
-          setSelectedTypes } = useUpperMenuBar();
+        setSelectedTypes,
+        postsClickedAnim } = useUpperMenuBar();
 
   // Modal State for Post Meal
   const [open, setOpen] = useState(false);
@@ -171,6 +176,14 @@ const UpperMenuBar: React.FC = () => {
           </div>
 
         </div>
+        <div className='dropdown-menu-wrapper'>
+          <div className='header-text-with-arrow'>
+            <span className={`header-text posts-header ${postsClickedAnim ? 'posts-click-anim' : ''}`} onClick={handlePostsClick}>
+              Posts
+            </span>
+          </div>
+        </div>
+
         <div
           onMouseEnter={() => setIsTrendsVisible(true)}
           onMouseLeave={() => setIsTrendsVisible(false)}
@@ -215,8 +228,10 @@ const UpperMenuBar: React.FC = () => {
           {hasBeenClickedToProfile && 
             <div className={`profile-menu${isProfileVisible ? ' animate-in' : ' animate-out'}`}>
               <div className='text' onClick={handleMyProfileClick}><IconProfile/>My Profile</div>
-              <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Recipes</div>
               <div className='text' onClick={handleLikedRecipes}><IconLike/>Likes</div>
+              <div className='text' onClick={handleMyPosts}><IconBlogs/>My Posts</div>
+              <div className='text' onClick={handleSavedRecipes}><IconBookmark/>Saved Posts</div>
+              <div className='text' onClick={handleLikedRecipes}><IconLike/>Liked Posts</div>
               <div className='text' onClick={handleLogout}><IconLogout/>Logout</div>
             </div>
           }

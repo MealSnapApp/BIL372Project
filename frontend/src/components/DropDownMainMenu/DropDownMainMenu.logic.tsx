@@ -7,27 +7,34 @@ const useDropDownMainMenu = () => {
     const navigate = useNavigate();
 
     const handleMyProfileClick = () => {
-        // If the user is already on the profile page, do not navigate again
+        // Keep existing profile route
         if (window.location.pathname === "/user-recipes") {
             return; 
         }
         navigate("/user-recipes");
     }
 
+    const handleMyPosts = () => {
+        if (window.location.pathname === "/user-posts") {
+            return;
+        }
+        navigate("/user-posts");
+    }
+
     const handleSavedRecipes = () => {
-        // If the user is already on the saved-recipes page, do not navigate again
-        if (window.location.pathname === "/saved-recipes") {
+        // If the user is already on the saved-posts page, do not navigate again
+        if (window.location.pathname === "/saved-posts") {
             return; 
         }
-        navigate("/saved-recipes");
+        navigate("/saved-posts");
     }
 
     const handleLikedRecipes = () => {
-        // If the user is already on the liked-recipes page, do not navigate again
-        if (window.location.pathname === "/liked-recipes") {
+        // If the user is already on the liked-posts page, do not navigate again
+        if (window.location.pathname === "/liked-posts") {
             return; 
         }
-        navigate("/liked-recipes");
+        navigate("/liked-posts");
     }
 
     const handleSendRecipe = () => {
@@ -59,6 +66,7 @@ const useDropDownMainMenu = () => {
 
   return {
     handleMyProfileClick,
+        handleMyPosts,
     handleSavedRecipes,
     handleLikedRecipes,
     handleSendRecipe,

@@ -158,6 +158,30 @@
   color: #fff;
 }
 
+/* Posts default white, hover green */
+.posts-header { color: #fff; cursor: pointer; }
+.posts-header:hover { color: #19850B; }
+
+/* Posts click feedback animation */
+.posts-click-anim {
+  position: relative;
+}
+.posts-click-anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background: #19850B;
+  animation: postsPulse 0.3s ease;
+}
+@keyframes postsPulse {
+  0% { opacity: 0; transform: scaleX(0.2); }
+  50% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+
 /* Dropdown Menu */
 
 .dropdown-menu-wrapper {

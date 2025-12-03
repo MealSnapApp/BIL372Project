@@ -17,6 +17,12 @@ export async function createPost(params: { content?: string; image_path?: string
   });
 }
 
+export async function updatePost(post_id: string, params: { content?: string; image_path?: string }) {
+  return makeRequest(RequestMethod.PUT, `/posts/${post_id}`, {
+    data: params,
+  });
+}
+
 export async function getRecentPosts(limit: number = 20, period: string = 'all-time') {
   return makeRequest(RequestMethod.GET, '/posts', {
     params: { limit, period }
@@ -43,4 +49,24 @@ export async function addComment(post_id: string, content: string, parent_commen
 
 export async function listComments(post_id: string) {
   return makeRequest(RequestMethod.GET, `/posts/${post_id}/comments`);
+}
+
+export async function bookmarkPost(post_id: string) {
+  return makeRequest(RequestMethod.POST, `/posts/${post_id}/bookmark`);
+}
+
+export async function unbookmarkPost(post_id: string) {
+  return makeRequest(RequestMethod.DELETE, `/posts/${post_id}/bookmark`);
+}
+
+export async function listSavedPosts() {
+  return makeRequest(RequestMethod.GET, `/posts/saved`);
+}
+
+export async function listLikedPosts() {
+  return makeRequest(RequestMethod.GET, `/posts/liked`);
+}
+
+export async function listMyPosts() {
+  return makeRequest(RequestMethod.GET, `/posts/mine`);
 }

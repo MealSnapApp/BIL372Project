@@ -16,6 +16,7 @@ const useUpperMenuBar = () => {
     const [isRecipesVisible, setIsRecipesVisible] = useState(false);
     const [isTrendsVisible, setIsTrendsVisible] = useState(false);
     const [isMouseOnSaveMeal, setIsMouseOnSaveMeal] = useState(false);
+    const [postsClickedAnim, setPostsClickedAnim] = useState(false);
 
     const profileMenuRef = useRef<HTMLDivElement>(null);
     const mainMenuRef = useRef<HTMLDivElement>(null);
@@ -71,6 +72,15 @@ const useUpperMenuBar = () => {
 
     const handleRecipesClick = () => {
         handleBringTheChosens(); // Fetch recipes based on selected categories
+    }
+
+    const handlePostsClick = () => {
+        setPostsClickedAnim(true);
+        setTimeout(() => setPostsClickedAnim(false), 300);
+        if (window.location.pathname === "/posts") {
+            return;
+        }
+        navigate("/posts");
     }
 
     const handleBringTheChosens = () => {
@@ -142,6 +152,13 @@ const handleTrendsClick = (period: string) => {
         navigate("/user-recipes");
     }
 
+    const handleMyPosts = () => {
+        if (window.location.pathname === "/user-posts") {
+            return;
+        }
+        navigate("/user-posts");
+    }
+
     // Saved Recipes Button
     const handleSavedRecipes = () => {
         // If the user is already on the saved-recipes page, do not navigate again
@@ -194,9 +211,11 @@ const handleTrendsClick = (period: string) => {
         handleLogoClick,
         handleRecipesClick,
         handleTrendsClick,
+        handlePostsClick,
         handleSaveMealClick,
         handleProfileClick,
         handleMyProfileClick,
+        handleMyPosts,
         handleSavedRecipes,
         handleLikedRecipes,
         handleMenuClick,
@@ -206,6 +225,7 @@ const handleTrendsClick = (period: string) => {
         setSelectedCategories,
         selectedTypes,
         setSelectedTypes,
+        postsClickedAnim,
     }  
 }
 export default useUpperMenuBar
