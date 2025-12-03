@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Select, Modal, Input, Button } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, EditOutlined, DeleteOutlined, CommentOutlined } from '@ant-design/icons';
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import './PostsPage.css';
+import { IconBaseProps } from 'react-icons';
 import { getRecentPosts, likePost, unlikePost, listSavedPosts, bookmarkPost, unbookmarkPost, updatePost, listPostLikes, listComments, addComment } from '../../../services/PostServices/PostService';
 import axiosInstance from '../../../axios/axiosInstance';
 import { checkAuth } from '../../../services/AuthServices/AuthService.export';
 import { followUser, unfollowUser, isFollowing } from '../../../services/FollowerServices/FollowerService';
 import { useSearchParams } from 'react-router-dom';
+
+const IconBookmark = FaBookmark as React.FC<IconBaseProps>;
+const IconRegBookmark = FaRegBookmark as React.FC<IconBaseProps>;
+
 const { TextArea } = Input;
 
 const PostsPage: React.FC = () => {
@@ -47,6 +54,10 @@ const PostsPage: React.FC = () => {
       if (resp.success) {
         const payload = resp.data?.data;
         const arr = Array.isArray(payload?.data) ? payload.data : Array.isArray(payload) ? payload : [];
+        
+        // Sort by like count descending initially
+        arr.sort((a:any, b:any) => (Number(b.like_count || 0) - Number(a.like_count || 0)));
+
         try {
           const savedResp = await listSavedPosts();
           const body = savedResp?.data?.data;
@@ -210,7 +221,6 @@ const PostsPage: React.FC = () => {
             if (!currentUserId) return true; // until auth loads, show all
             return postFilter === 'mine' ? ownerId === currentUserId : ownerId !== currentUserId;
           })
-          .sort((a, b) => (Number(b.like_count || 0) - Number(a.like_count || 0)))
           .map((p) => {
             const user = p.User || p.User?.dataValues || p.user;
             const username = user?.username ?? 'Unknown';
@@ -231,36 +241,36 @@ const PostsPage: React.FC = () => {
                   <div>@{username}</div>
                 </div>
                 <div className="post-actions">
-                  <button className={`btn-like ${p._liked ? 'liked' : ''}`} onClick={() => toggleLike(p)}>
-                    {p._liked ? <HeartFilled /> : <HeartOutlined />} {p._liked ? 'Unlike' : 'Like'}
-                  </button>
-                  <button className="btn-secondary" onClick={() => fetchLikes(p.post_id)}>
-                    Likes
-                  </button>
-                  <span className="like-count">
-                    <HeartFilled style={{ color:'#ef4444' }} />{p.like_count || 0}
-                  </span>
-                  <button className="btn-secondary" onClick={() => toggleBookmark(p)}>
-                    {p._bookmarked ? 'Unsave' : 'Save'}
-                  </button>
+                  <div className="action-group">
+                    <button className={`action-btn ${p._liked ? 'liked' : ''}`} onClick={() => toggleLike(p)}>
+                      {p._liked ? <HeartFilled /> : <HeartOutlined />}
+                    </button>
+                    <span className="like-count-text" onClick={() => fetchLikes(p.post_id)}>
+                      {p.like_count || 0} likes
+                    </span>
+                    
+                    <button className="action-btn" onClick={() => { setShowCommentBox(sc => ({ ...sc, [p.post_id]: !sc[p.post_id] })); fetchComments(p.post_id); }}>
+                      <CommentOutlined />
+                    </button>
+
+                    <button className={`action-btn ${p._bookmarked ? 'bookmarked' : ''}`} onClick={() => toggleBookmark(p)}>
+                      {p._bookmarked ? <IconBookmark /> : <IconRegBookmark />}
+                    </button>
+                  </div>
+
                   {currentUserId && (p.user_id === currentUserId || p?.User?.user_id === currentUserId) && (
-                    <>
-                      <Button size="small" onClick={() => setEditOpen({ open:true, post: { ...p, _draftContent: p.content } })}>
-                        Edit
-                      </Button>
-                      <Button size="small" danger onClick={() => deletePost(p.post_id)}>
-                        Delete
-                      </Button>
-                    </>
+                    <div className="action-group">
+                      <button className="action-btn edit-btn" onClick={() => setEditOpen({ open:true, post: { ...p, _draftContent: p.content } })}>
+                        <EditOutlined />
+                      </button>
+                      <button className="action-btn delete-btn" onClick={() => deletePost(p.post_id)}>
+                        <DeleteOutlined />
+                      </button>
+                    </div>
                   )}
                 </div>
                 {/* Comments */}
                 <div style={{ marginTop:8 }}>
-                  {!showCommentBox[p.post_id] && (
-                    <button className="comment-toggle" onClick={() => { setShowCommentBox(sc => ({ ...sc, [p.post_id]: true })); fetchComments(p.post_id); }}>
-                      Yorum yaz
-                    </button>
-                  )}
                   {showCommentBox[p.post_id] && (
                     <>
                       <textarea className="comment-area"

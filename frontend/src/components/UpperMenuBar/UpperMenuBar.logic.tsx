@@ -217,6 +217,7 @@ const handleTrendsClick = (period: string) => {
         selectedTypes,
         setSelectedTypes,
         postsClickedAnim,
+        showNotification
     }  
 }
 export default useUpperMenuBar

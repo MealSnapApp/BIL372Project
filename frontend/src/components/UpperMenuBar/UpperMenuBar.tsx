@@ -32,7 +32,7 @@ import { MdPostAdd } from "react-icons/md";
 import { IoBookOutline } from "react-icons/io5";
 
 // Ant Design imports for Modal
-import { Modal, Input, Upload, Button, message, Select } from 'antd';
+import { Modal, Input, Upload, Button, Select } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { createPost, uploadImage } from '../../services/PostServices/PostService';
@@ -92,7 +92,8 @@ const UpperMenuBar: React.FC = () => {
           setSelectedCategories,
           selectedTypes,
         setSelectedTypes,
-        postsClickedAnim } = useUpperMenuBar();
+        postsClickedAnim,
+        showNotification } = useUpperMenuBar();
 
   // Modal State for Post Meal
   const [open, setOpen] = useState(false);
@@ -114,7 +115,7 @@ const UpperMenuBar: React.FC = () => {
       }
 
       if (!content.trim() && !image_path) {
-        message.warning('Please enter content or choose an image.');
+        showNotification('Please enter content or choose an image.', 'warning');
         setSubmitting(false);
         return;
       }
@@ -127,17 +128,17 @@ const UpperMenuBar: React.FC = () => {
         type: selectedType
       });
       if (resp.success) {
-        message.success('Post shared');
+        showNotification('Post shared', 'success');
         setOpen(false);
         setContent('');
         setFileList([]);
         setSelectedCategory(undefined);
         setSelectedType(undefined);
       } else {
-        message.error(resp.errorMessage || 'Failed to share post');
+        showNotification(resp.errorMessage || 'Failed to share post', 'error');
       }
     } catch (err: any) {
-      message.error(err?.response?.data?.message || 'An error occurred');
+      showNotification(err?.response?.data?.message || 'An error occurred', 'error');
     } finally {
       setSubmitting(false);
     }
