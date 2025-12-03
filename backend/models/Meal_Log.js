@@ -45,7 +45,10 @@ const MealLog = sequelize.define('MealLog', {
   }
 }, {
   tableName: 'Meal_Log',
-  timestamps: false
+  timestamps: false,
+  indexes: [
+    { unique: true, fields: ['user_id', 'date', 'meal_time', 'food_name'] }
+  ]
 });
 
 User.hasMany(MealLog, { foreignKey: 'user_id' });
@@ -54,4 +57,4 @@ MealLog.belongsTo(User, { foreignKey: 'user_id' });
 Food.hasMany(MealLog, { foreignKey: 'food_name', sourceKey: 'food_name' });
 MealLog.belongsTo(Food, { foreignKey: 'food_name', targetKey: 'food_name' });
 
-module.exports = MealLog;
+module.exports = MealLog;
