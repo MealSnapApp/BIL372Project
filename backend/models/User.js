@@ -21,10 +21,12 @@ const User = sequelize.define(
     username: {
       type: DataTypes.TEXT,
       allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.TEXT,
       allowNull: false,
+      unique: true,
     },
     password: {
       type: DataTypes.TEXT,
@@ -54,7 +56,11 @@ const User = sequelize.define(
   {
     tableName: 'users',
     timestamps: false,
+    indexes: [
+      { unique: true, fields: ['username'] },
+      { unique: true, fields: ['email'] }
+    ]
   }
 );
 
-module.exports = User;
+module.exports = User;

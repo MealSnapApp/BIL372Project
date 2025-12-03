@@ -3,5 +3,9 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    background-image: url('./assets/black-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

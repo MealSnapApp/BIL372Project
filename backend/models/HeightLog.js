@@ -6,12 +6,12 @@ const HeightLog = sequelize.define('HeightLog', {
   log_id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
-    primaryKey: true,
     unique: true,
   },
   user_id: {
     type: DataTypes.UUID,
     allowNull: false,
+    primaryKey: true,
     references: {
       model: User,
       key: 'user_id'
@@ -24,6 +24,7 @@ const HeightLog = sequelize.define('HeightLog', {
   created_at: {
     type: DataTypes.DATE,
     allowNull: false,
+    primaryKey: true,
     defaultValue: DataTypes.NOW,
   }
 }, {
@@ -34,4 +35,4 @@ const HeightLog = sequelize.define('HeightLog', {
 User.hasMany(HeightLog, { foreignKey: 'user_id' });
 HeightLog.belongsTo(User, { foreignKey: 'user_id' });
 
-module.exports = HeightLog;
+module.exports = HeightLog;

@@ -1,13 +1,16 @@
 .container {
     position: relative;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    color: #fff;
     font-family: "Nunito", sans-serif;
     width : 800px;
     height: 520px;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow:  0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: transform 0.6s ease, width 0.6s ease, height 0.6s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 1000px) {
@@ -125,12 +128,67 @@
 /*Inputs*/
 
 .input {
-  background-color: #dedede;
-  border: none;
-  padding: 6px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
   width: 80%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.input:hover {
-    background-color: #d0d0d0;
+.input:hover, .input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #19850B;
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2);
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ant Design Input overrides for dark theme */
+.ant-input, .ant-input-password, .ant-input-affix-wrapper {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+.ant-input:hover, .ant-input:focus, .ant-input-focused, .ant-input-affix-wrapper:hover, .ant-input-affix-wrapper-focused {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #19850B !important;
+}
+
+.ant-input-password .ant-input, .ant-input-affix-wrapper .ant-input {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.ant-input-suffix {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ant-input-password-icon {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ant-input-password-icon:hover {
+    color: #fff !important;
+}
+
+.ant-picker {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+.ant-picker-input > input {
+    color: #fff !important;
+}
+
+.ant-picker-suffix {
+    color: rgba(255, 255, 255, 0.5) !important;
 }

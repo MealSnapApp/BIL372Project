@@ -13,8 +13,11 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
   const {contextHolder,form,handleSubmit} = useSignUpForm(clear ?? false);
 
   const disabledDate = (current: any) => {
-    // Can not select days after today - 7 years
-    return current && current > dayjs().subtract(7, 'year').endOf('day');
+    // Can not select days after today - 7 years OR before 1900
+    return current && (
+      current > dayjs().subtract(7, 'year').endOf('day') ||
+      current < dayjs('1900-01-01')
+    );
   };
 
   return (

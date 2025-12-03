@@ -6,12 +6,12 @@ const WeightLog = sequelize.define('WeightLog', {
   log_id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
-    primaryKey: true,
     unique: true,
   },
   user_id: {
     type: DataTypes.UUID,
     allowNull: false,
+    primaryKey: true,
     references: {
       model: User,
       key: 'user_id'
@@ -24,6 +24,7 @@ const WeightLog = sequelize.define('WeightLog', {
   created_at: {
     type: DataTypes.DATE,
     allowNull: false,
+    primaryKey: true,
     defaultValue: DataTypes.NOW,
   }
 }, {

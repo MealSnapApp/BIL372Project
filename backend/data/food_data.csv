@@ -1,0 +1,1880 @@
+"food_id","food_name","portion_size","calorie","protein_gr","carbohydrate_gr","fat_gr"
+"11100000",Milk,Per 100g,52.0,3.33,4.83,2.14
+"11115300",Buttermilk,Per 100g,43.0,3.46,4.81,1.08
+"11115400",Kefir (Includes: fermented milk drink; all types),Per 100g,52.0,3.59,7.48,0.96
+"11116000",Goat milk,Per 100g,69.0,3.56,4.45,4.14
+"11300100",Non-dairy milk,Per 100g,31.0,1.14,3.04,1.6
+"11320000",Soy milk,Per 100g,53.0,3.41,5.22,2.05
+"11350000",Almond milk,Per 100g,30.0,0.53,4.31,1.18
+"11360000",Rice milk,Per 100g,47.0,0.28,9.17,0.97
+"11360200",Oat milk,Per 100g,45.0,0.66,5.37,2.33
+"11370000",Coconut milk,Per 100g,31.0,0.21,2.92,2.08
+"11400000",Yogurt,Per 100g,94.0,6.67,10.22,2.87
+"11436100",Yogurt tube (Includes: pouch; Go-gurt; all types),Per 100g,81.0,4.34,13.68,1.03
+"11440010",Chipotle dip,Per 100g,189.0,7.93,3.33,15.99
+"11440030",Onion dip,Per 100g,160.0,6.82,4.06,12.91
+"11440040",Ranch dip,Per 100g,195.0,8.48,4.13,16.09
+"11440050",Spinach dip,Per 100g,159.0,7.02,3.59,12.96
+"11440060",Tzatziki dip (Includes: Greek dip),Per 100g,91.0,5.22,4.1,6.0
+"11440070",Vegetable dip,Per 100g,191.0,8.16,3.76,16.03
+"11446000",Yogurt parfait,Per 100g,104.0,5.25,16.08,2.18
+"11459990",Frozen yogurt,Per 100g,127.0,3.0,21.6,3.6
+"11461200",Frozen yogurt sandwich (Includes: all flavors; prepackaged frozen yogurt cone),Per 100g,204.0,3.9,34.38,6.25
+"11461210",Frozen yogurt bar,Per 100g,127.0,3.0,21.6,3.6
+"11461250",Frozen yogurt cone,Per 100g,142.0,3.2,23.9,3.73
+"11480000",Baby Toddler food,Per 100g,75.0,4.9,9.08,2.15
+"11480010",Baby Toddler yogurt,Per 100g,78.0,3.82,5.57,4.48
+"11511000",Chocolate milk,Per 100g,65.0,3.44,10.98,0.83
+"11512005",Hot chocolate / cocoa,Per 100g,72.0,1.82,13.9,1.04
+"11519040",Strawberry milk,Per 100g,65.0,3.2,8.54,2.06
+"11531000",Eggnog (Includes: eggnog,Per 100g,88.0,4.55,8.05,4.19
+"11541110",Milk shake,Per 100g,120.0,3.47,13.53,6.14
+"11541400",Milk shake with malt (Includes: malted milk with ice cream),Per 100g,125.0,3.76,13.64,6.11
+"11551050",Licuado or Batido (Includes: milk fruit drink),Per 100g,75.0,2.33,13.15,1.45
+"11553100",Fruit smoothie,Per 100g,66.0,2.32,11.98,1.1
+"11553130",Fruit smoothie juice drink,Per 100g,65.0,0.86,15.05,0.14
+"11560000",Chocolate milk drink (Includes: Yoo-hoo; other flavors),Per 100g,49.0,0.64,10.68,0.4
+"11710000",Infant formula,Per 100g,66.0,1.38,7.12,3.56
+"11710481",Toddler formula,Per 100g,58.0,1.73,5.87,3.11
+"11825000",Whey,Per 100g,353.0,12.93,74.46,1.07
+"11830150",Cocoa powder,Per 100g,228.0,19.6,57.9,13.7
+"11830160",Chocolate beverage powder,Per 100g,400.0,4.55,90.28,2.27
+"11830400",Strawberry beverage powder,Per 100g,389.0,0.1,99.1,0.2
+"12100100",Cream,Per 100g,131.0,3.13,4.3,11.5
+"12200100",Coffee creamer,Per 100g,136.0,1.0,11.38,9.97
+"12220200",Whipped topping (Includes: Cool Whip; non-dairy; plain or flavored; frozen; Rich's Richwhip; Dream Whip; whipped topping,Per 100g,318.0,1.25,23.05,25.31
+"12220270",Whipped topping,Per 100g,224.0,3.0,23.6,13.1
+"12310100",Sour cream,Per 100g,196.0,3.07,5.56,17.99
+"12350010",Dip,Per 100g,432.0,2.55,3.94,45.18
+"13110000",Ice cream,Per 100g,221.0,3.57,26.36,11.3
+"13110460",Gelato,Per 100g,249.0,3.5,22.29,16.2
+"13120050",Ice cream bar,Per 100g,358.0,2.11,37.12,25.26
+"13120110",Ice cream candy bar (Includes: all flavors; light ice cream candy bar; Snickers; Butterfinger),Per 100g,323.0,4.4,30.9,20.2
+"13120500",Ice cream sandwich,Per 100g,264.0,4.28,35.88,11.8
+"13120550",Ice cream cookie sandwich (Includes: Chipwich),Per 100g,317.0,4.61,43.35,14.11
+"13120730",Ice cream cone,Per 100g,215.0,3.68,25.82,10.84
+"13120800",Ice cream soda,Per 100g,85.0,0.92,14.02,2.9
+"13121000",Ice cream sundae,Per 100g,243.0,3.7,31.94,11.16
+"13121120",Banana split,Per 100g,199.0,2.42,32.59,6.88
+"13130100",Light ice cream,Per 100g,174.0,4.38,25.44,6.14
+"13130700",Soft serve,Per 100g,176.0,4.0,26.18,6.06
+"13135000",Light ice cream sandwich,Per 100g,239.0,4.93,37.26,8.15
+"13140000",Light ice cream bar,Per 100g,236.0,3.23,18.76,16.65
+"13140700",Creamsicle (Includes: Dreamsicle),Per 100g,165.0,1.54,32.75,3.08
+"13140900",Fudgesicle,Per 100g,163.0,2.56,29.99,3.67
+"13142100",Light ice cream cone,Per 100g,223.0,5.41,34.23,7.3
+"13150000",Sherbet,Per 100g,144.0,1.1,30.4,2.0
+"13200110",Pudding,Per 100g,142.0,2.09,23.01,4.6
+"13210300",Custard,Per 100g,97.0,5.08,10.97,3.64
+"13210350",Flan (Includes: Leche flan),Per 100g,178.0,5.23,28.24,4.94
+"13210370",Creme brulee,Per 100g,113.0,4.06,17.85,2.83
+"13210450",Firni,Per 100g,144.0,3.58,25.13,3.11
+"13241000",Banana pudding,Per 100g,160.0,2.57,28.0,4.26
+"13250000",Mousse (Includes: all flavors),Per 100g,212.0,4.2,16.23,15.12
+"13252200",Dulce de leche (Includes: milk dessert),Per 100g,315.0,6.84,55.35,7.35
+"13252500",Barfi or Burfi,Per 100g,284.0,5.42,40.43,11.36
+"13252590",Trifle,Per 100g,169.0,3.52,23.24,7.15
+"13252600",Tiramisu,Per 100g,353.0,5.65,29.44,23.86
+"13411000",White sauce or gravy,Per 100g,144.0,3.84,9.21,10.2
+"14010000",Cheese,Per 100g,381.0,20.7,4.33,31.26
+"14131000",Queso Anejo,Per 100g,373.0,21.44,4.63,29.98
+"14131500",Queso Asadero (Includes: Oaxacan-style string cheese),Per 100g,297.0,22.14,2.4,22.1
+"14133000",Queso Fresco (Includes: Queso Ranchero; Mexican cheese,Per 100g,298.0,18.88,2.96,23.36
+"14134000",Queso cotija,Per 100g,351.0,23.84,2.72,27.24
+"14201200",Cottage cheese,Per 100g,148.0,10.96,4.33,9.73
+"14203510",Puerto Rican white cheese (Includes: Queso del pais,Per 100g,298.0,18.88,2.96,23.36
+"14301010",Cream cheese,Per 100g,343.0,5.79,4.56,33.49
+"14410330",Cheese spread,Per 100g,176.0,13.41,10.71,8.88
+"14502000",Imitation cheese (Includes: American; cheddar; mozzarella; imitation cheese,Per 100g,390.0,25.0,1.0,32.0
+"14610520",Cheese ball (Includes: cheese with nuts),Per 100g,441.0,17.89,4.84,38.88
+"14620110",Artichoke dip,Per 100g,331.0,3.86,5.78,32.67
+"14620115",Spinach and artichoke dip,Per 100g,329.0,4.21,5.07,32.76
+"14620130",Seafood dip (Includes: clam dip; crab dip; shrimp dip; tuna dip),Per 100g,337.0,6.18,4.2,32.8
+"14620150",Cheese dip with chili pepper (Includes: chili con queso; jalapeno cheddar; salsa con queso),Per 100g,143.0,3.14,11.14,9.51
+"14620200",Cheese dip (Includes: cheese other than blue or cream cheese),Per 100g,163.0,3.14,7.86,13.27
+"14620300",Topping from cheese pizza (Includes: cheese and tomato sauce from pizza crust of any thickness),Per 100g,230.0,16.86,7.62,14.67
+"14620310",Topping from vegetable pizza (Includes: cheese,Per 100g,247.0,15.59,12.18,15.61
+"14620320",Topping from meat pizza (Includes: cheese,Per 100g,321.0,19.19,5.65,24.52
+"14620330",Topping from meat and vegetable pizza (Includes: cheese,Per 100g,299.0,17.55,7.66,22.03
+"14630100",Cheese fondue,Per 100g,276.0,19.32,1.95,21.2
+"14630200",Cheese souffle,Per 100g,207.0,9.43,6.38,16.01
+"14630300",Welsh rarebit,Per 100g,165.0,7.5,6.32,12.26
+"14640000",Cheese sandwich,Per 100g,297.0,12.46,31.89,13.29
+"14640100",Grilled cheese sandwich,Per 100g,343.0,11.03,28.09,20.78
+"14650100",Cheese sauce,Per 100g,163.0,3.14,7.86,13.27
+"14650160",Alfredo sauce (Includes: cream sauce),Per 100g,150.0,2.12,1.77,15.0
+"14650165",Alfredo sauce with added vegetables,Per 100g,122.0,2.07,2.65,11.54
+"14650170",Alfredo sauce with meat,Per 100g,171.0,6.52,1.44,15.34
+"14650175",Alfredo sauce with meat and added vegetables,Per 100g,148.0,6.47,2.15,12.53
+"14650180",Alfredo sauce with poultry,Per 100g,156.0,6.87,1.44,13.6
+"14650185",Alfredo sauce with poultry and added vegetables,Per 100g,133.0,6.83,2.15,10.79
+"14650190",Alfredo sauce with seafood,Per 100g,145.0,5.91,1.99,12.46
+"14650195",Alfredo sauce with seafood and added vegetables,Per 100g,122.0,5.87,2.7,9.66
+"14660200",Mozzarella sticks,Per 100g,325.0,14.75,25.14,18.33
+"14670000",Mozzarella cheese,Per 100g,139.0,7.17,3.86,10.87
+"20000000",Meat,Per 100g,215.0,27.13,0.0,11.29
+"20000300",Baby Toddler meat,Per 100g,112.0,12.58,1.25,5.99
+"21000100",Beef,Per 100g,231.0,27.13,0.0,13.04
+"21001000",Steak,Per 100g,230.0,26.95,0.0,12.99
+"21602100",Beef jerky (Includes: Slim Jim; Big Jerk; Super Jerk; Giant Jerk),Per 100g,410.0,33.2,11.0,25.6
+"21701010",Baby Toddler beef (Includes: any stage; with gravy),Per 100g,81.0,12.03,2.43,2.52
+"22000100",Pork,Per 100g,192.0,27.14,0.0,8.67
+"22002800",Pork jerky,Per 100g,412.0,35.0,9.73,24.73
+"22311000",Ham (Includes: sliced),Per 100g,117.0,19.04,1.58,3.87
+"22311450",Ham,Per 100g,195.0,27.8,0.3,8.32
+"22501010",Canadian bacon,Per 100g,146.0,28.31,1.8,2.78
+"22600100",Bacon,Per 100g,484.0,37.41,1.9,35.8
+"22600200",Pork bacon,Per 100g,484.0,37.41,1.9,35.8
+"22601040",Bacon or side pork,Per 100g,468.0,33.92,1.7,35.09
+"22621100",Fat back,Per 100g,750.0,2.68,0.0,81.93
+"22700000",Ribs,Per 100g,254.0,16.52,12.13,14.97
+"22709010",Pork skin rinds (Includes: snack type),Per 100g,544.0,61.3,0.0,31.3
+"22810010",Baby Toddler ham (Includes: any stage; with gravy),Per 100g,97.0,11.3,3.7,3.8
+"22820000",Baby Toddler meat stick (Includes: chicken; turkey),Per 100g,188.0,13.7,1.4,14.2
+"23000100",Lamb,Per 100g,292.0,24.32,0.0,20.77
+"23150100",Goat,Per 100g,142.0,26.88,0.0,3.01
+"23201010",Veal,Per 100g,158.0,29.51,0.07,4.4
+"23220020",Mock chicken legs,Per 100g,242.0,21.54,8.04,13.59
+"23310000",Rabbit,Per 100g,204.0,30.14,0.0,8.34
+"23321000",Venison,Per 100g,167.0,28.1,0.0,5.26
+"23321900",Venison/deer jerky,Per 100g,398.0,32.2,14.72,22.41
+"23322100",Venison sausage (Includes: deer; caribou; elk; antelope),Per 100g,312.0,20.23,0.0,25.08
+"23323100",Moose,Per 100g,133.0,29.04,0.0,0.96
+"23323500",Bear,Per 100g,257.0,32.16,0.0,13.28
+"23324100",Caribou,Per 100g,166.0,29.53,0.0,4.38
+"23326100",Bison (Includes: buffalo),Per 100g,178.0,25.25,0.0,8.55
+"23331100",Groundhog,Per 100g,159.0,28.08,0.0,4.34
+"23332100",Opossum (Includes: possum),Per 100g,219.0,29.96,0.0,10.12
+"23333100",Squirrel,Per 100g,172.0,30.53,0.0,4.65
+"23334100",Beaver,Per 100g,210.0,34.57,0.0,6.9
+"23335100",Raccoon,Per 100g,253.0,28.97,0.0,14.38
+"23340100",Armadillo,Per 100g,159.0,28.08,0.0,4.34
+"23345100",Wild pig,Per 100g,159.0,28.08,0.0,4.34
+"23350100",Ostrich (Includes: emu),Per 100g,174.0,25.93,0.0,7.01
+"24100000",Chicken,Per 100g,164.0,26.79,0.0,6.36
+"24120110",Chicken breast,Per 100g,175.0,26.37,0.09,7.67
+"24130210",Chicken leg,Per 100g,218.0,23.77,0.12,13.63
+"24140210",Chicken drumstick,Per 100g,206.0,25.65,0.12,11.46
+"24150210",Chicken thigh,Per 100g,226.0,22.51,0.12,15.08
+"24160110",Chicken wing,Per 100g,257.0,23.42,0.6,18.04
+"24168000","Chicken ""wings"" with hot sauce",Per 100g,272.0,16.78,6.18,20.2
+"24168001","Chicken ""wings"" with other sauces or seasoning",Per 100g,276.0,16.95,13.13,17.39
+"24168002","Chicken ""wings""",Per 100g,323.0,17.77,15.0,21.28
+"24198440",Chicken skin,Per 100g,450.0,20.19,0.0,40.34
+"24198500",Chicken feet,Per 100g,215.0,19.4,0.2,14.6
+"24198671",Chicken patty,Per 100g,287.0,14.85,12.84,19.58
+"24198677",Chicken fillet,Per 100g,240.0,14.62,14.86,13.58
+"24198729",Chicken nuggets,Per 100g,307.0,15.92,14.93,20.36
+"24198739",Chicken tenders or strips,Per 100g,271.0,19.22,17.25,13.95
+"24201000",Turkey,Per 100g,139.0,28.81,0.0,2.06
+"24201420",Turkey light or dark meat,Per 100g,204.0,30.25,0.14,8.52
+"24208500",Turkey bacon,Per 100g,368.0,29.5,4.24,25.87
+"24300110",Duck,Per 100g,336.0,18.91,0.0,28.23
+"24311010",Goose,Per 100g,304.0,25.06,0.0,21.83
+"24400010",Cornish game hen,Per 100g,257.0,22.08,0.0,18.06
+"24402100",Dove,Per 100g,212.0,23.8,0.0,12.95
+"24403100",Quail,Per 100g,226.0,25.0,0.0,14.04
+"24404100",Pheasant,Per 100g,238.0,32.26,0.0,12.05
+"24701010",Baby Toddler chicken (Includes: any stage; with gravy),Per 100g,130.0,13.7,0.1,7.9
+"24703010",Baby Toddler turkey (Includes: any stage; with gravy),Per 100g,111.0,11.5,1.4,6.2
+"25110140",Liver,Per 100g,174.0,26.31,5.12,4.64
+"25120000",Heart,Per 100g,164.0,28.25,0.15,4.69
+"25130000",Kidney,Per 100g,157.0,27.05,0.0,4.61
+"25140110",Sweetbreads,Per 100g,124.0,22.49,0.0,3.08
+"25150000",Brains,Per 100g,150.0,11.58,1.47,10.45
+"25160000",Tongue,Per 100g,282.0,19.14,0.0,22.12
+"25160130",Tongue pot roast,Per 100g,317.0,21.03,0.32,25.04
+"25170110",Tripe,Per 100g,89.0,12.6,0.0,3.85
+"25170210",Chitterlings,Per 100g,231.0,12.39,0.0,20.16
+"25170310",Hog maws,Per 100g,250.0,26.53,0.0,15.97
+"25170420",Gizzard (Includes: giblets),Per 100g,153.0,30.15,0.0,2.66
+"25210110",Hot dog,Per 100g,310.0,11.7,2.89,28.0
+"25220105",Beef sausage (Includes: fresh,Per 100g,341.0,13.3,3.37,28.7
+"25220150",Beef sausage with cheese,Per 100g,341.0,13.65,3.75,28.54
+"25220210",Blood sausage (Includes: blutwurst; blood pudding),Per 100g,379.0,14.6,1.29,34.5
+"25220350",Bratwurst (Includes: all meats (pork,Per 100g,333.0,13.72,2.85,29.18
+"25220360",Bratwurst,Per 100g,334.0,14.03,3.28,28.98
+"25220410",Bologna (Includes: bologna,Per 100g,281.0,10.34,6.31,23.77
+"25220425",Bologna,Per 100g,204.0,11.8,5.2,14.8
+"25220710",Chorizo (Includes: Spanish sausage; lenguica; Portuguese sausage; all meats / poultry),Per 100g,341.0,19.3,2.63,28.1
+"25220910",Head cheese (Includes: jellied pork; hog's head cheese; pork head cheese),Per 100g,157.0,13.83,0.0,10.9
+"25221110",Knockwurst (Includes: Knoblauch; all meats / poultry),Per 100g,307.0,11.1,3.2,27.7
+"25221210",Mortadella,Per 100g,311.0,16.37,3.05,25.39
+"25221215",Pastrami,Per 100g,147.0,21.8,0.36,5.82
+"25221250",Pepperoni,Per 100g,504.0,19.25,1.18,46.28
+"25221310",Polish sausage (Includes: Kielbasa; all meats / poultry),Per 100g,337.0,12.45,5.03,29.68
+"25221350",Italian sausage (Includes: hot links; all meats / poultry),Per 100g,317.0,18.2,2.15,26.2
+"25221400",Sausage,Per 100g,325.0,18.53,1.42,27.25
+"25221405",Pork sausage (Includes: fresh,Per 100g,325.0,18.53,1.42,27.25
+"25221406",Pork sausage,Per 100g,267.0,20.94,0.15,20.32
+"25221460",Pork and beef sausage (Includes: fresh,Per 100g,333.0,15.92,2.4,27.98
+"25221500",Salami,Per 100g,378.0,21.07,0.72,31.65
+"25221610",Scrapple,Per 100g,227.0,8.57,14.96,14.76
+"25221810",Thuringer (Includes: summer sausage),Per 100g,362.0,17.45,3.33,30.43
+"25221830",Turkey or chicken sausage (Includes: reduced fat; low fat or light; turkey or chicken and beef),Per 100g,193.0,19.65,1.09,12.24
+"25221855",Turkey or chicken sausage,Per 100g,230.0,20.03,13.32,10.7
+"25221870",Turkey or chicken and pork sausage (Includes: Jimmy Dean Light Turkey and Pork,Per 100g,307.0,22.7,0.7,23.0
+"25221910",Vienna sausage,Per 100g,230.0,10.5,2.6,19.4
+"25221950",Pickled sausage (Includes: Penrose hot or firecracker sausage),Per 100g,314.0,18.06,2.13,25.99
+"25230110",Luncheon meat,Per 100g,101.0,16.7,0.27,3.73
+"25230420",Ham luncheon meat,Per 100g,117.0,17.99,1.57,4.39
+"25230530",Spam (Includes: Treet),Per 100g,315.0,13.4,4.6,26.6
+"25230550",Spam,Per 100g,293.0,12.5,3.4,25.1
+"25230560",Liverwurst (Includes: liver cheese; Braunschweiger; liver sausage; liver loaf; liver  pudding; liver bacon; goose bacon; goose liver sausage; liver mush),Per 100g,327.0,14.5,3.1,28.5
+"25230800",Turkey ham,Per 100g,106.0,14.81,2.2,3.77
+"25240000",Meat spread or potted meat,Per 100g,235.0,7.66,11.94,17.34
+"25240110",Chicken salad spread,Per 100g,200.0,11.64,7.41,13.52
+"25240220",Ham salad spread,Per 100g,216.0,8.68,10.64,15.53
+"26100100",Fish,Per 100g,94.0,17.22,0.0,2.34
+"26203110",Frog legs,Per 100g,220.0,14.38,11.72,12.4
+"26205110",Octopus,Per 100g,226.0,13.25,13.39,12.96
+"26211100",Caviar (Includes: roe),Per 100g,264.0,24.6,4.0,17.9
+"26213120",Calamari,Per 100g,155.0,19.36,3.83,6.25
+"26215120",Turtle,Per 100g,157.0,24.59,0.0,5.8
+"26300000",Shellfish,Per 100g,146.0,15.46,4.9,6.67
+"26301110",Abalone,Per 100g,177.0,21.24,7.46,6.12
+"26303100",Clams,Per 100g,86.0,14.67,3.57,0.96
+"26305160",Crab,Per 100g,83.0,17.88,0.0,0.74
+"26309140",Crayfish,Per 100g,223.0,14.06,11.72,12.89
+"26311110",Lobster,Per 100g,97.0,20.91,0.0,0.95
+"26313110",Mussels,Per 100g,109.0,15.06,4.67,2.84
+"26315100",Oysters,Per 100g,51.0,5.71,2.72,1.71
+"26317120",Scallops,Per 100g,126.0,14.99,3.96,5.14
+"26319110",Shrimp,Per 100g,146.0,15.46,4.9,6.67
+"26321110",Escargot (Includes: snails),Per 100g,158.0,19.99,2.48,6.91
+"27100100",Barbecue meat,Per 100g,226.0,18.14,12.23,11.17
+"27111000",Beef with tomato-based sauce (Includes: beef with tomatoes),Per 100g,149.0,21.72,1.58,6.36
+"27111200",Beef burgundy (Includes: beef bourguignonne),Per 100g,148.0,18.48,4.19,6.0
+"27111300",Guisada,Per 100g,115.0,10.85,2.52,6.62
+"27111400",Chili,Per 100g,118.0,9.8,10.25,4.33
+"27111405",Chili with meat,Per 100g,160.0,12.04,6.68,9.35
+"27111406",Chili with meat and beans (Includes: multiple meats; NS as to beans; home recipe),Per 100g,118.0,9.8,10.25,4.33
+"27111420",Chili with meat (Includes: multiple meats; home recipe),Per 100g,139.0,13.32,2.41,8.22
+"27111500",Sloppy joe,Per 100g,140.0,12.06,5.48,7.63
+"27112000",Beef with gravy (Includes: country style),Per 100g,156.0,21.56,1.58,7.05
+"27112010",Salisbury steak with gravy (Includes: Banquet Salisbury Steak with Gravy),Per 100g,149.0,6.98,6.78,10.47
+"27113000",Beef with cream or white sauce,Per 100g,185.0,22.5,2.75,9.31
+"27113100",Beef stroganoff,Per 100g,150.0,10.06,6.21,9.33
+"27113200",Creamed chipped or dried beef,Per 100g,133.0,7.65,7.57,8.05
+"27113300",Swedish meatballs with cream or white sauce,Per 100g,170.0,12.48,6.29,10.3
+"27114000",Beef with mushroom sauce,Per 100g,163.0,21.97,1.83,7.54
+"27115000",Beef with soy-based sauce,Per 100g,187.0,15.86,3.35,12.38
+"27115100",Steak teriyaki (Includes: soy-based sauce),Per 100g,198.0,28.86,1.94,8.25
+"27116100",Beef curry (Includes: lamb; mutton; goat; pork),Per 100g,113.0,7.57,6.53,6.57
+"27116110",Beef curry with rice (Includes: lamb; mutton; goat; pork),Per 100g,119.0,5.61,15.12,4.05
+"27116200",Barbecue beef,Per 100g,228.0,19.83,12.23,10.79
+"27116300",Beef with sweet and sour sauce,Per 100g,211.0,9.29,14.22,12.81
+"27116350",Stewed seasoned ground beef,Per 100g,169.0,14.27,1.28,11.38
+"27116400",Steak tartare,Per 100g,216.0,17.45,0.34,15.6
+"27118110",Meatballs,Per 100g,225.0,14.33,6.9,15.31
+"27118130",Stewed dried beef,Per 100g,258.0,17.69,3.91,19.13
+"27120020",Ham or pork with gravy,Per 100g,160.0,20.15,1.58,7.49
+"27120030",Barbecue pork,Per 100g,226.0,17.57,12.23,11.3
+"27120060",Sweet and sour pork,Per 100g,260.0,8.88,25.5,13.6
+"27120080",Ham stroganoff (Includes: ham with cream or white sauce),Per 100g,131.0,7.62,5.19,8.85
+"27120090",Ham or pork with mushroom sauce,Per 100g,167.0,20.55,1.84,7.98
+"27120100",Ham or pork with tomato-based sauce (Includes: pork chop),Per 100g,153.0,20.3,1.59,6.8
+"27120110",Sausage with tomato-based sauce,Per 100g,234.0,13.28,2.58,19.09
+"27120120",Sausage gravy,Per 100g,180.0,6.78,7.65,13.61
+"27120150",Pork or ham with soy-based sauce,Per 100g,190.0,14.88,3.35,12.68
+"27120210",Chili hot dog,Per 100g,202.0,10.01,7.09,14.98
+"27120250",Frankfurters or hot dogs with tomato-based sauce (Includes: frankfurters or hot dogs with barbecue sauce or chili sauce),Per 100g,223.0,8.52,3.6,19.61
+"27121000",Pork with chili and tomatoes (Includes: Puerco con chile),Per 100g,95.0,11.64,2.68,3.99
+"27121010",Stewed pork,Per 100g,200.0,17.91,2.75,12.69
+"27130010",Lamb or mutton with gravy,Per 100g,219.0,17.29,1.58,15.37
+"27133010",Stewed goat,Per 100g,265.0,22.32,1.98,18.08
+"27135020",Veal scallopini (Includes: veal in wine sauce with cheese),Per 100g,241.0,18.71,1.47,17.47
+"27135050",Veal Marsala (Includes: veal in wine sauce),Per 100g,175.0,17.82,6.74,8.54
+"27135110",Veal parmigiana (Includes: breaded veal in tomato sauce with cheese),Per 100g,204.0,15.33,8.33,11.92
+"27135150",Veal cordon bleu (Includes: breaded veal,Per 100g,219.0,23.66,9.34,9.69
+"27136050",Venison or deer with tomato-based sauce,Per 100g,140.0,25.64,1.59,2.84
+"27136080",Venison or deer with gravy,Per 100g,147.0,25.48,1.58,3.53
+"27141000",Chicken or turkey cacciatore (Includes: chicken or turkey with tomato-based sauce; chicken or turkey with tomatoes),Per 100g,174.0,13.19,6.92,10.62
+"27141030",Spaghetti sauce with poultry (Includes: tomato-based,Per 100g,75.0,6.29,6.54,2.62
+"27141035",Spaghetti sauce with poultry and added vegetables (Includes: tomato-based,Per 100g,71.0,6.39,6.05,2.39
+"27141050",Stewed chicken with tomato-based sauce,Per 100g,120.0,11.98,2.48,7.06
+"27141500",Chili with chicken and beans (Includes: turkey; NS as to beans),Per 100g,99.0,10.2,10.25,2.08
+"27141505",Chili with chicken (Includes: turkey),Per 100g,100.0,14.11,2.41,3.71
+"27142000",Chicken with gravy,Per 100g,129.0,18.88,1.58,5.21
+"27142100",Chicken or turkey fricassee (Includes: stewed chicken),Per 100g,121.0,10.68,3.54,7.16
+"27142200",Turkey with gravy,Per 100g,125.0,20.46,1.58,3.46
+"27143000",Chicken or turkey with cream sauce,Per 100g,157.0,19.82,2.75,7.48
+"27144000",Chicken or turkey with mushroom sauce (Includes: chicken or turkey marsala),Per 100g,136.0,19.29,1.84,5.7
+"27145000",Chicken or turkey with teriyaki (Includes: soy-based sauce),Per 100g,163.0,25.73,1.62,5.96
+"27146011",Barbecue chicken (Includes: bbq; shredded or pulled; with or with sauce; turkey),Per 100g,167.0,19.0,12.23,4.64
+"27146100",Sweet and sour chicken or turkey (Includes: with vegetables; sweet and sour chicken or turkey,Per 100g,250.0,10.1,23.86,12.65
+"27146110",Sweet and sour chicken or turkey,Per 100g,250.0,10.1,23.86,12.65
+"27146150",Chicken curry (Includes: other poultry),Per 100g,107.0,6.48,6.54,6.48
+"27146155",Chicken curry with rice (Includes: other poultry),Per 100g,116.0,4.96,15.12,4.0
+"27146160",Chicken with mole sauce (Includes: chicken mole),Per 100g,137.0,18.97,3.22,5.58
+"27146200",Chicken or turkey with cheese sauce,Per 100g,173.0,21.77,1.64,8.9
+"27146250",Chicken or turkey cordon bleu,Per 100g,210.0,22.64,9.29,9.17
+"27146300",Chicken or turkey parmigiana,Per 100g,174.0,16.25,8.3,8.34
+"27146350",Orange chicken (Includes: Lemon chicken),Per 100g,262.0,14.46,22.46,12.68
+"27146360",Sesame chicken,Per 100g,293.0,14.33,26.88,14.25
+"27146400",Chicken kiev,Per 100g,280.0,21.31,5.45,19.21
+"27148010",Stuffed chicken,Per 100g,236.0,28.4,6.51,10.54
+"27150010",Fish with cream or white sauce,Per 100g,116.0,17.05,2.75,3.64
+"27150050",Fish timbale or mousse,Per 100g,149.0,10.08,1.96,10.95
+"27150110",Shrimp cocktail (Includes: shrimp with cocktail sauce),Per 100g,99.0,13.24,7.92,1.22
+"27150120",Tuna with cream or white sauce,Per 100g,102.0,14.42,2.81,3.71
+"27150130",Seafood thermidor (Includes: newburg),Per 100g,251.0,10.64,4.66,21.16
+"27150140",Seafood sauce (Includes: lobster; white clam),Per 100g,203.0,8.53,2.51,17.45
+"27150151",Spaghetti sauce with seafood (Includes: tomato-based,Per 100g,64.0,5.33,7.09,1.48
+"27150155",Spaghetti sauce with seafood and added vegetables (Includes: tomato-based,Per 100g,60.0,5.43,6.6,1.25
+"27150160",Shrimp with lobster sauce,Per 100g,151.0,16.78,2.16,7.85
+"27150170",Sweet and sour shrimp,Per 100g,172.0,5.92,16.19,9.22
+"27150210",Fish sauce (Includes: Bagoong; shrimp sauce),Per 100g,35.0,5.06,3.64,0.01
+"27150230",Shrimp scampi (Includes: shrimp in butter sauce),Per 100g,192.0,15.41,2.27,12.98
+"27150310",Fish with tomato-based sauce (Includes: fish with tomatoes),Per 100g,80.0,16.28,1.59,0.69
+"27150320",Fish curry (Includes: shrimp; other seafood),Per 100g,93.0,4.94,6.65,5.42
+"27150325",Fish curry with rice (Includes: shrimp; other seafood),Per 100g,107.0,4.03,15.19,3.36
+"27150410",Shrimp teriyaki (Includes: soy-based sauce),Per 100g,120.0,21.62,3.34,1.56
+"27151030",Ceviche (Includes: Marinated fish or sea food),Per 100g,63.0,10.53,3.58,0.76
+"27151040",Crabs in tomato-based sauce,Per 100g,144.0,12.52,2.92,8.9
+"27151050",Shrimp in garlic sauce,Per 100g,281.0,11.56,2.45,24.96
+"27151070",Stew,Per 100g,46.0,7.63,2.75,0.42
+"27161010",Meat loaf,Per 100g,325.0,19.85,10.7,22.0
+"27162010",Meat with tomato-based sauce (Includes: NS as to type of meat),Per 100g,149.0,21.72,1.58,6.36
+"27162040",Spaghetti sauce with meat (Includes: tomato-based,Per 100g,90.0,5.94,6.54,4.36
+"27162060",Spaghetti sauce with meat and added vegetables (Includes: tomato-based,Per 100g,86.0,6.03,6.05,4.13
+"27162500",Stewed,Per 100g,139.0,16.7,1.45,6.98
+"27163010",Meat with gravy,Per 100g,156.0,21.56,1.58,7.05
+"27211000",Beef and potatoes,Per 100g,133.0,7.92,14.52,4.93
+"27211190",Beef and potatoes with cream sauce,Per 100g,100.0,8.04,8.66,3.79
+"27211400",Corned beef hash,Per 100g,164.0,8.73,9.27,10.24
+"27211500",Beef and potatoes with cheese sauce,Per 100g,126.0,8.15,11.1,5.6
+"27212000",Beef and noodles,Per 100g,189.0,11.37,16.24,8.41
+"27212050",Beef and macaroni with cheese sauce (Includes: Hamburger Helper Cheddar'n Bacon; Hamburger Helper Nacho Cheese),Per 100g,137.0,9.12,12.26,5.42
+"27212100",Beef and noodles with tomato-based sauce (Includes: beef casserole,Per 100g,115.0,8.74,10.67,3.93
+"27212120",Chili with macaroni (Includes: chili mac),Per 100g,126.0,8.99,14.35,3.65
+"27212200",Beef and noodles with gravy,Per 100g,139.0,7.7,15.39,5.07
+"27212300",Beef and noodles with cream or white sauce,Per 100g,140.0,7.86,15.02,5.33
+"27212350",Beef stroganoff with noodles (Includes: Hamburger Helper Beef Stroganoff),Per 100g,129.0,7.76,8.99,6.8
+"27212400",Beef and noodles with mushroom sauce,Per 100g,136.0,7.54,14.96,5.14
+"27212500",Beef and noodles with soy-based sauce,Per 100g,173.0,13.19,7.54,10.05
+"27213000",Beef and rice,Per 100g,146.0,7.27,17.23,5.0
+"27213010",Biryani with meat (Includes: beef,Per 100g,145.0,8.5,12.19,6.79
+"27213100",Beef and rice with tomato-based sauce,Per 100g,136.0,6.39,15.88,5.15
+"27213120",Porcupine balls with tomato-based sauce (Includes: beef and rice balls),Per 100g,153.0,10.36,13.39,6.21
+"27213200",Beef and rice with gravy,Per 100g,137.0,6.28,15.98,5.12
+"27213300",Beef and rice with cream sauce,Per 100g,139.0,6.7,15.9,5.24
+"27213400",Beef and rice with mushroom sauce,Per 100g,135.0,6.25,15.53,5.18
+"27213420",Porcupine balls with mushroom sauce (Includes: beef and rice balls),Per 100g,157.0,10.34,10.71,7.76
+"27213500",Beef and rice with soy-based sauce (Includes: Asian Helper Beef Fried Rice),Per 100g,178.0,13.58,7.96,10.26
+"27213600",Beef and rice with cheese sauce (Includes: Hamburger Helper Cheesy Enchilada),Per 100g,142.0,8.08,14.66,5.35
+"27214100",Meat loaf made with beef (Includes: beef meat loaf or meatball,Per 100g,199.0,17.48,7.2,10.72
+"27214110",Meat loaf made with beef,Per 100g,159.0,13.78,6.77,8.35
+"27214300",Beef wellington,Per 100g,368.0,19.16,10.25,27.43
+"27214500",Corned beef patty,Per 100g,164.0,8.73,9.27,10.24
+"27218210",Beef stew with potatoes,Per 100g,220.0,14.57,6.53,14.85
+"27220010",Meat loaf made with ham (Includes: pork meatball,Per 100g,179.0,20.65,6.16,7.52
+"27220020",Ham and noodles with cream or white sauce,Per 100g,139.0,6.81,15.32,5.44
+"27220030",Ham and rice with mushroom sauce,Per 100g,136.0,5.37,16.28,5.19
+"27220050",Ham or pork with stuffing (Includes: stuffed pork chops),Per 100g,143.0,6.26,10.43,8.27
+"27220080",Ham croquette,Per 100g,273.0,17.97,2.6,20.74
+"27220110",Pork and rice with tomato-based sauce,Per 100g,140.0,6.42,16.78,5.0
+"27220120",Sausage and rice with tomato-based sauce,Per 100g,134.0,4.63,16.4,5.49
+"27220150",Sausage and rice with mushroom sauce,Per 100g,142.0,4.86,16.8,6.02
+"27220170",Sausage and rice with cheese sauce,Per 100g,151.0,6.32,13.94,7.61
+"27220190",Sausage and noodles with cream or white sauce,Per 100g,153.0,5.91,14.83,7.8
+"27220210",Ham and noodles,Per 100g,144.0,7.15,15.88,5.54
+"27220310",Ham or pork and rice,Per 100g,143.0,6.73,16.8,4.99
+"27220510",Ham or pork and potatoes with gravy,Per 100g,126.0,5.4,11.68,6.33
+"27220520",Ham or pork and potatoes with cheese sauce,Per 100g,127.0,7.86,11.11,5.69
+"27221100",Stewed pig's feet,Per 100g,136.0,9.99,4.13,8.7
+"27230010",Lamb or mutton loaf,Per 100g,192.0,14.05,7.44,11.58
+"27231000",Lamb or mutton and potatoes with gravy,Per 100g,129.0,5.13,12.53,6.46
+"27232000",Lamb or mutton and potatoes with tomato-based sauce,Per 100g,126.0,5.26,12.48,6.22
+"27233000",Lamb or mutton and noodles with gravy,Per 100g,141.0,6.8,15.63,5.48
+"27235000",Meat loaf made with venison/deer (Includes: venison meatball,Per 100g,166.0,19.02,6.31,6.73
+"27236000",Venison or deer and noodles with cream or white sauce,Per 100g,141.0,8.37,14.48,5.37
+"27241000",Chicken or turkey hash,Per 100g,110.0,9.57,8.27,4.1
+"27241010",Chicken or turkey and potatoes with gravy (Includes: Chicken Helper,Per 100g,122.0,7.47,9.04,6.35
+"27242000",Chicken or turkey and noodles,Per 100g,148.0,7.73,15.47,6.14
+"27242200",Chicken or turkey and noodles with gravy,Per 100g,140.0,6.99,15.23,5.67
+"27242250",Chicken or turkey and noodles with mushroom sauce,Per 100g,136.0,6.92,14.86,5.46
+"27242300",Chicken or turkey and noodles with cream or white sauce (Includes: chicken or turkey casserole,Per 100g,140.0,7.39,15.24,5.51
+"27242310",Chicken or turkey and noodles with cheese sauce,Per 100g,146.0,8.95,13.56,6.16
+"27242350",Chicken or turkey tetrazzini,Per 100g,119.0,11.96,6.96,4.79
+"27242400",Chicken or turkey and noodles with tomato-based sauce,Per 100g,137.0,7.12,15.17,5.44
+"27242500",Chicken or turkey and noodles with soy-based sauce,Per 100g,157.0,11.61,7.6,9.02
+"27243000",Chicken or turkey and rice,Per 100g,149.0,6.46,16.97,5.84
+"27243100",Biryani with chicken (Includes: Indian rice with chicken),Per 100g,104.0,7.15,13.55,2.38
+"27243300",Chicken or turkey and rice with cream sauce (Includes: Chicken Helper Mushroom Chicken with Long Grain and Wild Rice),Per 100g,136.0,8.13,12.78,5.86
+"27243400",Chicken or turkey and rice with mushroom sauce,Per 100g,135.0,5.67,15.43,5.48
+"27243500",Chicken or turkey and rice with tomato-based sauce,Per 100g,142.0,5.72,15.66,6.18
+"27243600",Chicken or turkey and rice with soy-based sauce (Includes: Chicken Helper Chicken Teriyaki),Per 100g,162.0,11.97,8.01,9.21
+"27246100",Chicken or turkey with dumplings (Includes: Chicken Helper Chicken and Dumplings),Per 100g,144.0,15.69,8.04,5.55
+"27246200",Chicken or turkey with stuffing (Includes: Chicken Helper Chicken and Stuffing),Per 100g,172.0,20.04,11.74,4.88
+"27246300",Chicken or turkey cake,Per 100g,262.0,20.83,2.59,18.75
+"27246400",Chicken or turkey souffle,Per 100g,171.0,11.72,5.59,11.33
+"27246500",Meat loaf made with chicken or turkey (Includes: with breading or NS as to breading,Per 100g,172.0,18.77,8.08,7.27
+"27246505",Meat loaf made with chicken or turkey,Per 100g,145.0,15.46,7.29,6.2
+"27250060",Gefilte fish,Per 100g,82.0,10.39,8.74,0.41
+"27250120",Shrimp and noodles,Per 100g,146.0,7.3,16.43,5.5
+"27250122",Shrimp and noodles with gravy,Per 100g,131.0,6.02,14.7,5.18
+"27250124",Shrimp and noodles with mushroom sauce,Per 100g,133.0,6.31,15.05,5.24
+"27250126",Shrimp and noodles with cream or white sauce,Per 100g,143.0,7.14,16.25,5.32
+"27250128",Shrimp and noodles with soy-based sauce,Per 100g,141.0,10.22,8.17,7.25
+"27250130",Shrimp and noodles with cheese sauce,Per 100g,136.0,8.18,13.45,5.37
+"27250132",Shrimp and noodles with tomato sauce,Per 100g,134.0,6.46,15.39,5.22
+"27250160",Tuna cake or patty,Per 100g,206.0,15.33,2.65,14.92
+"27250210",Clam cake or patty (Includes: deviled),Per 100g,246.0,19.02,6.79,15.35
+"27250250",Flounder with crab stuffing,Per 100g,136.0,15.07,5.73,5.52
+"27250260",Lobster with bread stuffing,Per 100g,177.0,14.98,9.83,8.26
+"27250270",Clams Casino (Includes: stuffed clams),Per 100g,162.0,11.8,10.3,7.9
+"27250410",Shrimp with crab stuffing,Per 100g,174.0,16.39,6.16,9.01
+"27250450",Shrimp toast,Per 100g,222.0,8.46,12.01,15.42
+"27250520",Imitation crab meat (Includes: imitation sea food; sea stix),Per 100g,95.0,7.62,15.0,0.46
+"27250550",Seafood souffle,Per 100g,153.0,9.94,5.56,9.98
+"27250610",Tuna noodle casserole with cream or white sauce (Includes: tuna noodle casserole,Per 100g,168.0,10.12,15.41,7.3
+"27250630",Tuna noodle casserole with mushroom sauce,Per 100g,139.0,9.02,13.92,5.18
+"27250710",Tuna and rice with mushroom sauce,Per 100g,128.0,4.57,15.39,5.17
+"27250810",Fish and rice with tomato-based sauce,Per 100g,135.0,5.41,16.53,5.12
+"27250820",Fish and rice with cream sauce,Per 100g,133.0,5.54,15.76,4.98
+"27250830",Fish and rice with mushroom sauce,Per 100g,135.0,5.34,16.11,5.16
+"27250900",Fish and noodles with mushroom sauce,Per 100g,131.0,6.3,14.79,5.11
+"27250950",Shellfish and noodles with tomato-based sauce,Per 100g,135.0,6.58,15.74,5.04
+"27251010",Stewed salmon,Per 100g,146.0,12.02,8.47,7.02
+"27260080",Meat loaf made with beef and pork (Includes: meatball or meat patty,Per 100g,196.0,17.27,7.18,10.5
+"27260100",Meat loaf made with beef and pork,Per 100g,157.0,13.63,6.75,8.18
+"27260110",Hash,Per 100g,164.0,8.73,9.27,10.24
+"27260500",Vienna sausages stewed with potatoes,Per 100g,219.0,5.08,13.06,16.36
+"27311210",Corned beef,Per 100g,127.0,4.76,13.73,6.0
+"27311510",Shepherd's pie,Per 100g,123.0,7.64,8.72,6.3
+"27313110",Beef chow mein or chop suey with noodles,Per 100g,129.0,10.78,11.17,4.89
+"27315250",Stuffed cabbage rolls with beef and rice,Per 100g,114.0,8.3,8.83,5.06
+"27315270",Stuffed grape leaves with beef and rice,Per 100g,228.0,8.15,11.3,17.03
+"27317010",Pot pie,Per 100g,271.0,8.92,23.95,15.37
+"27319010",Stuffed green pepper,Per 100g,152.0,8.89,15.63,5.84
+"27320025",Ham or pork,Per 100g,151.0,8.42,18.31,4.91
+"27320310",Pork chow mein or chop suey with noodles,Per 100g,143.0,10.41,11.17,6.38
+"27320500",Sweet and sour pork with rice,Per 100g,187.0,9.81,16.46,8.83
+"27330050",Lamb or mutton,Per 100g,136.0,5.05,16.34,5.51
+"27330170",Stuffed grape leaves with lamb and rice,Per 100g,271.0,8.17,11.89,21.52
+"27335500",Stewed rabbit,Per 100g,214.0,17.14,6.83,12.7
+"27336200",Venison or deer,Per 100g,127.0,5.95,11.17,6.5
+"27341000",Chicken or turkey,Per 100g,123.0,4.51,13.27,6.11
+"27343910",Chicken or turkey chow mein or chop suey with noodles,Per 100g,131.0,9.91,11.15,5.43
+"27348100",Chicken fricassee,Per 100g,172.0,12.13,7.17,10.65
+"27350020",Paella with seafood,Per 100g,143.0,8.03,16.44,4.76
+"27350050",Shrimp chow mein or chop suey with noodles,Per 100g,117.0,9.05,11.37,4.03
+"27350060",Shrimp creole,Per 100g,123.0,10.12,11.92,3.64
+"27350080",Tuna noodle casserole with vegetables,Per 100g,149.0,8.99,14.16,6.22
+"27350110",Soup,Per 100g,67.0,8.25,1.59,3.05
+"27350410",Tuna noodle casserole with vegetables and mushroom sauce,Per 100g,124.0,8.11,12.96,4.46
+"27351010",Codfish with starchy vegetables,Per 100g,135.0,3.53,18.46,5.43
+"27351040",Biscayne codfish,Per 100g,190.0,9.2,11.06,12.24
+"27360080",Chow mein or chop suey,Per 100g,131.0,9.91,11.15,5.43
+"27360090",Paella,Per 100g,169.0,9.53,15.77,7.17
+"27362000",Stewed tripe,Per 100g,109.0,8.56,9.49,4.05
+"27363000",Gumbo with rice (Includes: shellfish,Per 100g,89.0,8.16,6.55,3.43
+"27363100",Jambalaya with meat and rice (Includes: chicken and sausage jambalaya),Per 100g,161.0,13.76,8.65,7.97
+"27410210",Beef and vegetables including carrots,Per 100g,116.0,11.41,3.0,6.73
+"27410220",Beef and vegetables excluding carrots,Per 100g,121.0,10.03,5.16,7.09
+"27410250",Beef shish kabob with vegetables,Per 100g,122.0,14.8,5.06,4.88
+"27411100",Beef with vegetables including carrots,Per 100g,110.0,8.24,4.48,6.99
+"27411120",Swiss steak,Per 100g,115.0,15.48,3.67,4.42
+"27411150",Beef rolls,Per 100g,195.0,20.56,6.61,9.08
+"27411200",Beef with vegetables excluding carrots,Per 100g,115.0,7.67,5.96,7.18
+"27415110",Beef and broccoli,Per 100g,160.0,10.43,5.09,10.63
+"27415130",Szechuan beef,Per 100g,105.0,7.08,7.29,5.3
+"27415140",Hunan beef,Per 100g,105.0,7.08,7.29,5.3
+"27415150",Beef chow mein or chop suey,Per 100g,82.0,10.76,3.85,2.61
+"27415170",Kung Pao beef,Per 100g,216.0,17.93,4.55,14.44
+"27416100",Beef and vegetables,Per 100g,93.0,4.79,14.24,2.24
+"27416150",Pepper steak,Per 100g,145.0,11.88,4.34,9.12
+"27416250",Beef salad,Per 100g,261.0,17.85,2.9,19.32
+"27416300",Beef taco filling: beef,Per 100g,181.0,12.97,6.37,11.32
+"27416400",Stir fried beef and vegetables in soy sauce (Includes: Sukiyaki),Per 100g,102.0,10.73,4.44,4.81
+"27418410",Beef steak with onions,Per 100g,321.0,20.92,3.89,24.12
+"27420010",Cabbage with ham hocks,Per 100g,75.0,7.75,4.9,2.58
+"27420020",Ham or pork salad,Per 100g,230.0,13.26,2.83,18.09
+"27420040",Frankfurters or hot dogs and sauerkraut,Per 100g,198.0,7.56,3.42,17.31
+"27420060",Pork and vegetables including carrots,Per 100g,123.0,11.2,3.14,7.27
+"27420080",Greens with ham or pork,Per 100g,47.0,4.91,4.68,1.41
+"27420110",Pork and vegetables,Per 100g,89.0,7.43,6.97,3.64
+"27420120",Pork and watercress with soy-based sauce,Per 100g,190.0,14.88,3.35,12.68
+"27420150",Kung Pao pork,Per 100g,219.0,16.89,4.55,14.76
+"27420160",Moo Shu pork,Per 100g,153.0,10.41,4.01,10.7
+"27420170",Pork and onions with soy-based sauce (Includes: Pork Scallion; Onion Pork),Per 100g,149.0,11.06,5.43,9.14
+"27420200",Pork hash (Includes: no potatoes,Per 100g,186.0,12.94,1.96,13.66
+"27420250",Ham and vegetables including carrots broccoli,Per 100g,115.0,7.45,2.59,8.28
+"27420270",Ham and vegetables excluding carrots,Per 100g,120.0,7.56,5.12,7.83
+"27420350",Pork and vegetables excluding carrots,Per 100g,124.0,10.07,5.52,7.03
+"27420390",Pork chow mein or chop suey,Per 100g,98.0,10.34,3.85,4.3
+"27420410",Pork and vegetables excluding  carrots,Per 100g,118.0,7.81,6.44,7.14
+"27420450",Sausage and vegetables including  carrots,Per 100g,113.0,5.56,4.94,8.34
+"27420460",Sausage and vegetables,Per 100g,120.0,5.62,6.94,8.34
+"27420470",Sausage and peppers,Per 100g,247.0,13.99,3.26,19.87
+"27420520",Pork shish kabob with vegetables,Per 100g,124.0,13.87,5.06,5.17
+"27430610",Lamb shish kabob with vegetables,Per 100g,162.0,12.02,5.06,10.28
+"27440110",Chicken or turkey and vegetables including carrots,Per 100g,118.0,9.66,2.88,7.78
+"27440120",Chicken or turkey and vegetables excluding carrots,Per 100g,123.0,8.72,5.08,7.96
+"27440130",Chicken or turkey shish kabob with vegetables,Per 100g,104.0,13.04,5.06,3.69
+"27441120",Chicken or turkey creole,Per 100g,103.0,13.8,2.99,4.22
+"27443110",Chicken or turkey a la king with vegetables including carrots,Per 100g,187.0,9.41,6.76,13.8
+"27443120",Chicken or turkey a la king with vegetables excluding carrorts,Per 100g,181.0,9.57,6.31,13.34
+"27443150",Chicken or turkey divan (Includes: breaded chicken or turkey and broccoli in cheese sauce),Per 100g,140.0,15.51,4.01,7.26
+"27445150",General Tso chicken (Includes: fried chicken with vegetables in spicy soy sauce),Per 100g,295.0,12.9,23.99,16.36
+"27445180",Moo Goo Gai Pan (Includes: chicken with Asian vegetables in sauce),Per 100g,69.0,7.11,4.87,2.44
+"27445220",Kung pao chicken (Includes: cashew chicken),Per 100g,129.0,9.76,6.87,6.98
+"27445250",Almond chicken,Per 100g,195.0,15.66,4.46,13.16
+"27446100",Chicken or turkey chow mein or chop suey,Per 100g,83.0,9.78,3.84,3.23
+"27446200",Chicken or turkey salad,Per 100g,235.0,13.92,2.88,18.76
+"27446205",Chicken or turkey salad with nuts and/or fruits (Includes: made with any dressing),Per 100g,235.0,12.51,6.11,17.91
+"27446220",Chicken or turkey salad with egg (Includes: made with any dressing),Per 100g,228.0,13.81,2.73,18.06
+"27446300",Chicken or turkey garden salad,Per 100g,64.0,10.1,3.04,1.33
+"27446315",Chicken or turkey garden salad with bacon and cheese,Per 100g,106.0,10.95,3.0,5.61
+"27446330",Chicken or turkey garden salad with cheese,Per 100g,93.0,10.26,3.02,4.52
+"27446350",Asian chicken or turkey garden salad,Per 100g,130.0,11.44,9.5,5.46
+"27446355",Asian chicken or turkey garden salad with crispy noodles,Per 100g,116.0,10.24,8.11,5.26
+"27446360",Chicken or turkey caesar garden salad,Per 100g,63.0,8.52,2.99,1.94
+"27448020",Chicken or turkey fricassee,Per 100g,183.0,14.0,2.54,13.12
+"27450010",Crab salad (Includes: made with any dressing),Per 100g,188.0,9.4,1.27,15.89
+"27450020",Lobster salad (Includes: made with any dressing),Per 100g,187.0,10.29,1.22,15.4
+"27450030",Salmon salad (Includes: made with any dressing),Per 100g,213.0,10.82,2.73,17.36
+"27450040",Shrimp chow mein or chop suey,Per 100g,69.0,8.8,4.27,1.69
+"27450060",Tuna salad,Per 100g,194.0,10.07,2.89,15.84
+"27450070",Shrimp salad (Includes: made with any dressing),Per 100g,196.0,10.68,1.27,16.2
+"27450080",Seafood salad (Includes: made with any dressing),Per 100g,190.0,10.12,1.25,15.82
+"27450090",Tuna salad with cheese (Includes: made with any dressing),Per 100g,214.0,11.33,2.85,17.58
+"27450100",Tuna salad with egg (Includes: made with any dressing),Per 100g,190.0,10.28,2.74,15.4
+"27450110",Shrimp garden salad,Per 100g,65.0,8.28,2.77,2.04
+"27450130",Crab salad made with imitation crab (Includes: made with any dressing),Per 100g,197.0,4.07,8.66,16.28
+"27450180",Seafood garden salad with seafood,Per 100g,47.0,7.66,2.62,0.5
+"27450250",Oysters Rockefeller,Per 100g,134.0,7.64,9.38,7.53
+"27450310",Lomi salmon,Per 100g,60.0,7.55,3.31,1.86
+"27450400",Shrimp and vegetables including carrots,Per 100g,118.0,9.35,3.8,7.25
+"27450405",Shrimp and vegetables excluding carrots,Per 100g,124.0,9.25,6.78,6.87
+"27450430",Shrimp shish kabob with vegetables,Per 100g,83.0,11.23,5.74,1.59
+"27450470",Kung Pao shrimp,Per 100g,173.0,13.94,5.32,10.74
+"27450510",Tuna casserole with vegetables and mushroom sauce,Per 100g,115.0,9.04,8.39,5.12
+"27450600",Shellfish mixture and vegetables including carrots,Per 100g,120.0,9.41,5.89,6.38
+"27450610",Shellfish mixture and vegetables excluding carrots,Per 100g,122.0,9.73,5.63,6.62
+"27450700",Fish and vegetables including carrots,Per 100g,106.0,6.28,4.39,7.26
+"27450710",Fish and vegetables excluding carrots,Per 100g,112.0,6.33,6.3,7.26
+"27450750",Fish and vegetables excluding  carrots,Per 100g,106.0,8.04,4.33,6.22
+"27450760",Fish shish kabob with vegetables,Per 100g,68.0,9.41,5.06,1.05
+"27451010",Fried fish with sauce,Per 100g,155.0,11.81,3.42,10.3
+"27451030",Lobster with sauce,Per 100g,154.0,10.75,3.94,10.55
+"27451060",Octopus salad,Per 100g,170.0,9.67,5.56,11.95
+"27451070",Codfish salad,Per 100g,183.0,6.61,2.81,15.94
+"27460100",Lau lau (Includes: pork and fish wrapped in taro or spinach leaves),Per 100g,140.0,15.25,0.0,8.32
+"27460510",Antipasto with ham,Per 100g,158.0,11.62,3.75,10.7
+"27460710",Livers,Per 100g,226.0,12.89,2.87,17.69
+"27462000",Stewed chitterlings,Per 100g,214.0,8.38,3.83,18.5
+"27463000",Stewed gizzards,Per 100g,179.0,20.26,4.41,8.69
+"27464000",Gumbo,Per 100g,83.0,8.54,4.03,3.68
+"27500050",Sandwich,Per 100g,287.0,12.75,33.83,12.03
+"27500300",Sandwich wrap,Per 100g,232.0,12.77,23.3,9.4
+"27500400",Barbecue sandwich,Per 100g,238.0,15.34,24.86,8.12
+"27510100",Sloppy joe sandwich,Per 100g,185.0,11.32,19.95,6.42
+"27510130",Barbecue beef sandwich,Per 100g,245.0,16.48,24.86,8.5
+"27510140",Cheeseburger slider,Per 100g,298.0,16.15,25.02,14.29
+"27510155",Cheeseburger,Per 100g,296.0,17.87,18.71,16.15
+"27510170",Cheeseburger (Burger King),Per 100g,265.0,14.02,23.66,12.32
+"27510171",Whopper Jr with cheese (Burger King),Per 100g,235.0,12.02,19.0,12.09
+"27510172",Cheeseburger (McDonalds),Per 100g,270.0,13.49,25.46,12.9
+"27510191",Cheeseburger slider (Includes: miniature patty),Per 100g,297.0,18.09,17.9,16.41
+"27510229",Quarter Pounder (McDonalds),Per 100g,256.0,15.68,22.14,11.6
+"27510231",Whopper with cheese (Burger King),Per 100g,268.0,13.69,17.73,15.8
+"27510232",Quarter Pounder with cheese (McDonalds),Per 100g,269.0,15.21,19.72,14.4
+"27510254",Double cheeseburger,Per 100g,296.0,19.31,13.31,17.86
+"27510386",Double cheeseburger (Burger King),Per 100g,278.0,16.3,16.92,15.73
+"27510387",Double cheeseburger (McDonalds),Per 100g,282.0,16.24,17.97,16.18
+"27510388",McDouble (McDonalds),Per 100g,282.0,16.24,17.97,16.18
+"27510389",Big Mac (McDonalds) (Includes: Mac Jr; Grand Mac),Per 100g,261.0,11.94,21.53,14.1
+"27510501",Hamburger slider,Per 100g,285.0,15.27,29.18,11.35
+"27510521",Hamburger,Per 100g,288.0,17.51,20.68,14.38
+"27510551",Hamburger (Burger King),Per 100g,254.0,13.63,25.98,10.24
+"27510552",Whopper Jr (Burger King),Per 100g,216.0,10.73,21.14,9.58
+"27510553",Hamburger (McDonalds),Per 100g,263.0,13.3,29.57,10.18
+"27510573",Hamburger slider (Includes: miniature patty),Per 100g,288.0,17.76,19.71,14.72
+"27510615",Whopper (Burger King),Per 100g,226.0,11.34,17.33,12.37
+"27510649",Double hamburger,Per 100g,289.0,19.18,14.26,16.65
+"27510700",Meatball sandwich or sub,Per 100g,207.0,11.3,21.31,8.23
+"27510702",Meatloaf sandwich,Per 100g,217.0,11.75,28.73,6.15
+"27510705",Chiliburger,Per 100g,232.0,14.76,17.67,11.01
+"27510910",Corned beef sandwich on white (Includes: bread,Per 100g,259.0,13.65,25.68,11.02
+"27510920",Corned beef sandwich on white,Per 100g,274.0,14.68,22.51,13.69
+"27510930",Corned beef sandwich on wheat (Includes: bread,Per 100g,257.0,14.67,23.72,11.22
+"27510940",Corned beef sandwich on wheat,Per 100g,273.0,15.55,20.86,13.86
+"27510950",Reuben sandwich,Per 100g,282.0,10.01,16.42,19.43
+"27513010",Roast beef sandwich on white (Includes: bread,Per 100g,194.0,13.87,25.76,3.64
+"27513050",Roast beef sandwich on white,Per 100g,219.0,14.87,22.58,7.44
+"27513055",Roast beef sandwich on wheat (Includes: bread,Per 100g,192.0,14.89,23.8,3.84
+"27513065",Roast beef sandwich on wheat,Per 100g,217.0,15.73,20.93,7.61
+"27513070",French dip sandwich (Includes: roast beef au jus),Per 100g,184.0,13.23,24.47,3.47
+"27514010",Steak sandwich or sub on white (Includes: bread,Per 100g,249.0,17.91,25.45,8.07
+"27514020",Steak sandwich or sub on wheat (Includes: bread,Per 100g,247.0,18.93,23.49,8.27
+"27514030",Cheese steak sandwich or sub on white (Includes: bread,Per 100g,270.0,18.39,21.48,12.03
+"27514040",Cheese steak sandwich or sub on wheat (Includes: bread,Per 100g,268.0,19.22,19.9,12.2
+"27516010",Gyro sandwich,Per 100g,184.0,11.24,18.78,6.76
+"27517000",Hamburger wrap sandwich,Per 100g,299.0,16.86,20.38,16.06
+"27520210",Ham sandwich on white (Includes: bread,Per 100g,187.0,12.94,25.58,3.66
+"27520220",Ham sandwich on white,Per 100g,213.0,14.08,22.43,7.46
+"27520230",Ham sandwich on wheat (Includes: bread,Per 100g,185.0,13.96,23.62,3.86
+"27520240",Ham sandwich on wheat,Per 100g,212.0,14.94,20.78,7.62
+"27520255",Ham sandwich or sub,Per 100g,178.0,13.34,22.85,3.66
+"27520270",Ham sandwich wrap (Includes: tortilla; flatbread; cheese),Per 100g,230.0,13.54,22.51,9.38
+"27520340",Ham salad sandwich on white (Includes: bread,Per 100g,242.0,11.98,18.29,13.26
+"27520345",Ham salad sandwich on wheat (Includes: bread,Per 100g,241.0,12.64,17.03,13.38
+"27520410",Cuban sandwich,Per 100g,228.0,15.86,16.3,10.69
+"27520500",Barbecue rib sandwich (Includes: bbq; McDonald's McRib),Per 100g,223.0,13.66,26.5,6.47
+"27520510",Barbecue pork sandwich,Per 100g,243.0,14.97,24.86,8.83
+"27520520",Pork sandwich (Includes: bread,Per 100g,226.0,17.73,25.45,5.47
+"27520525",Pork sandwich,Per 100g,246.0,18.14,22.32,8.99
+"27540010",Turkey sandwich on white (Includes: bread,Per 100g,189.0,12.03,26.51,3.68
+"27540020",Turkey sandwich on white,Per 100g,215.0,13.31,23.22,7.47
+"27540030",Turkey sandwich on wheat (Includes: bread,Per 100g,187.0,13.05,24.56,3.88
+"27540040",Turkey sandwich on wheat,Per 100g,214.0,14.17,21.56,7.64
+"27540050",Turkey sandwich or sub,Per 100g,180.0,12.33,23.89,3.69
+"27540070",Turkey sandwich wrap (Includes: tortilla; flatbread; deli,Per 100g,232.0,12.77,23.3,9.4
+"27540080",Chicken deli sandwich or sub,Per 100g,176.0,13.72,24.28,2.66
+"27540120",Chicken salad sandwich on white (Includes: bread,Per 100g,246.0,12.42,18.32,13.7
+"27540121",Chicken salad sandwich on wheat (Includes: bread,Per 100g,245.0,13.08,17.06,13.83
+"27540122",Chicken salad sandwich wrap (Includes: tortilla; flatbread; turkey; cheese),Per 100g,269.0,12.89,16.99,16.56
+"27540123",Club sandwich on white (Includes: bread,Per 100g,222.0,15.08,23.09,7.48
+"27540124",Club sandwich on white,Per 100g,241.0,15.81,20.62,10.35
+"27540125",Club sandwich on wheat (Includes: bread,Per 100g,220.0,15.98,21.38,7.65
+"27540126",Club sandwich on wheat,Per 100g,239.0,16.58,19.13,10.5
+"27540127",Club sandwich or sub,Per 100g,234.0,15.99,18.43,10.55
+"27540130",Barbecue chicken sandwich,Per 100g,204.0,15.92,24.86,4.4
+"27540132",Chicken fillet sandwich,Per 100g,281.0,12.17,27.48,13.46
+"27540145",Chicken fillet biscuit,Per 100g,320.0,10.78,26.41,19.09
+"27540210",Chicken fillet wrap sandwich,Per 100g,299.0,12.68,24.42,16.68
+"27545100",Turkey or chicken burger,Per 100g,234.0,20.03,20.68,7.69
+"27550000",Fish sandwich,Per 100g,235.0,14.46,25.7,8.15
+"27550110",Crab cake sandwich (Includes: soft shell crab; shrimp cake),Per 100g,231.0,12.74,19.39,11.18
+"27550120",Salmon cake sandwich (Includes: tuna cake),Per 100g,279.0,13.86,19.37,15.93
+"27550150",Fried seafood sandwich (Includes: oyster; shrimp; clams; poor boy),Per 100g,234.0,11.32,24.67,9.82
+"27550425",Fish wrap sandwich (Includes: fillet; tortilla; with or without cheese),Per 100g,262.0,14.73,22.61,12.44
+"27550510",Sardine sandwich,Per 100g,234.0,17.87,21.87,7.96
+"27550720",Tuna salad sandwich on white (Includes: tuna fish; bread,Per 100g,218.0,9.86,18.33,11.76
+"27550730",Tuna salad sandwich on white,Per 100g,233.0,10.96,16.94,13.5
+"27550735",Tuna salad sandwich on wheat (Includes: tuna fish; bread,Per 100g,217.0,10.52,17.07,11.89
+"27550737",Tuna salad sandwich on wheat,Per 100g,232.0,11.55,15.81,13.62
+"27550755",Tuna salad sandwich wrap (Includes: tuna fish; tortilla; flatbread; cheese),Per 100g,244.0,10.59,16.99,14.82
+"27550800",Seafood salad sandwich (Includes: crab salad; shrimp salad; lobster salad),Per 100g,216.0,9.89,17.24,11.75
+"27560130",Bologna sandwich on white (Includes: bread,Per 100g,274.0,9.87,28.49,13.33
+"27560140",Bologna sandwich on white,Per 100g,287.0,11.48,24.9,15.65
+"27560150",Bologna sandwich on wheat (Includes: bread,Per 100g,272.0,10.89,26.54,13.53
+"27560160",Bologna sandwich on wheat,Per 100g,285.0,12.34,23.24,15.82
+"27560300",Corn dog,Per 100g,250.0,8.57,26.96,12.02
+"27560350",Pig in a blanket (Includes: dough wrapped hot dog),Per 100g,310.0,11.42,19.22,20.85
+"27560520",Salami sandwich on white (Includes: bread,Per 100g,321.0,15.05,25.8,17.14
+"27560530",Salami sandwich on white,Per 100g,326.0,15.87,22.61,18.87
+"27560540",Salami sandwich on wheat (Includes: bread,Per 100g,319.0,16.07,23.84,17.34
+"27560550",Salami sandwich on wheat,Per 100g,325.0,16.73,20.96,19.04
+"27560610",Italian sandwich on white (Includes: bread,Per 100g,309.0,15.7,18.9,18.78
+"27560620",Italian sandwich on wheat (Includes: bread,Per 100g,308.0,16.42,17.53,18.92
+"27560630",Italian sandwich or sub,Per 100g,313.0,16.23,16.42,20.05
+"27560710",Italian sausage sandwich on white (Includes: bread,Per 100g,300.0,14.45,23.47,16.29
+"27560715",Italian sausage sandwich on wheat (Includes: bread,Per 100g,293.0,15.18,21.38,16.32
+"27560920",Spam sandwich,Per 100g,266.0,10.03,27.64,12.83
+"27564000",Hot dog sandwich,Per 100g,296.0,10.85,23.73,17.37
+"27564440",Chili hot dog sandwich,Per 100g,223.0,9.94,18.75,11.98
+"27580010",Multiple meat sandwich on white (Includes: bread,Per 100g,190.0,12.87,21.66,5.62
+"27580020",Multiple meat sandwich on white,Per 100g,211.0,13.83,19.54,8.53
+"27580030",Multiple meat sandwich on wheat (Includes: bread,Per 100g,189.0,13.69,20.08,5.78
+"27580040",Multiple meat sandwich on wheat,Per 100g,210.0,14.54,18.17,8.67
+"27580050",Multiple meat sandwich or sub,Per 100g,183.0,13.18,19.25,5.76
+"27580070",Multiple meat sandwich wrap (Includes: tortilla; flatbread; any two or more meats excluding bacon; cheese),Per 100g,226.0,13.38,19.61,10.13
+"27580110",Turkey and ham sandwich on white (Includes: bread,Per 100g,172.0,13.12,21.22,3.68
+"27580120",Turkey and ham sandwich on white,Per 100g,195.0,14.04,19.16,6.83
+"27580130",Turkey and ham sandwich on wheat (Includes: bread,Per 100g,170.0,13.94,19.65,3.84
+"27580140",Turkey and ham sandwich on wheat,Per 100g,194.0,14.76,17.79,6.97
+"27580150",Turkey and ham sandwich or sub,Per 100g,163.0,13.47,18.57,3.69
+"28101000",Frozen dinner,Per 100g,146.0,6.82,10.94,8.4
+"28110000",Beef dinner,Per 100g,146.0,6.82,10.94,8.4
+"28110150",Beef with vegetable,Per 100g,125.0,10.64,4.69,6.95
+"28110300",Salisbury steak dinner,Per 100g,146.0,6.82,10.94,8.4
+"28110310",Salisbury steak with gravy,Per 100g,146.0,6.82,10.94,8.4
+"28113140",Beef with spaetzle or rice,Per 100g,118.0,6.92,12.23,4.37
+"28140100",Chicken dinner,Per 100g,124.0,8.48,10.73,5.18
+"28141201",Teriyaki chicken with rice and vegetable,Per 100g,126.0,5.65,22.46,1.56
+"28141250",Chicken with rice and vegetable,Per 100g,111.0,9.81,10.99,3.03
+"28141650",Chicken and vegetables au gratin with rice,Per 100g,120.0,10.67,7.24,5.41
+"28143020",Chicken and vegetable entree with rice,Per 100g,171.0,10.45,19.65,5.57
+"28143080",Chicken with noodles and cheese sauce,Per 100g,114.0,10.07,11.66,2.86
+"28143150",Chicken and vegetable entree with noodles,Per 100g,85.0,7.58,9.78,1.89
+"28143200",Chicken in soy-based sauce,Per 100g,109.0,6.56,18.06,0.91
+"28144100",Chicken and vegetable entree with noodles and cream sauce,Per 100g,124.0,8.48,10.73,5.18
+"28145110",Turkey with vegetable,Per 100g,96.0,9.3,10.66,1.82
+"28150510",Fish in lemon-butter sauce with starch item,Per 100g,101.0,5.46,10.98,3.78
+"28154010",Shrimp and vegetables in sauce with noodles,Per 100g,91.0,5.29,13.45,1.72
+"28160300",Meat loaf dinner,Per 100g,134.0,6.66,10.13,7.4
+"28160310",Meat loaf with potatoes,Per 100g,134.0,6.66,10.13,7.4
+"28355260",Lobster gumbo,Per 100g,59.0,6.19,4.63,1.78
+"28355440",Shrimp gumbo,Per 100g,61.0,6.52,4.63,1.89
+"28500000",Gravy,Per 100g,48.0,0.71,5.29,2.62
+"28520100",Oyster sauce,Per 100g,51.0,1.35,10.92,0.25
+"28522000",Mole sauce (Includes: mole,Per 100g,75.0,0.98,10.77,3.82
+"31101010",Egg,Per 100g,143.0,12.4,0.96,9.96
+"31201000",Duck egg,Per 100g,224.0,11.96,1.36,18.55
+"31202000",Goose egg,Per 100g,224.0,12.94,1.27,18.09
+"31203000",Quail egg,Per 100g,158.0,13.01,0.41,11.06
+"32103000",Egg salad,Per 100g,257.0,10.26,1.01,23.14
+"32103050",Egg Salad,Per 100g,139.0,9.8,4.29,8.82
+"32105180",Huevos rancheros,Per 100g,121.0,6.68,8.85,6.65
+"32105190",Egg casserole with bread,Per 100g,175.0,11.43,10.22,9.75
+"32105200",Egg foo yung,Per 100g,125.0,11.69,5.2,6.16
+"32105210",Chicken egg foo yung (Includes: young),Per 100g,137.0,12.79,4.78,7.38
+"32105220",Pork egg foo yung (Includes: young),Per 100g,149.0,13.29,4.78,8.25
+"32105230",Shrimp egg foo yung (Includes: young),Per 100g,125.0,11.69,5.2,6.16
+"32105240",Beef egg foo yung (Includes: young),Per 100g,147.0,13.82,4.78,8.08
+"32129990",Egg omelet or scrambled egg,Per 100g,185.0,11.58,0.91,15.0
+"32203010",Egg salad sandwich on white (Includes: bread,Per 100g,260.0,9.98,17.07,16.62
+"32203020",Egg salad sandwich on wheat (Includes: bread,Per 100g,259.0,10.64,15.81,16.75
+"32400055",Egg white omelet,Per 100g,100.0,9.99,2.21,5.72
+"32400100",Egg white,Per 100g,132.0,11.27,2.56,8.51
+"32401000",Meringues,Per 100g,324.0,7.17,75.34,0.04
+"33001010",Egg substitute,Per 100g,96.0,9.34,1.88,5.72
+"34001100",Egg sandwich on white bread (Includes: egg sandwich,Per 100g,228.0,10.46,26.1,9.05
+"34001110",Egg sandwich on white bread,Per 100g,248.0,11.99,22.85,12.04
+"34001200",Egg sandwich on wheat bread (Includes: on bun or roll; multigrain,Per 100g,226.0,11.48,24.13,9.25
+"34001210",Egg sandwich on wheat bread,Per 100g,246.0,12.86,21.18,12.21
+"34001300",Egg sandwich on English muffin (Includes: with or without cheese),Per 100g,230.0,11.74,20.63,11.2
+"34001310",Egg sandwich on English muffin,Per 100g,264.0,12.89,16.04,16.52
+"34001400",Egg sandwich on croissant (Includes: with or without cheese),Per 100g,309.0,11.45,21.35,19.72
+"34001410",Egg sandwich on croissant,Per 100g,325.0,12.67,16.59,23.03
+"34001500",Egg sandwich on biscuit (Includes: with or without cheese),Per 100g,298.0,10.69,21.6,18.81
+"34001510",Egg sandwich on biscuit,Per 100g,310.0,10.96,18.55,21.35
+"34001600",Egg sandwich on bagel (Includes: with or without cheese),Per 100g,251.0,11.97,31.81,8.43
+"34001610",Egg sandwich on bagel,Per 100g,274.0,12.83,26.17,13.09
+"34001700",Egg sandwich on griddle/pancake (Includes: waffle),Per 100g,242.0,8.32,22.81,13.21
+"34001710",Egg sandwich on griddle/pancake,Per 100g,287.0,11.69,15.62,19.84
+"34002000",Egg white sandwich,Per 100g,166.0,9.41,24.1,3.62
+"34002110",Bacon biscuit sandwich (Includes: with or without cheese),Per 100g,382.0,13.71,29.26,23.2
+"34002120",Ham biscuit sandwich (Includes: with or without cheese),Per 100g,322.0,11.56,28.24,18.1
+"34002130",Sausage biscuit sandwich,Per 100g,372.0,10.66,27.21,24.47
+"34002150",Sausage English muffin sandwich (Includes: with or without cheese; McDonald's Sausage McMuffin),Per 100g,300.0,13.48,22.81,17.2
+"34002160",Sausage griddle/pancake sandwich (Includes: waffle; with or without cheese; other meat; McDonald's Sausage McGriddle),Per 100g,278.0,10.53,17.04,18.69
+"34003100",Egg burrito (Includes: breakfast taco; sandwich wrap; tortilla; with or without cheese),Per 100g,249.0,10.91,20.06,13.71
+"34003120",Egg burrito,Per 100g,257.0,11.27,18.88,14.96
+"41100990",Beans,Per 100g,189.0,8.34,23.78,7.08
+"41101090",White beans,Per 100g,188.0,9.04,23.32,6.83
+"41101990",Black beans,Per 100g,181.0,8.23,22.04,7.01
+"41102170",Black beans with meat,Per 100g,177.0,10.61,19.06,6.81
+"41102210",Fava beans,Per 100g,161.0,7.06,18.26,6.88
+"41102990",Lima beans,Per 100g,165.0,7.25,19.4,6.86
+"41103070",Pink beans,Per 100g,197.0,8.42,25.94,6.96
+"41103990",Pinto beans,Per 100g,191.0,8.37,24.37,7.11
+"41104250",Pinto beans with meat (Includes: calico),Per 100g,186.0,10.73,21.07,6.9
+"41105990",Kidney beans,Per 100g,177.0,8.06,21.19,6.97
+"41106170",Kidney beans with meat (Includes: red),Per 100g,173.0,10.46,18.33,6.78
+"41106510",Peruvian beans,Per 100g,192.0,8.51,23.49,7.51
+"41107010",Soybeans,Per 100g,218.0,16.92,7.77,14.84
+"41108010",Mung beans,Per 100g,156.0,6.52,17.8,6.86
+"41201010",Baked beans (Includes: chili; barbecue; baked beans,Per 100g,105.0,4.52,21.57,0.89
+"41201020",Baked beans,Per 100g,94.0,4.75,21.14,0.37
+"41201050",Baked beans from fast food / restaurant,Per 100g,116.0,4.38,23.29,1.35
+"41202505",Beans and tomatoes,Per 100g,101.0,6.37,18.76,0.51
+"41203030",Black bean salad,Per 100g,94.0,3.08,12.61,3.85
+"41205010",Refried beans (Includes: canned; with or without fat; NS as to meat; refried beans,Per 100g,90.0,4.98,13.55,2.01
+"41205017",Refried beans,Per 100g,177.0,6.7,16.28,9.48
+"41205030",Refried beans with meat,Per 100g,99.0,7.81,11.76,2.51
+"41205050",Bean dip,Per 100g,119.0,5.44,15.89,3.7
+"41205055",Layer dip (Includes: any number of layers; taco dip; Mexican dip; seven layer dip),Per 100g,146.0,5.41,6.67,11.33
+"41205070",Hummus,Per 100g,243.0,7.35,14.9,17.1
+"41205100",Black bean sauce,Per 100g,168.0,6.28,17.36,8.45
+"41206030",Beans and franks,Per 100g,138.0,6.74,17.29,5.22
+"41208030",Pork and beans,Per 100g,105.0,4.52,21.57,0.89
+"41208100",Beans with meat,Per 100g,184.0,10.7,20.56,6.88
+"41209000",Falafel,Per 100g,514.0,8.28,28.96,41.19
+"41210000",Bean cake (Includes: lentil; soybean),Per 100g,414.0,5.8,49.88,21.41
+"41300990",Blackeyed peas,Per 100g,166.0,7.18,19.29,7.0
+"41301990",Chickpeas,Per 100g,211.0,8.23,25.48,8.91
+"41303000",Split peas,Per 100g,117.0,8.29,20.97,0.39
+"41304000",Wasabi peas,Per 100g,432.0,14.11,62.2,14.11
+"41304970",Lentils,Per 100g,166.0,8.38,18.71,6.86
+"41305050",Dal (Includes: daal; lentils,Per 100g,145.0,8.6,19.17,4.31
+"41310900",Bean chips (Includes: hummus; chickpea; garbanzo bean; black bean; popped bean chips; bean puffs; lentil chips),Per 100g,448.0,14.6,53.12,21.58
+"41311000",Papad,Per 100g,371.0,25.56,59.87,3.25
+"41311020",Sambar,Per 100g,86.0,4.33,11.77,2.71
+"41311030",Lentil curry (Includes: chickpea; other beans; tofu; with vegetables),Per 100g,111.0,3.68,12.33,5.65
+"41311040",Lentil curry with rice (Includes: chickpea; other beans; tofu; with vegetables),Per 100g,118.0,3.28,18.6,3.5
+"41410010",Soy nuts,Per 100g,469.0,38.55,30.22,25.4
+"41410015",Soy chips (Includes: all flavors; soy crisps),Per 100g,385.0,26.5,53.15,7.35
+"41420010",Soybean curd (Includes: stir fried; bean curd; tofu),Per 100g,61.0,7.17,1.18,3.69
+"41420020",Edamame,Per 100g,140.0,11.54,8.63,7.58
+"41420050",Soybean curd cheese,Per 100g,151.0,12.5,6.9,8.1
+"41420100",Miso sauce,Per 100g,429.0,3.43,13.99,41.0
+"41420110",Miso (Includes: fermented soybean paste),Per 100g,198.0,12.79,25.37,6.01
+"41420200",Natto (Includes: fermented soybean product),Per 100g,211.0,19.4,12.68,11.0
+"41420250",Hoisin sauce,Per 100g,220.0,3.31,44.08,3.39
+"41420300",Soy sauce (Includes: shoyu; tamari),Per 100g,53.0,8.14,4.93,0.57
+"41420350",Soy sauce,Per 100g,57.0,9.05,5.59,0.3
+"41420400",Teriyaki sauce (Includes: Asian barbecue sauce; eel sauce),Per 100g,89.0,5.93,15.56,0.02
+"41420410",Teriyaki sauce,Per 100g,89.0,5.93,15.58,0.02
+"41420450",Worcestershire sauce,Per 100g,77.0,0.0,19.17,0.0
+"41421010",Soybean curd,Per 100g,270.0,18.82,8.86,20.18
+"41425010",Vermicelli,Per 100g,126.0,0.04,31.42,0.04
+"41440000",Textured vegetable protein,Per 100g,366.0,51.1,32.9,3.33
+"41480020",Frozen dessert,Per 100g,159.0,0.87,18.24,9.27
+"41810200",Bacon strip,Per 100g,309.0,11.69,5.31,29.52
+"41810250",Bacon bits (Includes: meatless or meat),Per 100g,476.0,32.0,28.6,25.9
+"41810400",Breakfast link,Per 100g,255.0,20.28,8.09,18.16
+"41811600",Luncheon slice,Per 100g,189.0,17.78,4.44,11.11
+"41811800",Meatball,Per 100g,197.0,21.0,8.0,9.0
+"41811890",Veggie burger patty,Per 100g,177.0,15.7,14.27,6.3
+"41812500",Tofu and vegetables including carrots,Per 100g,92.0,4.11,4.68,6.71
+"41812510",Tofu and vegetables excluding carrots,Per 100g,93.0,4.21,4.4,6.94
+"41812600",Vegetarian,Per 100g,290.0,23.0,9.0,18.0
+"41812800",Vegetarian stew (Includes: meatless),Per 100g,33.0,0.67,3.12,2.15
+"41812850",Vegetarian stroganoff (Includes: prepared from Worthington Foods Natural Touch Stroganoff Mix),Per 100g,167.0,7.69,11.78,10.03
+"41901010",Veggie burger,Per 100g,224.0,12.96,30.82,5.2
+"41901030",Falafel sandwich,Per 100g,265.0,6.22,27.04,14.76
+"42100050",Nuts,Per 100g,610.0,19.59,20.9,53.82
+"42100100",Almonds,Per 100g,598.0,20.96,21.01,52.54
+"42102000",Brazil nuts,Per 100g,659.0,14.32,11.74,67.1
+"42104000",Cashews,Per 100g,574.0,15.31,32.69,46.35
+"42105000",Chestnuts (Includes: roasted),Per 100g,245.0,3.17,52.96,2.2
+"42106000",Coconut,Per 100g,354.0,3.33,15.23,33.49
+"42107000",Hazelnuts (Includes: filberts),Per 100g,628.0,14.95,16.7,60.75
+"42109100",Macadamia nuts (Includes: all; NFS),Per 100g,716.0,7.79,12.83,76.08
+"42110000",Mixed nuts,Per 100g,610.0,19.59,20.9,53.82
+"42111000",Peanuts,Per 100g,587.0,24.35,21.26,49.66
+"42112000",Pecans,Per 100g,750.0,9.96,12.7,73.28
+"42113000",Pine nuts (Includes: pignolias),Per 100g,673.0,13.69,13.08,68.37
+"42114130",Pistachio nuts,Per 100g,572.0,21.05,28.28,45.82
+"42116000",Walnuts,Per 100g,730.0,14.56,10.91,69.74
+"42200500",Almond butter (Includes: NS as to type),Per 100g,641.0,20.67,21.11,52.72
+"42200510",Almond butter,Per 100g,645.0,20.79,21.24,53.04
+"42200600",Almond paste (Includes: Marzipan paste),Per 100g,458.0,9.0,47.81,27.74
+"42201000",Cashew butter,Per 100g,609.0,12.12,30.3,53.03
+"42202000",Peanut butter (Includes: NS as to type),Per 100g,598.0,22.21,22.31,51.36
+"42202010",Peanut butter,Per 100g,598.0,22.21,22.31,51.36
+"42203000",Peanut butter and jelly (Includes: Smucker's Goober PB & J Stripes),Per 100g,432.0,11.18,46.13,25.69
+"42203100",Peanut butter and chocolate spread,Per 100g,498.0,11.66,42.76,34.48
+"42203200",Soy nut butter,Per 100g,613.0,23.02,23.0,50.01
+"42204050",Peanut sauce,Per 100g,257.0,6.31,22.02,16.02
+"42301010",Peanut butter sandwich,Per 100g,382.0,13.88,39.85,20.21
+"42302010",Peanut butter and jelly sandwich,Per 100g,361.0,11.42,45.22,16.6
+"42304010",Almond butter sandwich,Per 100g,397.0,13.34,39.43,20.68
+"42304030",Almond butter and jelly sandwich,Per 100g,374.0,10.98,44.88,16.99
+"42305010",Nutella sandwich on white bread (Includes: bread,Per 100g,362.0,8.03,53.78,12.68
+"42305020",Nutella sandwich on wheat bread (Includes: bread,Per 100g,359.0,9.32,51.31,12.93
+"42402010",Coconut cream,Per 100g,357.0,1.17,53.21,16.31
+"42403010",Coconut water,Per 100g,18.0,0.22,4.24,0.0
+"42500000",Trail mix,Per 100g,454.0,10.9,51.06,26.83
+"42500100",Trail mix with nuts (Includes: seeds),Per 100g,604.0,20.06,21.07,52.98
+"42501000",Trail mix with nuts and fruit (Includes: gorp; seeds),Per 100g,454.0,10.9,51.06,26.83
+"42501500",Trail mix with chocolate (Includes: any nuts,Per 100g,503.0,11.65,48.27,32.26
+"42502100",Trail mix with pretzels,Per 100g,476.0,13.09,50.59,27.66
+"43101050",Pumpkin seeds,Per 100g,574.0,29.84,14.71,49.05
+"43102000",Sunflower seeds,Per 100g,582.0,19.33,24.07,49.8
+"43103000",Sesame seeds,Per 100g,631.0,20.45,11.73,61.21
+"43103300",Tahini (Includes: sesame seed butter; sesame seed paste),Per 100g,697.0,19.71,14.18,62.4
+"43104000",Flax seeds,Per 100g,545.0,18.04,34.36,37.28
+"43107000",Mixed seeds,Per 100g,580.0,21.96,21.73,49.61
+"43108010",Chia seeds,Per 100g,486.0,16.54,42.12,30.74
+"51000100",Bread,Per 100g,267.0,9.43,49.2,3.59
+"51000200",Roll,Per 100g,279.0,9.77,50.12,3.91
+"51108010",Focaccia,Per 100g,249.0,8.77,35.82,7.89
+"51121015",Garlic bread,Per 100g,349.0,8.34,41.64,16.58
+"51136000",Bruschetta,Per 100g,171.0,4.29,21.32,7.61
+"51160200",Pan dulce,Per 100g,371.0,9.07,56.36,12.2
+"51161000",Pan Dulce,Per 100g,372.0,6.2,50.9,16.4
+"51165000",Coffee cake,Per 100g,372.0,6.2,50.9,16.4
+"51166000",Croissant (Includes: Sara Lee Wheat 'n' Honey; crescent roll),Per 100g,406.0,8.2,45.8,21.0
+"51166100",Croissant,Per 100g,414.0,9.2,47.0,20.9
+"51167000",Brioche,Per 100g,427.0,8.96,36.31,27.46
+"51180010",Bagel (Includes: water bagel; flavored bagel; egg bagel; bialy; Bagel Thins),Per 100g,264.0,10.56,52.38,1.32
+"51180030",Bagel,Per 100g,268.0,9.83,55.07,1.21
+"51182010",Bread stuffing (Includes: homemade; stuffing,Per 100g,177.0,3.14,21.71,8.51
+"51182020",Bread stuffing made with egg,Per 100g,192.0,3.31,17.77,11.92
+"51183990",Breadsticks,Per 100g,342.0,12.18,44.39,12.85
+"51185000",Croutons (Includes: seasoned bread crumbs),Per 100g,465.0,10.8,63.5,18.3
+"51186010",Muffin,Per 100g,227.0,8.87,44.17,1.69
+"51187000",Melba toast (Includes: all flavors; Old London; Devonsheer; mini toast crackers; crostini toast),Per 100g,390.0,12.1,76.6,3.2
+"51187020",Anisette toast (Includes: almond toast; Stella D'oro),Per 100g,373.0,7.63,66.99,8.38
+"51188100",Pannetone (Includes: Italian style sweet bread),Per 100g,325.0,9.76,53.75,8.39
+"51188500",Zwieback toast (Includes: rusk; Gerber),Per 100g,426.0,10.1,74.2,9.7
+"51807000",Injera,Per 100g,93.0,2.55,19.39,0.68
+"52101000",Biscuit,Per 100g,370.0,7.08,42.82,18.92
+"52104200",Biscuit with fruit (Includes: raisin),Per 100g,363.0,6.7,46.47,17.05
+"52105100",Scone (Includes: NS as to fruit),Per 100g,382.0,6.67,48.07,18.35
+"52105200",Scone,Per 100g,374.0,6.33,51.2,16.54
+"52201000",Cornbread,Per 100g,330.0,6.59,54.46,9.58
+"52204000",Cornbread stuffing (Includes: plain cornbread dressing),Per 100g,179.0,2.9,21.9,8.8
+"52206010",Cornbread muffin,Per 100g,305.0,5.9,51.0,8.4
+"52207010",Corn flour patty or tart,Per 100g,218.0,3.98,41.18,4.64
+"52208010",Corn pone,Per 100g,214.0,3.5,39.68,4.31
+"52208760",Gordita/sope shell,Per 100g,260.0,3.85,37.2,11.19
+"52209010",Hush puppy (Includes: fried cornbread),Per 100g,296.0,6.16,40.21,13.25
+"52211010",Johnnycake,Per 100g,277.0,7.98,43.82,7.46
+"52213010",Spoonbread,Per 100g,166.0,6.68,18.55,7.06
+"52215000",Tortilla,Per 100g,262.0,6.95,47.01,5.42
+"52215300",Taco shell,Per 100g,476.0,6.41,63.49,21.79
+"52220110",Arepa Dominicana (Includes: Cornmeal bread; Dominican style),Per 100g,267.0,5.66,30.47,14.0
+"52311010",Popover (Includes: Dutch Baby; Yorkshire pudding),Per 100g,268.0,11.05,35.28,9.2
+"53100100",Cake or cupcake,Per 100g,352.0,2.84,53.6,14.77
+"53101100",Cake,Per 100g,257.0,6.1,58.7,0.3
+"53104500",Cheesecake,Per 100g,399.0,5.29,34.82,26.52
+"53108200",Snack cake,Per 100g,399.0,3.63,60.31,15.93
+"53112100",Ice cream cake (Includes: any flavor; pie; roll; Baked Alaska; frozen yogurt cake),Per 100g,283.0,2.95,39.28,12.67
+"53200100",Cookie,Per 100g,435.0,4.97,54.47,22.45
+"53211000",Cookie bar,Per 100g,492.0,5.1,65.36,24.72
+"53239100",Pocky (Includes: biscuit sticks,Per 100g,447.0,10.0,51.08,22.5
+"53241510",Marie biscuit (Includes: Rich tea biscuit; Maria),Per 100g,406.0,7.05,70.54,10.58
+"53270100",Cookies,Per 100g,506.0,6.32,67.94,23.2
+"53300100",Pie,Per 100g,296.0,2.7,37.55,15.28
+"53300200",Tart,Per 100g,316.0,3.0,42.6,16.1
+"53344300",Dessert pizza (Includes: fruit pizza),Per 100g,204.0,1.84,32.38,7.53
+"53391000",Pie shell (Includes: pie crust),Per 100g,508.0,6.5,56.24,28.59
+"53391100",Pie shell,Per 100g,501.0,5.1,64.3,24.83
+"53410100",Cobbler,Per 100g,217.0,2.05,33.56,8.66
+"53415100",Crisp,Per 100g,215.0,2.81,30.18,9.59
+"53415110",Fritter,Per 100g,378.0,6.56,27.46,26.93
+"53420000",Cream puff,Per 100g,280.0,4.2,11.05,24.39
+"53420400",Sopaipilla,Per 100g,367.0,5.79,41.46,20.18
+"53420410",Sopaipilla with syrup or honey,Per 100g,361.0,4.38,51.7,16.25
+"53430100",Crepe,Per 100g,170.0,4.87,22.92,6.52
+"53430700",Tamale,Per 100g,259.0,2.22,35.61,12.57
+"53440000",Strudel,Per 100g,281.0,1.96,37.18,14.08
+"53441110",Baklava (Includes: Kadayif),Per 100g,440.0,6.58,37.55,29.34
+"53441210",Basbousa (Includes: semolina dessert dish),Per 100g,282.0,4.81,43.76,9.94
+"53450000",Turnover,Per 100g,316.0,3.0,42.6,16.1
+"53452100",Pastry,Per 100g,400.0,4.76,54.43,19.61
+"53452450",Cheese pastry puffs (Includes: cheese straws),Per 100g,265.0,9.3,13.4,19.54
+"53453150",Empanada,Per 100g,260.0,2.67,36.96,11.51
+"53500100",Breakfast pastry,Per 100g,371.0,5.4,47.8,18.5
+"53510000",Danish pastry,Per 100g,403.0,7.0,44.6,22.4
+"53520000",Doughnut,Per 100g,426.0,5.52,49.52,22.86
+"53520170",Doughnut holes (Includes: Munchkins),Per 100g,426.0,5.52,49.52,22.86
+"53520200",Churros (Includes: Mexican crullers),Per 100g,419.0,6.05,48.87,22.21
+"53520510",Beignet (Includes: malasada; okinawan; sweet fried dough),Per 100g,417.0,5.46,53.69,20.18
+"53530000",Breakfast tart (Includes: Pop Tart; with or without frosting; pasrty crisp),Per 100g,385.0,4.01,71.83,9.02
+"53530010",Breakfast tart,Per 100g,372.0,3.99,76.8,5.99
+"53710400",Cereal or granola bar (General Mills Fiber One Chewy Bar) (Includes: all flavors),Per 100g,389.0,5.0,69.82,10.0
+"53710500",Cereal or granola bar (Kellogg's Nutri-Grain Cereal Bar) (Includes: all flavors),Per 100g,365.0,4.22,67.61,8.67
+"53710502",Cereal or granola bar (Kellogg's Nutri-Grain Yogurt Bar) (Includes: all flavors),Per 100g,365.0,4.22,67.61,8.67
+"53710504",Cereal or granola bar (Kellogg's Nutri-Grain Fruit and Nut Bar) (Includes: all flavors),Per 100g,403.0,9.38,66.72,10.93
+"53710600",Milk 'n Cereal bar (Includes: General Mills Honey Nut Cheerios; General Mills Chex; General Mills Cinnamon Toast Crunch; Kellogg's Frosted Flakes; Kellogg's Froot Loops),Per 100g,413.0,6.47,72.05,10.98
+"53710700",Cereal or granola bar (Kellogg's Special K bar) (Includes: all flavors),Per 100g,409.0,9.09,72.73,9.09
+"53710800",Cereal or granola bar (Kashi Chewy) (Includes: chocolate coated; all flavors; GOLEAN; TLC),Per 100g,390.0,16.67,63.42,7.69
+"53710802",Cereal or granola bar (Kashi Crunchy) (Includes: all flavors; GOLEAN; TLC),Per 100g,429.0,18.57,53.26,15.71
+"53710810",Cereal or granola bar (KIND Fruit and Nut Bar) (Includes: all flavors),Per 100g,502.0,13.89,43.74,32.28
+"53710900",Cereal or granola bar (General Mills Nature Valley Chewy Trail Mix) (Includes: all flavors),Per 100g,415.0,5.71,72.27,11.43
+"53710902",Cereal or granola bar,Per 100g,423.0,5.71,74.29,11.43
+"53710904",Cereal or granola bar (General Mills Nature Valley Sweet and Salty Granola Bar) (Includes: all flavors),Per 100g,487.0,9.14,61.14,22.86
+"53710906",Cereal or granola bar (General Mills Nature Valley Crunchy Granola Bar) (Includes: all flavors; Nature Valley Granola Bar,Per 100g,471.0,10.1,64.4,19.8
+"53711000",Cereal or granola bar (Quaker Chewy Granola Bar) (Includes: all flavors; Quaker Oats bar,Per 100g,418.0,5.65,70.2,16.57
+"53711002",Cereal or granola bar (Quaker Chewy 90 Calorie Granola Bar) (Includes: all flavors; Quaker Lowfat Chewy Granola Bars),Per 100g,408.0,4.17,79.17,8.33
+"53711004",Cereal or granola bar (Quaker Chewy 25% Less Sugar Granola Bar) (Includes: all flavors; Quaker Chewy Reduced Sugar Granola Bar),Per 100g,412.0,5.55,69.4,12.5
+"53711006",Cereal or granola bar (Quaker Chewy Dipps Granola Bar) (Includes: all flavors),Per 100g,480.0,7.52,64.96,20.42
+"53711100",Cereal or granola bar (Quaker Granola Bites),Per 100g,451.0,7.17,66.27,17.5
+"53712000",Snack bar,Per 100g,389.0,6.67,75.47,6.67
+"53712100",Cereal or Granola bar,Per 100g,471.0,10.1,64.4,19.8
+"53714220",Cereal or granola bar with nuts,Per 100g,536.0,9.6,54.1,31.2
+"53714500",Breakfast bar,Per 100g,376.0,4.4,72.8,7.5
+"53720100",Nutrition bar (Balance Original Bar) (Includes: all flavors),Per 100g,415.0,28.0,48.73,12.0
+"53720200",Nutrition bar (Clif Bar) (Includes: all flavors; Clif Minis),Per 100g,346.0,14.71,65.44,5.88
+"53720210",Nutrition bar (Clif Kids Organic Zbar) (Includes: all flavors),Per 100g,416.0,5.55,74.72,9.72
+"53720300",Nutrition bar (PowerBar) (Includes: all flavors; PowerBar energy bar),Per 100g,363.0,14.15,69.63,3.11
+"53720400",Nutrition bar (Slim Fast Original Meal Bar) (Includes: Slim Fast meal-on-the-go and granola meal bars,Per 100g,386.0,16.19,60.21,8.92
+"53720500",Nutrition bar (Snickers Marathon Protein Bar),Per 100g,415.0,25.0,50.5,12.5
+"53720600",Nutrition bar (South Beach Living Meal Bar) (Includes: all flavors),Per 100g,386.0,16.19,60.21,8.92
+"53720610",Nutrition bar (South Beach Living High Protein Bar) (Includes: all flavors),Per 100g,412.0,30.34,38.4,15.17
+"53720700",Nutrition bar (Tiger's Milk),Per 100g,387.0,16.8,56.46,14.29
+"53720800",Nutrition bar (Zone Perfect Classic Crunch) (Includes: all flavors),Per 100g,426.0,30.0,45.0,14.0
+"53729000",Nutrition bar or meal replacement bar,Per 100g,386.0,22.36,55.22,9.94
+"53800000",Baby Toddler snack,Per 100g,359.0,7.34,83.4,3.29
+"53801000",Baby Toddler bar (Includes: snack; cereal and fruit bar),Per 100g,344.0,5.43,68.63,5.3
+"53803100",Baby Toddler cookie (Includes: snack; any flavor),Per 100g,420.0,9.88,69.79,11.24
+"53803300",Baby Toddler biscuit (Includes: snack; teething biscuit; rice rusk; wafer),Per 100g,395.0,11.37,80.53,2.97
+"54001000",Crackers,Per 100g,510.0,6.64,61.3,26.43
+"54102010",Graham crackers (Includes: Honeymaid Sticks; all flavors; graham crackers,Per 100g,430.0,6.69,77.66,10.6
+"54102015",Graham crackers (Teddy Grahams) (Includes: all flavors; Teddy Grahams,Per 100g,430.0,6.69,77.66,10.6
+"54102020",Graham crackers,Per 100g,500.0,4.0,66.78,25.8
+"54318000",Chips,Per 100g,384.0,8.2,81.5,2.8
+"54318500",Rice cake (Includes: all flavors; puffed rice cake with seeds and other grains; mini rice cakes,Per 100g,392.0,7.1,81.1,4.3
+"54319020",Popcorn cake (Includes: puffed corn and rice cake; Quaker Caramel Corn Cake; Quaker Popped Kettle Corn popcorn cakes),Per 100g,384.0,9.7,80.1,3.1
+"54319500",Rice paper (Includes: rice paper wrappers or banh trang),Per 100g,323.0,5.91,72.26,1.11
+"54350000",Baby Toddler crackers (Includes: snack),Per 100g,391.0,12.5,83.21,0.87
+"54350100",Baby Toddler puffs,Per 100g,344.0,6.19,85.79,2.3
+"54360000",Baby Toddler crunchies (Includes: snack; any flavor; cheese puffs or melts),Per 100g,462.0,3.2,69.14,19.24
+"54360100",Baby Toddler wheels (Includes: snack; any flavor),Per 100g,413.0,10.0,78.89,6.41
+"54401011",Corn nuts (Includes: corn nuggets; plain or flavored),Per 100g,446.0,8.5,71.86,15.64
+"54401021",Corn chips,Per 100g,535.0,6.12,56.82,33.1
+"54401055",Cheese flavored corn snacks (Includes: corn-cheese puffs,Per 100g,567.0,5.46,54.54,36.54
+"54401065",Cheese flavored corn snacks,Per 100g,432.0,8.5,72.35,12.1
+"54401075",Tortilla chips,Per 100g,472.0,7.1,67.78,20.68
+"54401081",Cheese flavored corn snacks (Cheetos) (Includes: Cheetos,Per 100g,567.0,5.46,54.54,36.54
+"54402200",Snack mix (Includes: Frito Lay Munchies Snack Mix; Party Mix; SunChip,Per 100g,504.0,6.87,63.11,25.79
+"54402610",Potato chips,Per 100g,505.0,5.3,65.34,24.74
+"54402700",Pita chips (Includes: all flavors; salted; pita crackers; Stacy's Pita Chips; multigrain; plain),Per 100g,457.0,11.79,68.26,15.2
+"54403001",Popcorn,Per 100g,518.0,9.13,54.99,30.57
+"54404000",Popcorn chips,Per 100g,438.0,10.19,74.18,11.19
+"54406010",Onion flavored rings (Includes: all flavors; Funyuns),Per 100g,499.0,7.7,65.1,22.6
+"54406200",Shrimp chips (Includes: shrimp crackers; prawn crackers; Banh Phong Tom; tapioca base),Per 100g,426.0,7.14,59.09,17.86
+"54408000",Pretzels,Per 100g,384.0,10.04,80.39,2.93
+"54408105",Pretzel chips,Per 100g,375.0,9.8,78.43,2.86
+"54420210",Multigrain chips (Sun Chips) (Includes: all flavors; plain),Per 100g,491.0,7.95,67.26,21.11
+"54420220",Snack mix,Per 100g,417.0,8.74,72.2,10.34
+"54440010",Bagel chips (Includes: all flavors),Per 100g,451.0,12.34,66.36,15.14
+"54440020",Cracker chips (Includes: all flavors; Pepperidge Farm Cracker Chips; Ritz Chips; Special K Cracker Chips; Wheat Thins Toasted Chips; multigrain Ritz Chips; Pepperidge Farm Multi-Grain Chips),Per 100g,491.0,7.95,67.26,21.11
+"55100005",Pancakes,Per 100g,282.0,7.41,35.32,12.07
+"55200010",Waffle,Per 100g,309.0,7.42,48.39,9.49
+"55300010",French toast,Per 100g,273.0,10.36,32.34,11.38
+"55301031",French toast sticks (Includes: frozen),Per 100g,278.0,7.52,40.62,9.18
+"55301040",French toast sticks,Per 100g,400.0,7.06,48.48,20.87
+"55501000",Chinese pancake,Per 100g,207.0,4.05,45.38,0.38
+"55610300",Dumpling,Per 100g,125.0,3.45,20.49,3.37
+"55701000",Cake made with glutinous rice (Includes: Japanese rice cake Mochi; Chinese Nian gao / gau or New Year Cake; Filipino Puto cake; Korean Tteok or Duk cake),Per 100g,279.0,2.49,53.57,6.51
+"55702000",Idli (Includes: Indian steamed rice cake; dried beans),Per 100g,128.0,6.36,24.98,0.35
+"55702100",Dosa,Per 100g,210.0,5.7,37.04,4.05
+"55703000",Cake made with glutinous rice and dried beans (Includes: Korean Cake 'Injolmi'),Per 100g,185.0,7.76,36.09,0.6
+"55801000",Funnel cake with sugar,Per 100g,353.0,7.87,43.49,16.57
+"55801010",Funnel cake with sugar and fruit,Per 100g,380.0,5.84,55.18,15.7
+"56104000",Pasta,Per 100g,128.0,4.52,26.55,0.11
+"56112000",Noodles,Per 100g,137.0,4.51,25.01,2.06
+"56116990",Long rice noodles,Per 100g,84.0,0.04,20.66,0.01
+"56117090",Rice noodles,Per 100g,107.0,1.78,23.87,0.2
+"56200300",Cereal,Per 100g,64.0,2.21,11.36,1.09
+"56200410",Barley (Includes: all liquids; with or without fat),Per 100g,139.0,2.2,27.23,2.74
+"56200510",Buckwheat groats (Includes: kasha; all liquids; with or without fat),Per 100g,118.0,3.24,18.99,3.97
+"56200990",Grits,Per 100g,71.0,1.19,12.2,1.84
+"56201515",Cornmeal mush,Per 100g,71.0,1.11,12.25,1.84
+"56201600",Masa harina,Per 100g,97.0,2.26,20.5,0.99
+"56202000",Millet (Includes: all liquids; with or without fat),Per 100g,118.0,3.5,23.57,1.0
+"56202900",Oatmeal,Per 100g,80.0,2.6,11.9,2.54
+"56204000",Quinoa,Per 100g,146.0,4.2,20.22,5.42
+"56205000",Rice,Per 100g,129.0,2.67,27.99,0.28
+"56205050",Cream of rice (Includes: cream of rye),Per 100g,69.0,1.17,15.28,0.09
+"56205101",Congee (Includes: rice porridge or gruel),Per 100g,39.0,0.8,8.4,0.08
+"56205130",Yellow rice,Per 100g,88.0,1.8,19.1,0.45
+"56206990",Cream of wheat,Per 100g,65.0,1.44,10.39,1.8
+"56207110",Bulgur,Per 100g,83.0,3.06,18.48,0.24
+"56207160",Couscous,Per 100g,111.0,3.77,23.11,0.16
+"56207200",Whole wheat cereal,Per 100g,47.0,1.55,10.39,0.28
+"56207370",Wheat cereal,Per 100g,49.0,1.79,10.96,0.47
+"56208500",Oat bran cereal,Per 100g,46.0,3.21,12.28,1.3
+"57412000",Wheat germ,Per 100g,382.0,29.1,49.6,10.7
+"57601100",Wheat bran (Includes: millers bran),Per 100g,216.0,15.55,64.51,4.25
+"57602100",Oats,Per 100g,379.0,13.15,67.7,6.52
+"57801000",Baby Toddler cereal,Per 100g,376.0,13.2,69.4,6.6
+"58100360",Chilaquiles (Includes: migas; tortilla casserole),Per 100g,195.0,10.63,14.9,10.67
+"58101830",Frito pie,Per 100g,328.0,9.96,26.32,20.98
+"58101835",Mexican pizza,Per 100g,249.0,15.47,15.3,13.94
+"58101930",Taco or tostada salad with meat (Includes: Taco Bell Taco Salad; with beef,Per 100g,179.0,7.45,16.49,9.32
+"58101935",Taco or tostada salad with chicken (Includes: with turkey),Per 100g,167.0,7.83,16.29,8.02
+"58101940",Taco or tostada salad,Per 100g,163.0,5.28,19.3,7.36
+"58101945",Taco or tostada salad with meat and sour cream (Includes: with beef,Per 100g,181.0,6.91,15.12,10.4
+"58101950",Taco or tostada salad with chicken and sour cream (Includes: with turkey),Per 100g,171.0,7.24,14.96,9.26
+"58102000",Taco,Per 100g,246.0,15.31,15.62,13.56
+"58102300",Burrito,Per 100g,219.0,11.12,23.87,8.54
+"58102700",Burrito bowl,Per 100g,145.0,13.03,10.58,5.44
+"58102800",Enchilada,Per 100g,178.0,10.03,14.64,9.02
+"58103310",Tamale casserole with meat,Per 100g,174.0,7.38,15.8,9.04
+"58104105",Nachos,Per 100g,265.0,7.6,23.85,15.85
+"58104255",Gordita,Per 100g,324.0,10.65,22.39,21.59
+"58104500",Chimichanga,Per 100g,324.0,12.08,25.76,18.8
+"58104700",Quesadilla,Per 100g,316.0,13.36,28.62,16.21
+"58104800",Taquito,Per 100g,309.0,11.16,32.15,15.32
+"58104990",Fajita,Per 100g,219.0,11.7,17.99,11.02
+"58105100",Pupusa,Per 100g,256.0,11.72,22.39,13.25
+"58106200",Pizza,Per 100g,263.0,11.91,28.8,11.07
+"58106345",Pizza with cheese and extra vegetables,Per 100g,208.0,8.68,25.98,7.8
+"58106512",Pizza with pepperoni,Per 100g,274.0,12.25,27.52,12.71
+"58106602",Pizza with meat other than pepperoni,Per 100g,267.0,12.34,26.98,12.1
+"58106650",Pizza with extra meat,Per 100g,277.0,14.72,24.25,13.36
+"58106700",Pizza with meat and vegetables,Per 100g,276.0,11.28,25.14,14.43
+"58106736",Pizza with extra meat and extra vegetables,Per 100g,222.0,11.43,23.67,9.16
+"58106750",Pizza with meat and fruit,Per 100g,227.0,10.88,27.01,8.34
+"58106820",Pizza with beans and vegetables,Per 100g,203.0,9.29,26.88,6.63
+"58107205",White pizza,Per 100g,285.0,12.4,27.58,13.66
+"58108000",Calzone,Per 100g,389.0,17.59,29.49,22.51
+"58108050",Pizza rolls,Per 100g,345.0,9.19,53.39,10.5
+"58109210",Breakfast pizza with egg,Per 100g,292.0,14.02,25.63,14.5
+"58110110",Egg roll,Per 100g,270.0,5.62,30.02,14.14
+"58110200",Roll with meat and/or shrimp,Per 100g,112.0,5.65,17.23,2.65
+"58111110",Wonton,Per 100g,192.0,8.76,14.05,11.13
+"58111200",Puffs,Per 100g,314.0,9.4,35.09,15.12
+"58117210",Cornmeal stick,Per 100g,415.0,6.92,48.38,20.97
+"58117310",Kibby,Per 100g,168.0,8.76,17.99,7.2
+"58117410",Bacalaitos fritos (Includes: codfish fritter),Per 100g,281.0,14.43,36.1,8.63
+"58117510",Hayacas,Per 100g,157.0,5.82,9.37,10.83
+"58121610",Pierogi,Per 100g,195.0,5.26,29.64,6.14
+"58122210",Gnocchi,Per 100g,178.0,8.51,9.38,11.96
+"58122320",Knish (Includes: pastry filled with cheese,Per 100g,345.0,10.51,31.92,19.73
+"58123110",Bao bun (Includes: any meat; char siu; manapua; pork bun),Per 100g,273.0,11.17,39.78,7.58
+"58123120",Bao bun,Per 100g,268.0,6.73,54.27,2.94
+"58124250",Spanakopita (Includes: Greek spinach cheese pie),Per 100g,212.0,8.27,10.35,15.15
+"58124500",Samosa (Includes: pastry with potatoes and peas),Per 100g,310.0,5.14,33.16,17.47
+"58125110",Quiche with meat,Per 100g,387.0,15.5,12.12,30.63
+"58125120",Spinach quiche,Per 100g,299.0,10.29,11.68,23.51
+"58125180",Cheese quiche,Per 100g,365.0,11.91,13.74,29.23
+"58126100",Turnover or hot pocket,Per 100g,260.0,10.26,27.9,11.92
+"58126290",Turnover or lean pocket (Includes: all varieties),Per 100g,208.0,10.61,24.38,7.5
+"58126400",Turnover or breakfast pocket,Per 100g,265.0,10.01,30.9,11.29
+"58128000",Biscuit with gravy (Includes: with sausage gravy),Per 100g,224.0,6.2,16.98,14.68
+"58128110",Chicken cornbread,Per 100g,167.0,13.78,9.38,8.21
+"58128120",Cornmeal dressing with chicken or turkey and vegetables (Includes: cornbread stuffing with poultry and vegetables),Per 100g,237.0,7.6,19.27,14.45
+"58128210",Dressing with oysters (Includes: oyster stuffing),Per 100g,189.0,4.95,18.4,10.75
+"58128220",Dressing with chicken or turkey and vegetables (Includes: poultry stuffing with vegetables; stuffing with giblets),Per 100g,217.0,8.2,20.97,11.17
+"58128250",Dressing with meat and vegetables (Includes: stuffing with sausage; with ground beef; with pepperoni; with ham; with bacon; with salami),Per 100g,243.0,7.94,20.36,14.56
+"58130011",Lasagna with meat (Includes: lasagna NFS),Per 100g,139.0,7.45,16.17,4.97
+"58130013",Lasagna with meat,Per 100g,97.0,3.24,13.26,3.41
+"58130020",Lasagna with meat and spinach,Per 100g,207.0,13.33,13.76,10.79
+"58130140",Lasagna with chicken or turkey,Per 100g,205.0,13.74,14.01,10.37
+"58130150",Lasagna,Per 100g,201.0,13.51,13.76,10.14
+"58131100",Ravioli,Per 100g,185.0,10.3,19.89,6.97
+"58133110",Manicotti,Per 100g,207.0,10.4,20.4,9.3
+"58134110",Stuffed shells,Per 100g,205.0,9.93,22.21,8.51
+"58134610",Tortellini,Per 100g,134.0,6.62,15.83,4.92
+"58134810",Cannelloni,Per 100g,157.0,6.31,18.36,6.51
+"58135110",Chow fun noodles with meat and vegetables,Per 100g,102.0,7.09,11.51,2.74
+"58135120",Chow fun noodles with vegetables,Per 100g,74.0,1.56,14.46,0.97
+"58136110",Lo mein,Per 100g,121.0,4.77,20.16,2.35
+"58137210",Pad Thai,Per 100g,154.0,8.13,14.36,7.5
+"58137230",Pad Thai with chicken (Includes: turkey and other poultry),Per 100g,154.0,8.13,14.36,7.5
+"58137240",Pad Thai with seafood (Includes: shrimp; fish),Per 100g,147.0,6.84,15.05,6.82
+"58137250",Pad Thai with meat,Per 100g,160.0,8.18,14.73,7.92
+"58137300",Adobo,Per 100g,172.0,16.89,8.14,7.66
+"58140310",Macaroni with tuna,Per 100g,147.0,7.71,18.13,4.74
+"58145110",Macaroni or noodles with cheese (Includes: macaroni casserole,Per 100g,223.0,8.68,23.08,10.5
+"58145111",Macaroni or noodles with cheese,Per 100g,151.0,5.42,18.8,6.06
+"58145120",Macaroni or noodles with cheese and tuna (Includes: Tuna Helper Cheesy Noodles 'n' Tuna; Tuna Helper Tuna Au gratin),Per 100g,164.0,7.59,18.23,6.79
+"58145135",Macaroni or noodles with cheese and meat (Includes: beef; pork or ham),Per 100g,210.0,11.79,15.14,11.16
+"58145136",Macaroni or noodles with cheese and meat,Per 100g,144.0,8.24,10.27,7.59
+"58145140",Macaroni or noodles with cheese and tomato,Per 100g,148.0,3.94,18.72,6.53
+"58145160",Macaroni or noodles with cheese and frankfurters or hot dogs,Per 100g,209.0,6.17,18.71,12.25
+"58145170",Macaroni or noodles with cheese and egg,Per 100g,185.0,5.91,19.0,9.52
+"58145190",Macaroni or noodles with cheese and chicken or turkey,Per 100g,178.0,12.53,14.82,7.61
+"58146120",Pasta with tomato-based sauce,Per 100g,147.0,7.61,13.34,7.1
+"58146150",Pasta with tomato-based sauce and cheese (Includes: Baked Ziti,Per 100g,119.0,3.74,14.98,4.83
+"58146160",Pasta with vegetables,Per 100g,144.0,4.46,23.1,3.54
+"58146210",Pasta with sauce,Per 100g,125.0,5.86,19.15,2.58
+"58146315",Pasta with sauce and meat,Per 100g,117.0,5.95,17.5,3.12
+"58146321",Pasta with tomato-based sauce and meat,Per 100g,178.0,5.43,17.74,9.25
+"58146341",Pasta with tomato-based sauce and poultry,Per 100g,171.0,5.59,17.74,8.47
+"58146361",Pasta with tomato-based sauce and seafood,Per 100g,166.0,5.16,17.98,7.97
+"58146381",Pasta with cream sauce,Per 100g,204.0,3.72,15.56,13.95
+"58146391",Pasta with cream sauce and added vegetables,Per 100g,191.0,3.7,15.95,12.41
+"58146401",Pasta with cream sauce and meat,Per 100g,213.0,5.67,15.41,14.1
+"58146421",Pasta with cream sauce and poultry,Per 100g,206.0,5.83,15.41,13.33
+"58146441",Pasta with cream sauce and seafood,Per 100g,202.0,5.4,15.66,12.82
+"58147110",Pasta with tomato-based sauce and beans or lentils (Includes: spaghetti,Per 100g,125.0,5.23,20.94,2.28
+"58147330",Macaroni or noodles,Per 100g,158.0,4.72,22.03,5.49
+"58147510",Flavored pasta (Includes: meatless yat ga mein; meatless chow wor mein; dry pasta mix with sauce; Knorr Noodles and Sauce; Knorr Pasta and Sauce; Knorr Italian Sides; Knorr Pasta Sides; Pasta Roni; made with or without fat; any type of fat),Per 100g,87.0,2.47,14.45,2.21
+"58147520",Yat Ga Mein with meat,Per 100g,134.0,10.36,11.16,5.57
+"58148110",Macaroni or pasta salad,Per 100g,221.0,4.46,24.65,11.52
+"58148120",Macaroni or pasta salad with egg (Includes: made with assorted vegetables and any dressing),Per 100g,215.0,5.18,22.54,11.44
+"58148130",Macaroni or pasta salad with tuna (Includes: made with assorted vegetables and any dressing),Per 100g,200.0,6.69,20.88,9.9
+"58148140",Macaroni or pasta salad with crab meat (Includes: made with assorted vegetables and any dressing),Per 100g,201.0,6.48,20.94,9.9
+"58148150",Macaroni or pasta salad with shrimp (Includes: made with assorted vegetables and any dressing),Per 100g,203.0,6.86,20.94,9.99
+"58148160",Macaroni or pasta salad with tuna and egg (Includes: made with assorted vegetables and any dressing),Per 100g,197.0,7.14,19.36,9.96
+"58148170",Macaroni or pasta salad with chicken (Includes: made with assorted vegetables and any dressing),Per 100g,213.0,7.82,20.94,10.75
+"58148180",Macaroni or pasta salad with cheese (Includes: made with assorted vegetables and any dressing),Per 100g,246.0,6.89,21.78,14.43
+"58148550",Macaroni or pasta salad with meat (Includes: made with assorted vegetables and any dressing),Per 100g,211.0,7.65,20.82,10.59
+"58149110",Noodle pudding (Includes: kugel),Per 100g,209.0,5.94,31.02,7.4
+"58150100",Bibimbap,Per 100g,76.0,5.5,8.11,2.44
+"58150520",Dukboki or Tteokbokki,Per 100g,131.0,4.11,19.61,4.05
+"58151100",Sushi,Per 100g,94.0,2.92,18.39,0.67
+"58151170",Sushi roll,Per 100g,93.0,1.8,17.65,1.47
+"58151220",Sushi roll tuna (Includes: NS as to rolled or topped; Maki or Temaki),Per 100g,97.0,7.4,15.3,0.26
+"58155320",Seafood paella,Per 100g,146.0,7.59,15.7,5.64
+"58155410",Soupy rice with chicken,Per 100g,151.0,12.07,16.47,4.04
+"58155510",Soupy rice mixture with chicken and potatoes,Per 100g,112.0,6.34,12.07,4.26
+"58155810",Stewed rice,Per 100g,224.0,3.96,33.43,7.8
+"58155910",Rice with squid,Per 100g,264.0,8.87,29.31,11.8
+"58156210",Rice with vienna sausage,Per 100g,269.0,6.46,33.54,11.6
+"58156310",Rice with Spanish sausage,Per 100g,289.0,8.39,32.39,13.58
+"58156710",Rice with stewed beans,Per 100g,138.0,3.66,23.02,3.23
+"58157300",Congee,Per 100g,58.0,4.34,7.0,1.28
+"58160000",Biryani with vegetables (Includes: plain biryani; Indian rice with vegetables; vegetarian biryani),Per 100g,109.0,1.93,17.91,3.2
+"58160100",Beans and rice,Per 100g,185.0,6.29,24.41,6.99
+"58160102",Kidney beans and rice,Per 100g,179.0,5.72,23.17,7.07
+"58160104",Black beans and rice,Per 100g,182.0,5.82,23.66,7.09
+"58160106",Pinto beans and rice,Per 100g,188.0,5.9,25.02,7.15
+"58160110",Beans and white rice (Includes: lentils; peas; all other beans except red,Per 100g,164.0,6.5,25.19,4.21
+"58160150",Kidney beans and white rice (Includes: red; all types of rice except brown),Per 100g,158.0,5.9,23.91,4.29
+"58160154",Black beans and white rice (Includes: all types of rice except brown),Per 100g,160.0,6.01,24.42,4.32
+"58160156",Pinto beans and white rice (Includes: calico; all types of rice except brown),Per 100g,167.0,6.09,25.82,4.38
+"58161320",Beans and brown rice (Includes: lentils; peas; all other beans except red,Per 100g,162.0,6.4,24.29,4.54
+"58161321",Kidney beans and brown rice (Includes: red),Per 100g,155.0,5.81,23.02,4.63
+"58161322",Black beans and brown rice,Per 100g,158.0,5.91,23.52,4.65
+"58161323",Pinto beans and brown rice (Includes: calico),Per 100g,164.0,6.0,24.92,4.71
+"58161510",Grape leaves stuffed with rice,Per 100g,168.0,2.28,13.88,11.95
+"58161710",Rice croquette,Per 100g,154.0,3.35,20.08,6.58
+"58162090",Stuffed pepper,Per 100g,198.0,9.2,4.23,15.87
+"58162130",Stuffed tomato,Per 100g,99.0,4.75,9.86,4.54
+"58162310",Rice pilaf (Includes: Suzi Wan Sweet'n Sour Rice),Per 100g,137.0,3.29,24.08,3.03
+"58163130",Dirty rice (Includes: rice cooked with chicken giblets; cajun rice),Per 100g,112.0,5.12,17.25,2.25
+"58163310",Flavored rice mixture (Includes: Uncle Ben's,Per 100g,127.0,1.87,19.83,4.26
+"58163330",Flavored rice mixture with cheese (Includes: rice au gratin; Uncle Ben's Country Inn cheese and rice mixtures),Per 100g,124.0,2.99,25.22,1.2
+"58163360",Flavored rice,Per 100g,106.0,2.72,19.34,2.15
+"58163380",Flavored rice and pasta mixture (Includes: Rice-A-Roni,Per 100g,118.0,2.68,19.11,3.49
+"58163400",Flavored rice and pasta mixture,Per 100g,111.0,2.59,17.29,3.43
+"58163405",Spanish rice,Per 100g,185.0,3.28,31.16,5.29
+"58163450",Spanish rice with ground beef,Per 100g,163.0,9.68,14.79,6.91
+"58163510",Rice dressing (Includes: rice stuffing combined with bread),Per 100g,110.0,1.98,17.61,3.29
+"58164110",Rice with raisins,Per 100g,162.0,2.65,32.13,2.58
+"58164210",Rice dessert or salad with fruit (Includes: glorified rice),Per 100g,154.0,1.39,20.8,7.29
+"58174000",Upma (Includes: Indian breakfast dish),Per 100g,87.0,1.98,13.81,2.64
+"58175000",Vada (Includes: lentil or bean dumpling; fritter),Per 100g,266.0,12.75,33.25,9.73
+"58175110",Tabbouleh (Includes: Tabbuli; bulgar with tomatoes and parsley),Per 100g,127.0,1.64,9.65,9.66
+"58200210",Vegetable sandwich on white (Includes: bread,Per 100g,120.0,3.94,21.53,2.11
+"58200220",Vegetable sandwich on white,Per 100g,147.0,5.82,19.65,5.11
+"58200230",Vegetable sandwich on wheat (Includes: bread,Per 100g,119.0,4.67,20.14,2.25
+"58200240",Vegetable sandwich on wheat,Per 100g,146.0,6.46,18.42,5.24
+"58200250",Vegetable sandwich wrap (Includes: tortilla; flatbread; cheese),Per 100g,160.0,5.42,19.71,6.55
+"58201000",Jelly sandwich,Per 100g,267.0,5.72,57.5,2.16
+"58302080",Noodles with vegetables in tomato-based sauce,Per 100g,70.0,3.63,10.82,1.55
+"58304010",Spaghetti and meatballs dinner,Per 100g,113.0,5.58,15.06,3.39
+"58304060",Spaghetti with meat sauce,Per 100g,113.0,5.58,15.06,3.39
+"58310310",Pancakes and sausage,Per 100g,272.0,9.0,27.92,13.85
+"58407034",Ramen bowl,Per 100g,127.0,7.13,13.95,4.57
+"58407038",Ramen bowl with beef (Includes: with pork or sausage; multiple meats),Per 100g,137.0,6.81,15.4,5.19
+"58407042",Ramen bowl with chicken,Per 100g,126.0,7.04,15.4,3.86
+"58407046",Ramen bowl with fish (Includes: with shrimp or seafood),Per 100g,112.0,5.78,15.4,2.87
+"58407056",Ramen bowl with meat and egg (Includes: with any meat,Per 100g,127.0,7.13,13.95,4.57
+"59003000",Meat substitute,Per 100g,359.0,12.8,61.25,7.23
+"61100600",Clementine,Per 100g,53.0,0.81,13.34,0.31
+"61101010",Grapefruit,Per 100g,42.0,0.77,10.66,0.14
+"61110010",Kumquat,Per 100g,71.0,1.88,15.9,0.86
+"61113010",Lemon,Per 100g,29.0,1.1,9.32,0.3
+"61113500",Lemon pie filling,Per 100g,354.0,4.71,68.92,6.93
+"61116010",Lime,Per 100g,30.0,0.7,10.54,0.2
+"61119010",Orange,Per 100g,50.0,0.92,11.78,0.14
+"61125010",Tangerine,Per 100g,53.0,0.81,13.34,0.31
+"61201010",Grapefruit juice,Per 100g,39.0,0.5,9.2,0.1
+"61204000",Lemon juice,Per 100g,22.0,0.35,6.9,0.24
+"61207000",Lime juice,Per 100g,25.0,0.42,8.42,0.07
+"61210000",Orange juice,Per 100g,47.0,0.77,10.17,0.34
+"61213220",Tangerine juice,Per 100g,43.0,0.5,10.1,0.2
+"61213800",Fruit juice blend,Per 100g,47.0,0.77,10.18,0.34
+"62101050",Dried,Per 100g,298.0,2.28,78.62,0.62
+"62101100",Apple,Per 100g,243.0,0.93,65.89,0.32
+"62104100",Apricot,Per 100g,241.0,3.39,62.64,0.51
+"62105000",Blueberries,Per 100g,317.0,2.5,80.0,2.5
+"62106000",Cherries,Per 100g,333.0,1.25,80.45,0.73
+"62107200",Banana chips,Per 100g,519.0,2.3,58.4,33.6
+"62108100",Currants,Per 100g,290.0,3.43,76.98,0.22
+"62109100",Cranberries,Per 100g,308.0,0.17,82.8,1.09
+"62110100",Date,Per 100g,282.0,2.45,75.03,0.39
+"62113100",Fig,Per 100g,277.0,3.3,63.9,0.92
+"62114050",Mango,Per 100g,319.0,2.45,78.58,1.18
+"62114110",Papaya,Per 100g,302.0,1.25,75.43,0.84
+"62116100",Peach,Per 100g,239.0,3.61,61.33,0.76
+"62119100",Pear,Per 100g,262.0,1.87,69.7,0.63
+"62120000",Persimmon,Per 100g,374.0,1.54,96.07,0.66
+"62120100",Pineapple,Per 100g,347.0,1.22,84.11,0.71
+"62122100",Prune,Per 100g,240.0,2.18,63.88,0.38
+"62125100",Raisins,Per 100g,299.0,3.3,79.32,0.25
+"63100100",Fruit,Per 100g,68.0,0.68,16.24,0.21
+"63101110",Applesauce,Per 100g,75.0,0.25,17.97,0.17
+"63101210",Apple pie filling (Includes: pie filling,Per 100g,100.0,0.1,26.1,0.1
+"63105010",Avocado,Per 100g,160.0,2.0,8.53,14.66
+"63107010",Banana,Per 100g,97.0,0.74,22.71,0.28
+"63109010",Cantaloupe,Per 100g,38.0,0.82,8.16,0.18
+"63109015",Melon,Per 100g,35.0,0.66,8.27,0.16
+"63109700",Starfruit,Per 100g,31.0,1.04,6.73,0.33
+"63113030",Cherry pie filling,Per 100g,122.0,0.6,28.59,0.91
+"63116010",Dragon fruit (Includes: pitaya),Per 100g,68.0,0.68,16.24,0.21
+"63123000",Grapes,Per 100g,83.0,0.9,19.4,0.2
+"63125010",Guava,Per 100g,68.0,2.55,14.32,0.95
+"63126500",Kiwi fruit,Per 100g,64.0,1.06,14.0,0.44
+"63126510",Lychee,Per 100g,66.0,0.83,16.53,0.44
+"63127010",Honeydew melon,Per 100g,36.0,0.54,9.09,0.14
+"63131010",Nectarine,Per 100g,43.0,1.06,9.18,0.28
+"63134010",Passion fruit,Per 100g,97.0,2.2,23.38,0.7
+"63143010",Plum,Per 100g,46.0,0.7,11.42,0.28
+"63145010",Pomegranate,Per 100g,83.0,1.67,18.7,1.17
+"63147110",Rhubarb (Includes: rhubarb sauce),Per 100g,73.0,0.81,17.45,0.22
+"63148750",Tamarind,Per 100g,239.0,2.8,62.5,0.6
+"63149010",Watermelon,Per 100g,30.0,0.61,7.55,0.15
+"63200100",Berries,Per 100g,44.0,0.66,9.94,0.25
+"63201010",Blackberries,Per 100g,43.0,1.39,9.61,0.49
+"63203110",Bluberries,Per 100g,88.0,1.04,22.66,0.4
+"63203700",Blueberry pie filling,Per 100g,181.0,0.41,44.38,0.2
+"63207110",Cranberry sauce (Includes: jellied; whole berry; canned; relish),Per 100g,159.0,0.9,40.4,0.15
+"63219000",Raspberries,Per 100g,57.0,1.01,12.9,0.19
+"63223020",Strawberries,Per 100g,36.0,0.64,7.96,0.22
+"63301010",Ambrosia,Per 100g,75.0,0.81,16.45,0.98
+"63311000",Fruit salad,Per 100g,59.0,0.64,13.94,0.21
+"63311110",Fruit cocktail,Per 100g,55.0,0.41,14.1,0.08
+"63311180",Fruit mixture,Per 100g,48.0,0.69,11.29,0.23
+"63401010",Apple salad with dressing (Includes: Waldorf salad; fruit and nut salad with apples,Per 100g,180.0,1.45,12.2,14.24
+"63403150",Lime souffle (Includes: other citrus fruits),Per 100g,328.0,8.82,39.83,15.02
+"63409010",Guacamole,Per 100g,155.0,1.95,8.45,14.18
+"63409015",Guacamole with tomatoes (Includes: avocado dip with tomatoes),Per 100g,145.0,1.87,8.09,13.09
+"63409020",Chutney (Includes: fruit; tamarind),Per 100g,246.0,0.33,60.6,0.06
+"63413010",Pineapple salad with dressing (Includes: pineapple salad with cream cheese; with nuts),Per 100g,105.0,0.5,12.79,5.79
+"63420105",Frozen fruit juice bar (Includes: all flavors; frozen fruit bar; NS as to type),Per 100g,106.0,0.81,25.4,0.06
+"63420205",Frozen fruit juice bar,Per 100g,30.0,0.12,7.35,0.01
+"63430150",Sorbet (Includes: all flavors,Per 100g,110.0,0.79,27.12,0.05
+"64100100",Fruit juice,Per 100g,51.0,0.29,12.1,0.26
+"64100200",Cranberry juice blend,Per 100g,46.0,0.12,11.16,0.18
+"64101010",Apple cider (Includes: cider,Per 100g,46.0,0.1,11.3,0.13
+"64104010",Apple juice,Per 100g,48.0,0.09,11.34,0.25
+"64104600",Blackberry juice,Per 100g,38.0,0.3,7.8,0.6
+"64104610",Blueberry juice,Per 100g,42.0,0.46,9.47,0.2
+"64105400",Cranberry juice,Per 100g,32.0,0.0,7.26,0.34
+"64116020",Grape juice,Per 100g,66.0,0.18,15.73,0.28
+"64120010",Papaya juice,Per 100g,57.0,0.17,14.51,0.15
+"64121000",Passion fruit juice,Per 100g,51.0,0.39,13.6,0.05
+"64124020",Pineapple juice,Per 100g,53.0,0.36,12.87,0.12
+"64126000",Pomegranate juice,Per 100g,54.0,0.15,13.13,0.29
+"64132010",Prune juice,Per 100g,71.0,0.61,17.45,0.03
+"64132500",Strawberry juice,Per 100g,23.0,0.42,5.17,0.14
+"64133100",Watermelon juice,Per 100g,30.0,0.61,7.55,0.15
+"64200100",Fruit nectar,Per 100g,51.0,0.11,13.12,0.06
+"64201010",Apricot nectar,Per 100g,56.0,0.17,13.63,0.45
+"64201500",Banana nectar,Per 100g,74.0,0.26,18.01,0.13
+"64202010",Cantaloupe nectar,Per 100g,65.0,0.33,15.64,0.11
+"64203020",Guava nectar,Per 100g,48.0,0.3,13.3,0.07
+"64204010",Mango nectar,Per 100g,51.0,0.11,13.12,0.06
+"64205010",Peach nectar,Per 100g,49.0,0.1,11.61,0.57
+"64210010",Papaya nectar,Per 100g,57.0,0.17,14.51,0.15
+"64213010",Passion fruit nectar,Per 100g,69.0,0.16,17.39,0.06
+"64215010",Pear nectar,Per 100g,60.0,0.11,15.76,0.01
+"64221010",Soursop,Per 100g,59.0,0.11,14.93,0.17
+"64401000",Vinegar,Per 100g,21.0,0.0,0.93,0.0
+"67100000",Baby Toddler fruit,Per 100g,68.0,0.68,16.44,0.21
+"67100100",Baby Toddler multiple fruit,Per 100g,68.0,0.68,16.44,0.21
+"67100350",Baby Toddler fruit and vegetables,Per 100g,59.0,0.98,13.69,0.23
+"67100480",Baby Toddler fruit and meat (Includes: any stage; with grain),Per 100g,82.0,2.26,16.44,0.99
+"67102010",Baby Toddler apples,Per 100g,41.0,0.2,10.8,0.2
+"67105030",Baby Toddler bananas,Per 100g,91.0,1.0,21.34,0.2
+"67108010",Baby Toddler peaches,Per 100g,65.0,0.94,14.48,0.33
+"67109010",Baby Toddler pears,Per 100g,42.0,0.3,10.8,0.2
+"67110000",Baby Toddler prunes (Includes: any stage; plums),Per 100g,100.0,1.0,23.52,0.2
+"67110100",Baby Toddler mangoes (Includes: any stage),Per 100g,60.0,0.82,14.98,0.38
+"67201000",Baby Toddler juice,Per 100g,47.0,0.0,11.7,0.1
+"67408010",Baby Toddler pudding (Includes: any stage; any flavor; custard),Per 100g,86.0,1.76,17.58,0.98
+"67430500",Baby Toddler yogurt melts (Includes: snack; yogurt puffs or drops; any flavor),Per 100g,380.0,14.29,71.82,4.0
+"71000100",Potato,Per 100g,126.0,1.87,20.45,4.25
+"71106000",Stewed potatoes,Per 100g,115.0,2.09,18.75,3.71
+"71106010",Potato only from Puerto Rican mixed dishes,Per 100g,85.0,1.7,19.89,0.1
+"71106020",Potato from Puerto Rican style stuffed pot roast,Per 100g,74.0,2.46,14.45,0.93
+"71106050",Potato from Puerto Rican beef stew,Per 100g,74.0,2.46,14.45,0.93
+"71106070",Potato from Puerto Rican chicken fricassee,Per 100g,72.0,1.34,14.62,1.02
+"71205020",Potato sticks,Per 100g,522.0,6.7,53.3,34.4
+"71220000",Vegetable chips (Includes: veggie chips; Eat smart; vegetable puffs; vegetable sticks; veggie straws; veggie crisp; Terra; all flavors excluding sweet potato; snap pea crisps),Per 100g,495.0,4.72,59.2,26.56
+"71410000",Potato skins without topping,Per 100g,151.0,2.12,19.53,7.45
+"71410500",Potato skins,Per 100g,199.0,6.07,16.34,12.4
+"71503010",Potato patty (Includes: potato croquettes; potato cake),Per 100g,171.0,3.89,13.49,11.32
+"71505000",Potato tots,Per 100g,237.0,1.9,24.4,15.46
+"71600950",Potato salad with egg,Per 100g,175.0,3.04,15.37,11.35
+"71602010",Potato salad,Per 100g,108.0,2.92,17.17,3.22
+"71701000",Potato pancake (Includes: latkes),Per 100g,196.0,4.47,20.64,10.8
+"71701500",Lefse (Includes: Norwegian potato and flour pancake),Per 100g,218.0,4.37,36.39,6.34
+"71703990",Stewed potatoes (Includes: papas guisadas; with or with out peel; with or without fat added),Per 100g,103.0,1.99,16.26,3.39
+"71704000",Stewed potatoes with tomatoes (Includes: papas guisadas con tomate),Per 100g,87.0,1.71,12.89,3.29
+"71900100",Plantain,Per 100g,122.0,1.3,31.8,0.35
+"71905410",Plantain chips,Per 100g,531.0,2.28,63.84,29.59
+"71930120",Cassava,Per 100g,191.0,1.42,39.62,3.03
+"71930190",Yuca fries,Per 100g,269.0,1.24,34.72,13.94
+"71930200",Casabe,Per 100g,299.0,2.54,71.22,0.52
+"71962040",Taro,Per 100g,141.0,1.57,27.55,2.95
+"71970200",Fufu (Includes: African dish),Per 100g,166.0,1.5,33.59,2.99
+"71980200",Taro chips,Per 100g,498.0,2.3,68.1,24.9
+"72101100",Beet greens,Per 100g,22.0,2.2,4.33,0.13
+"72103000",Broccoli raab,Per 100g,22.0,3.17,2.85,0.49
+"72104100",Chard,Per 100g,19.0,1.8,3.74,0.2
+"72107100",Collards,Per 100g,32.0,3.02,5.42,0.61
+"72110100",Cress,Per 100g,32.0,2.6,5.5,0.7
+"72113100",Dandelion greens,Per 100g,45.0,2.7,9.2,0.7
+"72116000",Romaine lettuce,Per 100g,21.0,0.98,4.06,0.07
+"72116150",Caesar salad,Per 100g,77.0,4.0,7.49,3.41
+"72116220",Escarole,Per 100g,37.0,1.12,2.98,2.72
+"72118211",Greens,Per 100g,37.0,2.97,5.16,0.97
+"72119190",Kale,Per 100g,43.0,2.92,4.42,1.49
+"72120220",Lambsquarter,Per 100g,54.0,3.11,4.85,3.22
+"72122100",Mustard greens,Per 100g,27.0,2.86,4.67,0.42
+"72123020",Poke greens,Per 100g,42.0,2.24,3.01,2.93
+"72124100",Radicchio,Per 100g,23.0,1.43,4.48,0.25
+"72125100",Spinach,Per 100g,27.0,2.85,2.41,0.62
+"72125240",Spinach souffle,Per 100g,128.0,5.72,7.13,8.64
+"72125260",Spinach and cheese casserole (Includes: spinach casserole,Per 100g,130.0,7.05,9.86,7.59
+"72125310",Palak Paneer (Includes: spinach or mustard greens with cottage cheese; Saagwala; Saag Paneer; Indian dish),Per 100g,101.0,5.42,4.28,7.02
+"72125500",Channa Saag (Includes: Chana Shaag or Sagh; spinach and chickpeas; Indian),Per 100g,89.0,4.1,8.79,4.33
+"72126001",Taro leaves,Per 100g,68.0,5.19,6.98,3.51
+"72128211",Turnip greens,Per 100g,20.0,1.14,4.35,0.23
+"72128220",Turrnip greens,Per 100g,42.0,1.11,4.23,2.77
+"72130100",Watercress,Per 100g,11.0,2.3,1.29,0.1
+"72132201",Bitter melon,Per 100g,56.0,3.49,6.47,2.74
+"72133201",Sweet potato,Per 100g,57.0,2.12,7.15,2.88
+"72201100",Broccoli,Per 100g,39.0,2.57,6.27,0.34
+"72202010",Broccoli casserole with noodles (Includes: cream sauce),Per 100g,112.0,3.55,15.86,3.77
+"72202020",Broccoli casserole with rice (Includes: mushroom sauce),Per 100g,107.0,4.14,15.06,3.6
+"72202030",Fried broccoli (Includes: battered or breaded; broccoli bites),Per 100g,223.0,4.28,22.41,12.88
+"73101010",Carrots,Per 100g,44.0,0.87,9.68,0.24
+"73105000",Beet juice,Per 100g,25.0,0.72,5.91,0.06
+"73105010",Carrot juice,Per 100g,40.0,0.95,9.28,0.15
+"73111211",Peas and carrots,Per 100g,67.0,3.3,12.84,0.39
+"73201013",Pumpkin,Per 100g,56.0,1.08,7.86,2.82
+"73302010",Winter squash,Per 100g,26.0,1.0,6.5,0.1
+"73305020",Squash,Per 100g,78.0,3.4,12.14,2.26
+"73410200",Sweet potato fries,Per 100g,192.0,2.27,37.45,9.39
+"73410210",Sweet potato chips,Per 100g,529.0,2.92,56.54,32.19
+"73420020",Sweet potato tots (Includes: sweet potato puffs,Per 100g,191.0,2.26,37.3,9.35
+"73420100",Sweet potato tots,Per 100g,240.0,2.12,34.87,15.6
+"74101000",Tomatoes,Per 100g,20.0,0.82,4.04,0.31
+"74205010",Fried green tomatoes (Includes: fried tomato,Per 100g,216.0,3.68,21.78,12.84
+"74205020",Tomato,Per 100g,40.0,1.0,9.09,0.18
+"74206000",Sun-dried tomatoes (Includes: dried red tomatoes),Per 100g,258.0,14.11,55.76,2.97
+"74301100",Tomato juice,Per 100g,23.0,0.86,4.32,0.29
+"74302000",Tomato juice cocktail (Includes: less than 100% tomato juice; tomato juice with clam or beef juice; NS as to 100% tomato juice),Per 100g,22.0,0.93,3.87,0.31
+"74303000",Tomato and vegetable juice,Per 100g,22.0,0.93,3.87,0.31
+"74401010",Ketchup (Includes: catsup),Per 100g,109.0,1.08,27.1,0.32
+"74401110",Ketchup,Per 100g,101.0,1.04,27.4,0.1
+"74402010",Tomato chili sauce,Per 100g,92.0,2.5,19.79,0.3
+"74402100",Salsa,Per 100g,34.0,1.44,6.74,0.19
+"74402210",Taco sauce (Includes: McDonald's hot sauce; Taco Bell hot sauce; fast food hot sauce),Per 100g,11.0,1.16,0.72,0.68
+"74402250",Enchilada sauce,Per 100g,30.0,0.62,4.87,0.91
+"74402350",Salsa verde or salsa,Per 100g,38.0,1.13,6.36,0.89
+"74403000",Hot Thai sauce (Includes: hot chilli sauce; Sriracha sauce; red pepper paste; chilli pepper paste),Per 100g,74.0,1.03,16.58,0.66
+"74404010",Spaghetti sauce (Includes: tomato-based,Per 100g,51.0,1.41,8.05,1.48
+"74404020",Spaghetti sauce with added vegetables (Includes: tomato-based,Per 100g,46.0,1.52,7.45,1.2
+"74404050",Spaghetti sauce,Per 100g,51.0,1.41,8.06,1.48
+"74404090",Vodka sauce with tomatoes and cream,Per 100g,75.0,1.15,3.56,6.57
+"74406010",Barbecue sauce (Includes: BBQ sauce),Per 100g,172.0,0.82,40.77,0.63
+"74406060",Buffalo sauce,Per 100g,11.0,1.21,0.75,0.71
+"74406100",Steak sauce (Includes: A1; Pickapeppa; Heinz 57),Per 100g,95.0,1.25,22.04,0.23
+"74406500",Cocktail sauce,Per 100g,128.0,1.36,28.22,1.05
+"74410110",Puerto Rican seasoning with ham (Includes: Sofrito,Per 100g,266.0,3.96,7.24,24.78
+"74420110",Puerto Rican seasoning without ham and tomato sauce (Includes: Sofrito sin jamon o salsa de tomate),Per 100g,127.0,1.02,6.89,10.79
+"74506000",Tomato and cucumber salad made with tomato,Per 100g,122.0,0.52,6.35,10.18
+"74701000",Tomato sandwich on white (Includes: bread,Per 100g,201.0,8.46,26.54,6.8
+"74701010",Tomato sandwich on wheat (Includes: bread,Per 100g,199.0,9.44,24.67,6.99
+"75100250",Raw vegetable,Per 100g,30.0,1.19,5.83,0.26
+"75100300",Sprouts,Per 100g,30.0,3.04,5.94,0.18
+"75100500",Alfalfa sprouts,Per 100g,23.0,3.99,2.1,0.69
+"75100750",Artichoke,Per 100g,53.0,2.89,11.95,0.34
+"75100800",Asparagus,Per 100g,20.0,2.2,3.88,0.12
+"75101000",Bean sprouts,Per 100g,30.0,3.04,5.94,0.18
+"75101800",Green beans,Per 100g,40.0,1.97,7.41,0.28
+"75102500",Beets,Per 100g,43.0,1.61,9.56,0.17
+"75102600",Broccoflower,Per 100g,31.0,2.95,6.09,0.3
+"75102750",Brussels sprouts,Per 100g,43.0,3.38,8.95,0.3
+"75103000",Cabbage,Per 100g,31.0,0.96,6.38,0.23
+"75105500",Cactus,Per 100g,16.0,1.32,3.33,0.09
+"75107000",Cauliflower,Per 100g,25.0,1.92,4.97,0.28
+"75109000",Celery,Per 100g,17.0,0.49,3.32,0.16
+"75109010",Fennel bulb,Per 100g,31.0,1.24,7.3,0.2
+"75109400",Basil,Per 100g,23.0,3.15,2.65,0.64
+"75109500",Chives,Per 100g,30.0,3.27,4.35,0.73
+"75109550",Cilantro,Per 100g,23.0,2.13,3.67,0.52
+"75109600",Corn,Per 100g,86.0,3.27,18.7,1.35
+"75111000",Cucumber,Per 100g,16.0,0.62,2.95,0.18
+"75111200",Eggplant,Per 100g,25.0,0.98,5.88,0.18
+"75111500",Garlic,Per 100g,143.0,6.62,28.2,0.38
+"75111800",Jicama,Per 100g,38.0,0.72,8.82,0.09
+"75112000",Kohlrabi,Per 100g,27.0,1.7,6.2,0.1
+"75113000",Lettuce,Per 100g,20.0,0.92,3.69,0.1
+"75114000",Mixed salad greens,Per 100g,21.0,1.31,3.43,0.21
+"75115000",Mushrooms,Per 100g,31.0,2.9,4.13,0.35
+"75117010",Onions,Per 100g,32.0,1.83,7.34,0.19
+"75119000",Parsley,Per 100g,36.0,2.97,6.33,0.79
+"75120000",Green peas,Per 100g,81.0,5.42,14.45,0.4
+"75121000",Peppers,Per 100g,34.0,1.39,7.66,0.4
+"75125000",Radish (Includes: daikon),Per 100g,16.0,0.68,3.4,0.1
+"75127000",Rutabaga,Per 100g,37.0,1.08,8.62,0.16
+"75127500",Seaweed,Per 100g,41.0,3.51,7.94,0.49
+"75127750",Snowpeas,Per 100g,42.0,2.8,7.55,0.2
+"75128000",Summer squash,Per 100g,19.0,1.01,3.88,0.27
+"75129000",Turnip,Per 100g,28.0,0.9,6.43,0.1
+"75132000",Mixed vegetable juice (Includes: vegetables other than tomato),Per 100g,28.0,0.72,6.3,0.16
+"75132100",Celery juice,Per 100g,17.0,0.49,3.32,0.16
+"75140500",Broccoli salad with cauliflower,Per 100g,270.0,5.83,10.38,22.82
+"75140510",Broccoli slaw salad (Includes: Broccoli salad,Per 100g,123.0,1.97,10.41,8.11
+"75140990",Coleslaw,Per 100g,159.0,0.88,12.35,11.78
+"75141000",Coleslaw (Includes: NFS),Per 100g,117.0,0.94,10.45,7.98
+"75141040",Cabbage salad,Per 100g,45.0,0.79,8.93,0.8
+"75142000",Cucumber and vegetable namasu (Includes: cucumbers,Per 100g,56.0,0.47,12.22,0.18
+"75142500",Cucumber salad,Per 100g,66.0,1.3,3.7,5.18
+"75142600",Cucumber salad made with cucumber and vinegar (Includes: with onions),Per 100g,34.0,0.5,6.79,0.13
+"75145000",Seven-layer salad,Per 100g,229.0,4.7,5.79,20.71
+"75146000",Greek Salad,Per 100g,48.0,2.75,4.35,2.26
+"75147000",Spinach salad,Per 100g,84.0,7.02,2.09,5.07
+"75148010",Cobb salad,Per 100g,93.0,11.32,2.65,4.33
+"75200700",Aloe vera juice drink,Per 100g,15.0,0.0,3.75,0.0
+"75203028",Bamboo shoots,Per 100g,41.0,1.68,3.13,2.94
+"75205200",Fried green beans (Includes: battered or breaded),Per 100g,223.0,4.04,22.86,12.86
+"75206020",Yellow string beans,Per 100g,50.0,1.45,6.25,2.71
+"75208501",Breadfruit,Per 100g,123.0,1.04,26.26,2.77
+"75209501",Burdock,Per 100g,100.0,1.6,18.06,2.89
+"75215511",Christophine,Per 100g,44.0,0.86,4.7,2.87
+"75217301",Flowers or blossoms of sesbania,Per 100g,37.0,1.06,3.2,2.62
+"75217520",Hominy,Per 100g,88.0,1.45,13.8,2.91
+"75218400",Leeks,Per 100g,88.0,1.57,14.74,3.05
+"75218501",Lotus root,Per 100g,87.0,1.54,15.51,2.61
+"75219100",Mushroom,Per 100g,44.0,2.4,8.15,0.2
+"75220011",Okra,Per 100g,35.0,2.07,7.99,0.2
+"75221160",Palm hearts,Per 100g,134.0,2.62,24.8,2.74
+"75222020",Parsnips,Per 100g,92.0,1.29,16.47,2.84
+"75226700",Pimiento,Per 100g,28.0,1.35,6.24,0.37
+"75229011",Salsify,Per 100g,89.0,2.65,14.88,2.71
+"75230000",Sauerkraut,Per 100g,40.0,0.9,4.16,2.53
+"75233220",Spaghetti squash,Per 100g,49.0,0.65,6.26,2.8
+"75235000",Water Chesnut (Includes: with or without fat),Per 100g,78.0,1.38,19.22,0.09
+"75235750",Winter melon,Per 100g,36.0,0.4,2.95,2.74
+"75236000",Yeast (Includes: brewers yeast),Per 100g,325.0,40.44,41.22,7.61
+"75236500",Yeast extract spread (Includes: Vegemite; Marmite; Promite),Per 100g,185.0,23.88,20.42,0.9
+"75301110",Lima beans and corn,Per 100g,92.0,4.3,19.25,0.5
+"75302080",Bean salad,Per 100g,109.0,3.52,13.0,5.0
+"75306998",Peppers and onions,Per 100g,37.0,1.06,8.38,0.12
+"75310990",Classic mixed vegetables,Per 100g,100.0,2.84,12.37,4.74
+"75315010",Peas and corn,Per 100g,79.0,3.84,16.73,0.47
+"75316050",Ratatouille (Includes: vegetable mixture of eggplant,Per 100g,67.0,1.09,5.77,4.73
+"75317010",Vegetables,Per 100g,97.0,1.44,15.11,3.64
+"75330050",Broccoli and cauliflower,Per 100g,23.0,2.35,4.54,0.17
+"75340010",Asian stir fry vegetables,Per 100g,50.0,2.07,9.93,0.3
+"75340200",Jai,Per 100g,60.0,4.25,7.72,1.86
+"75365000",Vegetable mixture,Per 100g,328.0,17.41,49.22,8.88
+"75400500",Artichokes,Per 100g,160.0,5.33,22.28,5.94
+"75403020",Green bean casserole (Includes: green beans with mushroom sauce),Per 100g,56.0,1.96,7.05,2.21
+"75409020",Fried cauliflower (Includes: battered or breaded; cauliflower bites),Per 100g,218.0,4.02,21.9,12.86
+"75410500",Chiles rellenos,Per 100g,228.0,7.84,10.38,17.2
+"75410550",Stuffed jalapeno pepper (Includes: battered or breaded; cheese stuffed; poppers; jalapeno bites),Per 100g,241.0,8.82,16.5,15.93
+"75412010",Fried eggplant (Includes: battered or breaded),Per 100g,218.0,3.66,22.33,12.82
+"75412030",Eggplant dip (Includes: Baba Ghanoush),Per 100g,183.0,4.8,8.15,14.98
+"75412060",Eggplant parmesan casserole,Per 100g,155.0,7.02,8.96,10.5
+"75412070",Eggplant with cheese and tomato sauce (Includes: baked eggplant casserole),Per 100g,90.0,6.16,6.34,4.84
+"75414030",Fried mushrooms (Includes: battered or breaded),Per 100g,222.0,4.63,21.9,12.91
+"75414500",Fried okra (Includes: battered or breaded),Per 100g,219.0,3.88,22.37,12.84
+"75415022",Fried onion rings (Includes: battered or breaded),Per 100g,352.0,4.19,39.94,19.82
+"75416500",Pea salad,Per 100g,180.0,2.98,10.64,14.02
+"75416600",Pea salad with cheese,Per 100g,203.0,5.0,9.82,16.01
+"75418010",Fried summer squash,Per 100g,216.0,3.76,21.5,12.88
+"75440200",Vegetable tempura,Per 100g,239.0,3.81,20.45,15.81
+"75440400",Pakora (Includes: vegetables dipped in chickpea flour,Per 100g,125.0,4.92,16.24,4.77
+"75440600",Vegetable curry,Per 100g,86.0,1.6,8.81,5.27
+"75440610",Vegetable curry with rice,Per 100g,103.0,2.03,16.48,3.27
+"75501010",Relish,Per 100g,111.0,1.7,25.7,0.91
+"75502520",Kimchi (Includes: Kim Chee),Per 100g,15.0,1.1,2.4,0.5
+"75503010",Pickles,Per 100g,14.0,0.48,1.99,0.43
+"75503085",Ginger root,Per 100g,20.0,0.33,4.83,0.1
+"75503090",Horseradish,Per 100g,48.0,1.18,11.29,0.69
+"75506010",Mustard,Per 100g,69.0,4.25,5.3,3.38
+"75506100",Honey mustard dip (Includes: honey mustard dipping sauce; hot mustard dipping sauce),Per 100g,275.0,1.77,25.16,18.01
+"75510000",Olives,Per 100g,116.0,0.84,6.04,10.9
+"75510050",Olive tapenade (Includes: olive spread),Per 100g,282.0,0.73,4.17,30.05
+"75511010",Hot pepper sauce (Includes: Tabasco sauce; hot sauce,Per 100g,12.0,1.29,0.8,0.76
+"75512010",Radishes,Per 100g,34.0,0.56,7.68,0.1
+"75534550",Wasabi paste (Includes: wasabi sauce),Per 100g,292.0,2.23,46.13,10.9
+"75535000",Zucchini,Per 100g,35.0,1.0,7.44,0.28
+"76000000",Baby Toddler vegetable,Per 100g,44.0,1.44,9.56,0.25
+"76201010",Baby Toddler carrots,Per 100g,26.0,0.8,6.0,0.1
+"76205010",Baby Toddler squash,Per 100g,28.0,0.81,5.73,0.2
+"76209010",Baby Toddler sweet potatoes,Per 100g,57.0,1.1,13.2,0.1
+"76401010",Baby Toddler green beans,Per 100g,24.0,1.2,5.8,0.1
+"76403010",Baby Toddler beets (Includes: any stage),Per 100g,34.0,1.3,7.7,0.1
+"76407010",Baby Toddler multiple vegetables,Per 100g,44.0,1.44,9.56,0.25
+"76407050",Baby Toddler vegetables,Per 100g,58.0,1.84,12.01,0.5
+"76407080",Baby Toddler vegetables and meat (Includes: any stage; with grain; any meat),Per 100g,64.0,2.95,11.18,1.08
+"76409010",Baby Toddler peas,Per 100g,50.0,3.27,8.36,0.43
+"76700000",Toddler meal,Per 100g,85.0,3.65,12.84,2.08
+"77121010",Fried stuffed potatoes,Per 100g,185.0,4.9,16.18,11.33
+"77201210",Green plantain with cracklings,Per 100g,358.0,13.16,26.97,22.82
+"77205610",Ripe plantain meat pie,Per 100g,315.0,12.81,22.03,20.22
+"77272010",Puerto Rican pasteles (Includes: Pasteles de masa),Per 100g,213.0,7.08,17.44,13.19
+"77316010",Stuffed cabbage,Per 100g,207.0,9.56,8.41,15.13
+"77316600",Eggplant and meat casserole (Includes: Moussaka made with lamb or beef),Per 100g,96.0,7.11,4.67,5.53
+"78101000",Vegetable and fruit juice,Per 100g,46.0,0.3,11.15,0.01
+"78101100",Fruit and vegetable smoothie,Per 100g,64.0,1.59,12.74,0.72
+"78101130",Vegetable smoothie (Includes: with or without dairy; NS as to protein),Per 100g,89.0,2.75,5.84,6.63
+"81100000",Table fat,Per 100g,677.0,0.58,0.36,75.33
+"81100500",Butter,Per 100g,743.0,0.85,0.06,82.2
+"81102000",Margarine,Per 100g,579.0,0.17,0.82,65.04
+"81103090",Butter replacement,Per 100g,533.0,0.17,0.86,59.81
+"81200100",Oil or table fat,Per 100g,789.0,0.29,0.18,87.67
+"81201000",Animal fat or drippings (Includes: bacon grease),Per 100g,841.0,2.23,0.0,92.18
+"81202000",Lard,Per 100g,902.0,0.0,0.0,100.0
+"81203000",Shortening,Per 100g,884.0,0.0,0.0,99.97
+"81204000",Ghee,Per 100g,876.0,0.28,0.0,99.48
+"81301000",Garlic sauce,Per 100g,683.0,1.43,2.87,74.02
+"81301020",Lemon-butter sauce (Includes: butter sauce),Per 100g,671.0,0.8,0.74,74.0
+"81302010",Hollandaise sauce (Includes: bernaise),Per 100g,546.0,5.4,1.03,57.98
+"81302040",Sandwich spread,Per 100g,389.0,0.9,22.4,34.0
+"81302050",Tartar sauce,Per 100g,211.0,1.0,13.3,16.7
+"81302060",Horseradish sauce,Per 100g,503.0,1.09,10.05,50.89
+"81302070",Pesto sauce,Per 100g,580.0,8.61,5.67,59.17
+"81308100",Fry sauce (Includes: mayo ketchup),Per 100g,535.0,0.98,7.28,56.16
+"81308200",Sauce,Per 100g,109.0,1.59,12.72,5.67
+"81312100",Curry sauce,Per 100g,95.0,1.39,5.03,8.22
+"81322000",Honey butter,Per 100g,485.0,0.53,48.5,33.85
+"82101000",Vegetable oil,Per 100g,900.0,0.0,0.0,100.0
+"82101300",Almond oil (Includes: apricot kernel),Per 100g,884.0,0.0,0.0,100.0
+"82101500",Coconut oil,Per 100g,895.0,0.0,0.84,99.1
+"82102000",Corn oil (Includes: Mazola Corn Oil; Mazola oil,Per 100g,900.0,0.0,0.0,100.0
+"82103000",Cottonseed oil,Per 100g,884.0,0.0,0.0,100.0
+"82103500",Flaxseed oil,Per 100g,884.0,0.11,0.0,99.98
+"82104000",Olive oil,Per 100g,900.0,0.0,0.0,100.0
+"82105000",Peanut oil,Per 100g,900.0,0.0,0.0,100.0
+"82105500",Canola oil (Includes: rapeseed),Per 100g,900.0,0.0,0.0,100.0
+"82106000",Safflower oil,Per 100g,900.0,0.0,0.0,100.0
+"82107000",Sesame oil,Per 100g,884.0,0.0,0.0,100.0
+"82108000",Soybean oil,Per 100g,900.0,0.0,0.0,100.0
+"82108500",Sunflower oil,Per 100g,900.0,0.0,0.0,100.0
+"82108700",Walnut oil,Per 100g,884.0,0.0,0.0,100.0
+"82109000",Wheat germ oil,Per 100g,884.0,0.0,0.0,100.0
+"83100100",Salad dressing,Per 100g,430.0,1.32,5.9,44.54
+"83101000",Blue or roquefort cheese dressing (Includes: Blue or roquefort cheese dressing,Per 100g,484.0,1.37,4.77,51.1
+"83101600",Bacon and tomato dressing,Per 100g,326.0,1.8,2.0,35.0
+"83102000",Caesar dressing (Includes: Caesar dressing,Per 100g,542.0,2.17,3.3,57.85
+"83103000",Coleslaw dressing (Includes: Coleslaw dressing,Per 100g,404.0,0.85,22.4,34.53
+"83104000",French or Catalina dressing (Includes: French or Catalina dressing,Per 100g,419.0,0.87,18.79,39.07
+"83105500",Honey mustard dressing (Includes: Honey mustard dressing,Per 100g,464.0,0.87,23.33,40.83
+"83106000",Italian dressing,Per 100g,240.0,0.41,12.12,21.12
+"83107000",Mayonnaise,Per 100g,680.0,0.96,0.57,74.85
+"83108000",Vegan mayonnaise (Includes: imitation; Vegenaise; vegan mayonnaise),Per 100g,232.0,0.3,16.0,19.2
+"83109000",Russian dressing (Includes: Russian dressing,Per 100g,355.0,0.69,31.9,26.18
+"83110000",Mayonnaise-type salad dressing (Includes: Miracle Whip; Mayonnaise-type salad dressing,Per 100g,250.0,0.65,14.78,21.6
+"83112000",Avocado dressing (Includes: Green Goddess),Per 100g,427.0,1.9,7.36,43.33
+"83112400",Creamy Italian dressing (Includes: parmesan,Per 100g,268.0,0.55,11.19,24.63
+"83112950",Poppy seed dressing,Per 100g,399.0,0.92,23.73,33.33
+"83112990",Sesame dressing (Includes: Asian dressing; Oriental dressing; Soy Ginger dressing; sesame sauce),Per 100g,443.0,3.1,8.6,45.2
+"83113500",Ranch dressing (Includes: NFS),Per 100g,430.0,1.32,5.9,44.54
+"83114000",Thousand Island dressing (Includes: McDonald's Big Mac sauce; Thousand Island dressing,Per 100g,379.0,1.09,14.64,35.06
+"83115000",Fruit dressing (Includes: yogurt dressing),Per 100g,219.0,2.51,12.42,17.97
+"83201000",Blue or roquefort cheese dressing,Per 100g,300.0,1.44,15.18,26.06
+"83201500",Creamy Italian dressing,Per 100g,111.0,0.56,9.54,7.78
+"83202020",French or Catalina dressing,Per 100g,222.0,0.58,31.22,11.52
+"83203000",Caesar dressing,Per 100g,110.0,0.3,18.6,4.4
+"83204050",Mayonnaise-type salad dressing,Per 100g,158.0,0.65,16.4,10.0
+"83204500",Honey mustard dressing,Per 100g,207.0,0.98,28.26,10.0
+"83205560",Ranch dressing,Per 100g,160.0,1.5,7.0,14.0
+"83206500",Sesame dressing,Per 100g,102.0,0.39,9.99,6.68
+"83207000",Thousand Island dressing,Per 100g,195.0,0.83,24.06,11.32
+"83208500",Korean dressing or marinade,Per 100g,348.0,3.17,12.66,31.41
+"89901010",Cream sauce,Per 100g,175.0,0.83,10.6,14.17
+"89901040",Soy based sauce,Per 100g,89.0,1.65,20.07,0.15
+"89901050",Tomato sauce,Per 100g,104.0,0.48,12.08,6.15
+"89902050",Pepper,Per 100g,27.0,0.81,5.72,0.12
+"91101000",Sugar,Per 100g,401.0,0.0,99.6,0.32
+"91106010",Sugar substitute and sugar blend (Includes: Domino Light),Per 100g,399.0,0.0,99.35,0.31
+"91107000",Sugar substitute,Per 100g,336.0,0.0,91.17,0.0
+"91300010",Syrup,Per 100g,265.0,0.0,69.6,0.1
+"91300100",Pancake syrup (Includes: cane; buttered blends; maple; maple cream),Per 100g,265.0,0.0,69.6,0.1
+"91301030",Corn syrup (Includes: Karo),Per 100g,283.0,0.0,76.79,0.2
+"91301050",Blueberry syrup (Includes: all other fruit flavors),Per 100g,341.0,0.0,85.13,0.0
+"91301080",Chocolate syrup (Includes: Nestle Quik; Hershey's; chocolate sauce),Per 100g,269.0,0.0,67.21,0.0
+"91301081",Chocolate syrup,Per 100g,153.0,1.4,34.56,0.97
+"91301100",Simple syrup (Includes: sugar and water; grenadine),Per 100g,184.0,0.0,45.58,0.15
+"91301130",Strawberry drink syrup (Includes: Nestle Quik; Hershey's; flavors other than chocolate),Per 100g,261.0,0.0,65.1,0.02
+"91301510",Pancake syrup,Per 100g,165.0,0.0,44.55,0.0
+"91302010",Honey,Per 100g,304.0,0.3,82.4,0.0
+"91302020",Agave liquid sweetener (Includes: blue agave),Per 100g,310.0,0.09,76.37,0.45
+"91303000",Molasses,Per 100g,290.0,0.0,74.73,0.1
+"91304010",Topping,Per 100g,216.0,1.21,57.01,0.0
+"91304090",Chocolate hazelnut spread (Includes: Nutella; chocolate spread; other nuts),Per 100g,539.0,5.41,62.36,29.73
+"91305010",Icing,Per 100g,397.0,1.1,63.2,17.6
+"91306020",Caramel dip,Per 100g,295.0,1.16,48.47,12.33
+"91306030",Chocolate dip (Includes: chocolate fondue),Per 100g,393.0,3.33,65.31,13.22
+"91306040",Dessert dip (Includes: fruit dip; vanilla dip; cinnamon dip; all flavors other than chocoloate or caramel dip),Per 100g,249.0,6.01,22.48,15.05
+"91361010",Sweet and sour sauce,Per 100g,154.0,0.27,38.22,0.02
+"91361040",Dessert sauce (Includes: vanilla; rum; sweet cream; hard),Per 100g,150.0,0.09,19.53,7.95
+"91361050",Duck sauce (Includes: chasni; plum sauce),Per 100g,245.0,0.36,60.66,0.13
+"91400000",Jam or jelly,Per 100g,261.0,0.18,67.12,0.03
+"91401000",Jelly,Per 100g,266.0,0.15,69.95,0.02
+"91402000",Jam (Includes: preserve),Per 100g,278.0,0.37,68.86,0.07
+"91403000",Fruit butter (Includes: apple or pumpkin butter),Per 100g,173.0,0.39,42.47,0.3
+"91404000",Marmalade,Per 100g,246.0,0.3,66.3,0.0
+"91407100",Guava paste,Per 100g,292.0,0.1,72.56,0.27
+"91407120",Sweet potato paste (Includes: dulce de calabaza),Per 100g,305.0,0.49,75.14,0.34
+"91407150",Bean paste,Per 100g,226.0,6.22,49.98,0.47
+"91501010",Gelatin dessert (Includes: jello; jigglers; NFS),Per 100g,60.0,1.22,14.19,0.0
+"91501020",Gelatin dessert with fruit (Includes: jello),Per 100g,56.0,1.1,13.34,0.01
+"91501100",Gelatin salad with vegetables (Includes: jello),Per 100g,61.0,1.47,14.02,0.02
+"91511010",Gelatin dessert,Per 100g,20.0,0.83,4.22,0.0
+"91520100",Yokan (Includes: Yookan; Japanese dessert,Per 100g,133.0,2.4,30.63,0.24
+"91560100",Haupia (Includes: coconut pudding),Per 100g,274.0,1.98,23.52,20.45
+"91601000",Italian Ice (Includes: all flavors; NS as to type),Per 100g,128.0,0.4,32.6,0.0
+"91601010",Italian Ice,Per 100g,24.0,0.0,5.92,0.0
+"91610900",Popsicle,Per 100g,79.0,0.0,19.23,0.24
+"91611000",Popsicle (Includes: all flavors; ice pop; push pop; popsicles with sticks),Per 100g,79.0,0.0,19.23,0.24
+"91612000",Freezer pop (Includes: all flavors; Fla-Vor-Ice or Flavor ice; popsicles without sticks),Per 100g,79.0,0.0,19.23,0.24
+"91621000",Snow cone (Includes: all flavors; shaved ice; NS as to type),Per 100g,128.0,0.4,32.6,0.0
+"91621050",Snow cone,Per 100g,24.0,0.0,5.92,0.0
+"91700010",Candy,Per 100g,429.0,1.95,86.62,8.26
+"91705005",Chocolate candy,Per 100g,535.0,7.65,59.4,29.66
+"91705010",Chocolate candy (Includes: chocolate egg; Dove; Hershey bar,Per 100g,535.0,7.65,59.4,29.66
+"91705012",Chocolate candy with nuts,Per 100g,545.0,10.99,51.77,33.66
+"91705015",Chocolate candy with nuts (Includes: peanut clusters; Dove; Ferrero Rocher; Hershey bar,Per 100g,545.0,10.99,51.77,33.66
+"91705020",Chocolate candy with cereal (Includes: Whoppers; Nestle crunch),Per 100g,511.0,7.64,59.67,29.37
+"91705200",Chocolate chips (Includes: baking chips,Per 100g,480.0,4.2,63.9,30.0
+"91705290",Dark chocolate candy,Per 100g,550.0,5.09,59.97,32.2
+"91705300",Dark chocolate candy (Includes: Dove; Hershey bar,Per 100g,550.0,5.09,59.97,32.2
+"91705312",Dark chocolate candy with nuts,Per 100g,560.0,8.26,52.18,36.27
+"91705315",Dark chocolate candy with nuts (Includes: Dove; Hershey bar,Per 100g,560.0,8.26,52.18,36.27
+"91705400",White chocolate candy,Per 100g,539.0,5.87,59.24,32.09
+"91705550",Chocolate candy with dried fruit (Includes: raisins; Raisinettes),Per 100g,390.0,4.1,68.4,14.8
+"91718300",Ladoo,Per 100g,411.0,6.92,46.74,22.25
+"91745035",Cough drops,Per 100g,394.0,0.0,98.3,0.1
+"91801000",Chewing gum (Includes: NFS),Per 100g,360.0,0.0,96.7,0.3
+"91802000",Chewing gum,Per 100g,268.0,0.0,94.8,0.4
+"92100000",Coffee,Per 100g,1.0,0.12,0.0,0.02
+"92101920",Frozen coffee drink (Includes: NS as to regular or decaffeinated; 2% or whole milk; plain,Per 100g,68.0,1.56,13.4,0.93
+"92101921",Frozen coffee drink,Per 100g,61.0,1.59,13.41,0.1
+"92102000",Frozen mocha coffee drink (Includes: 2% or whole milk; chocolate or cocoa flavored; McDonald's McCafe Frappe Mocha; Starbuck's Mocha Frappuccino; NS as to regular or decaffeinated),Per 100g,66.0,1.51,13.07,0.88
+"92102010",Frozen mocha coffee drink,Per 100g,59.0,1.54,13.08,0.08
+"92102400",Iced Coffee,Per 100g,1.0,0.09,0.0,0.02
+"92152000",Coffee and chicory,Per 100g,1.0,0.12,0.0,0.02
+"92201010",Coffee substitute,Per 100g,6.0,0.1,1.3,0.04
+"92202010",Chicory beverage,Per 100g,7.0,0.22,1.42,0.0
+"92302000",Tea,Per 100g,1.0,0.0,0.3,0.0
+"92306100",Corn beverage (Includes: corn tea),Per 100g,44.0,0.84,9.4,0.21
+"92307500",Iced Tea / Lemonade juice drink (Includes: half and half beverage,Per 100g,34.0,0.2,9.15,0.05
+"92307510",Iced Tea / Lemonade juice drink,Per 100g,21.0,0.22,6.12,0.04
+"92400000",Soft drink,Per 100g,42.0,0.0,10.36,0.25
+"92410110",Water,Per 100g,34.0,0.0,8.8,0.0
+"92432000",Fruit juice drink,Per 100g,32.0,0.46,7.16,0.24
+"92510610",Fruit juice drink (Includes: Minute Maid fruit punch; Snapple juice drinks),Per 100g,10.0,0.0,2.5,0.0
+"92510650",Tamarind drink (Includes: Refresco de tamarindo),Per 100g,109.0,0.64,27.67,0.18
+"92510720",Fruit punch,Per 100g,44.0,0.18,10.82,0.06
+"92510955",Lemonade,Per 100g,46.0,0.0,12.08,0.0
+"92511015",Fruit flavored drink (Includes: Kool-aid Bursts; Little Hug Fruit Drink,Per 100g,64.0,0.0,16.03,0.0
+"92512090",Pina Colada,Per 100g,128.0,0.47,25.64,2.79
+"92512110",Margarita mix,Per 100g,87.0,0.1,21.4,0.1
+"92513000",Slush frozen drink (Includes: Slurpee; Icee; no dairy; slushee or slush; Slush Puppy,Per 100g,28.0,0.0,7.68,0.02
+"92513010",Slush frozen drink,Per 100g,11.0,0.0,3.11,0.01
+"92530410",Fruit flavored drink,Per 100g,27.0,0.0,6.67,0.0
+"92530510",Cranberry juice drink,Per 100g,54.0,0.0,13.52,0.1
+"92530950",Vegetable and fruit juice drink,Per 100g,29.0,0.04,7.47,0.01
+"92531030",Fruit juice drink (Sunny D) (Includes: Sunny Delight fruit juice drink,Per 100g,54.0,0.13,13.16,0.0
+"92550200",Grape juice drink,Per 100g,23.0,0.06,5.51,0.1
+"92550350",Orange juice beverage,Per 100g,21.0,0.21,5.42,0.0
+"92550360",Apple juice beverage,Per 100g,22.0,0.0,5.1,0.1
+"92550380",Pomegranate juice beverage,Per 100g,27.0,0.08,6.56,0.14
+"92552030",Fruit juice drink (Capri Sun) (Includes: Capri Sun,Per 100g,39.0,0.0,10.0,0.07
+"92610020",Horchata,Per 100g,88.0,1.09,20.45,0.13
+"92611010",Frescavena (Includes: refresco de avena; oatmeal beverage made with water),Per 100g,45.0,0.25,10.59,0.15
+"92611100",Atole de avena (Includes: oatmeal beverage made with milk),Per 100g,83.0,1.74,15.46,1.58
+"92612010",Sugar cane beverage (Includes: guarapo),Per 100g,74.0,0.0,20.17,0.0
+"92613010",Atole (Includes: cornmeal beverage),Per 100g,86.0,1.69,16.28,1.54
+"92613510",Atole de chocolate (Includes: champurrado; cornmeal beverage with chocolate),Per 100g,103.0,1.8,20.3,1.78
+"92801000",Wine,Per 100g,6.0,0.5,1.1,0.0
+"92803000",Beer,Per 100g,37.0,0.21,8.05,0.12
+"92804000",Shirley Temple,Per 100g,56.0,0.0,14.17,0.0
+"92900300",Sports drink,Per 100g,380.0,0.0,97.9,1.01
+"93101000",Beer (Includes: beer,Per 100g,43.0,0.46,3.55,0.0
+"93106000",Alcoholic malt beverage,Per 100g,68.0,0.0,10.07,0.0
+"93106100",Alcoholic malt beverage (Includes: malt liquor; Colt 45; Champale flavored malt liquor; unsweetened; Forty),Per 100g,58.0,0.9,0.27,0.0
+"93106500",Hard cider (Includes: hard apple cider),Per 100g,56.0,0.0,5.92,0.0
+"93106600",Hard seltzer (Includes: all types),Per 100g,24.0,0.07,0.55,0.0
+"93201000",Liqueur (Includes: amaretto; anisette; benedictine; chartreuse; cointreau; creme de menthe; curacao; drambuie; kirsch; kummel; sloe gin; triple sec; schnapps; Jagermeister; cordial),Per 100g,279.0,0.0,33.2,0.11
+"93201010",Liqueur,Per 100g,296.0,0.15,33.48,2.74
+"93301000",Cocktail,Per 100g,89.0,0.0,7.8,0.19
+"93301010",Brandy Alexander (Includes: Grasshopper),Per 100g,238.0,1.05,18.94,3.83
+"93301030",Bloody Mary,Per 100g,73.0,0.67,3.8,0.23
+"93301032",Cape Cod (Includes: vodka and cranberry juice),Per 100g,98.0,0.0,10.18,0.08
+"93301040",Daiquiri,Per 100g,119.0,0.09,15.64,0.1
+"93301045",Gelatin shot,Per 100g,102.0,0.24,2.8,0.0
+"93301050",Gimlet (Includes: vodka gimlet),Per 100g,188.0,0.1,5.08,0.03
+"93301060",Gin and tonic,Per 100g,84.0,0.0,6.57,0.0
+"93301075",Greyhound (Includes: vodka and grapefruit juice; Salty Dog),Per 100g,87.0,0.42,6.28,0.36
+"93301083",Jagerbomb (Includes: Jagermeister with energy drink),Per 100g,102.0,0.34,15.97,0.03
+"93301085",Kamikaze,Per 100g,187.0,0.06,6.93,0.07
+"93301090",Manhattan,Per 100g,222.0,0.03,1.82,0.0
+"93301100",Margarita (Includes: margarita on the rocks),Per 100g,122.0,0.08,16.06,0.08
+"93301110",Martini (Includes: plain gin or vodka martini; unflavored; unsweetened; Gibson cocktail),Per 100g,201.0,0.07,0.15,0.0
+"93301111",Martini,Per 100g,187.0,0.09,6.36,0.03
+"93301113",Michelada (Includes: beer and tomato juice),Per 100g,33.0,0.66,4.05,0.15
+"93301115",Mimosa (Includes: champagne and orange juice),Per 100g,64.0,0.43,6.49,0.18
+"93301120",Mint julep,Per 100g,187.0,0.0,5.75,0.01
+"93301125",Mojito (Includes: all types),Per 100g,61.0,0.09,2.45,0.03
+"93301127",Moscow mule (Includes: cocktail with ginger beer; all types),Per 100g,91.0,0.0,8.6,0.01
+"93301130",Old fashioned,Per 100g,164.0,0.16,6.11,0.04
+"93301132",Orange Blossom (Includes: gin and  juice),Per 100g,98.0,0.57,9.32,0.26
+"93301135",Rob Roy,Per 100g,212.0,0.05,3.6,0.0
+"93301136",Rusty Nail,Per 100g,244.0,0.0,8.74,0.03
+"93301140",Screwdriver (Includes: Harvey Wallbanger; vodka and orange juice),Per 100g,92.0,0.58,7.66,0.26
+"93301141",Seabreeze (Includes: vodka,Per 100g,92.0,0.21,8.23,0.22
+"93301142",Seven and Seven (Includes: whiskey and lemon-lime soft drink),Per 100g,87.0,0.04,7.63,0.02
+"93301150",Tom Collins (Includes: Vodka Collins),Per 100g,123.0,0.08,16.11,0.08
+"93301160",Whiskey sour (Includes: vodka sour; apricot sour; brandy sour; amaretto sour),Per 100g,123.0,0.08,16.11,0.08
+"93301170",Whiskey and soda (Includes: scotch,Per 100g,59.0,0.0,0.0,0.0
+"93301181",Whiskey and water (Includes: bourbon,Per 100g,59.0,0.0,0.0,0.0
+"93301182",Whiskey and cola (Includes: bourbon,Per 100g,89.0,0.0,7.8,0.19
+"93301183",Whiskey and diet cola (Includes: Jack Daniel's and Diet Coke; bourbon,Per 100g,60.0,0.08,0.22,0.02
+"93301184",Whiskey and ginger ale (Includes: bourbon,Per 100g,83.0,0.0,6.59,0.0
+"93301190",Rum and cola (Includes: rum and Coke; Cuba Libre),Per 100g,89.0,0.0,7.8,0.19
+"93301191",Rum and diet cola (Includes: rum and Diet Coke),Per 100g,60.0,0.08,0.22,0.02
+"93301205",Brandy and cola (Includes: cognac or Hennessy and Coke),Per 100g,89.0,0.0,7.8,0.19
+"93301211",Vodka and soda (Includes: vodka and carbonated or seltzer water),Per 100g,59.0,0.0,0.0,0.0
+"93301213",Vodka and lemonade,Per 100g,93.0,0.0,9.02,0.0
+"93301214",Vodka and cola (Includes: vodka and Coke),Per 100g,89.0,0.0,7.8,0.19
+"93301215",Vodka and diet cola (Includes: vodka and Diet Coke),Per 100g,60.0,0.08,0.22,0.02
+"93301216",Vodka and energy drink (Includes: Vodka Red Bull; Vegas Bomb),Per 100g,90.0,0.35,7.7,0.0
+"93301217",Vodka and water,Per 100g,59.0,0.0,0.0,0.0
+"93301218",Vodka and tonic,Per 100g,84.0,0.0,6.57,0.0
+"93301230",Sloe gin fizz,Per 100g,66.0,0.03,2.22,0.01
+"93301240",Black Russian,Per 100g,279.0,0.04,21.21,0.14
+"93301250",White Russian,Per 100g,181.0,2.15,11.17,7.9
+"93301275",Champagne punch (Includes: champagne fruit punch),Per 100g,120.0,0.16,11.5,0.06
+"93301280",Singapore Sling,Per 100g,93.0,0.12,7.25,0.04
+"93301310",Mai Tai,Per 100g,149.0,0.18,16.48,0.07
+"93301320",Tequila Sunrise,Per 100g,111.0,0.52,12.62,0.23
+"93301360",Long Island iced tea,Per 100g,107.0,0.01,8.66,0.15
+"93301370",Fuzzy Navel,Per 100g,107.0,0.57,16.17,0.28
+"93301400",Alcoholic coffee drink (Includes: Coffee Royale; Irish coffee; coffee and liqueur; hard or spiked coffee),Per 100g,88.0,0.21,2.1,2.38
+"93301500",Frozen daiquiri (Includes: all flavors; strawberry; banana),Per 100g,127.0,0.07,17.65,0.08
+"93301510",Frozen margarita,Per 100g,122.0,0.08,16.06,0.08
+"93301550",Eggnog,Per 100g,113.0,3.74,6.62,3.45
+"93301600",Gin fizz,Per 100g,66.0,0.03,2.22,0.01
+"93302000",Rum,Per 100g,160.0,0.08,4.95,4.47
+"93404000",Wine cooler (Includes: all types),Per 100g,68.0,0.0,10.07,0.0
+"93404550",Sangria,Per 100g,85.0,0.04,7.23,0.02
+"93405000",Wine spritzer (Includes: wine and club soda or seltzer water),Per 100g,49.0,0.04,1.62,0.0
+"93406000",Glug (Includes: glogg; gluhwein; mulled wine),Per 100g,96.0,0.1,6.24,0.14
+"93501000",Brandy (Includes: applejack; cognac; Hennessy; straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"93502000",Whiskey (Includes: bourbon; rye; Southern Comfort; straight up or on the rocks; Jack Daniel's; Fireball),Per 100g,231.0,0.0,0.0,0.0
+"93502100",Scotch (Includes: straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"93503000",Gin (Includes: straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"93504000",Rum (Includes: straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"93505000",Vodka (Includes: straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"93505100",Tequila (Includes: straight up or on the rocks),Per 100g,231.0,0.0,0.0,0.0
+"94100300",Water beverage,Per 100g,18.0,0.0,4.5,0.0
+"95101000",Nutritional drink or shake,Per 100g,101.0,4.22,17.3,1.69
+"95201000",Nutritional powder mix (Carnation Instant Breakfast) (Includes: instant breakfast,Per 100g,353.0,19.9,66.2,1.4
+"95201010",Nutritional powder mix,Per 100g,358.0,35.8,41.0,5.1
+"95201200",Nutritional powder mix (EAS Whey Protein Powder) (Includes: all flavors),Per 100g,385.0,66.67,17.95,5.13
+"95201300",Nutritional powder mix (EAS Soy Protein Powder) (Includes: all flavors),Per 100g,405.0,47.62,43.94,3.57
+"95201600",Nutritional powder mix (Isopure) (Includes: all flavors),Per 100g,359.0,58.14,29.07,1.16
+"95202000",Nutritional powder mix (Muscle Milk) (Includes: all flavors),Per 100g,411.0,45.71,18.5,17.14
+"95210000",Nutritional powder mix (Slim Fast) (Includes: all flavors; 3-2-1 Plan; Optima),Per 100g,448.0,8.13,73.92,13.34
+"95310200",Energy drink (Full Throttle),Per 100g,46.0,0.25,12.08,0.08
+"95310400",Energy drink (Monster),Per 100g,47.0,0.47,11.28,0.0
+"95310500",Energy drink (Mountain Dew AMP),Per 100g,46.0,0.25,12.08,0.08
+"95310550",Energy drink (No Fear),Per 100g,62.0,0.42,15.0,0.0
+"95310555",Energy drink (No Fear Motherload),Per 100g,62.0,0.42,15.0,0.0
+"95310560",Energy drink (NOS),Per 100g,44.0,0.0,11.25,0.0
+"95310600",Energy drink (Red Bull),Per 100g,43.0,0.46,10.23,0.0
+"95310700",Energy drink (Rockstar),Per 100g,58.0,0.34,12.7,0.22
+"95310750",Energy drink (SoBe Energize Energy Juice Drink) (Includes: all flavors),Per 100g,45.0,0.0,11.27,0.0
+"95310800",Energy drink (Vault) (Includes: all flavors),Per 100g,49.0,0.0,12.99,0.0
+"95311000",Energy Drink (Includes: NS as to brand),Per 100g,43.0,0.46,10.23,0.0
+"95312400",Energy drink,Per 100g,5.0,0.0,1.38,0.0
+"95312560",Energy drink (Ocean Spray Cran-Energy Juice Drink) (Includes: all flavors),Per 100g,15.0,0.0,3.75,0.0
+"95312900",Energy drink (XS) (Includes: all flavors),Per 100g,5.0,0.25,0.7,0.08
+"95312905",Energy drink (XS Gold Plus) (Includes: all flavors),Per 100g,5.0,0.25,0.7,0.08
+"95320200",Sports drink (Gatorade G) (Includes: all flavors; Gatorade,Per 100g,26.0,0.0,6.43,0.0
+"95320500",Sports drink (Powerade) (Includes: all flavors),Per 100g,32.0,0.0,7.84,0.05
+"95330100",Fluid replacement,Per 100g,10.0,0.0,2.45,0.0
+"99991400",Cheese as ingredient in sandwiches,Per 100g,358.0,20.39,5.04,28.44
+"99991410",Cheese and Queso as ingredient,Per 100g,362.0,21.92,2.4,29.34
+"99992100",Beef as ingredient in recipes,Per 100g,261.0,26.44,0.0,16.52
+"99992230",Breakfast meat as ingredient in omelet,Per 100g,252.0,20.81,1.61,17.87
+"99992405",Chicken as ingredient in recipes,Per 100g,182.0,28.06,0.0,7.34
+"99992610",Fish fillet,Per 100g,195.0,18.16,8.27,10.08
+"99995000",Breading or batter as ingredient in food,Per 100g,201.0,6.56,40.08,1.63
+"99995130",Wheat bread as ingredient in sandwiches,Per 100g,264.0,11.4,45.42,3.98
+"99995135",Wheat bun as ingredient in sandwiches,Per 100g,264.0,11.4,45.42,3.98
+"99997520",Green pepper,Per 100g,25.0,0.77,5.14,0.12
+"99997525",Red pepper,Per 100g,33.0,0.97,7.15,0.14
+"99997800",Dark green vegetables as ingredient in omelet,Per 100g,35.0,2.97,4.51,0.56
+"99997802",Tomatoes as ingredient in omelet,Per 100g,25.0,1.1,5.49,0.23
+"99997804",Other vegetables as ingredient in omelet,Per 100g,39.0,3.24,5.74,0.39
+"99997805",Mirepoix,Per 100g,41.0,1.02,9.06,0.19
+"99997810",Vegetables as ingredient in curry,Per 100g,53.0,1.81,11.71,0.2
+"99997815",Vegetables as ingredient in soups,Per 100g,50.0,1.87,10.56,0.33
+"99997820",Vegetables as ingredient in stews,Per 100g,59.0,1.77,12.67,0.3
+"99998130",Sauce as ingredient in hamburgers,Per 100g,272.0,1.34,17.14,22.85
+"99998210",Industrial oil as ingredient in food,Per 100g,892.0,0.0,0.0,100.0

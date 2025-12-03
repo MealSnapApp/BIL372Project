@@ -60,6 +60,10 @@ const ProfilePage: React.FC = () => {
         fetchWeightLogs,
     } = useProfilePage();
 
+    const disabledDate = (current: any) => {
+        return current && current > dayjs().endOf('day');
+    };
+
     // Get all unique dates from both logs
     const uniqueDates = Array.from(new Set([
         ...(Array.isArray(weightLogs) ? weightLogs.map(log => moment(log.created_at).format('YYYY-MM-DD')) : []),
@@ -339,14 +343,7 @@ const ProfilePage: React.FC = () => {
 
             <div className="profile-section">
                 <Collapse ghost className="meal-collapse">
-                    <Panel header="Body Records" key="1" extra={
-                        <Button type="primary" size="small" onClick={(e) => {
-                            e.stopPropagation();
-                            setIsBodyModalVisible(true);
-                        }}>
-                            Add Record
-                        </Button>
-                    }>
+                    <Panel header="Body Records" key="1">
                         <div className="body-records-table">
                             <table>
                                 <thead>
@@ -416,8 +413,13 @@ const ProfilePage: React.FC = () => {
                         <Form.Item name="height" label="Height (cm)" rules={[{ required: true, message: 'Please enter your height' }]}>
                             <InputNumber min={0} max={300} style={{ width: '100%' }} />
                         </Form.Item>
-                        <Form.Item name="date" label="Date" initialValue={moment()} rules={[{ required: true, message: 'Please select a date' }]}>
-                            <DatePicker style={{ width: '100%' }} defaultValue={moment()} popupClassName="dark-date-picker-dropdown" />
+                        <Form.Item name="date" label="Date" initialValue={dayjs()} rules={[{ required: true, message: 'Please select a date' }]}>
+                            <DatePicker 
+                                style={{ width: '100%' }} 
+                                defaultValue={dayjs()} 
+                                disabledDate={disabledDate}
+                                popupClassName="dark-date-picker-dropdown" 
+                            />
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit" block>

@@ -12,8 +12,16 @@ exports.signup = async (req, res) => {
       BirthDate, Sex, TargetWeight, TargetCalorie, ActivityLevel 
     } = req.body;
 
+    // Check if user already exists
+    const existingUser = await UserService.getUserByEmailOrUsername(Username);
+    const existingEmail = await UserService.getUserByEmailOrUsername(Email);
+
+    if (existingUser || existingEmail) {
+        return res.status(409).send("This username or email is already exists!");
+    }
+
     // Password comes hashed from frontend, so we store it directly
-    const user = await UserService.createUser({ 
+    const user = await UserService.createUser({  
       Name, Surname, Username, Email, Password,
       BirthDate, Sex, TargetWeight, TargetCalorie, ActivityLevel
     });

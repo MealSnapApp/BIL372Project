@@ -18,6 +18,8 @@ require('./models/Comment_Likes');
 require('./models/HeightLog');
 require('./models/WeightLog');
 
+const seedFoods = require('./utils/seeder');
+
 const server = express();
 
 // Middleware
@@ -71,8 +73,11 @@ initializeDatabase().then(() => {
       try {
         // Normalize any negative like counts persisted previously
         await sequelize.query('UPDATE `Post` SET `like_count` = GREATEST(0, COALESCE(`like_count`,0))');
+        
+        // Seed foods from CSV if needed
+        await seedFoods();
       } catch (e) {
-        console.warn('Warning: failed to normalize like_count values:', e?.message || e);
+        console.warn('Warning: failed to normalize like_count values or seed foods:', e?.message || e);
       }
       server.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
