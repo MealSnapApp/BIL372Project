@@ -5,7 +5,7 @@
     color: #fff;
     font-family: "Nunito", sans-serif;
     width : 800px;
-    height: 520px;
+    height: 560px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -16,7 +16,7 @@
 @media (max-width: 1000px) {
     .container {
         width: 600px;
-        height: 500px;
+        height: 540px;
     }
 }
 
@@ -123,6 +123,11 @@
 
 #sign-up-button {
     margin: auto;
+    margin-top: 10px;
+    padding: 10px 28px; /* smaller button */
+    font-size: 13px; /* smaller text */
+    border-radius: 16px; /* slightly tighter corners */
+    margin-left: -6px; /* nudge slightly to the left */
 }
 
 /*Inputs*/
@@ -165,6 +170,7 @@
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    color: #fff !important;
 }
 
 .ant-input-suffix {
@@ -183,12 +189,122 @@
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
     border-radius: 8px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+}
+.ant-select-selector {
+    height: 25px !important; /* even smaller select height */
+    display: flex;
+    align-items: center;
+}
+
+/* Normalize internal padding so both controls align */
+.ant-picker,
+.ant-select-selector {
+    padding: 0 10px !important; /* slightly tighter padding for smaller control */
 }
 
 .ant-picker-input > input {
     color: #fff !important;
 }
 
+.ant-picker-input > input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* AntD DatePicker dropdown dark theme */
+.ant-picker-dropdown {
+    background: transparent; /* container is transparent */
+}
+
+.ant-picker-dropdown .ant-picker-panel,
+.ant-picker-dropdown .ant-picker-panel-container,
+.ant-picker-dropdown .ant-picker-panel-layout {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    color: #fff !important;
+}
+
+.ant-picker-dropdown .ant-picker-header,
+.ant-picker-dropdown .ant-picker-header button {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+.ant-picker-dropdown .ant-picker-content th,
+.ant-picker-dropdown .ant-picker-content td {
+    color: #fff !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-inner {
+    color: #fff !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view .ant-picker-cell-inner:hover,
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: #19850B !important;
+    color: #fff !important;
+}
+
+/* Disabled dates: make them dimmed */
+.ant-picker-dropdown .ant-picker-cell-disabled .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-disabled.ant-picker-cell {
+    color: rgba(255, 255, 255, 0.35) !important;
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-disabled .ant-picker-cell-inner:hover {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-disabled .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-disabled.ant-picker-cell .ant-picker-cell-inner {
+    text-shadow: none !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-disabled.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-dropdown .ant-picker-cell-disabled.ant-picker-cell-in-view .ant-picker-cell-inner:hover {
+    background: transparent !important;
+}
+
+.ant-picker-dropdown .ant-picker-footer {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
 .ant-picker-suffix {
     color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Ant Design Select minimal overrides for dark theme */
+.ant-select,
+.ant-select-selector {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    color: #fff !important;
+}
+
+.ant-select-selection-item,
+.ant-select-arrow {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px !important; /* smaller text inside select */
+}
+
+.ant-select .ant-select-selection-placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.ant-select-selector:hover,
+.ant-select-focused .ant-select-selector {
+    border-color: #19850B !important;
+    box-shadow: 0 0 0 2px rgba(25, 133, 11, 0.2) !important;
+}
+
+.ant-input-password input::placeholder, .ant-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
 }
