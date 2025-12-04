@@ -163,7 +163,7 @@ const UpperMenuBar: React.FC = () => {
           <div>
             <div className='header-text-with-arrow'>
               <span className={isRecipesVisible ? "title-on-mouse header-text" : "header-text"} onClick={handleRecipesClick}>
-                Recipes
+                Meals
               </span>
               <IconArrowDown />
             </div>

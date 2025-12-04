@@ -212,6 +212,27 @@
 
 .dropdown-menu.recipes {
   width: 435px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Recipes Menu */
+.dropdown-menu.recipes::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-menu.recipes::-webkit-scrollbar-track {
+  background: #2c2c2e;
+  border-radius: 10px;
+}
+
+.dropdown-menu.recipes::-webkit-scrollbar-thumb {
+  background: #3a3a3c;
+  border-radius: 10px;
+}
+
+.dropdown-menu.recipes::-webkit-scrollbar-thumb:hover {
+  background: #19850B;
 }
 
 .dropdown-menu.trends {
