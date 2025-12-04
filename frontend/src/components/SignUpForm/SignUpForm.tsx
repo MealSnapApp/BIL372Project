@@ -100,16 +100,17 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
               </Form.Item>
 
                {/* Birth Date and Sex Row */}
-              <div style={{ display: 'flex', gap: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <Form.Item
                   name='BirthDate'
                   rules={[{ required: true, message: 'Please select your birth date!' }]}
-                  style={{ flex: 1 }}
+                  style={{ flex: 1, marginBottom: 0 }}
                 >
                   <DatePicker 
                     className="input" 
                     placeholder="Birth Date" 
                     style={{ width: '100%' }} 
+                    size="large"
                     disabledDate={disabledDate}
                     defaultPickerValue={dayjs().subtract(7, 'year')}
                   />
@@ -118,12 +119,19 @@ const SignUpForm: React.FC<SignUpFormProps> = ({whichState, clear}) => {
                 <Form.Item
                   name='Sex'
                   rules={[{ required: true, message: 'Please select your sex!' }]}
-                  style={{ flex: 1 }}
+                  style={{ flex: 1, marginBottom: 0 }}
                 >
-                  <Select className="input" placeholder="Sex">
-                    <Select.Option value="M">Male</Select.Option>
-                    <Select.Option value="F">Female</Select.Option>
-                  </Select>
+                  <Select
+                    className="input"
+                    placeholder="Sex"
+                    style={{ width: '100%' }}
+                    size="large"
+                    showArrow
+                    options={[
+                      { value: 'M', label: 'Male' },
+                      { value: 'F', label: 'Female' },
+                    ]}
+                  />
                 </Form.Item>
               </div>
 
